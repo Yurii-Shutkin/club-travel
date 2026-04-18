@@ -1,0 +1,53 @@
+@use "@/scss/mixins/variables" as vars;
+@use "@/scss/mixins/media" as media;
+//
+:root {
+    --primary: #{vars.$primary};
+    --green: #{vars.$green};
+    --blue: #{vars.$blue};
+    --text: #{vars.$text};
+
+    --font-family: #{vars.$font-family};
+    --second-family: #{vars.$second-family};
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F3F4F6;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #F59E0B;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #D97706;
+}
+// Open Sans  400,700
+// Roboto  400,600
+body {
+    font-family: var(--font-family);
+    font-weight: 400;
+    background: #fff;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    //max-width: 1440px;
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 0 98px;
+
+}
+
+
+
+
+
