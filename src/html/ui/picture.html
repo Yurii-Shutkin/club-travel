@@ -1,0 +1,22 @@
+<picture class="{{className}}" {{#if dataAttr}} {{dataAttr}}} {{/if}}>
+    <source
+      media="(min-width:769px)"
+      srcset="{{desktopWebp}}"
+      type="image/webp">
+    <source
+      media="(min-width:769px)"
+      srcset="{{desktop}}">
+    {{#if mobile}}
+    <source
+      media="(max-width:768px)"
+      type="image/webp"
+      srcset="{{mobileWebp}}">
+    <source
+      media="(max-width:768px)"
+      srcset="{{mobile}}">
+    {{/if}}
+    <img
+      src="{{desktop}}"
+      alt="{{alt}}"
+      loading="lazy">
+</picture>

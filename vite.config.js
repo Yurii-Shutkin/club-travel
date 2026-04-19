@@ -1,15 +1,17 @@
 import {defineConfig} from 'vite'
-// import basicSsl from '@vitejs/plugin-basic-ssl'
-import path from 'path'
-import {resolve} from 'path'
+import { fileURLToPath } from 'url'
+import path, { resolve } from 'path'
 import {globSync} from 'glob'
 import handlebars from 'vite-plugin-handlebars'
 import autoprefixer from 'autoprefixer'
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import postcssCombineMediaQuery from 'postcss-combine-media-query';
 import sortMediaQueries from 'postcss-sort-media-queries';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import {hulakPlugins} from 'vite-plugin-hulak-tools'
 
 const BASE_URL = '/club-travel/'; // name project in gitHub
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const pages = Object.fromEntries(
     globSync(['./*.html', './pages/*.html'], {ignore: 'node_modules/**'}).map(file => {
@@ -20,6 +22,7 @@ const pages = Object.fromEntries(
 
 export default defineConfig({
     base: BASE_URL,
+    // logLevel: 'warn',
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'src'),
@@ -31,7 +34,9 @@ export default defineConfig({
             plugins:
                 [
                     autoprefixer(),
+                    postcssCombineMediaQuery(),
                     sortMediaQueries({sort: 'desktop-first'}),
+
                 ],
         },
     },
@@ -118,22 +123,11 @@ export default defineConfig({
         },
     },
 
-    // build: {
-    //     sourcemap: false,
-    //     rollupOptions: {
-    //         input: {
-    //             ...pages,
-    //         },
-    //     },
-    // },
     build: {
-        target: 'es2015',
-        minify: 'terser',
-        terserOptions: {
-            compress: {
-                drop_console: true,
-                drop_debugger: true,
-            },
+        target: 'es2020',
+        minify: 'esbuild',
+        esbuild: {
+            drop: ['console', 'debugger']
         },
         sourcemap: false,
         rollupOptions: {
