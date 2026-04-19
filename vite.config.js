@@ -4,7 +4,6 @@ import path, { resolve } from 'path'
 import {globSync} from 'glob'
 import handlebars from 'vite-plugin-handlebars'
 import autoprefixer from 'autoprefixer'
-import postcssCombineMediaQuery from 'postcss-combine-media-query';
 import sortMediaQueries from 'postcss-sort-media-queries';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import {hulakPlugins} from 'vite-plugin-hulak-tools'
@@ -34,9 +33,7 @@ export default defineConfig({
             plugins:
                 [
                     autoprefixer(),
-                    postcssCombineMediaQuery(),
                     sortMediaQueries({sort: 'desktop-first'}),
-
                 ],
         },
     },
@@ -74,7 +71,7 @@ export default defineConfig({
         },
 
         hulakPlugins({
-            enableHandlebars: true,
+            enableHandlebars: false,
             handlebarsOptions: {
                 partialDirectory: './src/html'
             }
