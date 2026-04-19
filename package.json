@@ -4,11 +4,41 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"node convert-webp.js\"  \"vite\"",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead",
+    "not op_mini all"
+  ],
   "devDependencies": {
-    "vite": "^8.0.4"
+    "autoprefixer": "^10.5.0",
+    "chokidar": "^5.0.0",
+    "concurrently": "^9.2.1",
+    "esbuild": "^0.28.0",
+    "gh-pages": "^6.3.0",
+    "glob": "^13.0.6",
+    "handlebars-loader": "^1.7.3",
+    "postcss": "^8.5.10",
+    "postcss-combine-media-query": "^2.1.0",
+    "postcss-sort-media-queries": "^6.5.0",
+    "sass": "^1.99.0",
+    "sharp": "^0.34.5",
+    "terser": "^5.46.1",
+    "vite": "^8.0.8",
+    "vite-plugin-handlebars": "^2.0.2",
+    "vite-plugin-hulak-tools": "^3.0.0",
+    "vite-plugin-image-optimizer": "^2.0.3"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^6.1.13",
+    "body-scroll-lock": "^3.1.5",
+    "libphonenumber-js": "^1.12.41",
+    "nouislider": "^15.8.1",
+    "toastify-js": "^1.12.0"
   }
 }
