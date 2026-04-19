@@ -1,0 +1,71 @@
+<div class="promo-support__container container">
+    {{> ui/picture
+    className="promo-support__photo"
+    alt="bg"
+    desktop="/src/image/components/promo-support/bg.jpg"
+    desktopWebp="/src/image/components/promo-support/bg.webp"
+    mobile="/src/image/components/promo-support/bg_2.jpg"
+    mobileWebp="/src/image/components/promo-support/bg_2.webp"
+    }}
+    <h2 class="promo-support__title">НЕТ ВРЕМЕНИ ИСКАТЬ ТУР? </h2>
+    <p class="promo-support__description">Просто скажите нам как должен
+        выглядеть
+        отдых вашей мечты и мы найдём лучший тур для вас!</p>
+    <div class="promo-support__row">
+        <div class="promo-support__col">
+            <p class="promo-support__col-text">
+                Заполните короткую форму запроса на нашем сайте и мы свяжемся с
+                вами в течении 1 часа в рабочее время
+            </p>
+            <a
+              href="{{>links/tour-support}}"
+              class="promo-support__col-btn btn btn_orange">
+                ЗАПОЛНИТЬ ЗАЯВКУ НА ПОИСК ТУРА</a>
+        </div>
+        <div class="promo-support__divider">
+            <hr class="promo-support__divider-line">
+            <span class="promo-support__divider-text">или</span>
+            <hr class="promo-support__divider-line">
+        </div>
+        <div class="promo-support__col">
+            <div class="promo-support__promo-consultant promo-consultant">
+                <h3 class="promo-consultant__title">Свяжитесь с нашим консультантом</h3>
+                <div class="promo-consultant__inner">
+                    {{> ui/picture
+                    className="promo-consultant__photo"
+                    alt="photo"
+                    desktop="/src/image/components/promo-support/photo_2.jpg"
+                    desktopWebp="/src/image/components/promo-support/photo_2.webp"
+                    }}
+                    <div class="promo-consultant__content">
+                        <h4 class="promo-consultant__name">Марина Каасик</h4>
+                        <p class="promo-consultant__sub-fio">Специалист по подбору туров</p>
+                        <div class="promo-consultant__contacts">
+                            <div class="promo-consultant__contacts-row">
+                                {{> ui/svg
+                                className="promo-consultant__contacts-icon"
+                                id="location"
+                                }}
+                                <a href="tel:+3726130633" class="promo-consultant__link">+372 6 130 633</a>
+                            </div>
+                            <div class="promo-consultant__contacts-row">
+                                {{> ui/svg
+                                className="promo-consultant__contacts-icon"
+                                id="location"
+                                }}
+                                <a href="mailto: contact@email.ee" class="promo-consultant__item">contact@email.ee</a>
+                            </div>
+                            <div class="promo-consultant__contacts-row">
+                                {{> ui/svg
+                                className="promo-consultant__contacts-icon"
+                                id="location"
+                                }}
+                                <a href="{{>links/messenger}}" class="promo-consultant__link">Написать в Messenger</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

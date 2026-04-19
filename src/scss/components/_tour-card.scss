@@ -1,0 +1,63 @@
+.tour-card {
+    border-radius: 10px;
+    width: 380px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    background: #fff;
+
+    &__picture-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 38/25;
+    }
+
+    &__meta {
+        position: absolute;
+        bottom: 14px;
+        left: 14px;
+    }
+
+    &__meta-col {
+        display: flex;
+        color: #fff;
+        &:last-child {
+            margin-top: 8px;
+        }
+    }
+
+    &__meta-icon {
+        width: 24px;
+        aspect-ratio: 1;
+    }
+    &__meta-item {
+    }
+
+    &__picture {
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__content {
+        padding-inline: 16px;
+    }
+
+    &__hotel-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__hotel-name {
+    }
+    &__hotel-rating{
+
+    }
+    &__hotel-icon{
+        width: 24px;
+        aspect-ratio: 1;
+    }
+
+    &__btn {
+    }
+}
+
