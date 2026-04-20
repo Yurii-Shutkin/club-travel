@@ -1,3 +1,28 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('@/assets/fonts/open-sans-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('@/assets/fonts/open-sans-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('@/assets/fonts/roboto-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('@/assets/fonts/roboto-semiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-display: swap;
+}
+
 $primary: #f68521;
 $green: #3e7739;
 $blue: #255296;

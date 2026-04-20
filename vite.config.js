@@ -3,10 +3,11 @@ import { fileURLToPath } from 'url'
 import path, { resolve } from 'path'
 import {globSync} from 'glob'
 import handlebars from 'vite-plugin-handlebars'
-import autoprefixer from 'autoprefixer'
-import sortMediaQueries from 'postcss-sort-media-queries';
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import {hulakPlugins} from 'vite-plugin-hulak-tools'
+import autoprefixer from 'autoprefixer'
+import sortMediaQueries from 'postcss-sort-media-queries'
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
+import {links} from "./src/data/links.js";
 
 const BASE_URL = '/club-travel/'; // name project in gitHub
 const __filename = fileURLToPath(import.meta.url)
@@ -29,6 +30,11 @@ export default defineConfig({
     },
 
     css: {
+        preprocessorOptions: {
+            scss: {
+                api: 'modern-compiler',
+            },
+        },
         postcss: {
             plugins:
                 [
@@ -70,13 +76,6 @@ export default defineConfig({
             }
         },
 
-        hulakPlugins({
-            enableHandlebars: false,
-            handlebarsOptions: {
-                partialDirectory: './src/html'
-            }
-        }),
-
         handlebars({
             partialDirectory: path.resolve(__dirname, 'src/html'),
             helpers: {
@@ -88,7 +87,13 @@ export default defineConfig({
                 },
                 first: (arr) => (Array.isArray(arr) ? arr[0] : arr),
                 json: (str) => JSON.parse(str),
+            },
+            context: {
+                links,
             }
+        }),
+        hulakPlugins({
+            extensions: ['.html', '.hbs']
         }),
 
         ViteImageOptimizer({
@@ -134,7 +139,7 @@ export default defineConfig({
             output: {
                 chunkFileNames: 'assets/js/[name]-[hash].js',
                 entryFileNames: 'assets/js/[name]-[hash].js',
-                assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
+                assetFileNames: 'assets/[ext]/[name]-[hash][extname]',
             },
         },
         cssMinify: true,
