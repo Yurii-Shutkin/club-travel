@@ -7,6 +7,8 @@ import autoprefixer from 'autoprefixer'
 import sortMediaQueries from 'postcss-sort-media-queries';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import {hulakPlugins} from 'vite-plugin-hulak-tools'
+import { links } from '@/data/links.js';
+
 
 const BASE_URL = '/club-travel/'; // name project in gitHub
 const __filename = fileURLToPath(import.meta.url)
@@ -88,7 +90,10 @@ export default defineConfig({
                 },
                 first: (arr) => (Array.isArray(arr) ? arr[0] : arr),
                 json: (str) => JSON.parse(str),
-            }
+            },
+            context: {
+                links
+            },
         }),
 
         ViteImageOptimizer({
