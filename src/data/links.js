@@ -4,7 +4,7 @@ export const links = {
     social: { href: './company.html' },
     tourSupport: { href: '#!' },
 
-    messenger: { href: '#!' },
+    messenger: { href: 'https://m.me' },
 };
 
 // <a href="{{links.tourSupport.href}}">Поддержка туров</a>

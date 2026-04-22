@@ -1,65 +1,205 @@
-.promo-support {
+@use "@/scss/utils/media" as media;
 
+.promo-support {
+    color: #fff;
     &__container {
+        position: relative;
+        padding: 80px 20px 95px 20px;
+        @include media.max-width(sm) {
+            padding: 30px 10px 45px 10px;
+        }
+    }
+    &__bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+    &__inner{
+        position: relative;
+        z-index: 4;
     }
 
     &__title {
+        font-weight: 700;
+        font-size: 26px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        text-align: center;
+        @include media.max-width(xs) {
+            padding-inline: 5%;
+        }
     }
 
     &__description {
+        font-size: 16px;
+        text-align: center;
+        margin-top: 15px;
+        @include media.max-width(xs) {
+            margin-top: 22px;
+        }
+        & br{
+            @include media.max-width(sm) {
+                display: none;
+            }
+        }
+
     }
 
     &__row {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        column-gap: 7.3%;
+        margin-top: 94px;
+        max-width: 1200px;
+        margin-inline: auto;
+        @include media.max-width(md) {
+            column-gap: 2.3%;
+        }
+        @include media.max-width(sm) {
+            display: block;
+            margin-top: 31px;
+        }
     }
 
-    &__col {
+    &__request {
+        min-width: 0;
+        max-width: 380px;
+        margin-left: auto;
+        @include media.max-width(md) {
+            align-self: center;
+        }
+        @include media.max-width(sm) {
+            margin: 0 auto;
+        }
+
     }
 
-    &__col-text {
+    &__request-text {
+        margin: 27px auto 0 auto;
+        font-size: 18px;
+        text-align: center;
     }
 
-    &__col-btn {
+    &__request-btn {
+        margin-top: 35px;
+        max-width: 378px;
     }
 
     &__divider {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        @include media.max-width(sm) {
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 33px;
+        }
     }
 
     &__divider-line {
+        background: #fff;
+        height: 100%;
+        width: 1px;
+        @include media.max-width(sm) {
+            width: 21.5%;
+            height: 1px;
+        }
     }
 
     &__divider-text {
     }
 
     &__promo-consultant {
+        padding-left: 6px;
+        min-width: 0;
+        //width: 460px;
+        //width: 35%;
+        //flex-shrink: 0;
+        @include media.max-width(sm) {
+            margin: 33px 0 0 3%;
+        }
     }
 }
 
 .promo-consultant {
 
     &__title {
+        font-size: 18px;
     }
 
     &__inner {
+        display: flex;
+        gap: 32px;
+        margin-top: 17px;
+        @include media.max-width(md) {
+            flex-direction: column;
+            align-items: start;
+        }
+        @include media.max-width(sm) {
+            flex-direction: row;
+            align-items: center;
+            gap: 17px;
+        }
+        @include media.max-width(xs) {
+            flex-direction: column;
+            align-items: start;
+        }
+    }
+    &__photo{
+        max-width: 280px;
+        width: 80%;
+        border-radius: 6px;
+        align-self: center;
+        aspect-ratio: 207/152;
+        @include media.max-width(md) {
+            align-self: start;
+        }
+        @include media.max-width(sm) {
+            //max-width: 300px;
+            width: 83%;
+            aspect-ratio: 3/2;
+        }
     }
 
     &__content {
     }
 
     &__name {
+        font-size: 22px;
     }
 
     &__sub-fio {
+        margin-top: 2px;
     }
 
     &__contacts {
+        font-size: 16px;
+        margin-top: 23px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        @include media.max-width(sm) {
+            gap: 16px;
+        }
     }
 
     &__contacts-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    &__contacts-icon{
+        width: 24px;
+        aspect-ratio: 1;
+        opacity: 0.5;
     }
 
     &__link {
-    }
-
-    &__item {
+        width: 180px;
     }
 }
