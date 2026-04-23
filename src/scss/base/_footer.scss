@@ -1,16 +1,27 @@
+@use "@/scss/utils/media" as media;
 .footer {
     margin-top: 82px;
+    @include media.max-width(sm) {
+        margin-top: 42px;
+    }
 
     &__container {
     }
 
     &__inner {
         display: grid;
-        grid-template-columns: 3fr 4fr 5fr;
+        grid-template-columns: max-content 4fr 4fr;
+        gap: 50px;
+        @include media.max-width(lg) {
+            grid-template-columns: 2fr 3fr ;
+        }
+        @include media.max-width(sm) {
+            grid-template-columns: 1fr;
+            gap: 59px;
+        }
     }
 
     &__destinations {
-
     }
 
     &__destinations-title {
@@ -26,6 +37,12 @@
         font-size: 18px;
         color: var(--text);
         margin-top: 24px;
+        @include media.max-width(sm) {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+        @include media.max-width(xs) {
+            grid-template-columns: max-content max-content;
+        }
     }
 
     &__destinations-link {
@@ -33,6 +50,9 @@
     }
 
     &__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     &__contacts-title {
@@ -50,13 +70,25 @@
 
     }
 
-    &__contacts-inner {
-        display: grid;
-        grid-template-columns: max-content max-content;
-        gap: 23px 12px;
-        margin-top: 27px;
+    &__contacts-list {
+        margin-top: 26px;
+        @include media.max-width(sm) {
+            margin-top: 22px;
+        }
     }
 
+    &__contacts-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        & span{
+            font-size: 16px;
+            color: var(--text);
+        }
+        &:nth-child(n+2){
+            margin-top: 23px;
+        }
+    }
 
     &__contacts-icon {
         width: 24px;
@@ -64,12 +96,12 @@
         fill: var(--green);
     }
 
-    &__contacts-item {
-        font-size: 16px;
-        color: var(--text);
-    }
+
 
     &__contacts-phones {
+        display: flex;
+        align-items: center;
+        gap: 2px;
     }
 
     &__contacts-link {
@@ -78,23 +110,69 @@
         text-decoration-skip-ink: none;
         color: var(--blue);
     }
+    &__contacts-phone-line{
+        display: block;
+        margin-top: -2px;
+        color: var(--text);
+    }
 
     &__social {
+        justify-self: end;
+        display: flex;
+        //align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        width: 95%;
+        @include media.max-width(lg) {
+            grid-column: span 2;
+            display: block;
+            justify-self: center;
+        }
+        @include media.max-width(sm) {
+            grid-column: span 1;
+        }
 
+    }
+    &__social-inner{
+        @include media.max-width(lg) {
+            display: contents;
+        }
+    }
+    &__social-line{
+        display: block;
+        width: 1px;
+        height: 100%;
+        background-color: var(--green);
+        @include media.max-width(lg) {
+            display: none;
+        }
     }
 
     &__social-row {
         display: flex;
         align-items: center;
         gap: 16px;
+
     }
 
     &__social-icon {
-        width: 24px;
+        width: 32px;
         aspect-ratio: 1;
     }
 
     &__social-link {
+        background: linear-gradient(90deg, #E15050 0%, #E23067 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
+    &__social-photo{
+        margin-top: 24px;
+        width: 100%;
+        @include media.max-width(lg) {
+            margin-top: 18px;
+        }
     }
 
     &__rights {
@@ -102,6 +180,12 @@
         align-items: center;
         justify-content: center;
         gap: 16px;
+        margin-top: 80px;
+        padding: 15px 0;
+        background: #f4f4f4;
+        @include media.max-width(sm) {
+            margin-top: 72px;
+        }
     }
 
     &__rights-item {
@@ -113,10 +197,9 @@
         text-decoration-skip-ink: none;
         text-align: center;
         color: var(--blue);
-    }
-
-    &__social-photo {
-        width: 332px;
+        @include media.max-width(sm) {
+            display: none;
+        }
     }
 }
 
