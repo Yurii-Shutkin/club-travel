@@ -1,23 +1,23 @@
 <!doctype html>
 <html lang="ru">
-<head>
-  {{>base/head title="Club Travel"}}
-</head>
-<body class="main-page">
-{{>base/header}}
-<main>
-  <section class="hero-swiper"></section>
-  <section class="travel-filter"></section>
-  <section class="promo-company"></section>
-  <section class="promo-offers"></section>
-  <section class="promo-winter-tours"></section>
-  <section class="promo-summer-tours"></section>
-  {{>components/promo-support className="main-page__promo-support"}}
-</main>
-<!--{{>base/footer className="main-page__footer"}}-->
-<script
-  type="module"
-  src="/src/main.js"
-  defer></script>
-</body>
+  <head>
+    {{>base/head title="Club Travel"}}
+  </head>
+  <body class="main-page">
+    {{>base/header}} {{>base/burger-menu}}
+
+    <main>
+      <section class="hero-swiper"></section>
+      <section class="travel-filter"></section>
+      <section class="promo-company"></section>
+      <section class="promo-offers"></section>
+      <section class="promo-winter-tours"></section>
+      <section class="promo-summer-tours"></section>
+      {{>components/promo-support className="main-page__promo-support"}}
+    </main>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script type="module" src="/src/main.js" defer></script>
+  </body>
 </html>

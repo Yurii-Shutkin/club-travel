@@ -1,7 +1,13 @@
 <header class="header">
   <div class="header__container container">
     <div class="header__panel">
-      <button class="header__burger" type="button" aria-label="Открыть меню">
+      <button
+        class="header__burger js-burger-open"
+        type="button"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        aria-controls="burger-menu"
+      >
         {{> ui/svg className="header__burger-icon" id="menu" }}
       </button>
 
@@ -43,9 +49,55 @@
         </ul>
       </address>
 
-      <a class="header__account" href="index.html" aria-label="Личный кабинет">
-        {{> ui/svg className="header__account-icon" id="user" }}
-      </a>
+      <div class="header__account-menu">
+        <button
+          class="header__account"
+          type="button"
+          aria-label="Личный кабинет"
+          aria-expanded="false"
+          aria-controls="account-dropdown"
+        >
+          {{> ui/svg className="header__account-icon" id="user" }}
+        </button>
+
+        <div
+          class="header__account-dropdown"
+          id="account-dropdown"
+          aria-label="Меню личного кабинета"
+        >
+          <ul class="header__account-list">
+            <li class="header__account-item">
+              <a class="header__account-link" href="index.html">
+                {{> ui/svg className="header__account-item-icon" id="ticket" }}
+                <span class="header__account-item-text">Мои заказы</span>
+              </a>
+            </li>
+
+            <li class="header__account-item">
+              <a class="header__account-link" href="index.html">
+                {{> ui/svg className="header__account-item-icon"
+                id="payment-card" }}
+                <span class="header__account-item-text">История платежей</span>
+              </a>
+            </li>
+
+            <li class="header__account-item">
+              <a class="header__account-link" href="index.html">
+                {{> ui/svg className="header__account-item-icon" id="settings"
+                }}
+                <span class="header__account-item-text">Настройки</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="header__account-divider"></div>
+
+          <a class="header__account-logout" href="index.html">
+            {{> ui/svg className="header__account-logout-icon" id="exit" }}
+            <span class="header__account-logout-text">Выход</span>
+          </a>
+        </div>
+      </div>
 
       <button class="header__languages" type="button" aria-label="Выбор языка">
         {{> ui/svg className="header__languages-icon" id="languages" }}

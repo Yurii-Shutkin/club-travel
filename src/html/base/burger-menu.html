@@ -1,0 +1,97 @@
+<div class="burger-menu js-burger-menu" id="burger-menu" aria-hidden="true">
+  <div class="burger-menu__dialog">
+    <div class="burger-menu__container container">
+      <div class="burger-menu__head">
+        <a class="burger-menu__logo" href="index.html" aria-label="Club Travel">
+          {{> ui/svg className="burger-menu__logo-icon" id="logo" }}
+        </a>
+
+        <button
+          class="burger-menu__close js-burger-close"
+          type="button"
+          aria-label="Закрыть меню"
+        >
+          {{> ui/svg className="burger-menu__close-icon" id="close" }}
+        </button>
+      </div>
+
+      <nav class="burger-menu__main-nav" aria-label="Основная навигация">
+        <ul class="burger-menu__main-list">
+          <li class="burger-menu__main-item">
+            <a class="burger-menu__main-link" href="index.html">Поиск тура</a>
+          </li>
+          <li class="burger-menu__main-item">
+            <a class="burger-menu__main-link" href="index.html">Направления</a>
+          </li>
+          <li class="burger-menu__main-item">
+            <a class="burger-menu__main-link" href="index.html">Кампании</a>
+          </li>
+          <li class="burger-menu__main-item">
+            <a class="burger-menu__main-link" href="index.html">
+              Горящие предложения
+            </a>
+          </li>
+          <li class="burger-menu__main-item">
+            <a class="burger-menu__main-link" href="index.html">Запрос тура</a>
+          </li>
+          <li class="burger-menu__main-item">
+            <a class="burger-menu__main-link" href="index.html">Авиабилеты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="burger-menu__divider"></div>
+
+      <nav
+        class="burger-menu__service-nav"
+        aria-label="Дополнительная навигация"
+      >
+        <ul class="burger-menu__service-list">
+          <li class="burger-menu__service-item">
+            <a class="burger-menu__service-link" href="index.html">Визы</a>
+          </li>
+          <li class="burger-menu__service-item">
+            <a class="burger-menu__service-link" href="index.html">Страховки</a>
+          </li>
+          <li class="burger-menu__service-item">
+            <a class="burger-menu__service-link" href="index.html">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <address class="burger-menu__contacts">
+        <ul class="burger-menu__contacts-list">
+          <li class="burger-menu__contacts-item">
+            <a
+              class="burger-menu__contacts-link"
+              href="mailto:contact@email.ee"
+            >
+              {{> ui/svg className="burger-menu__contacts-icon
+              burger-menu__contacts-icon_mail" id="mail" }}
+              <span class="burger-menu__contacts-text">contact@email.ee</span>
+            </a>
+          </li>
+
+          <li class="burger-menu__contacts-item">
+            <a class="burger-menu__contacts-link" href="tel:+3726130633">
+              {{> ui/svg className="burger-menu__contacts-icon
+              burger-menu__contacts-icon_phone" id="phone" }}
+              <span class="burger-menu__contacts-text">+372 6 130 633</span>
+            </a>
+          </li>
+        </ul>
+      </address>
+
+      <div class="burger-menu__divider burger-menu__divider_bottom"></div>
+
+      <button
+        class="burger-menu__language"
+        type="button"
+        aria-label="Выбор языка"
+      >
+        {{> ui/svg className="burger-menu__language-icon" id="languages" }}
+        <span class="burger-menu__language-text">Русский</span>
+      </button>
+    </div>
+  </div>
+</div>
