@@ -1,0 +1,597 @@
+// @use "../utils/variables" as *;
+
+// .header {
+//   &__container {
+//     &.container {
+//       padding: 16px 11px 12px 13px;
+
+//       @media screen and (min-width: 768px) {
+//         padding: 20px 24px 16px;
+//       }
+
+//       @media screen and (min-width: 1024px) {
+//         padding: 24px 32px 18px;
+//       }
+
+//       @media screen and (min-width: 1366px) {
+//         position: relative;
+//         padding: 12px 98px 0;
+//       }
+//     }
+//   }
+
+//   &__panel {
+//     display: flex;
+//     align-items: flex-start;
+//     justify-content: space-between;
+
+//     @media screen and (min-width: 768px) {
+//       position: relative;
+//       align-items: center;
+//       min-height: 67px;
+//     }
+
+//     @media screen and (min-width: 1366px) {
+//       min-height: auto;
+//       justify-content: flex-end;
+//       gap: 48px;
+//       margin-bottom: 30px;
+//     }
+//   }
+
+//   &__burger,
+//   &__logo,
+//   &__account {
+//     flex-shrink: 0;
+//   }
+
+//   &__burger,
+//   &__account {
+//     @media screen and (min-width: 768px) {
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       width: 40px;
+//       height: 40px;
+//     }
+
+//     @media screen and (min-width: 1024px) {
+//       width: 44px;
+//       height: 44px;
+//     }
+//   }
+
+//   &__burger {
+//     @media screen and (min-width: 1366px) {
+//       display: none;
+//     }
+//   }
+
+//   &__burger-icon {
+//     display: block;
+//     width: 22px;
+//     height: 22px;
+//   }
+
+//   &__logo {
+//     @media screen and (min-width: 768px) {
+//       position: absolute;
+//       top: 0;
+//       left: 50%;
+//       z-index: 1;
+//       transform: translateX(-50%);
+//     }
+
+//     @media screen and (min-width: 1366px) {
+//       top: 0;
+//       left: 0;
+//       transform: none;
+//     }
+//   }
+
+//   &__logo-icon {
+//     display: block;
+//     width: 48px;
+//     height: 67px;
+
+//     @media screen and (min-width: 1366px) {
+//       width: 82px;
+//       height: 114px;
+//     }
+//   }
+
+//   &__service-nav,
+//   &__contacts,
+//   &__languages,
+//   &__main-nav {
+//     display: none;
+//   }
+
+//   @media screen and (min-width: 1366px) {
+//     &__service-nav,
+//     &__contacts,
+//     &__languages,
+//     &__main-nav {
+//       display: block;
+//     }
+
+//     &__service-list,
+//     &__contacts-list,
+//     &__main-list {
+//       display: flex;
+//       align-items: center;
+//     }
+//   }
+
+//   &__service-list {
+//     @media screen and (min-width: 1366px) {
+//       gap: 24px;
+//     }
+//   }
+
+//   &__service-link,
+//   &__contacts-link {
+//     font-weight: 400;
+//     font-size: 12px;
+//     color: #666;
+//   }
+
+//   &__contacts {
+//     @media screen and (min-width: 1366px) {
+//       margin-right: 4px;
+//     }
+//   }
+
+//   &__contacts-list {
+//     @media screen and (min-width: 1366px) {
+//       gap: 24px;
+//     }
+//   }
+
+//   &__contacts-link {
+//     @media screen and (min-width: 1366px) {
+//       display: flex;
+//       align-items: center;
+//       gap: 10px;
+//     }
+//   }
+
+//   &__contacts-icon {
+//     display: none;
+
+//     @media screen and (min-width: 1366px) {
+//       display: block;
+//       flex-shrink: 0;
+//     }
+
+//     &_phone {
+//       width: 12px;
+//       height: 12px;
+//     }
+
+//     &_mail {
+//       width: 14px;
+//       height: 11px;
+//     }
+//   }
+
+//   &__account {
+//     @media screen and (min-width: 1366px) {
+//       width: auto;
+//       height: auto;
+//       margin-left: 2px;
+//     }
+//   }
+
+//   &__account-icon {
+//     display: block;
+//     width: 27px;
+//     height: 27px;
+//     transform: translateY(-8px);
+
+//     @media screen and (min-width: 768px) {
+//       transform: none;
+//     }
+
+//     @media screen and (min-width: 1366px) {
+//       width: 20px;
+//       height: 20px;
+//     }
+//   }
+
+//   &__languages {
+//     @media screen and (min-width: 1366px) {
+//       margin-left: -22px;
+//     }
+//   }
+
+//   &__languages-icon {
+//     width: 20px;
+//     height: 20px;
+//   }
+
+//   &__main-nav {
+//     @media screen and (min-width: 1366px) {
+//       width: 100%;
+//       margin-top: 10px;
+//       padding-left: 96px;
+//     }
+//   }
+
+//   &__main-list {
+//     @media screen and (min-width: 1366px) {
+//       justify-content: flex-end;
+//       gap: 24px;
+//     }
+//   }
+
+//   &__main-link {
+//     font-weight: 400;
+//     font-size: 16px;
+//     text-transform: uppercase;
+//     text-align: center;
+//     color: $blue;
+
+//     @media screen and (min-width: 1366px) {
+//       display: flex;
+//       align-items: center;
+//       gap: 6px;
+//     }
+
+//     &_campaigns {
+//       color: #f15d28;
+//     }
+
+//     &_hot {
+//       color: $primary;
+//     }
+//   }
+
+//   &__main-link-icon {
+//     &_campaigns {
+//       width: 20px;
+//       height: 20px;
+//       fill: #f15d28;
+//     }
+
+//     &_hot {
+//       width: 27px;
+//       height: 24px;
+//       fill: $primary;
+//     }
+//   }
+
+//   &__main-link-text {
+//     font-weight: 600;
+//   }
+// }
+
+@use "../utils/variables" as *;
+
+.header {
+  &__container {
+    &.container {
+      padding: 16px 11px 12px 13px;
+
+      @media screen and (min-width: 768px) {
+        padding: 20px 24px 16px;
+      }
+
+      @media screen and (min-width: 1024px) {
+        padding: 24px 32px 18px;
+      }
+
+      @media screen and (min-width: 1366px) {
+        position: relative;
+        padding: 12px 98px 0;
+      }
+    }
+  }
+
+  &__panel {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @media screen and (min-width: 768px) {
+      position: relative;
+      align-items: center;
+      min-height: 67px;
+    }
+
+    @media screen and (min-width: 1366px) {
+      min-height: auto;
+      justify-content: flex-end;
+      gap: 48px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__burger,
+  &__logo,
+  &__account {
+    flex-shrink: 0;
+  }
+
+  &__burger,
+  &__account {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  &__burger {
+    @media screen and (min-width: 1366px) {
+      display: none;
+    }
+  }
+
+  &__burger-icon,
+  &__logo-icon,
+  &__account-icon {
+    display: block;
+  }
+
+  &__burger-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  &__logo {
+    @media screen and (min-width: 768px) {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: 1;
+      transform: translateX(-50%);
+    }
+
+    @media screen and (min-width: 1366px) {
+      top: 0;
+      left: 0;
+      transform: none;
+    }
+  }
+
+  &__logo-icon {
+    width: 48px;
+    height: 67px;
+
+    @media screen and (min-width: 1366px) {
+      width: 82px;
+      height: 114px;
+    }
+  }
+
+  &__service-nav,
+  &__contacts,
+  &__languages,
+  &__main-nav {
+    display: none;
+  }
+
+  @media screen and (min-width: 1366px) {
+    &__service-nav,
+    &__contacts,
+    &__languages,
+    &__main-nav {
+      display: block;
+    }
+
+    &__service-list,
+    &__contacts-list,
+    &__main-list {
+      display: flex;
+      align-items: center;
+    }
+
+    &__account-icon,
+    &__languages-icon,
+    &__main-link-icon_campaigns {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__service-list {
+    @media screen and (min-width: 1366px) {
+      gap: 24px;
+    }
+  }
+
+  &__service-link,
+  &__contacts-link {
+    font-weight: 400;
+    font-size: 12px;
+    color: #666;
+  }
+
+  &__contacts {
+    @media screen and (min-width: 1366px) {
+      margin-right: 4px;
+    }
+  }
+
+  &__contacts-list {
+    @media screen and (min-width: 1366px) {
+      gap: 24px;
+    }
+  }
+
+  &__contacts-link {
+    font-weight: 400;
+    font-size: 12px;
+    color: #666;
+    font-style: normal;
+
+    @media screen and (min-width: 1366px) {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  &__contacts-icon {
+    display: none;
+
+    @media screen and (min-width: 1366px) {
+      display: block;
+      flex-shrink: 0;
+    }
+
+    &_phone {
+      width: 12px;
+      height: 12px;
+      fill: #999;
+    }
+
+    &_mail {
+      width: 14px;
+      height: 11px;
+      fill: #999;
+    }
+  }
+
+  &__account {
+    @media screen and (min-width: 1366px) {
+      width: auto;
+      height: auto;
+      margin-left: 2px;
+    }
+  }
+
+  &__account-icon {
+    width: 27px;
+    height: 27px;
+    transform: translateY(-8px);
+
+    @media screen and (min-width: 768px) {
+      transform: none;
+    }
+
+    @media screen and (min-width: 1366px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__languages {
+    @media screen and (min-width: 1366px) {
+      margin-left: -22px;
+    }
+  }
+
+  &__languages-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__main-nav {
+    @media screen and (min-width: 1366px) {
+      width: 100%;
+      margin-top: 10px;
+      padding-left: 96px;
+    }
+  }
+
+  &__main-list {
+    @media screen and (min-width: 1366px) {
+      justify-content: flex-end;
+      gap: 24px;
+    }
+  }
+
+  &__main-link {
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    color: $blue;
+
+    @media screen and (min-width: 1366px) {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 200ms ease;
+    }
+
+    &_campaigns {
+      color: #f15d28;
+    }
+
+    &_hot {
+      color: $primary;
+    }
+
+    @media screen and (min-width: 1366px) {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -17px;
+        left: 50%;
+        width: 48px;
+        height: 2px;
+        background: $primary;
+        opacity: 0;
+        transform: translateX(-50%);
+        transition:
+          opacity 200ms ease,
+          background-color 200ms ease;
+      }
+
+      &_campaigns::after {
+        background: #f15d28;
+      }
+
+      &_hot::after {
+        background: $primary;
+      }
+    }
+  }
+
+  &__main-link-icon {
+    &_hot {
+      width: 27px;
+      height: 24px;
+      fill: $primary;
+    }
+
+    &_campaigns {
+      fill: #f15d28;
+    }
+  }
+
+  &__main-link-text {
+    font-weight: 600;
+  }
+}
+
+@media screen and (min-width: 1366px) and (hover: hover) and (pointer: fine) {
+  .header {
+    &__main-link:hover {
+      color: $primary;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &__main-link_campaigns:hover {
+      color: #f15d28;
+    }
+
+    &__main-link_hot:hover {
+      color: $primary;
+    }
+  }
+}
