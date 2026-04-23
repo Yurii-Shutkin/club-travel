@@ -1,22 +1,12 @@
 <picture class="{{className}}" {{#if dataAttr}} {{{dataAttr}}} {{/if}}>
-    <source
-      media="(min-width:769px)"
-      srcset="{{desktopWebp}}"
-      type="image/webp">
-    <source
-      media="(min-width:769px)"
-      srcset="{{desktop}}">
+    <source media="(min-width:769px)" srcset="{{desktopWebp}}" type="image/webp">
+
     {{#if mobile}}
-    <source
-      media="(max-width:768px)"
-      srcset="{{mobileWebp}}"
-      type="image/webp">
-    <source
-      media="(max-width:768px)"
-      srcset="{{mobile}}">
+    <source media="(max-width:768px)" srcset="{{mobileWebp}}" type="image/webp">
+    <source media="(max-width:768px)" srcset="{{mobile}}">
+    {{else}}
+        <source media="(max-width:768px)" srcset="{{desktopWebp}}" type="image/webp">
     {{/if}}
-    <img
-      src="{{desktop}}"
-      alt="{{alt}}"
-      loading="lazy">
+    <img src="{{desktop}}" alt="{{alt}}" loading="lazy">
 </picture>
+

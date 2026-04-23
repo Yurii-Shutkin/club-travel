@@ -2,6 +2,11 @@
 
 .promo-support {
     color: #fff;
+    margin-top: 100px;
+    @include media.max-width(sm) {
+        margin-top: 80px;
+    }
+
     &__container {
         position: relative;
         padding: 80px 20px 95px 20px;
@@ -9,7 +14,8 @@
             padding: 30px 10px 45px 10px;
         }
     }
-    &__bg{
+
+    &__bg {
         position: absolute;
         top: 0;
         left: 0;
@@ -17,7 +23,8 @@
         height: 100%;
         z-index: 2;
     }
-    &__inner{
+
+    &__inner {
         position: relative;
         z-index: 4;
     }
@@ -40,7 +47,8 @@
         @include media.max-width(xs) {
             margin-top: 22px;
         }
-        & br{
+
+        & br {
             @include media.max-width(sm) {
                 display: none;
             }
@@ -117,9 +125,6 @@
     &__promo-consultant {
         padding-left: 6px;
         min-width: 0;
-        //width: 460px;
-        //width: 35%;
-        //flex-shrink: 0;
         @include media.max-width(sm) {
             margin: 33px 0 0 3%;
         }
@@ -150,17 +155,18 @@
             align-items: start;
         }
     }
-    &__photo{
+
+    &__photo {
         max-width: 280px;
-        width: 80%;
+        width: 42%;
         border-radius: 6px;
         align-self: center;
         aspect-ratio: 207/152;
         @include media.max-width(md) {
             align-self: start;
+            width: 80%;
         }
         @include media.max-width(sm) {
-            //max-width: 300px;
             width: 83%;
             aspect-ratio: 3/2;
         }
@@ -193,10 +199,12 @@
         align-items: center;
         gap: 12px;
     }
-    &__contacts-icon{
+
+    &__contacts-icon {
         width: 24px;
         aspect-ratio: 1;
         opacity: 0.5;
+        fill: #fff;
     }
 
     &__link {

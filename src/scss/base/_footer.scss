@@ -1,0 +1,122 @@
+.footer {
+    margin-top: 82px;
+
+    &__container {
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 3fr 4fr 5fr;
+    }
+
+    &__destinations {
+
+    }
+
+    &__destinations-title {
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #5a5a5a;
+    }
+
+    &__destinations-list {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        gap: 10px 44px;
+        font-size: 18px;
+        color: var(--text);
+        margin-top: 24px;
+    }
+
+    &__destinations-link {
+
+    }
+
+    &__contacts {
+    }
+
+    &__contacts-title {
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #5a5a5a;
+
+    }
+
+    &__contacts-desc {
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--text);
+        margin-top: 24px;
+
+    }
+
+    &__contacts-inner {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        gap: 23px 12px;
+        margin-top: 27px;
+    }
+
+
+    &__contacts-icon {
+        width: 24px;
+        aspect-ratio: 1;
+        fill: var(--green);
+    }
+
+    &__contacts-item {
+        font-size: 16px;
+        color: var(--text);
+    }
+
+    &__contacts-phones {
+    }
+
+    &__contacts-link {
+        font-size: 16px;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: var(--blue);
+    }
+
+    &__social {
+
+    }
+
+    &__social-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__social-icon {
+        width: 24px;
+        aspect-ratio: 1;
+    }
+
+    &__social-link {
+    }
+
+    &__rights {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    &__rights-item {
+        color: #575757;
+    }
+
+    &__rights-link {
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        text-align: center;
+        color: var(--blue);
+    }
+
+    &__social-photo {
+        width: 332px;
+    }
+}
+
