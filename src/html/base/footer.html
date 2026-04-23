@@ -1,0 +1,79 @@
+<footer class="footer {{className}}" id="footer">
+  <div class="footer__container container">
+    <div class="footer__inner">
+      <div class="footer__destinations">
+        <h2 class="footer__destinations-title">Популярные направления</h2>
+        {{> ui/links-list
+          classNameList="footer__destinations-list"
+          classNameItem="footer__destinations-link"
+          link=links.tourSupport.href
+          sortItems=(split "Египет, Бали, АОЭ, Грузия, Тайланд, Греция, Болгария, Турция, Тенерифе, Кипр")
+        }}
+      </div>
+      <div class="footer__contacts">
+        <h2 class="footer__contacts-title">Контакты</h2>
+        <p class="footer__contacts-desc">Clubs Travel OÜ</p>
+        <div class="footer__contacts-inner">
+          {{> ui/svg
+            className="footer__contacts-icon"
+            id="clock"
+          }}
+          <span
+            class="footer__contacts-item">Пн-Пт 9:30-18:00, Сб 11:00-15:00</span>
+          {{> ui/svg
+            className="footer__contacts-icon"
+            id="point"
+          }}
+          <span
+            class="footer__contacts-item">Пн-Пт 9:30-18:00, Сб 11:00-15:00</span>
+          {{> ui/svg
+            className="footer__contacts-icon"
+            id="phone"
+          }}
+          <div class="footer__contacts-phones">
+            <a
+              href="tel:+37255560310"
+              class="footer__contacts-link">+372 555 60 310
+            </a>
+            <a
+              href="tel:+3726130633"
+              class="footer__contacts-link">+372 61 30 633
+            </a>
+          </div>
+          {{> ui/svg
+            className="footer__contacts-icon"
+            id="mail"
+          }}
+          <a
+            href="mailto:info@clubstravel.ee"
+            class="footer__contacts-link">
+            info@clubstravel.ee
+          </a>
+        </div>
+      </div>
+      <div class="footer__social">
+        <div class="footer__social-row">
+          {{> ui/svg
+            className="footer__social-icon"
+            id="mail"
+          }}
+          <a
+            href="mailto:info@clubstravel.ee"
+            class="footer__social-link">{{links.instagram.href}}
+          </a>
+        </div>
+        {{> ui/picture
+          className="footer__social-photo"
+          alt="img"
+          desktop="/src/image/main/footer/social.jpg"
+          desktopWebp="/src/image/footer/social.webp"
+        }}
+      </div>
+    </div>
+    <div class="footer__rights">
+      <p class="footer__rights-item">©2020 Clubstravel. Все права защищены.</p>
+      <a href="#!" class="footer__rights-link">Политика конфиденциальности</a>
+      <a href="#!" class="footer__rights-link">Политика использования</a>
+    </div>
+  </div>
+</footer>
