@@ -16,18 +16,18 @@ button {
     box-sizing: border-box;
 }
 
-a:focus:not(:focus-visible), a:active {
+a:focus, a:active {
     outline: none;
 }
+
+//a:focus:not(:focus-visible), a:active {
+//    outline: none;
+//}
 
 a {
     color: inherit;
     font-family: inherit;
     font-size: inherit;
-}
-
-nav, footer, header, aside {
-    display: block;
 }
 
 html {
