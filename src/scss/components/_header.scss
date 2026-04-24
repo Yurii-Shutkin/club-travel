@@ -1,63 +1,95 @@
-@use "../utils/variables" as *;
+@use '../utils/variables' as *;
 
 .header {
   &__container {
     &.container {
-      padding: 16px 11px 12px 13px;
+      position: relative;
+      padding: 10px 98px 0;
 
-      @media screen and (min-width: 768px) {
-        padding: 20px 24px 16px;
-      }
-
-      @media screen and (min-width: 1024px) {
+      @media screen and (max-width: 1365px) {
+        position: static;
         padding: 24px 32px 18px;
       }
 
-      @media screen and (min-width: 1366px) {
-        position: relative;
-        padding: 12px 98px 0;
+      @media screen and (max-width: 1023px) {
+        padding: 20px 24px 16px;
+      }
+
+      @media screen and (max-width: 767px) {
+        padding: 16px 11px 12px 13px;
       }
     }
   }
 
   &__panel {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 48px;
+    min-height: auto;
+    margin-bottom: 28px;
 
-    @media screen and (min-width: 768px) {
-      position: relative;
-      align-items: center;
+    @media screen and (max-width: 1365px) {
+      justify-content: space-between;
+      gap: 0;
       min-height: 67px;
+      margin-bottom: 0;
     }
 
-    @media screen and (min-width: 1366px) {
-      min-height: auto;
-      justify-content: flex-end;
-      gap: 48px;
-      margin-bottom: 30px;
-    }
-  }
-
-  &__burger,
-  &__account {
-    @media screen and (min-width: 768px) {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-    }
-
-    @media screen and (min-width: 1024px) {
-      width: 44px;
-      height: 44px;
+    @media screen and (max-width: 767px) {
+      position: static;
+      align-items: flex-start;
+      min-height: initial;
     }
   }
 
   &__burger {
-    @media screen and (min-width: 1366px) {
-      display: none;
+    display: none;
+
+    @media screen and (max-width: 1365px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+    }
+
+    @media screen and (max-width: 1023px) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media screen and (max-width: 767px) {
+      display: inline-block;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &__account {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    cursor: pointer;
+
+    @media screen and (max-width: 1365px) {
+      width: 44px;
+      height: 44px;
+    }
+
+    @media screen and (max-width: 1023px) {
+      width: 40px;
+      height: 40px;
+    }
+
+    @media screen and (max-width: 767px) {
+      display: inline-block;
+      width: auto;
+      height: auto;
     }
   }
 
@@ -67,28 +99,30 @@
   }
 
   &__logo {
-    @media screen and (min-width: 768px) {
-      position: absolute;
-      top: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: none;
+
+    @media screen and (max-width: 1365px) {
       left: 50%;
-      z-index: 1;
       transform: translateX(-50%);
     }
 
-    @media screen and (min-width: 1366px) {
-      top: 0;
-      left: 0;
+    @media screen and (max-width: 767px) {
+      position: static;
       transform: none;
     }
   }
 
   &__logo-icon {
-    width: 48px;
-    height: 67px;
+    width: 82px;
+    height: 114px;
 
-    @media screen and (min-width: 1366px) {
-      width: 82px;
-      height: 114px;
+    @media screen and (max-width: 1365px) {
+      width: 48px;
+      height: 67px;
     }
   }
 
@@ -96,54 +130,38 @@
   &__contacts,
   &__languages,
   &__main-nav {
-    display: none;
+    display: block;
+
+    @media screen and (max-width: 1365px) {
+      display: none;
+    }
   }
 
-  @media screen and (min-width: 1366px) {
-    &__service-nav,
-    &__contacts,
-    &__languages,
-    &__main-nav {
-      display: block;
-    }
-
-    &__service-list,
-    &__contacts-list,
-    &__main-list {
-      display: flex;
-      align-items: center;
-    }
-
-    &__account-icon,
-    &__languages-icon,
-    &__main-link-icon_campaigns {
-      width: 20px;
-      height: 20px;
-    }
+  &__service-list,
+  &__contacts-list,
+  &__main-list {
+    display: flex;
+    align-items: center;
   }
 
   &__service-nav {
-    @media screen and (min-width: 1366px) {
-      position: relative;
+    position: relative;
 
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        right: -24px;
-        width: 1px;
-        height: 24px;
-        background-color: #000;
-        opacity: 0.05;
-        transform: translateY(-50%);
-      }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -24px;
+      width: 1px;
+      height: 24px;
+      background-color: #000;
+      opacity: 0.05;
+      transform: translateY(-50%);
     }
   }
 
   &__service-list {
-    @media screen and (min-width: 1366px) {
-      gap: 24px;
-    }
+    gap: 24px;
   }
 
   &__service-link,
@@ -154,48 +172,38 @@
   }
 
   &__contacts {
-    @media screen and (min-width: 1366px) {
-      position: relative;
-      margin-right: 4px;
+    position: relative;
+    margin-right: 4px;
 
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        right: -24px;
-        width: 1px;
-        height: 24px;
-        background-color: #000;
-        opacity: 0.05;
-        transform: translateY(-50%);
-      }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: -24px;
+      width: 1px;
+      height: 24px;
+      background-color: #000;
+      opacity: 0.05;
+      transform: translateY(-50%);
     }
   }
 
   &__contacts-list {
-    @media screen and (min-width: 1366px) {
-      gap: 24px;
-    }
+    gap: 24px;
   }
 
   &__contacts-link {
-    font-weight: 400;
-    font-size: 12px;
-    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-style: normal;
-
-    @media screen and (min-width: 1366px) {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
   }
 
   &__contacts-icon {
-    display: none;
+    display: block;
 
-    @media screen and (min-width: 1366px) {
-      display: block;
+    @media screen and (max-width: 1365px) {
+      display: none;
     }
 
     &_phone {
@@ -216,69 +224,60 @@
 
     &_open {
       .header__account-dropdown {
-        @media screen and (min-width: 1366px) {
-          opacity: 1;
-          visibility: visible;
-          pointer-events: auto;
-          transform: translateY(0);
-        }
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
       }
 
       .header__account {
-        @media screen and (min-width: 1366px) {
-          background-color: rgba(0, 0, 0, 0.06);
-        }
+        background-color: rgba(0, 0, 0, 0.06);
       }
     }
   }
 
-  &__account {
-    background-color: transparent;
-    cursor: pointer;
-
-    @media screen and (min-width: 1366px) {
-      width: auto;
-      height: auto;
-    }
+  &__account-icon,
+  &__languages-icon,
+  &__main-link-icon_campaigns {
+    width: 20px;
+    height: 20px;
   }
 
   &__account-icon {
-    width: 27px;
-    height: 27px;
-    transform: translateY(-8px);
+    transform: none;
 
-    @media screen and (min-width: 768px) {
-      transform: none;
+    @media screen and (max-width: 1365px) {
+      width: 27px;
+      height: 27px;
     }
 
-    @media screen and (min-width: 1366px) {
-      width: 20px;
-      height: 20px;
+    @media screen and (max-width: 767px) {
+      transform: translateY(-8px);
     }
   }
 
   &__account-dropdown {
-    display: none;
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    z-index: 20;
+    display: block;
+    width: 219px;
+    padding: 16px;
+    border-radius: 0;
+    background-color: #f5f5f5;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition:
+      opacity 200ms ease,
+      visibility 200ms ease,
+      transform 200ms ease;
 
-    @media screen and (min-width: 1366px) {
-      position: absolute;
-      top: calc(100% + 14px);
-      right: 0;
-      z-index: 20;
-      display: block;
-      width: 219px;
-      padding: 16px;
-      border-radius: 0;
-      background-color: #f5f5f5;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transform: translateY(8px);
-      transition:
-        opacity 200ms ease,
-        visibility 200ms ease,
-        transform 200ms ease;
+    @media screen and (max-width: 1365px) {
+      display: none;
     }
   }
 
@@ -289,9 +288,6 @@
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-
-  &__account-item {
   }
 
   &__account-link,
@@ -337,75 +333,59 @@
   }
 
   &__languages {
-    @media screen and (min-width: 1366px) {
-      margin-left: -22px;
-    }
-  }
-
-  &__languages-icon {
-    width: 20px;
-    height: 20px;
+    margin-left: -22px;
   }
 
   &__main-nav {
-    @media screen and (min-width: 1366px) {
-      width: 100%;
-      margin-top: 10px;
-      padding-left: 96px;
-    }
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 96px;
   }
 
   &__main-list {
-    @media screen and (min-width: 1366px) {
-      justify-content: flex-end;
-      gap: 24px;
-    }
+    justify-content: flex-end;
+    gap: 24px;
   }
 
   &__main-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     font-weight: 400;
     font-size: 16px;
     text-transform: uppercase;
     text-align: center;
     color: $blue;
+    transition: color 200ms ease;
 
-    @media screen and (min-width: 1366px) {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: color 200ms ease;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -17px;
+      left: 50%;
+      width: 48px;
+      height: 2px;
+      background: $primary;
+      opacity: 0;
+      transform: translateX(-50%);
+      transition:
+        opacity 200ms ease,
+        background-color 200ms ease;
     }
 
     &_campaigns {
       color: #f15d28;
+
+      &::after {
+        background: #f15d28;
+      }
     }
 
     &_hot {
       color: $primary;
-    }
 
-    @media screen and (min-width: 1366px) {
       &::after {
-        content: "";
-        position: absolute;
-        bottom: -17px;
-        left: 50%;
-        width: 48px;
-        height: 2px;
-        background: $primary;
-        opacity: 0;
-        transform: translateX(-50%);
-        transition:
-          opacity 200ms ease,
-          background-color 200ms ease;
-      }
-
-      &_campaigns::after {
-        background: #f15d28;
-      }
-
-      &_hot::after {
         background: $primary;
       }
     }
@@ -428,7 +408,7 @@
   }
 }
 
-@media screen and (min-width: 1366px) and (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) {
   .header {
     &__main-link:hover {
       color: $primary;
