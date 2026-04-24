@@ -31,6 +31,8 @@
     height: 100%;
     background-color: #f5f5f5;
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     transform: translateX(-100%);
     transition: transform 250ms ease;
@@ -343,13 +345,5 @@
       width: 20px;
       height: 20px;
     }
-  }
-}
-
-body.burger-menu-open {
-  overflow: visible;
-
-  @media screen and (max-width: 1365px) {
-    overflow: hidden;
   }
 }
