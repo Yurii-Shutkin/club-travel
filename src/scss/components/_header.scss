@@ -1,4 +1,5 @@
 @use '../utils/variables' as *;
+@use '../utils/media' as media;
 
 .header {
   &__container {
@@ -11,11 +12,11 @@
         padding: 24px 32px 18px;
       }
 
-      @media screen and (max-width: 1023px) {
+      @include media.max-width(md) {
         padding: 20px 24px 16px;
       }
 
-      @media screen and (max-width: 767px) {
+      @include media.max-width(sm) {
         padding: 16px 11px 12px 13px;
       }
     }
@@ -37,7 +38,7 @@
       margin-bottom: 0;
     }
 
-    @media screen and (max-width: 767px) {
+    @include media.max-width(sm) {
       position: static;
       align-items: flex-start;
       min-height: initial;
@@ -55,12 +56,12 @@
       height: 44px;
     }
 
-    @media screen and (max-width: 1023px) {
+    @include media.max-width(md) {
       width: 40px;
       height: 40px;
     }
 
-    @media screen and (max-width: 767px) {
+    @include media.max-width(sm) {
       display: inline-block;
       width: auto;
       height: auto;
@@ -81,12 +82,12 @@
       height: 44px;
     }
 
-    @media screen and (max-width: 1023px) {
+    @include media.max-width(md) {
       width: 40px;
       height: 40px;
     }
 
-    @media screen and (max-width: 767px) {
+    @include media.max-width(sm) {
       display: inline-block;
       width: auto;
       height: auto;
@@ -110,7 +111,7 @@
       transform: translateX(-50%);
     }
 
-    @media screen and (max-width: 767px) {
+    @include media.max-width(sm) {
       position: static;
       transform: none;
     }
@@ -251,7 +252,7 @@
       height: 27px;
     }
 
-    @media screen and (max-width: 767px) {
+    @include media.max-width(sm) {
       transform: translateY(-8px);
     }
   }
