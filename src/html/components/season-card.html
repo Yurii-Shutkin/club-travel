@@ -1,22 +1,28 @@
-<div class="{{className}} season-card">
+<div class="season-card {{className}}" data-card>
+  <div class="season-card__content">
     <picture class="season-card__picture">
-        <img
-          src="src/image/test.webp"
-          alt="{{altPict}}">
+      <img
+        src=""
+        alt="{{altPict}}" data-card-img>
     </picture>
-    <div class="season-card__content">
-        <div class="season-card__info">
-            {{> ui/svg
-            className="season-card__info-icon"
-            id="location"
-            }}
-            <span class="season-card__info-location">
+
+    <div class="season-card__info">
+      {{> ui/svg
+        className="season-card__info-icon"
+        id="point"
+      }}
+      <span class="season-card__info-location" data-card-location>
             Литва
             </span>
-            <span class="season-card__info-price">от <span class="season-card__info-price_bold">509€</span>/чел</span>
-        </div>
-        <a
-          href="#!"
-          class="season-card__btn btn btn_orange">Выбрать тур</a>
+      <span class="season-card__info-price">от <span
+        class="season-card__info-price_bold"
+        data-card-price>509€</span>/чел</span>
     </div>
+  </div>
+  <div class="season-card__footer">
+    <a
+      href="{{hrefLink}}"
+      class="season-card__btn btn btn_orange">Выбрать тур
+    </a>
+  </div>
 </div>

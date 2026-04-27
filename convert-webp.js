@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import chokidar from "chokidar";
 
-const imageDir = path.resolve("./src/image");
+const imageDir = path.resolve("./src/assets/image");
 
 // Рекурсивно отримуємо всі файли
 function getAllFiles(dir) {

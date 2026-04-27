@@ -1,10 +1,16 @@
 @use "@/scss/utils/media" as media;
 .footer {
-    margin-top: 82px;
-    @include media.max-width(sm) {
-        margin-top: 42px;
-    }
+    //margin-top: 82px;
+    //@include media.max-width(sm) {
+    //    margin-top: 42px;
+    //}
 
+    &__line{
+        background: #000;
+        height: 1px;
+        width: 100%;
+        opacity: 0.1;
+    }
     &__container {
     }
 
@@ -12,12 +18,15 @@
         display: grid;
         grid-template-columns: max-content 4fr 4fr;
         gap: 50px;
+        margin-top: 82px;
+
         @include media.max-width(lg) {
             grid-template-columns: 2fr 3fr ;
         }
         @include media.max-width(sm) {
             grid-template-columns: 1fr;
             gap: 59px;
+            margin-top: 40px;
         }
     }
 
@@ -40,7 +49,7 @@
         @include media.max-width(sm) {
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         }
-        @include media.max-width(xs) {
+        @include media.max-width(xxs) {
             grid-template-columns: max-content max-content;
         }
     }
@@ -95,8 +104,6 @@
         aspect-ratio: 1;
         fill: var(--green);
     }
-
-
 
     &__contacts-phones {
         display: flex;
@@ -184,7 +191,7 @@
         padding: 15px 0;
         background: #f4f4f4;
         @include media.max-width(sm) {
-            margin-top: 72px;
+            margin-top: 81px;
         }
     }
 

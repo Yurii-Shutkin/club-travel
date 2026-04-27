@@ -1,24 +1,15 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    {{> base/head title="Club Travel"}}
+  {{>layout/head title="Club Travel, Кампании" hrefStyle="company-style"}}
 </head>
-<body>
-<header
-  class="header"
-  id="header">
-</header>
+<body class="company">
+{{>components/header}}
+{{>components/burger-menu}}
 <main>
-    <section class="">
-    </section>
+  {{>sections/company/news}}
 </main>
-<footer
-  class="footer"
-  id="footer">
-</footer>
-<script
-  type="module"
-  src="/src/main.js"
-  defer></script>
+{{>layout/footer}}
+<script type="module" src="/src/js/pages/company.js" defer></script>
 </body>
 </html>

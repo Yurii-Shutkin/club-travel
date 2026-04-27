@@ -1,0 +1,21 @@
+<section class="promo-season-tours {{className}}">
+  <div class="promo-season-tours__container">
+    <h2 class="promo-season-tours__title title">{{title}}</h2>
+    <p class="promo-season-tours__subtitle">{{subtitle}}</p>
+
+    <template class="promo-season-tours__template" data-template>
+      {{> components/season-card
+        hrefLink=hrefLink
+      }}
+    </template>
+    {{> components/swiper-cards className="promo-season-tours__swiper-cards"}}
+
+    <div class="promo-season-tours__footer">
+      {{> ui/link-more
+        classNameLinkMore="promo-season-tours__link-more"
+        textLinkMore=textLinkMore
+        hrefLink=hrefLink
+      }}
+    </div>
+  </div>
+</section>

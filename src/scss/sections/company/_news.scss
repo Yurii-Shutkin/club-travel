@@ -1,0 +1,20 @@
+@use "@/scss/utils/media" as media;
+.news {
+    margin-top: 200px;
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 21px 24px;
+        margin-top: 40px;
+        padding-bottom: 98px;
+        @include media.max-width(md) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include media.max-width(xs) {
+            grid-template-columns:1fr;
+            gap: 16px;
+        }
+    }
+}
+

@@ -1,12 +1,13 @@
 <footer class="footer {{className}}" id="footer">
+  <hr class="footer__line">
   <div class="footer__container container">
     <div class="footer__inner">
       <div class="footer__destinations">
         <h2 class="footer__destinations-title">Популярные направления</h2>
         {{> ui/links-list
           classNameList="footer__destinations-list"
-          classNameItem="footer__destinations-link"
-          link=links.tourSupport.href
+          classNameItem="footer__destinations-link link-state"
+          link=links.directions.href
           sortItems=(split "Египет, Бали, ОАЭ, Грузия, Таиланд, Греция, Болгария, Турция, Тенерифе, Кипр")
         }}
       </div>
@@ -37,13 +38,13 @@
             <div class="footer__contacts-phones">
               <a
                 href="tel:+37255560310"
-                class="footer__contacts-link"
+                class="footer__contacts-link link-state"
                 aria-label="Позвонить по номеру +372 555 60 310">+372 555 60 310
               </a>
               <span class="footer__contacts-phone-line"> | </span>
               <a
                 href="tel:+3726130633"
-                class="footer__contacts-link"
+                class="footer__contacts-link link-state"
                 aria-label="Позвонить по номеру +372 61 30 633">+372 61 30 633
               </a>
             </div>
@@ -55,7 +56,7 @@
             }}
             <a
               href="mailto:info@clubstravel.ee"
-              class="footer__contacts-link">
+              class="footer__contacts-link link-state">
               info@clubstravel.ee
             </a>
             </li>
@@ -72,14 +73,14 @@
             }}
             <a
               href="{{links.instagram.href}}"
-              class="footer__social-link">@booking.clubstravel.ee
+              class="footer__social-link link-state">@booking.clubstravel.ee
             </a>
           </div>
           {{> ui/picture
             className="footer__social-photo"
             alt="Social messenger"
-            desktop="/src/image/footer/social.jpg"
-            desktopWebp="/src/image/footer/social.webp"
+            desktop="/src/assets/image/footer/social.jpg"
+            desktopWebp="/src/assets/image/footer/social.webp"
           }}
         </div>
       </div>
@@ -87,7 +88,7 @@
   </div>
   <div class="footer__rights">
     <p class="footer__rights-item">©2020 Clubstravel. Все права защищены.</p>
-    <a href="#!" class="footer__rights-link">Политика конфиденциальности</a>
-    <a href="#!" class="footer__rights-link">Политика использования</a>
+    <a href="{{links.policy.href}}" class="footer__rights-link link-state">Политика конфиденциальности</a>
+    <a href="{{links.policy.href}}" class="footer__rights-link link-state">Политика использования</a>
   </div>
 </footer>

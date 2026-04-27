@@ -1,0 +1,40 @@
+@use "@/scss/utils/media" as media;
+
+.intro-header {
+    text-align: center;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        @include media.max-width(xs) {
+            flex-direction: column;
+
+        }
+    }
+    &__icon {
+        width: 35px;
+        aspect-ratio: 1;
+        fill: #F15D28;
+    }
+
+    &__title {
+
+        @include media.max-width(xs) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &_orange {
+            color: #f15d28;
+        }
+    }
+    &__subtitle {
+        margin-top: 20px;
+        padding-inline: 24px;
+        @include media.max-width(xs) {
+            margin-top: 14px;
+        }
+    }
+}

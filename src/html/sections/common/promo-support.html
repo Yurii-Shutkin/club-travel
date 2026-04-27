@@ -3,10 +3,10 @@
     {{> ui/picture
       className="promo-support__bg"
       alt=""
-      desktop="/src/image/components/promo-support/bg.jpg"
-      desktopWebp="/src/image/components/promo-support/bg.webp"
-      mobile="/src/image/components/promo-support/bg_2.jpg"
-      mobileWebp="/src/image/components/promo-support/bg_2.webp"
+      desktop="/src/assets/image/components/promo-support/bg.jpg"
+      desktopWebp="/src/assets/image/components/promo-support/bg.webp"
+      mobile="/src/image/assets/components/promo-support/bg_2.jpg"
+      mobileWebp="/src/assets/image/components/promo-support/bg_2.webp"
     }}
     <div class="promo-support__inner">
       <h2 class="promo-support__title">НЕТ ВРЕМЕНИ ИСКАТЬ ТУР? </h2>
@@ -30,21 +30,17 @@
           <hr class="promo-support__divider-line" aria-hidden="true">
         </div>
         <div class="promo-support__promo-consultant promo-consultant">
-          <h3 class="promo-consultant__title">Свяжитесь с нашим
-            консультантом</h3>
+          <h3 class="promo-consultant__title">Свяжитесь с нашим консультантом</h3>
           <div class="promo-consultant__inner">
             {{> ui/picture
               className="promo-consultant__photo"
               alt="Марина Каасик"
-              desktop="/src/image/components/promo-support/photo_2.jpg"
-              desktopWebp="/src/image/components/promo-support/photo_2.webp"
+              desktop="/src/assets/image/components/promo-support/photo.jpg"
+              desktopWebp="/src/assets/image/components/promo-support/photo.webp"
             }}
             <div class="promo-consultant__content">
-              <h4 class="promo-consultant__name">Марина
-                Каасик</h4>
-              <p class="promo-consultant__sub-fio">Специалист
-                по
-                подбору туров</p>
+              <h4 class="promo-consultant__name">Марина Каасик</h4>
+              <p class="promo-consultant__sub-fio">Специалист по подбору туров</p>
               <div class="promo-consultant__contacts">
                 <div class="promo-consultant__contacts-row">
                   {{> ui/svg
@@ -53,7 +49,7 @@
                   }}
                   <a
                     href="tel:+3726130633"
-                    class="promo-consultant__link">+372 6 130 633</a>
+                    class="promo-consultant__link link-state">+372 6 130 633</a>
                 </div>
                 <div class="promo-consultant__contacts-row">
                   {{> ui/svg
@@ -62,7 +58,7 @@
                   }}
                   <a
                     href="mailto:contact@email.ee"
-                    class="promo-consultant__link">contact@email.ee</a>
+                    class="promo-consultant__link link-state">contact@email.ee</a>
                 </div>
                 <div class="promo-consultant__contacts-row">
                   {{> ui/svg
@@ -71,7 +67,7 @@
                   }}
                   <a
                     href="{{links.messenger.href}}"
-                    class="promo-consultant__link">Написать в Messenger</a>
+                    class="promo-consultant__link link-state">Написать в Messenger</a>
                 </div>
               </div>
             </div>

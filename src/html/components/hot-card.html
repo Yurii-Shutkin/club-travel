@@ -1,0 +1,51 @@
+<div class="{{className}} tour-card" data-card>
+    <div class="fire-card__picture-wrap">
+        <div class="fire-card__meta">
+            <div class="fire-card__meta-col">
+                {{> ui/svg
+                className="fire-card__meta-icon"
+                id="point"
+                }}
+                <span class="fire-card__meta-item">
+                    29 октября 2020
+                </span>
+            </div>
+            <div class="fire-card__meta-col">
+                {{> ui/svg
+                className="fire-card__meta-icon"
+                id="point"
+                }}
+                <span class="fire-card__meta-item">
+                Болгария, Золотые Пески
+                </span>
+            </div>
+        </div>
+        <picture class="fire-card__picture">
+            <img
+              src=""
+              alt="{{altPict}}" data-img>
+        </picture>
+    </div>
+    <div class="fire-card__content">
+        <div class="fire-card__hotel-info">
+            <span class="fire-card__hotel-name">
+            Название Отеля здесь
+            </span>
+            <div class="fire-card__hotel-rating">
+                {{> ui/svg
+                className="fire-card__hotel-icon"
+                id="location"
+                }}
+            </div>
+        </div>
+        <div class="fire-card__price-wrap">
+            <div class="fire-card__price">
+                <span class="fire-card__price-value"><span class="fire-card__price-value_bold">509€</span>/чел</span>
+                <span class="fire-card__price-old-value">779 €/чел</span>
+            </div>
+            <div class="fire-card__discount">
+                <span class="fire-card__discount-value">-30%</span>
+            </div>
+        </div>
+    </div>
+</div>
