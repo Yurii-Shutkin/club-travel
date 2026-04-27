@@ -1,0 +1,30 @@
+@use "@/scss/utils/media" as media;
+.btn {
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    padding: 5px;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+
+    &_orange {
+        background: var(--primary);
+        transition: background .3s ease;
+        &:focus-visible {
+            background: #cf660b;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                background: #cf660b;
+            }
+        }
+        &:active{
+            background: #a85309;
+        }
+    }
+}

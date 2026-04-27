@@ -1,0 +1,34 @@
+@use "@/scss/utils/media" as media;
+
+.promo-season-tours {
+    margin-top: 98px;
+    @include media.max-width(md) {
+        margin-top: 80px;
+    }
+
+    &__container {
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__subtitle {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    &__template {
+    }
+    &__swiper-cards {
+        margin-top: 18px;
+    }
+
+    &__footer {
+        margin-top: 27px;
+        @include media.max-width(md) {
+            margin-top: 19px;
+        }
+    }
+}
+

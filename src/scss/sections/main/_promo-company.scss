@@ -1,0 +1,39 @@
+@use "@/scss/utils/media" as media;
+.promo-company {
+    margin-top: 102px;
+    @include media.max-width(md) {
+        margin-top: 82px;
+    }
+
+    &__container {
+    }
+
+    &__header {
+    }
+    &__header-icon {
+        width: 35px;
+        aspect-ratio: 1;
+        fill: #F15D28;
+    }
+
+    &__header-title {
+        &_orange {
+            color: #f15d28;
+        }
+    }
+
+    &__swiper-cards {
+        margin-top: 20px;
+        @include media.max-width(sm) {
+            margin-top: 30px;
+        }
+    }
+
+    &__footer {
+        margin-top: 21px;
+        @include media.max-width(sm) {
+            margin-top: 27px;
+        }
+    }
+}
+

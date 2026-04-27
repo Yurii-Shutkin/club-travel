@@ -1,0 +1,79 @@
+@use "@/scss/utils/media" as media;
+.news-card {
+    width: 100%;
+    //max-width: 380px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 10px;
+
+
+    &__picture-wrap {
+        position: relative;
+        width: 100%;
+    }
+
+    &__picture {
+        aspect-ratio: 38/25;
+        border-radius: 10px 10px 0 0;
+        @include media.max-width(sm) {
+            aspect-ratio: 32/25;
+        }
+    }
+
+    &__price-badge {
+        position: absolute;
+        display: none;
+        top: 31px;
+        right: 0;
+        background: var(--primary);
+        font-size: 16px;
+        color: #fff;
+        padding: 4px 12px 5px 10px;
+        z-index: 2;
+        @include media.max-width(sm) {
+            top: 28px;
+        }
+        &.has-price{
+            display: block;
+        }
+    }
+
+    &__meta {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+        display: none;
+        align-items: center;
+        gap: 6px;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        padding: 7px 15px 7px 12px;
+        border-radius: 6px;
+        color: #fff;
+        z-index: 2;
+
+        &-icon {
+            width: 14px;
+            height: 14px;
+            fill: #fff;
+        }
+        &.has-date{
+            display: flex;
+        }
+    }
+
+    &__content {
+        padding: 18px 21px;
+    }
+
+    &__title {
+        font-size: 16px;
+        color: var(--text);
+        min-height: 45px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

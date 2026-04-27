@@ -47,6 +47,13 @@ body {
     }
 }
 
+.title{
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
 picture {
     overflow: hidden;
     & img {
