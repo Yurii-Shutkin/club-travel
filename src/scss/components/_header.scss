@@ -207,15 +207,10 @@
       display: none;
     }
 
-    &_phone {
-      width: 12px;
-      height: 12px;
-      fill: #999;
-    }
-
+    &_phone,
     &_mail {
-      width: 14px;
-      height: 11px;
+      width: 16px;
+      height: 16px;
       fill: #999;
     }
   }
@@ -245,7 +240,7 @@
   }
 
   &__account-icon {
-    transform: none;
+    transform: translateX(-4px);
 
     @media screen and (max-width: 1365px) {
       width: 27px;
@@ -253,7 +248,7 @@
     }
 
     @include media.max-width(sm) {
-      transform: translateY(-8px);
+      transform: translateY(-6px);
     }
   }
 
