@@ -259,15 +259,15 @@
 
   &__account-dropdown {
     position: absolute;
-    top: calc(100% + 14px);
-    right: 0;
+    top: calc(100% + 8px);
+    right: -16px;
     z-index: 20;
     display: block;
     width: 219px;
-    padding: 16px;
+    padding: 20px 16px 12px;
     border-radius: 0;
-    background-color: #f5f5f5;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -285,50 +285,63 @@
   &__account-list {
     display: flex;
     flex-direction: column;
-    row-gap: 16px;
+    row-gap: 27px;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
-  &__account-link,
-  &__account-logout {
+  &__account-link {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #333;
+    color: var(--text, #252525);
     text-decoration: none;
     transition: color 200ms ease;
   }
 
-  &__account-item-text,
-  &__account-logout-text {
+  &__account-item-text {
+    font-family: var(--font-family, inherit);
     font-weight: 400;
     font-size: 16px;
-    line-height: 1.2;
+    line-height: 1.125;
+    white-space: nowrap;
   }
 
   &__account-item-icon {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
     fill: currentColor;
   }
 
   &__account-divider {
     height: 1px;
-    margin: 16px 0;
+    margin: 21px 0 14px;
     background-color: #000;
-    opacity: 0.15;
+    opacity: 0.2;
   }
 
   &__account-logout {
-    color: #999;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: #7d7d7d;
+    text-decoration: none;
+    transition: color 200ms ease;
+  }
+
+  &__account-logout-text {
+    font-family: var(--font-family, inherit);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    white-space: nowrap;
   }
 
   &__account-logout-icon {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
     fill: currentColor;
   }
@@ -427,7 +440,10 @@
       color: $primary;
     }
 
-    &__account-link:hover,
+    &__account-link:hover {
+      color: $primary;
+    }
+
     &__account-logout:hover {
       color: $primary;
     }
