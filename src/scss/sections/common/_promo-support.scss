@@ -2,10 +2,7 @@
 
 .promo-support {
     color: #fff;
-    margin-top: 100px;
-    @include media.max-width(sm) {
-        margin-top: 80px;
-    }
+
 
     &__container {
         position: relative;

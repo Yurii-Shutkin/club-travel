@@ -1,5 +1,5 @@
 export const links = {
-  lastMinuteDeals: { href: '#!' },
+  hotDeals: { href: '#!' },
   main: { href: './index.html' },
   searchResults: { href: '#!' },
   searchResultsCalendar: { href: '#!' },
@@ -21,5 +21,5 @@ export const links = {
   policy: { href: 'https://zakon.rada.gov.ua/laws/show/2297-17#Text' },
 };
 
-// <a href="{{links.tourSupport.href}}">Поддержка туров</a>
+// <a href="{{links.hotDeals.href}}">Поддержка туров</a>
 // <a href="{{links.[tour-support].href}}">Поддержка туров</a>

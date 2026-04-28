@@ -1,4 +1,5 @@
 import { getSeasonTour } from '@/js/services/api/getSeasonTour.js';
+import { updateTextContent } from '@/js/utils/update-text-content.js';
 
 export const renderSeasonCards =async (season, className) => {
   const cardsData = await getSeasonTour(season);
@@ -17,12 +18,13 @@ export const renderSeasonCards =async (season, className) => {
     const card = templateCard.cloneNode(true);
 
     const cardImg = card.querySelector('[data-card-img]');
-    const cardPrice = card.querySelector('[data-card-price]');
-    const cardLocation = card.querySelector('[data-card-location]');
 
-    if (cardImg && cardsData[i].coverImage) cardImg.src = cardsData[i].coverImage;
-    if (cardPrice && cardsData[i].country) cardLocation.textContent = cardsData[i].country;
-    if (cardLocation && cardsData[i].price) cardPrice.textContent = cardsData[i].price +"€";
+    if (cardImg && cardsData[i].coverImage) {
+      cardImg.src = cardsData[i].coverImage;
+    }
+
+    updateTextContent(card, '[data-card-location]', cardsData[i].country);
+    updateTextContent(card, '[data-card-price]', `${cardsData[i].price}€`);
 
     cardsList.push(card);
   }

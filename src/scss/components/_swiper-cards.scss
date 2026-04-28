@@ -21,6 +21,7 @@
         }
     }
     &__swiper-wrapper{
+        will-change: transform;
         & .swiper-slide{
             height: auto;
             flex-shrink: 0;

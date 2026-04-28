@@ -18,7 +18,6 @@ const monthsMap = {
 export const formatStringDate = (dateString) => {
   if (!dateString || typeof dateString !== 'string') return dateString;
 
-  // Очищаємо рядок і розбиваємо на масив
   const parts = dateString.trim().toLowerCase().split(/\s+/);
 
   if (parts.length < 2) return dateString;
@@ -26,7 +25,6 @@ export const formatStringDate = (dateString) => {
   const day = parts[0].padStart(2, '0');
   const month = monthsMap[parts[1]];
 
-  // Якщо року немає в рядку, беремо поточний
   const year = parts[2] || new Date().getFullYear();
 
   if (!month) {
