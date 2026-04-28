@@ -186,10 +186,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 16px;
+        //gap: 16px;
         margin-top: 80px;
         padding: 15px 0;
         background: #f4f4f4;
+        opacity: 0.5;
         @include media.max-width(sm) {
             margin-top: 81px;
         }
@@ -204,6 +205,9 @@
         text-decoration-skip-ink: none;
         text-align: center;
         color: var(--blue);
+        &:first-of-type{
+            margin-left: 16px;
+        }
         @include media.max-width(sm) {
             display: none;
         }

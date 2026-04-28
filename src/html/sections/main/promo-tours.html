@@ -1,8 +1,8 @@
-<section class="promo-tours {{className}}">
+<section class="promo-tours {{sectionClass}}">
   <div class="promo-tours__container">
 
     {{> ui/intro-header
-      className="promo-tours__header"
+      introHeaderClass="promo-tours__header"
       tag="h2"
       iconId="fast-time"
       titleOrange="горящие предложения"
@@ -13,13 +13,13 @@
       {{> (lookup . "cardPartial") }}
     </template>
 
-    {{> components/swiper-cards className="promo-tours__swiper-cards"}}
+    {{> components/swiper-cards swiperCardsClass="promo-tours__swiper-cards"}}
 
     <div class="promo-tours__footer">
       {{> ui/link-more
-        classNameLinkMore="promo-tours__link-more"
+        linkMoreClass="promo-tours__link-more"
         textLinkMore="Все кампании и новости"
-        hrefLink=links.company.href
+        hrefLink=hrefLink
       }}
     </div>
 

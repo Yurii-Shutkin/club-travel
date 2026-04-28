@@ -1,11 +1,11 @@
-<footer class="footer {{className}}" id="footer">
+<footer class="footer {{footerClass}}" id="footer">
   <hr class="footer__line">
   <div class="footer__container container">
     <div class="footer__inner">
       <div class="footer__destinations">
         <h2 class="footer__destinations-title">Популярные направления</h2>
         {{> ui/links-list
-          classNameList="footer__destinations-list"
+          linksListClass="footer__destinations-list"
           classNameItem="footer__destinations-link link-state"
           link=links.directions.href
           sortItems=(split "Египет, Бали, ОАЭ, Грузия, Таиланд, Греция, Болгария, Турция, Тенерифе, Кипр")
