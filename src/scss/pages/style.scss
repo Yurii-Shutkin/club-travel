@@ -1,11 +1,11 @@
 @use '@/scss/base/reset';
 @use '@/scss/base/base';
-@use "@/scss/ui/states";
-@use "@/scss/ui/btn";
+@use '@/scss/ui/states';
+@use '@/scss/ui/btn';
 
-@use "swiper/css";
-@use "swiper/css/navigation";
-@use "swiper/css/autoplay";
+@use 'swiper/css';
+@use 'swiper/css/navigation';
+@use 'swiper/css/autoplay';
 
 @use '@/scss/ui/intro-header';
 @use '@/scss/ui/link-more';
@@ -17,6 +17,7 @@
 
 @use '@/scss/components/header';
 @use '@/scss/components/burger-menu';
+@use '@/scss/components/main-hero';
 
 @use '@/scss/sections/main/promo-company';
 @use '@/scss/sections/main/promo-season-tours';

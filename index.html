@@ -7,28 +7,20 @@
     {{>components/header}} {{>components/burger-menu}}
 
     <main>
-      <section class="hero-swiper"></section>
+      {{>components/main-hero}}
       <section class="travel-filter"></section>
 
       {{>sections/main/promo-company}}
 
       <section class="promo-offers"></section>
 
-      {{>sections/main/promo-season-tours
-        className="promo-winter-tours"
-        title="ЗИМНИЕ ТУРЫ"
-        subtitle="Зима 2026 - 2027"
-        textLinkMore="Все зимние туры"
-        hrefLink=links.seasonTours.href
-      }}
-      {{>sections/main/promo-season-tours
-        className="promo-summer-tours"
-        title="летние ТУРЫ"
-        subtitle="Лето 2026 - 2027"
-        textLinkMore="Все летние туры"
-        hrefLink=links.seasonTours.href
-      }}
-      {{>sections/common/promo-support className="main-page__promo-support"}}
+      {{>sections/main/promo-season-tours className="promo-winter-tours"
+      title="ЗИМНИЕ ТУРЫ" subtitle="Зима 2026 - 2027" textLinkMore="Все зимние
+      туры" hrefLink=links.seasonTours.href }}
+      {{>sections/main/promo-season-tours className="promo-summer-tours"
+      title="летние ТУРЫ" subtitle="Лето 2026 - 2027" textLinkMore="Все летние
+      туры" hrefLink=links.seasonTours.href }} {{>sections/common/promo-support
+      className="main-page__promo-support"}}
     </main>
     {{>layout/footer}}
 
