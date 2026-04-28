@@ -26,9 +26,14 @@ if (openButton && burgerMenu && closeButton) {
     burgerMenu.setAttribute('aria-hidden', 'false');
     openButton.setAttribute('aria-expanded', 'true');
     lockBodyScroll();
+    closeButton.focus();
   };
 
   const closeMenu = () => {
+    if (burgerMenu.contains(document.activeElement)) {
+      openButton.focus();
+    }
+
     burgerMenu.classList.remove('is-open');
     burgerMenu.setAttribute('aria-hidden', 'true');
     openButton.setAttribute('aria-expanded', 'false');
