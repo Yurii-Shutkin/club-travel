@@ -16,6 +16,11 @@ export const getNews = async () => {
 
     const normalized = countries.map((country) => {
       const countryItem = country || {};
+      const originalUrl = country.cover?.formats?.large?.url || country.cover?.formats?.small?.url || null;
+      const optimizedImage = originalUrl && originalUrl.includes('cloudinary.com')
+        ? originalUrl.replace('/upload/', '/upload/f_webp,q_auto/')
+        .replace(/\.(png|jpg|jpeg)$/, '.webp') 
+        : originalUrl;
 
       return {
         id: country.id,
@@ -24,7 +29,7 @@ export const getNews = async () => {
           month: 'long'
         }) || null,
         countryName: country.name || null,
-        image: country.cover?.formats?.large?.url || country.cover?.formats?.small?.url || null,
+        image: optimizedImage,
         title: country.title || null,
       };
     });
@@ -35,5 +40,6 @@ export const getNews = async () => {
     return [];
   }
 }
+
 
 

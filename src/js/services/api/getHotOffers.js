@@ -23,6 +23,11 @@ export const getHotOffers = async () => {
       const oldPrice = offer.oldPrice ?? null;
       const discount = offer.discount ?? null;
       let price = offer.price;
+      const originalUrl = hotel.main?.url || null;
+      const optimizedImage = originalUrl && originalUrl.includes('cloudinary.com')
+        ? originalUrl.replace('/upload/', '/upload/f_webp,q_auto/')
+        .replace(/\.(png|jpg|jpeg)$/, '.webp') 
+        : originalUrl;
 
       if (!price && oldPrice) {
         price = discount
@@ -39,7 +44,7 @@ export const getHotOffers = async () => {
         hotelName: hotel.name || null,
         price: price || null,
         stars: hotel.stars || null,
-        coverImage: hotel.main?.url || null,
+        coverImage: optimizedImage,
         country: hotel.region?.country?.name || null,
         oldPrice: oldPrice,
         discount: discount || null,
@@ -52,5 +57,3 @@ export const getHotOffers = async () => {
     return [];
   }
 }
-
-getHotOffers();
