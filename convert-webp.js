@@ -51,7 +51,6 @@ async function convertToWebP(filePath) {
                 })
                 .toFile(outputFilePathWebP);
         }
-
         // console.log(`Конвертовано: ${filePath}`);
 
     } catch (err) {

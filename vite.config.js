@@ -24,7 +24,6 @@ const pages = Object.fromEntries(
 
 export default defineConfig({
   base: BASE_URL,
-  // logLevel: 'warn',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
