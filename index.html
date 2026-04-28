@@ -4,52 +4,31 @@
     {{>layout/head title="Club Travel" hrefStyle="style"}}
   </head>
   <body class="main">
-    {{>components/header}}
-    {{>components/burger-menu}}
+    {{>layout/header}} {{>layout/burger-menu}}
 
     <main>
-      <section class="hero-swiper"></section>
+      {{>sections/common/main-hero}}
       <section class="global-filter"></section>
 
-      {{>sections/main/promo-tours
-        sectionClass="promo-company"
-        tag="h1"
-        iconId="offer"
-        titleOrange="Кампании"
-        titleMain="и новости"
-        subtitle="Кто действует быстро — получает самые вкусные цены 😉"
-        cardPartial="components/news-card"
-        hrefLink=links.company.href
-      }}
-
-      {{>sections/main/promo-tours
-        sectionClass="promo-offers"
-        tag="h2"
-        iconId="fast-time"
-        titleOrange="горящие предложения"
-        subtitle="Кто действует быстро — получает самые вкусные цены 😉"
-        cardPartial="components/hot-card"
-        hrefLink=links.hotDeals.href
-      }}
-      {{>sections/main/promo-season-tours
-        sectionClass="promo-winter-tours"
-        title="ЗИМНИЕ ТУРЫ"
-        subtitle="Зима 2026 - 2027"
-        textLinkMore="Все зимние туры"
-        hrefLink=links.seasonTours.href
-      }}
-      {{>sections/main/promo-season-tours
-        sectionClass="promo-summer-tours"
-        title="летние ТУРЫ"
-        subtitle="Лето 2026 - 2027"
-        textLinkMore="Все летние туры"
-        hrefLink=links.seasonTours.href
-      }}
-      {{>sections/common/promo-support
-        classClass="main__promo-support"
-      }}
+      {{>sections/main/promo-tours sectionClass="promo-company" tag="h1"
+      iconId="offer" titleOrange="Кампании" titleMain="и новости" subtitle="Кто
+      действует быстро — получает самые вкусные цены 😉"
+      cardPartial="components/news-card" hrefLink=links.company.href }}
+      {{>sections/main/promo-tours sectionClass="promo-offers" tag="h2"
+      iconId="fast-time" titleOrange="горящие предложения" subtitle="Кто
+      действует быстро — получает самые вкусные цены 😉"
+      cardPartial="components/hot-card" hrefLink=links.hotDeals.href }}
+      {{>sections/main/promo-season-tours className="promo-winter-tours"
+      title="ЗИМНИЕ ТУРЫ" subtitle="Зима 2026 - 2027" textLinkMore="Все зимние
+      туры" hrefLink=links.seasonTours.href }}
+      {{>sections/main/promo-season-tours className="promo-summer-tours"
+      title="летние ТУРЫ" subtitle="Лето 2026 - 2027" textLinkMore="Все летние
+      туры" hrefLink=links.seasonTours.href }} {{>sections/common/promo-support
+      className="main-page__promo-support"}}
     </main>
+
     {{>layout/footer}}
+
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

@@ -1,0 +1,146 @@
+<header class="header">
+  <div class="header__container container">
+    <div class="header__panel">
+      <button
+        class="header__burger js-burger-open"
+        type="button"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        aria-controls="burger-menu"
+      >
+        {{> ui/svg className="header__burger-icon" id="menu" }}
+      </button>
+
+      <a class="header__logo" href="index.html" aria-label="Club Travel">
+        {{> ui/svg className="header__logo-icon" id="logo" }}
+      </a>
+
+      <nav class="header__service-nav" aria-label="Дополнительная навигация">
+        <ul class="header__service-list">
+          <li class="header__service-item">
+            <a class="header__service-link" href="index.html">Страховки</a>
+          </li>
+          <li class="header__service-item">
+            <a class="header__service-link" href="index.html">Визы</a>
+          </li>
+          <li class="header__service-item">
+            <a class="header__service-link" href="index.html">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <address class="header__contacts">
+        <ul class="header__contacts-list">
+          <li class="header__contacts-item">
+            <a class="header__contacts-link" href="tel:+3726130633">
+              {{> ui/svg className="header__contacts-icon
+              header__contacts-icon_phone" id="phone" }}
+              <span class="header__contacts-text">+372 6 130 633</span>
+            </a>
+          </li>
+
+          <li class="header__contacts-item">
+            <a class="header__contacts-link" href="mailto:contact@email.ee">
+              {{> ui/svg className="header__contacts-icon
+              header__contacts-icon_mail" id="mail" }}
+              <span class="header__contacts-text">contact@email.ee</span>
+            </a>
+          </li>
+        </ul>
+      </address>
+
+      <div class="header__account-menu">
+        <button
+          class="header__account"
+          type="button"
+          aria-label="Личный кабинет"
+          aria-expanded="false"
+          aria-controls="account-dropdown"
+        >
+          {{> ui/svg className="header__account-icon" id="user" }}
+        </button>
+
+        <div
+          class="header__account-dropdown"
+          id="account-dropdown"
+          aria-label="Меню личного кабинета"
+        >
+          <ul class="header__account-list">
+            <li class="header__account-item">
+              <a class="header__account-link" href="index.html">
+                {{> ui/svg className="header__account-item-icon" id="ticket" }}
+                <span class="header__account-item-text">Мои заказы</span>
+              </a>
+            </li>
+
+            <li class="header__account-item">
+              <a class="header__account-link" href="index.html">
+                {{> ui/svg className="header__account-item-icon"
+                id="payment-card" }}
+                <span class="header__account-item-text">История платежей</span>
+              </a>
+            </li>
+
+            <li class="header__account-item">
+              <a class="header__account-link" href="index.html">
+                {{> ui/svg className="header__account-item-icon" id="settings"
+                }}
+                <span class="header__account-item-text">Настройки</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="header__account-divider"></div>
+
+          <a class="header__account-logout" href="index.html">
+            {{> ui/svg className="header__account-logout-icon" id="exit" }}
+            <span class="header__account-logout-text">Выход</span>
+          </a>
+        </div>
+      </div>
+
+      <button class="header__languages" type="button" aria-label="Выбор языка">
+        {{> ui/svg className="header__languages-icon" id="languages" }}
+      </button>
+    </div>
+
+    <nav class="header__main-nav" aria-label="Основная навигация">
+      <ul class="header__main-list">
+        <li class="header__main-item">
+          <a class="header__main-link" href="index.html">Поиск тура</a>
+        </li>
+
+        <li class="header__main-item">
+          <a class="header__main-link" href="index.html">Направления</a>
+        </li>
+
+        <li class="header__main-item">
+          <a
+            class="header__main-link header__main-link_campaigns"
+            href="index.html"
+          >
+            {{> ui/svg className="header__main-link-icon
+            header__main-link-icon_campaigns" id="offer" }}
+            <span class="header__main-link-text">Кампании</span>
+          </a>
+        </li>
+
+        <li class="header__main-item">
+          <a class="header__main-link header__main-link_hot" href="index.html">
+            {{> ui/svg className="header__main-link-icon
+            header__main-link-icon_hot" id="fast-time" }}
+            <span class="header__main-link-text">Горящие предложения</span>
+          </a>
+        </li>
+
+        <li class="header__main-item">
+          <a class="header__main-link" href="index.html">Запрос тура</a>
+        </li>
+
+        <li class="header__main-item">
+          <a class="header__main-link" href="index.html">Авиабилеты</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

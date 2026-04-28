@@ -1,0 +1,46 @@
+<section class="main-hero">
+  <div class="main-hero__swiper swiper js-main-hero-swiper">
+    <div class="main-hero__wrapper swiper-wrapper">
+      <div class="main-hero__slide swiper-slide">
+        {{> ui/picture className="main-hero__picture"
+        desktop="/src/assets/image/components/main-hero/main-hero-photo1-1366.jpg"
+        desktopWebp="/src/assets/image/components/main-hero/main-hero-photo1-1366.webp"
+        mobile="/src/assets/image/components/main-hero/main-hero-photo1-360.jpg"
+        mobileWebp="/src/assets/image/components/main-hero/main-hero-photo1-360.webp"
+        alt="Пляжний відпочинок біля моря" }}
+      </div>
+
+      <div class="main-hero__slide swiper-slide">
+        {{> ui/picture className="main-hero__picture"
+        desktop="/src/assets/image/components/main-hero/main-hero-photo2-1366.jpg"
+        desktopWebp="/src/assets/image/components/main-hero/main-hero-photo2-1366.webp"
+        alt="Пляжний відпочинок на узбережжі" }}
+      </div>
+
+      <div class="main-hero__slide swiper-slide">
+        {{> ui/picture className="main-hero__picture"
+        desktop="/src/assets/image/components/main-hero/main-hero-photo3-1366.jpg"
+        desktopWebp="/src/assets/image/components/main-hero/main-hero-photo3-1366.webp"
+        alt="Морський курорт для подорожі" }}
+      </div>
+    </div>
+
+    <button
+      class="main-hero__button main-hero__button_prev js-main-hero-prev"
+      type="button"
+      aria-label="Попередній слайд"
+    >
+      {{> ui/svg className="main-hero__button-icon main-hero__button-icon_prev"
+      id="chevron" }}
+    </button>
+
+    <button
+      class="main-hero__button main-hero__button_next js-main-hero-next"
+      type="button"
+      aria-label="Наступний слайд"
+    >
+      {{> ui/svg className="main-hero__button-icon main-hero__button-icon_next"
+      id="chevron" }}
+    </button>
+  </div>
+</section>
