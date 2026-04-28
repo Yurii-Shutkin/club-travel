@@ -1,8 +1,7 @@
 import { getNews } from '@/js/services/api/getNews.js';
-import { formatStringDate } from '@/js/utils/format-string-date.js';
 import { updateTextContent } from '@/js/utils/update-text-content.js';
 
-export const renderNewsCards = async className => {
+export const renderNewsCards = async (className, maxCards) => {
   const cardsData = await getNews();
 
   const container = document.querySelector(className);
@@ -15,7 +14,9 @@ export const renderNewsCards = async className => {
   }
 
   const cardsList = [];
-  for (let i = 0; i < cardsData.length; i++) {
+  const cardsToRender = Math.min(maxCards || cardsData.length, cardsData.length);
+
+  for (let i = 0; i < cardsToRender; i++) {
     const card = templateCard.cloneNode(true);
 
     const cardImg = card.querySelector('[data-card-img]');
@@ -26,13 +27,13 @@ export const renderNewsCards = async className => {
 
     updateTextContent(card, '[data-card-title]', cardsData[i].title);
 
-    if (cardPriceWrap  && cardsData[i].price) {
+    if (cardPriceWrap && cardsData[i].price) {
       updateTextContent(cardPriceWrap, 'span', `от ${cardsData[i].price}€`);
       cardPriceWrap.classList.add('has-price');
     } else cardPriceWrap.classList.remove('has-price');
 
-    if (cardDateWrap  && cardsData[i].date) {
-      updateTextContent(cardDateWrap, 'span', formatStringDate(cardsData[i].date));
+    if (cardDateWrap && cardsData[i].date) {
+      updateTextContent(cardDateWrap, 'span', cardsData[i].date);
       cardDateWrap.classList.add('has-date');
     } else cardDateWrap.classList.remove('has-date');
 

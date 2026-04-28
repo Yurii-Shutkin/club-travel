@@ -9,10 +9,10 @@ import { initCardsSwiper } from '@/js/sections/main/cards-swiper.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   await Promise.all([
-    renderNewsCards('.promo-company').then(() =>
+    renderNewsCards('.promo-company',5).then(() =>
       initCardsSwiper('.promo-company', 3),
     ),
-    renderHotCards('.promo-offers').then(() =>
+    renderHotCards('.promo-offers',5).then(() =>
       initCardsSwiper('.promo-offers', 3),
     ),
     renderSeasonCards('winter', '.promo-winter-tours').then(() =>
