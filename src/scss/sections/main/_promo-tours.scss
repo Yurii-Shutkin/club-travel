@@ -1,9 +1,5 @@
 @use "@/scss/utils/media" as media;
-.promo-company {
-    margin-top: 102px;
-    @include media.max-width(md) {
-        margin-top: 82px;
-    }
+.promo-tours {
 
     &__container {
     }

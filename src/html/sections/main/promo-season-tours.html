@@ -1,4 +1,4 @@
-<section class="promo-season-tours {{className}}">
+<section class="promo-season-tours {{sectionClass}}">
   <div class="promo-season-tours__container">
     <h2 class="promo-season-tours__title title">{{title}}</h2>
     <p class="promo-season-tours__subtitle">{{subtitle}}</p>
@@ -8,11 +8,11 @@
         hrefLink=hrefLink
       }}
     </template>
-    {{> components/swiper-cards className="promo-season-tours__swiper-cards"}}
+    {{> components/swiper-cards swiperCardsClass="promo-season-tours__swiper-cards"}}
 
     <div class="promo-season-tours__footer">
       {{> ui/link-more
-        classNameLinkMore="promo-season-tours__link-more"
+        linkMoreClass="promo-season-tours__link-more"
         textLinkMore=textLinkMore
         hrefLink=hrefLink
       }}

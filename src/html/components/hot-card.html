@@ -1,51 +1,41 @@
-<div class="{{className}} tour-card" data-card>
-    <div class="fire-card__picture-wrap">
-        <div class="fire-card__meta">
-            <div class="fire-card__meta-col">
-                {{> ui/svg
-                className="fire-card__meta-icon"
-                id="point"
-                }}
-                <span class="fire-card__meta-item">
-                    29 октября 2020
-                </span>
-            </div>
-            <div class="fire-card__meta-col">
-                {{> ui/svg
-                className="fire-card__meta-icon"
-                id="point"
-                }}
-                <span class="fire-card__meta-item">
-                Болгария, Золотые Пески
-                </span>
-            </div>
-        </div>
-        <picture class="fire-card__picture">
-            <img
-              src=""
-              alt="{{altPict}}" data-img>
-        </picture>
+<div class="{{cardClass}} hot-card" data-card>
+  <div class="hot-card__inner">
+  <div class="hot-card__image-wrap">
+    <div class="hot-card__overlay">
+      <div class="hot-card__meta">
+        {{> ui/svg className="hot-card__meta-icon" id="clock"}}
+        <span class="hot-card__meta-text" data-card-date>soon</span>
+      </div>
+      <div class="hot-card__meta">
+        {{> ui/svg className="hot-card__meta-icon" id="point"}}
+        <span class="hot-card__meta-text" data-card-location></span>
+      </div>
     </div>
-    <div class="fire-card__content">
-        <div class="fire-card__hotel-info">
-            <span class="fire-card__hotel-name">
-            Название Отеля здесь
-            </span>
-            <div class="fire-card__hotel-rating">
-                {{> ui/svg
-                className="fire-card__hotel-icon"
-                id="location"
-                }}
-            </div>
-        </div>
-        <div class="fire-card__price-wrap">
-            <div class="fire-card__price">
-                <span class="fire-card__price-value"><span class="fire-card__price-value_bold">509€</span>/чел</span>
-                <span class="fire-card__price-old-value">779 €/чел</span>
-            </div>
-            <div class="fire-card__discount">
-                <span class="fire-card__discount-value">-30%</span>
-            </div>
-        </div>
+
+    <picture class="hot-card__picture">
+      <img
+        src="" alt="{{img}}" loading="lazy"
+        data-card-img>
+    </picture>
+  </div>
+
+
+  <div class="hot-card__header">
+    <span class="hot-card__title" data-card-hotel>Отель</span>
+    {{> ui/rating ratingClass="hot-card__rating"}}
+  </div>
+</div>
+  <div class="hot-card__footer">
+    <div class="hot-card__price">
+      <span class="hot-card__price_current"><span
+        class="hot-card__price-value" data-card-price>509</span>€/чел</span>
+      <span class="hot-card__price_old" data-card-old-price>779€/чел</span>
     </div>
+
+    {{> ui/badge
+      bangeClass="hot-card__badge"
+      text="-30%"
+    }}
+
+  </div>
 </div>
