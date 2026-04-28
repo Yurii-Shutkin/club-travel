@@ -1,5 +1,6 @@
 import { getNews } from '@/js/services/api/getNews.js';
 import { formatStringDate } from '@/js/utils/format-string-date.js';
+import { updateTextContent } from '@/js/utils/update-text-content.js';
 
 export const renderNewsCards = async className => {
   const cardsData = await getNews();
@@ -18,23 +19,20 @@ export const renderNewsCards = async className => {
     const card = templateCard.cloneNode(true);
 
     const cardImg = card.querySelector('[data-card-img]');
-    const cardPriceWrap = card.querySelector('[data-card-price]');
-    const cardPrice = cardPriceWrap.querySelector('span');
-    const cardTitle = card.querySelector('[data-card-title]');
+    const cardPriceWrap = card.querySelector('[data-badge]');
     const cardDateWrap = card.querySelector('[data-card-date]');
-    const cardDate = cardDateWrap.querySelector('span');
 
     if (cardImg && cardsData[i].image) cardImg.src = cardsData[i].image;
-    if (cardTitle && cardsData[i].title)
-      cardTitle.textContent = cardsData[i].title;
 
-    if (cardPriceWrap && cardPrice && cardsData[i].price) {
-      cardPrice.textContent = cardsData[i].price;
+    updateTextContent(card, '[data-card-title]', cardsData[i].title);
+
+    if (cardPriceWrap  && cardsData[i].price) {
+      updateTextContent(cardPriceWrap, 'span', `от ${cardsData[i].price}€`);
       cardPriceWrap.classList.add('has-price');
     } else cardPriceWrap.classList.remove('has-price');
 
-    if (cardDateWrap && cardDate && cardsData[i].date) {
-      cardDate.textContent = formatStringDate(cardsData[i].date);
+    if (cardDateWrap  && cardsData[i].date) {
+      updateTextContent(cardDateWrap, 'span', formatStringDate(cardsData[i].date));
       cardDateWrap.classList.add('has-date');
     } else cardDateWrap.classList.remove('has-date');
 

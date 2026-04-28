@@ -34,14 +34,21 @@
         spaceBetween: 30,
         grabCursor: true,
         loop: true,
-
-        pauseOnMouseEnter: false,
-        preventInteractionOnTransition: false,
-        speed: 1500,
-        autoplay: {
-          delay: 4000,
-          disableOnInteraction: false,
+        lazy: {
+          loadPrevNext: true,
+          loadOnTransitionStart: true,
         },
+
+        pauseOnMouseEnter: true,
+        preventInteractionOnTransition: false,
+
+        // observer:true,
+        // observeParents: true,
+        // speed: 1500,
+        // autoplay: {
+        //   delay: 4000,
+        //   disableOnInteraction: false,
+        // },
 
         navigation: {
           nextEl: btnNext,

@@ -1,8 +1,9 @@
-<div class="{{className}} news-card" data-card>
+<div class="{{classNameCard}} news-card" data-card>
   <div class="news-card__picture-wrap">
-    <div class="news-card__price-badge" data-card-price>
-      от <span>509</span>€
-    </div>
+    {{> ui/badge
+      className="news-card__badge"
+      text="от 509€"
+    }}
 
     <div class="news-card__meta" data-card-date>
       {{> ui/svg
@@ -16,6 +17,7 @@
       <img
         src="/src/assets/image/test.webp"
         alt="{{img}}"
+        loading="lazy"
         data-card-img>
     </picture>
   </div>

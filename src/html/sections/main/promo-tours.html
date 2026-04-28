@@ -1,0 +1,27 @@
+<section class="promo-tours {{className}}">
+  <div class="promo-tours__container">
+
+    {{> ui/intro-header
+      className="promo-tours__header"
+      tag="h2"
+      iconId="fast-time"
+      titleOrange="горящие предложения"
+      subtitle="Кто действует быстро — получает самые вкусные цены 😉"
+    }}
+
+    <template class="promo-tours__template" data-template>
+      {{> (lookup . "cardPartial") }}
+    </template>
+
+    {{> components/swiper-cards className="promo-tours__swiper-cards"}}
+
+    <div class="promo-tours__footer">
+      {{> ui/link-more
+        classNameLinkMore="promo-tours__link-more"
+        textLinkMore="Все кампании и новости"
+        hrefLink=links.company.href
+      }}
+    </div>
+
+  </div>
+</section>

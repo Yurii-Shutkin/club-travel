@@ -1,11 +1,12 @@
 @use "@/scss/utils/media" as media;
+
 .news-card {
     width: 100%;
     //max-width: 380px;
     box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
     background: #fff;
     border-radius: 10px;
-
+    overflow: hidden;
 
     &__picture-wrap {
         position: relative;
@@ -20,20 +21,17 @@
         }
     }
 
-    &__price-badge {
+    &__badge {
         position: absolute;
         display: none;
         top: 31px;
         right: 0;
-        background: var(--primary);
-        font-size: 16px;
-        color: #fff;
-        padding: 4px 12px 5px 10px;
         z-index: 2;
         @include media.max-width(sm) {
             top: 28px;
         }
-        &.has-price{
+
+        &.has-price {
             display: block;
         }
     }
@@ -52,14 +50,15 @@
         color: #fff;
         z-index: 2;
 
-        &-icon {
-            width: 14px;
-            height: 14px;
-            fill: #fff;
-        }
-        &.has-date{
+        &.has-date {
             display: flex;
         }
+    }
+
+    &__meta-icon {
+        width: 16px;
+        aspect-ratio: 1;
+        fill: #fff;
     }
 
     &__content {
