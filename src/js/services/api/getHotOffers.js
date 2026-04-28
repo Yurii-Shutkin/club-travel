@@ -48,6 +48,7 @@ export const getHotOffers = async () => {
         country: hotel.region?.country?.name || null,
         oldPrice: oldPrice,
         discount: discount || null,
+        region: hotel.region?.name || null
       };
     });
     console.log(normalized);
@@ -57,3 +58,4 @@ export const getHotOffers = async () => {
     return [];
   }
 }
+
