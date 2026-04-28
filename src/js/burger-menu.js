@@ -10,8 +10,8 @@ const closeButton = document.querySelector('.js-burger-close');
 
 if (openButton && burgerMenu && closeButton) {
   const desktopMediaQuery = window.matchMedia('(min-width: 1366px)');
-  const scrollLockTarget =
-    burgerMenu.querySelector('.burger-menu__dialog') ?? burgerMenu;
+  const dialog = burgerMenu.querySelector('.burger-menu__dialog');
+  const scrollLockTarget = dialog ?? burgerMenu;
 
   const lockBodyScroll = () => {
     disableBodyScroll(scrollLockTarget, { reserveScrollBarGap: true });
@@ -37,6 +37,14 @@ if (openButton && burgerMenu && closeButton) {
 
   openButton.addEventListener('click', openMenu);
   closeButton.addEventListener('click', closeMenu);
+
+  burgerMenu.addEventListener('click', event => {
+    if (!burgerMenu.classList.contains('is-open')) return;
+
+    if (dialog && !dialog.contains(event.target)) {
+      closeMenu();
+    }
+  });
 
   const closeMenuIfOpen = () => {
     if (burgerMenu.classList.contains('is-open')) {
