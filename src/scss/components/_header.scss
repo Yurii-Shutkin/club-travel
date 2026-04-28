@@ -2,6 +2,16 @@
 @use '../utils/media' as media;
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background-color: #fff;
+  transition: background-color 200ms ease;
+
+  &_scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
   &__container {
     &.container {
       position: relative;
