@@ -17,12 +17,17 @@ export const getSeasonTour = async (slug) => {
 
     const normalized = category.offers.map((offer) => {
       const hotel = offer.hotel || {};
+      const originalUrl = hotel.region?.country?.cover?.url || null;
+      const optimizedImage = originalUrl && originalUrl.includes('cloudinary.com')
+        ? originalUrl.replace('/upload/', '/upload/f_webp,q_auto/')
+        .replace(/\.(png|jpg|jpeg)$/, '.webp') 
+        : originalUrl;
 
       return {
         id: offer.id,
         price: offer.price || null,
         country: hotel.region?.country?.name || null,
-        coverImage: hotel.region?.country?.cover?.url || null
+        coverImage: optimizedImage
       };
     });
     console.log(normalized);
