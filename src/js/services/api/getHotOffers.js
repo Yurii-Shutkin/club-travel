@@ -20,6 +20,21 @@ export const getHotOffers = async () => {
     const normalized = category.offers.map((offer) => {
       const hotel = offer.hotel || {};
 
+      const oldPrice = offer.oldPrice ?? null;
+      const discount = offer.discount ?? null;
+      let price = offer.price;
+      const originalUrl = hotel.main?.url || null;
+      const optimizedImage = originalUrl && originalUrl.includes('cloudinary.com')
+        ? originalUrl.replace('/upload/', '/upload/f_webp,q_auto/')
+        .replace(/\.(png|jpg|jpeg)$/, '.webp') 
+        : originalUrl;
+
+      if (!price && oldPrice) {
+        price = discount
+          ? oldPrice - (oldPrice * discount / 100)
+          : oldPrice;
+      }
+
       return {
         id: offer.id,
         date: new Date(offer.date).toLocaleDateString('ru-RU', {
@@ -27,10 +42,12 @@ export const getHotOffers = async () => {
           month: 'long'
         }) || null,
         hotelName: hotel.name || null,
-        price: offer.price || null,
+        price: price || null,
         stars: hotel.stars || null,
-        coverImage: hotel.main?.url || null,
-        country: hotel.region?.country?.name || null
+        coverImage: optimizedImage,
+        country: hotel.region?.country?.name || null,
+        oldPrice: oldPrice,
+        discount: discount || null,
       };
     });
     console.log(normalized);
@@ -40,5 +57,3 @@ export const getHotOffers = async () => {
     return [];
   }
 }
-
-

@@ -2,10 +2,20 @@
 @use '../utils/media' as media;
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background-color: #fff;
+  transition: background-color 200ms ease;
+
+  &_scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
   &__container {
     &.container {
       position: relative;
-      padding: 10px 98px 0;
+      padding: 10px 98px 19px;
 
       @media screen and (max-width: 1365px) {
         position: static;
@@ -17,7 +27,7 @@
       }
 
       @include media.max-width(sm) {
-        padding: 16px 11px 12px 13px;
+        padding: 16px 11px 0px 13px;
       }
     }
   }
@@ -34,14 +44,11 @@
     @media screen and (max-width: 1365px) {
       justify-content: space-between;
       gap: 0;
-      min-height: 67px;
       margin-bottom: 0;
     }
 
     @include media.max-width(sm) {
-      position: static;
       align-items: flex-start;
-      min-height: initial;
     }
   }
 
@@ -103,17 +110,30 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     transform: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 175px;
+      height: 145px;
+      border-radius: 50%;
+      background-color: #fff;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+
+      @include media.max-width(md) {
+        width: 110px;
+        height: 91px;
+      }
+    }
 
     @media screen and (max-width: 1365px) {
       left: 50%;
       transform: translateX(-50%);
-    }
-
-    @include media.max-width(sm) {
-      position: static;
-      transform: none;
     }
   }
 

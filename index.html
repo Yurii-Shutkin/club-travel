@@ -4,11 +4,11 @@
     {{>layout/head title="Club Travel" hrefStyle="style"}}
   </head>
   <body class="main">
-    {{>components/header}}
-    {{>components/burger-menu}}
+    {{>layout/header}}
+    {{>layout/burger-menu}}
 
     <main>
-      <section class="hero-swiper"></section>
+      {{>sections/common/main-hero}}
       <section class="global-filter"></section>
 
       {{>sections/main/promo-tours
@@ -21,7 +21,6 @@
         cardPartial="components/news-card"
         hrefLink=links.company.href
       }}
-
       {{>sections/main/promo-tours
         sectionClass="promo-offers"
         tag="h2"
@@ -46,10 +45,11 @@
         hrefLink=links.seasonTours.href
       }}
       {{>sections/common/promo-support
-        classClass="main__promo-support"
+        sectionClass="main-page__promo-support"
       }}
     </main>
     {{>layout/footer}}
+
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

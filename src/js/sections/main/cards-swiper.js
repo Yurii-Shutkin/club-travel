@@ -2,13 +2,22 @@
   import { Navigation, Autoplay } from 'swiper/modules';
   // import Swiper, { Navigation, Autoplay } from 'swiper';
 
-
   export function initCardsSwiper(className, desktopSlides) {
-    const sliderWrap = document.querySelector(className);
-    if (!sliderWrap) return;
-    const sliderEl = sliderWrap.querySelector('.swiper');
-    const btnNext = sliderWrap.querySelector('[data-btn-next]');
-    const btnPrev = sliderWrap.querySelector('[data-btn-prev]');
+    const sliderContainer = document.querySelector(className);
+    if (!sliderContainer) return;
+    const sliderEl = sliderContainer.querySelector('.swiper');
+    const slidesWrap = sliderContainer.querySelector('.swiper-wrapper');
+    const slides = sliderContainer.querySelectorAll('.swiper-slide');
+    const btnNext = sliderContainer.querySelector('[data-btn-next]');
+    const btnPrev = sliderContainer.querySelector('[data-btn-prev]');
+
+    if (!desktopSlides) desktopSlides = 1;
+    if (slides.length < 6) {
+      slides.forEach(slide => {
+        const clone = slide.cloneNode(true);
+        slidesWrap.appendChild(clone);
+      });
+    }
 
     const breakpoints ={};
     if (desktopSlides === 4) {
@@ -34,6 +43,7 @@
         spaceBetween: 30,
         grabCursor: true,
         loop: true,
+        loopAdditionalSlides: 2,
         lazy: {
           loadPrevNext: true,
           loadOnTransitionStart: true,

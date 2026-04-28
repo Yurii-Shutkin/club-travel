@@ -1,13 +1,13 @@
 @use '@/scss/base/reset';
 @use '@/scss/base/base';
 
-@use "swiper/css";
-@use "swiper/css/navigation";
-@use "swiper/css/autoplay";
+@use 'swiper/css';
+@use 'swiper/css/navigation';
+@use 'swiper/css/autoplay';
 
-@use "@/scss/ui/states";
-@use "@/scss/ui/btn";
-@use "@/scss/ui/rating";
+@use '@/scss/ui/states';
+@use '@/scss/ui/btn';
+@use '@/scss/ui/rating';
 @use '@/scss/ui/intro-header';
 @use '@/scss/ui/link-more';
 @use '@/scss/ui/badge';
@@ -20,8 +20,9 @@
 @use '@/scss/sections/main/promo-tours';
 @use '@/scss/sections/main/promo-season-tours';
 
-@use '@/scss/components/header';
-@use '@/scss/components/burger-menu';
+@use '@/scss/layout/header';
+@use '@/scss/layout/burger-menu';
+@use '@/scss/sections/common/main-hero';
 
 @use '@/scss/sections/common/promo-support';
 @use '@/scss/sections/main/main';

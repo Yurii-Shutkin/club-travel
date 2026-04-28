@@ -1,12 +1,13 @@
 import './burger-menu.js';
 import './header-account-dropdown.js';
+import './header-scroll-state.js';
 
 import { renderNewsCards } from '@/js/components/render-news-cards.js';
 import { renderHotCards } from '@/js/components/render-hot-cards.js';
 import { renderSeasonCards } from '@/js/sections/main/render-season-cards.js';
 import { initCardsSwiper } from '@/js/sections/main/cards-swiper.js';
 
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener('DOMContentLoaded', async () => {
   await Promise.all([
     renderNewsCards('.promo-company').then(() =>
       initCardsSwiper('.promo-company', 3),

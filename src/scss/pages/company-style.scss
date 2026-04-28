@@ -1,13 +1,13 @@
 @use '@/scss/base/reset';
 @use '@/scss/base/base';
-@use "@/scss/ui/states";
+@use '@/scss/ui/states';
 
 @use '@/scss/ui/intro-header';
 
 @use '@/scss/components/news-card';
 
-@use '@/scss/components/header';
-@use '@/scss/components/burger-menu';
+@use '@/scss/layout/header';
+@use '@/scss/layout/burger-menu';
 
 @use '@/scss/sections/company/news';
 
