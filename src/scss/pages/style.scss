@@ -20,9 +20,9 @@
 @use '@/scss/sections/main/promo-tours';
 @use '@/scss/sections/main/promo-season-tours';
 
-@use '@/scss/components/header';
-@use '@/scss/components/burger-menu';
-@use '@/scss/components/main-hero';
+@use '@/scss/layout/header';
+@use '@/scss/layout/burger-menu';
+@use '@/scss/sections/common/main-hero';
 
 @use '@/scss/sections/common/promo-support';
 @use '@/scss/sections/main/main';
