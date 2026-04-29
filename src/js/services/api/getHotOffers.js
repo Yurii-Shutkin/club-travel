@@ -39,8 +39,9 @@ export const getHotOffers = async () => {
         id: offer.id,
         date: new Date(offer.date).toLocaleDateString('ru-RU', {
           day: 'numeric',
-          month: 'long'
-        }) || null,
+          month: 'long',
+          year: 'numeric'
+        }).replace(/\s*г\.?$/, '') || null,
         hotelName: hotel.name || null,
         price: price || null,
         stars: hotel.stars || null,
