@@ -6,7 +6,7 @@ export const links = {
   hotel: { href: '#!' },
   directions: { href: '#!' },
   company: { href: './company.html' },
-  tourSupport: { href: '#!' },
+  tourRequest: { href: './tour-request.html' },
   customerAccount: { href: '#!' },
   contacts: { href: '#!' },
   authorization: { href: '#!' },

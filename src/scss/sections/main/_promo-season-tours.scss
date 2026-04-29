@@ -2,7 +2,7 @@
 
 .promo-season-tours {
     margin-top: 98px;
-    @include media.max-width(md) {
+    @include media.max-width(sm) {
         margin-top: 80px;
     }
 
@@ -15,19 +15,22 @@
 
     &__subtitle {
         text-align: center;
-        margin-top: 15px;
+        margin-top: 13px;
     }
 
     &__template {
     }
     &__swiper-cards {
-        margin-top: 18px;
+        margin-top: 22px;
+        @include media.max-width(md) {
+            margin-top: 30px;
+        }
     }
 
     &__footer {
-        margin-top: 27px;
+        margin-top: 24px;
         @include media.max-width(md) {
-            margin-top: 19px;
+            margin-top: 30px;
         }
     }
 }
