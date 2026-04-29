@@ -31,10 +31,10 @@
         }
     }
     &__subtitle {
-        margin-top: 20px;
+        margin-top: 17px;
         padding-inline: 24px;
         @include media.max-width(xs) {
-            margin-top: 14px;
+            margin-top: 12px;
         }
     }
 }

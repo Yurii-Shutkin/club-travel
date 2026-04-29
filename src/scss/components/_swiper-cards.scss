@@ -18,6 +18,7 @@
         padding: 20px ;
         @include media.max-width(md) {
             margin-inline: 0;
+            padding: 10px ;
         }
     }
     &__swiper-wrapper{

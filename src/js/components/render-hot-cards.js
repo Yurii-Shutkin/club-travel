@@ -31,7 +31,7 @@ export const renderHotCards = async (className, maxCards) => {
 
     updateTextContent(card, '[data-card-hotel]', cardsData[i].hotelName);
     updateTextContent(card, '[data-card-date]', cardsData[i].date);
-    updateTextContent(card, '[data-card-location]', `${cardsData[i].region}, ${cardsData[i].country}`);
+    updateTextContent(card, '[data-card-location]', `${cardsData[i].country}, ${cardsData[i].region}`);
 
 
     if (cardsData[i].discount) {

@@ -5,6 +5,7 @@ export const renderSeasonCards =async (season, className, maxCards) => {
   const cardsData = await getSeasonTour(season);
 
   const container = document.querySelector(className);
+  if (!container) return;
   const templateWrapper = container.querySelector('[data-template]');
   const templateCard = templateWrapper.content.querySelector('[data-card]');
   const cardsWrapper = container.querySelector('[data-wrapper]');

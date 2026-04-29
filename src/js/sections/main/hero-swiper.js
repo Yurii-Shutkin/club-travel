@@ -1,6 +1,6 @@
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
-import 'swiper/css';
+// import 'swiper/css';
 
 const heroSwiperElement = document.querySelector('.js-main-hero-swiper');
 const desktopMediaQuery = window.matchMedia('(min-width: 1366px)');

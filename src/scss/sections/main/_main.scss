@@ -8,7 +8,7 @@
     }
 
     & .promo-winter-tours,& .promo-summer-tours {
-        margin-top: 98px;
+        margin-top: 101px;
         @include media.max-width(md) {
             margin-top: 80px;
         }
@@ -16,7 +16,7 @@
 
     & .promo-support {
         color: #fff;
-        margin-top: 100px;
+        margin-top: 98px;
         @include media.max-width(sm) {
             margin-top: 80px;
         }
