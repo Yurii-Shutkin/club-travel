@@ -16,23 +16,15 @@
       </a>
 
       <nav class="header__service-nav" aria-label="Дополнительная навигация">
-        <ul class="header__service-list">
-          <li class="header__service-item">
-            <a class="header__service-link" href="index.html">Страховки</a>
-          </li>
-          <li class="header__service-item">
-            <a class="header__service-link" href="index.html">Визы</a>
-          </li>
-          <li class="header__service-item">
-            <a class="header__service-link" href="index.html">Контакты</a>
-          </li>
-        </ul>
+        {{> ui/links-list linksListClass="header__service-list"
+        classNameItem="header__service-link link-state" link="index.html"
+        sortItems=(split "Страховки, Визы, Контакты") }}
       </nav>
 
       <address class="header__contacts">
         <ul class="header__contacts-list">
           <li class="header__contacts-item">
-            <a class="header__contacts-link" href="tel:+3726130633">
+            <a class="header__contacts-link link-state" href="tel:+3726130633">
               {{> ui/svg className="header__contacts-icon
               header__contacts-icon_phone" id="phone" }}
               <span class="header__contacts-text">+372 6 130 633</span>
@@ -40,7 +32,10 @@
           </li>
 
           <li class="header__contacts-item">
-            <a class="header__contacts-link" href="mailto:contact@email.ee">
+            <a
+              class="header__contacts-link link-state"
+              href="mailto:contact@email.ee"
+            >
               {{> ui/svg className="header__contacts-icon
               header__contacts-icon_mail" id="mail" }}
               <span class="header__contacts-text">contact@email.ee</span>

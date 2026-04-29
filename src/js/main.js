@@ -1,6 +1,7 @@
 import './burger-menu.js';
 import './header-account-dropdown.js';
 import './header-scroll-state.js';
+import './sections/main/hero-swiper';
 
 import { renderNewsCards } from '@/js/components/render-news-cards.js';
 import { renderHotCards } from '@/js/components/render-hot-cards.js';
