@@ -1,11 +1,16 @@
 @use '@/scss/base/reset';
 @use '@/scss/base/base';
+
+@use 'swiper/css';
+@use 'swiper/css/navigation';
+
 @use '@/scss/ui/states';
 @use '@/scss/ui/btn';
 
 @use '@/scss/layout/header';
 @use '@/scss/layout/burger-menu';
 
+@use '@/scss/sections/common/main-hero';
 @use '@/scss/sections/tour-request/tour-selector';
 
 @use '@/scss/layout/footer';
