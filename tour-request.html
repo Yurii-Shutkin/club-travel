@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/club-travel/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Club Travel, Кампании</title>  <script type="module" crossorigin src="/club-travel/assets/js/render-news-cards-frweQqh8.js"></script>
-  <script type="module" crossorigin src="/club-travel/assets/js/main-BG-CW0IJ.js"></script>
-  <link rel="stylesheet" crossorigin href="/club-travel/assets/css/main-DYjo12IG.css">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/club-travel/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Club Travel, Подбор тура</title>  <script type="module" crossorigin src="/club-travel/assets/js/render-news-cards-CcPviUql.js"></script>
+  <script type="module" crossorigin src="/club-travel/assets/js/main-jyFHIppF.js"></script>
+  <link rel="stylesheet" crossorigin href="/club-travel/assets/css/tour-request-stl3St1b.css">
 </head>
-<body class="page-company">
+<body class="tour-request">
 <header class="header">
   <div class="header__container container">
     <div class="header__panel">
@@ -31,23 +31,16 @@
       </a>
 
       <nav class="header__service-nav" aria-label="Дополнительная навигация">
-        <ul class="header__service-list">
-          <li class="header__service-item">
-            <a class="header__service-link" href="index.html">Страховки</a>
-          </li>
-          <li class="header__service-item">
-            <a class="header__service-link" href="index.html">Визы</a>
-          </li>
-          <li class="header__service-item">
-            <a class="header__service-link" href="index.html">Контакты</a>
-          </li>
-        </ul>
-      </nav>
+        <div class="header__service-list" >
+            <a href="index.html" class="header__service-link link-state">Страховки</a>
+            <a href="index.html" class="header__service-link link-state">Визы</a>
+            <a href="index.html" class="header__service-link link-state">Контакты</a>
+        </div>      </nav>
 
       <address class="header__contacts">
         <ul class="header__contacts-list">
           <li class="header__contacts-item">
-            <a class="header__contacts-link" href="tel:+3726130633">
+            <a class="header__contacts-link link-state" href="tel:+3726130633">
               <svg class="header__contacts-icon
                             header__contacts-icon_phone" >
                   <use href="/club-travel/sprite.svg#icon-phone"></use>
@@ -57,7 +50,10 @@
           </li>
 
           <li class="header__contacts-item">
-            <a class="header__contacts-link" href="mailto:contact@email.ee">
+            <a
+              class="header__contacts-link link-state"
+              href="mailto:contact@email.ee"
+            >
               <svg class="header__contacts-icon
                             header__contacts-icon_mail" >
                   <use href="/club-travel/sprite.svg#icon-mail"></use>
@@ -284,10 +280,167 @@
     </div>
   </div>
 </div>
+
 <main>
-    <section class="">
-    </section>
+  <section class="main-hero">
+    <div class="main-hero__swiper swiper js-main-hero-swiper">
+      <div class="main-hero__wrapper swiper-wrapper">
+        <div class="main-hero__slide swiper-slide">
+          <picture class="main-hero__picture" >
+              <source media="(min-width:769px)" srcset="/club-travel/assets/webp/main-hero-photo1-1366-BWLe7mgc.webp" type="image/webp">
+          
+              <source media="(max-width:768px)" srcset="/club-travel/assets/webp/main-hero-photo1-360-BdESJ8Qa.webp" type="image/webp">
+              <source media="(max-width:768px)" srcset="/club-travel/assets/jpg/main-hero-photo1-360-vz527wvr.jpg">
+              <img src="/club-travel/assets/jpg/main-hero-photo1-1366-xqKCH3kp.jpg" alt="Пляжний відпочинок біля моря" loading="lazy">
+          </picture>
+          
+        </div>
+  
+        <div class="main-hero__slide swiper-slide">
+          <picture class="main-hero__picture" >
+              <source media="(min-width:769px)" srcset="/club-travel/assets/webp/main-hero-photo2-1366-Nosv__Hc.webp" type="image/webp">
+          
+                  <source media="(max-width:768px)" srcset="/club-travel/assets/webp/main-hero-photo2-1366-Nosv__Hc.webp" type="image/webp">
+              <img src="/club-travel/assets/jpg/main-hero-photo2-1366-dLhlzGaW.jpg" alt="Пляжний відпочинок на узбережжі" loading="lazy">
+          </picture>
+          
+        </div>
+  
+        <div class="main-hero__slide swiper-slide">
+          <picture class="main-hero__picture" >
+              <source media="(min-width:769px)" srcset="/club-travel/assets/webp/main-hero-photo3-1366-B1XzeR7e.webp" type="image/webp">
+          
+                  <source media="(max-width:768px)" srcset="/club-travel/assets/webp/main-hero-photo3-1366-B1XzeR7e.webp" type="image/webp">
+              <img src="/club-travel/assets/jpg/main-hero-photo3-1366-BVmgRQ96.jpg" alt="Морський курорт для подорожі" loading="lazy">
+          </picture>
+          
+        </div>
+      </div>
+  
+      <button
+        class="main-hero__button main-hero__button_prev js-main-hero-prev"
+        type="button"
+        aria-label="Попередній слайд"
+      >
+        <svg class="main-hero__button-icon main-hero__button-icon_prev" >
+            <use href="/club-travel/sprite.svg#icon-chevron"></use>
+        </svg>
+      </button>
+  
+      <button
+        class="main-hero__button main-hero__button_next js-main-hero-next"
+        type="button"
+        aria-label="Наступний слайд"
+      >
+        <svg class="main-hero__button-icon main-hero__button-icon_next" >
+            <use href="/club-travel/sprite.svg#icon-chevron"></use>
+        </svg>
+      </button>
+    </div>
+  </section>
+  <section class="tour-selector">
+    <div class="container">
+      <div class="tour-selector__grid">
+        <article class="tour-selector__card">
+          <ul class="tour-selector__tabs" aria-label="Крок 1">
+            <li class="tour-selector__tab is-active">Основное</li>
+            <li class="tour-selector__tab">Предпочтения</li>
+            <li class="tour-selector__tab">Контакты</li>
+          </ul>
+  
+          <label class="tour-selector__field">
+            <span class="tour-selector__label">Направление</span>
+            <span class="tour-selector__input">Болгария > Золотые пески</span>
+          </label>
+  
+          <label class="tour-selector__field">
+            <span class="tour-selector__label">Дата вылета</span>
+            <span class="tour-selector__input">25.06.2020 - 10.07.2020</span>
+          </label>
+  
+          <label class="tour-selector__field">
+            <span class="tour-selector__label">Гости</span>
+            <span class="tour-selector__input">Взрослых: 2; детей: 5</span>
+          </label>
+  
+          <div class="tour-selector__chips">
+            <span class="tour-selector__chip">Взрослых x2</span>
+            <span class="tour-selector__chip">15 лет x1</span>
+            <span class="tour-selector__chip">3 года x1</span>
+            <span class="tour-selector__chip">10 лет x3</span>
+          </div>
+  
+          <label class="tour-selector__field">
+            <span class="tour-selector__label">Длительность тура (дней)</span>
+            <span class="tour-selector__input tour-selector__input_center">12</span>
+          </label>
+  
+          <button class="btn tour-selector__btn" type="button">Дальше</button>
+        </article>
+  
+        <article class="tour-selector__card">
+          <ul class="tour-selector__tabs" aria-label="Крок 2">
+            <li class="tour-selector__tab">Основное</li>
+            <li class="tour-selector__tab is-active">Предпочтения</li>
+            <li class="tour-selector__tab">Контакты</li>
+          </ul>
+  
+          <label class="tour-selector__field">
+            <span class="tour-selector__label">Желаемая цена на одного человека (€)</span>
+            <span class="tour-selector__input">12</span>
+          </label>
+  
+          <label class="tour-selector__field">
+            <span class="tour-selector__label">Питание</span>
+            <span class="tour-selector__input">Завтрак</span>
+          </label>
+  
+          <div class="tour-selector__field">
+            <span class="tour-selector__label">Категория отеля</span>
+            <div class="tour-selector__stars" aria-label="Рейтинг 4 із 5">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span class="is-muted">★</span>
+            </div>
+          </div>
+  
+          <label class="tour-selector__field">
+            <span class="tour-selector__label">Пожелания</span>
+            <span class="tour-selector__input tour-selector__input_area"></span>
+          </label>
+  
+          <button class="btn tour-selector__btn" type="button">Дальше</button>
+        </article>
+  
+        <article class="tour-selector__card">
+          <ul class="tour-selector__tabs" aria-label="Крок 3">
+            <li class="tour-selector__tab">Основное</li>
+            <li class="tour-selector__tab">Предпочтения</li>
+            <li class="tour-selector__tab is-active">Контакты</li>
+          </ul>
+  
+          <label class="tour-selector__field">
+            <span class="tour-selector__label">Имя</span>
+            <span class="tour-selector__input"></span>
+          </label>
+  
+          <label class="tour-selector__field">
+            <span class="tour-selector__label">Телефон</span>
+            <span class="tour-selector__input"></span>
+          </label>
+  
+          <label class="tour-selector__field">
+            <span class="tour-selector__label">Эл. почта</span>
+            <span class="tour-selector__input"></span>
+          </label>
+  
+          <button class="btn btn_orange tour-selector__btn tour-selector__btn_orange" type="button">
+            Подобрать тур
+          </button>
+        </article>
+      </div>
+    </div>
+  </section>
 </main>
+
 <footer class="footer " id="footer">
   <hr class="footer__line">
   <div class="footer__container container">
@@ -358,19 +511,22 @@
         <hr class="footer__social-line" aria-hidden="true">
         <div class="footer__social-inner">
           <div class="footer__social-row">
-            <svg class="footer__social-icon" >
-                <use href="/club-travel/sprite.svg#icon-instagram"></use>
-            </svg>
             <a
               href="https://www.instagram.com/"
-              class="footer__social-link link-state">@booking.clubstravel.ee
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer__social-link link-state">
+              <svg class="footer__social-icon"  focusable="false" >
+                  <use href="/club-travel/sprite.svg#icon-instagram"></use>
+              </svg>
+              <span>@booking.clubstravel.ee</span>
             </a>
           </div>
           <picture class="footer__social-photo" >
-              <source media="(min-width:769px)" srcset="/club-travel/assets/webp/social-D1TaRoQj.webp" type="image/webp">
+              <source media="(min-width:769px)" srcset="/club-travel/assets/webp/social-DjDRm8Y8.webp" type="image/webp">
           
-                  <source media="(max-width:768px)" srcset="/club-travel/assets/webp/social-D1TaRoQj.webp" type="image/webp">
-              <img src="/club-travel/assets/jpg/social-B_hVhY6J.jpg" alt="Social messenger" loading="lazy">
+                  <source media="(max-width:768px)" srcset="/club-travel/assets/webp/social-DjDRm8Y8.webp" type="image/webp">
+              <img src="/club-travel/assets/jpg/social-DN3aN2mD.jpg" alt="Social messenger" loading="lazy">
           </picture>
           
         </div>
