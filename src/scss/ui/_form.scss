@@ -4,11 +4,13 @@
 @use "@/scss/utils/media" as media;
 
 .form {
+    position: relative;
     width: 100%;
     max-width: 427px;
     margin: 0 auto;
     background-color: #fff;
     border-radius: 10px;
+    z-index: 1;
 
     @include media.max-width(sm) {
         width: 350px;

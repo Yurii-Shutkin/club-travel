@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    {{>layout/head title="Club Travel, Регистрация" hrefStyle="signup-style"}}
+</head>
+
+{{>layout/header}}
+{{>layout/burger-menu}}
+<main>
+    <div class="user-services-bg signup-bg">
+        <div class="form">
+            <div class="form-container">
+                <p class="form social-header">Зарегистрируйтесь используя соц. сети</p>
+
+                <div class="form social-buttons">
+                    <button type="button" class="btn_social btn_social--facebook">
+                        {{>ui/svg id="facebook" className="social-icon"}}
+                        Войти с помощью Facebook
+                    </button>
+
+                    <button type="button" class="btn_social btn_social--google">
+                        {{>ui/svg id="google" className="social-icon"}}
+                        Войти с помощью Google
+                    </button>
+                </div>
+
+                <div class="divider">или</div>
+
+                <form>
+                    <div class="input-group">
+                        <label>E-mail</label>
+                        <input type="email">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Пароль</label>
+                        <input type="password">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Повторите пароль</label>
+                        <input type="password">
+                    </div>
+
+                    <div class="button-row">
+                        <button type="button" class="btn btn_bordered">ВХОД</button>
+                        <button type="submit" class="btn btn_orange">РЕГИСТРАЦИЯ</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="form footer-links">
+                <a href="#" clas]s="link-basic link-basic--white">Политика конфиденциальности</a>
+                <a href="#" class="link-basic--white">Политика использования</a>
+            </div>
+        </div>
+    </div>
+</main>
+{{>layout/footer}}
+</body>
+
+</html>
