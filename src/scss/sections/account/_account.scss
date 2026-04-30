@@ -1,0 +1,32 @@
+.account-page {
+  &__hero {
+    .main-hero__swiper {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1366 / 320;
+    }
+  }
+}
+
+.account {
+  &__container {
+    padding-top: 0;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 316px minmax(0, 1fr);
+    gap: 48px;
+    align-items: flex-start;
+  }
+
+  &__sidebar {
+    min-width: 0;
+  }
+
+  &__content {
+    min-width: 0;
+    padding-top: 20px;
+    padding-bottom: 100px;
+  }
+}

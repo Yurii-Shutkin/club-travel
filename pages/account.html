@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    {{> layout/head}}
+
+    <title>Личный кабинет</title>
+
+    <link rel="stylesheet" href="/src/scss/pages/account-style.scss" />
+  </head>
+
+  <body class="account-page">
+    {{> layout/header}}
+
+    <div class="account-page__hero">{{> sections/common/main-hero}}</div>
+
+    {{> sections/account/account}} {{> layout/footer}}
+
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/pages/account.js"></script>
+  </body>
+</html>

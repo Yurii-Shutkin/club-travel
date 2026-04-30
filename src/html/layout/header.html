@@ -44,25 +44,32 @@
         </ul>
       </address>
 
-      <div class="header__account-menu">
+      <div class="header__account-menu header__account-menu_guest">
         <button
           class="header__account"
           type="button"
           aria-label="Личный кабинет"
           aria-expanded="false"
           aria-controls="account-dropdown"
+          data-auth-url="index.html"
+          data-account-url="{{links.customerAccount.href}}"
         >
           {{> ui/svg className="header__account-icon" id="user" }}
+          <span class="header__account-initials" aria-hidden="true"></span>
         </button>
 
         <div
           class="header__account-dropdown"
           id="account-dropdown"
           aria-label="Меню личного кабинета"
+          aria-hidden="true"
         >
           <ul class="header__account-list">
             <li class="header__account-item">
-              <a class="header__account-link" href="index.html">
+              <a
+                class="header__account-link"
+                href="{{links.customerAccount.href}}"
+              >
                 {{> ui/svg className="header__account-item-icon" id="ticket" }}
                 <span class="header__account-item-text">Мои заказы</span>
               </a>

@@ -1,0 +1,218 @@
+.account-orders {
+  width: 100%;
+
+  &__title {
+    margin: 0 0 24px;
+
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: #111111;
+  }
+
+  &__card {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+  }
+
+  &__table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    min-width: 780px;
+    border-collapse: collapse;
+  }
+
+  &__row {
+    border-bottom: 1px solid #dddddd;
+  }
+
+  &__cell {
+    padding: 18px 16px;
+
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 400;
+    color: #303030;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  &__cell_head {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    font-size: 15px;
+    font-weight: 700;
+    color: #111111;
+  }
+
+  &__status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 96px;
+    min-height: 24px;
+    padding: 4px 12px;
+    border-radius: 5px;
+
+    font-size: 13px;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  &__status_paid {
+    background-color: #d8e8d8;
+    color: #4f8f4f;
+  }
+
+  &__status_processing {
+    background-color: #ffe5d2;
+    color: #ff7a1a;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 18px 18px 20px;
+  }
+
+  &__counter {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.4;
+    color: #666666;
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__pagination-button {
+    min-width: 58px;
+    min-height: 30px;
+    padding: 5px 12px;
+    border: none;
+    border-radius: 3px;
+
+    background-color: #ff7a1a;
+
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #ffffff;
+    cursor: pointer;
+
+    transition:
+      background-color 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  &__pagination-button:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  &__pagination-text {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.4;
+    color: #666666;
+    white-space: nowrap;
+  }
+
+  &__pagination-current {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 27px;
+    min-height: 27px;
+    margin: 0 4px;
+    border-radius: 4px;
+
+    background-color: #e5e5e5;
+    color: #333333;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &__pagination-button:not(:disabled):hover {
+      background-color: #e86d12;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__title {
+      font-size: 28px;
+    }
+
+    &__cell {
+      padding: 16px 14px;
+      font-size: 15px;
+    }
+
+    &__footer {
+      gap: 18px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__title {
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    &__footer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__pagination {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    &__title {
+      font-size: 24px;
+    }
+
+    &__cell {
+      padding: 14px 12px;
+      font-size: 14px;
+    }
+
+    &__cell_head {
+      font-size: 14px;
+    }
+
+    &__footer {
+      padding: 16px 14px;
+    }
+
+    &__pagination {
+      gap: 10px;
+    }
+
+    &__pagination-text {
+      font-size: 14px;
+    }
+
+    &__pagination-button {
+      min-width: 54px;
+      padding-inline: 10px;
+    }
+  }
+}

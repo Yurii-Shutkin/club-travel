@@ -1,0 +1,67 @@
+<aside class="account-profile">
+  <div class="account-profile__card">
+    <div class="account-profile__avatar" data-account-profile-avatar>
+      <span
+        class="account-profile__avatar-initials"
+        data-account-profile-initials
+      >
+        К
+      </span>
+    </div>
+
+    <h2 class="account-profile__name" data-account-profile-name>
+      Имя пользователя
+    </h2>
+
+    <nav class="account-profile__nav">
+      <a
+        class="account-profile__nav-link account-profile__nav-link_active"
+        href="#account-orders"
+      >
+        <span class="account-profile__nav-icon">
+          {{> ui/svg className="account-profile__nav-svg" id="ticket" }}
+        </span>
+
+        <span class="account-profile__nav-text">Мои заказы</span>
+      </a>
+
+      <button class="account-profile__nav-link" type="button">
+        <span class="account-profile__nav-icon">
+          {{> ui/svg className="account-profile__nav-svg" id="payment-card" }}
+        </span>
+
+        <span class="account-profile__nav-text">История платежей</span>
+      </button>
+
+      <button class="account-profile__nav-link" type="button">
+        <span class="account-profile__nav-icon">
+          {{> ui/svg className="account-profile__nav-svg" id="settings" }}
+        </span>
+
+        <span class="account-profile__nav-text">Настройки</span>
+      </button>
+
+      <button
+        class="account-profile__nav-link account-profile__nav-link_logout"
+        type="button"
+        data-account-logout
+      >
+        <span class="account-profile__nav-icon">
+          {{> ui/svg className="account-profile__nav-svg" id="exit" }}
+        </span>
+
+        <span class="account-profile__nav-text">Выход</span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="account-profile__policies">
+    <a class="account-profile__policy-link" href="#">
+      Политика конфиденциальности
+    </a>
+
+    <a class="account-profile__policy-link" href="#">
+      Политика использования
+    </a>
+  </div>
+</aside>
