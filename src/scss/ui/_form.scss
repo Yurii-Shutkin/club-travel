@@ -1,0 +1,119 @@
+@use "@/scss/ui/btn";
+@use "@/scss/ui/link-basic";
+@use "@/scss/utils/variables" as *;
+@use "@/scss/utils/media" as media;
+
+.form {
+    width: 100%;
+    max-width: 427px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+
+    @include media.max-width(sm) {
+        width: 350px;
+    }
+
+    &-container {
+        padding: 33px 28px;
+        margin-bottom: 16px;
+        width: 100%;
+    }
+
+    .social-header {
+        color: #999;
+        font-size: 14px;
+        margin-bottom: 30px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .social-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .social-buttons {
+        padding: 0 4px;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        margin-bottom: 32px;
+        width: 100%;
+    }
+
+    .divider {
+        display: flex;
+        align-items: center;
+        color: #ccc;
+        margin: 20px 0 26px 0;
+    }
+
+    .divider::before,
+    .divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #eee;
+        margin: 0 10px;
+    }
+
+    .input-group {
+        text-align: left;
+        margin-bottom: 14px;
+    }
+
+    .input-group label {
+        display: block;
+        color: #999;
+        font-size: 13px;
+        margin-bottom: 6px;
+        margin-left: 16px;
+    }
+
+    .label-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .link-basic {
+            margin-bottom: 5px;
+            margin-right: 11px;
+        }
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background: #fdfdfd;
+    }
+
+    .button-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-top: 30px;
+
+        @include media.max-width(sm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .footer-links {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+        background: none;
+
+        a {
+            display: block;
+            color: white;
+            text-decoration: underline;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+    }
+}

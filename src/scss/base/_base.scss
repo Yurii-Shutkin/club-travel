@@ -29,6 +29,7 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #D97706;
 }
+
 // Open Sans  400,700
 // Roboto  400,600
 body {
@@ -42,12 +43,13 @@ body {
     max-width: 1366px;
     margin: 0 auto;
     padding: 0 98px;
+
     @include media.max-width(md) {
         padding: 0 20px;
     }
 }
 
-.title{
+.title {
     font-weight: 700;
     font-size: 26px;
     letter-spacing: 0.05em;
@@ -56,15 +58,15 @@ body {
 
 picture {
     overflow: hidden;
+
     & img {
         width: 100%;
         height: 100%;
     }
 }
 
-
-
-
-
-
-
+.user-services-bg {
+    background: url('@/assets/image/components/promo-support/bg.webp') no-repeat center center;
+    background-size: cover;
+    padding-top: 120px;
+}
