@@ -67,13 +67,17 @@
         <hr class="footer__social-line" aria-hidden="true">
         <div class="footer__social-inner">
           <div class="footer__social-row">
-            {{> ui/svg
-              className="footer__social-icon"
-              id="instagram"
-            }}
             <a
               href="{{links.instagram.href}}"
-              class="footer__social-link link-state">@booking.clubstravel.ee
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer__social-link link-state">
+              {{> ui/svg
+                className="footer__social-icon"
+                id="instagram"
+                dataAttr='focusable="false"'
+              }}
+              <span>@booking.clubstravel.ee</span>
             </a>
           </div>
           {{> ui/picture

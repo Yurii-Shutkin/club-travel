@@ -27,7 +27,7 @@
       }
 
       @include media.max-width(sm) {
-        padding: 16px 11px 0px 13px;
+        padding: 16px 11px 9px 13px;
       }
     }
   }
@@ -81,6 +81,8 @@
     justify-content: center;
     width: auto;
     height: auto;
+    padding: 0;
+    border: none;
     background-color: transparent;
     cursor: pointer;
 
@@ -95,7 +97,7 @@
     }
 
     @include media.max-width(sm) {
-      display: inline-block;
+      display: inline-flex;
       width: auto;
       height: auto;
     }
@@ -238,6 +240,26 @@
   &__account-menu {
     position: relative;
 
+    &_guest {
+      .header__account-icon {
+        display: block;
+      }
+
+      .header__account-initials {
+        display: none;
+      }
+    }
+
+    &_authorized {
+      .header__account-icon {
+        display: none;
+      }
+
+      .header__account-initials {
+        display: flex;
+      }
+    }
+
     &_open {
       .header__account-dropdown {
         opacity: 1;
@@ -260,6 +282,7 @@
   }
 
   &__account-icon {
+    display: block;
     transform: translateX(-4px);
 
     @media screen and (max-width: 1365px) {
@@ -269,6 +292,39 @@
 
     @include media.max-width(sm) {
       transform: translateY(-6px);
+    }
+  }
+
+  &__account-initials {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $blue;
+    color: #fff;
+    font-weight: 600;
+    font-size: 8px;
+    line-height: 1;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 1365px) {
+      width: 27px;
+      height: 27px;
+      font-size: 10px;
+    }
+
+    @include media.max-width(md) {
+      width: 27px;
+      height: 27px;
+      font-size: 10px;
+    }
+
+    @include media.max-width(sm) {
+      width: 27px;
+      height: 27px;
+      font-size: 10px;
     }
   }
 

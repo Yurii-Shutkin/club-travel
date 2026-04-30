@@ -1,0 +1,65 @@
+<section class="account-orders" id="account-orders">
+  <h1 class="account-orders__title">Заказы</h1>
+
+  <div class="account-orders__card">
+    <div class="account-orders__table-wrapper">
+      <table class="account-orders__table">
+        <thead class="account-orders__head">
+          <tr class="account-orders__row">
+            <th class="account-orders__cell account-orders__cell_head">
+              Номер заказа
+            </th>
+            <th class="account-orders__cell account-orders__cell_head">
+              Сумма
+            </th>
+            <th class="account-orders__cell account-orders__cell_head">
+              E-mail
+            </th>
+            <th class="account-orders__cell account-orders__cell_head">
+              Статус
+            </th>
+            <th class="account-orders__cell account-orders__cell_head">Дата</th>
+          </tr>
+        </thead>
+
+        <tbody class="account-orders__body" data-account-orders-body></tbody>
+      </table>
+    </div>
+
+    <div class="account-orders__footer">
+      <p class="account-orders__counter" data-account-orders-counter>
+        Показано 0 из 0
+      </p>
+
+      <div class="account-orders__pagination">
+        <button
+          class="account-orders__pagination-button"
+          type="button"
+          data-account-orders-prev
+        >
+          Назад
+        </button>
+
+        <p class="account-orders__pagination-text">
+          Страница
+          <span
+            class="account-orders__pagination-current"
+            data-account-orders-page
+          >
+            1
+          </span>
+          из
+          <span data-account-orders-total-pages>1</span>
+        </p>
+
+        <button
+          class="account-orders__pagination-button"
+          type="button"
+          data-account-orders-next
+        >
+          Вперед
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

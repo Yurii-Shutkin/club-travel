@@ -1,0 +1,262 @@
+@use '@/scss/utils/media' as media;
+
+.account-profile {
+  width: 100%;
+
+  &__card {
+    box-sizing: border-box;
+    padding: 25px 24px 24px;
+
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  }
+
+  &__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 126px;
+    height: 126px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+
+    background-color: #f2f2f2;
+    overflow: hidden;
+  }
+
+  &__avatar-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__avatar-initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #1f4f9f;
+
+    font-family: var(--font-family);
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 400;
+    color: #ffffff;
+  }
+
+  &__name {
+    margin: 0 0 26px;
+
+    font-family: var(--font-family);
+    font-size: 26px;
+    line-height: 1.35;
+    font-weight: 400;
+    text-align: center;
+    color: var(--text);
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    margin-inline: -11px;
+  }
+
+  &__nav-link {
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    width: 100%;
+    min-height: 42px;
+    padding: 0 13px;
+    border: none;
+    border-radius: 4px;
+
+    background-color: transparent;
+
+    font-family: var(--font-family);
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-align: left;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  &__nav-link_active {
+    background-color: rgba(196, 196, 196, 0.2);
+  }
+
+  &__nav-link_logout {
+    position: relative;
+
+    align-items: flex-start;
+    gap: 16px;
+
+    min-height: auto;
+    padding: 16px 11px 0;
+    border-radius: 0;
+
+    font-size: 14px;
+    line-height: 1.35;
+    color: #7d7d7d;
+  }
+
+  &__nav-link_logout::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 11px;
+
+    width: calc(100% - 22px);
+    height: 1px;
+
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  &__nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 24px;
+    height: 24px;
+
+    color: var(--primary);
+    fill: var(--primary);
+  }
+
+  &__nav-link_logout &__nav-icon {
+    color: #999999;
+    fill: #999999;
+  }
+
+  &__nav-link_logout &__nav-text {
+    padding-top: 2px;
+  }
+
+  &__nav-svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+
+    color: inherit;
+    fill: currentColor;
+  }
+
+  &__nav-svg use,
+  &__nav-svg path {
+    fill: currentColor;
+  }
+
+  &__nav-text {
+    display: block;
+  }
+
+  &__policies {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    margin-top: 28px;
+  }
+
+  &__policy-link {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    color: #555;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &__nav-link:hover {
+      background-color: rgba(196, 196, 196, 0.2);
+    }
+
+    &__policy-link:hover {
+      color: var(--primary);
+    }
+  }
+
+  @include media.max-width(xxs) {
+    &__card {
+      padding: 24px 13px 24px;
+      transform: translateX(-5px);
+    }
+
+    &__avatar {
+      width: 126px;
+      height: 126px;
+      margin-bottom: 20px;
+    }
+
+    &__name {
+      margin-bottom: 26px;
+
+      font-size: 26px;
+      line-height: 1.35;
+    }
+
+    &__nav {
+      gap: 5px;
+      margin-inline: 0;
+    }
+
+    &__nav-link {
+      min-height: 42px;
+      padding: 0 13px;
+      gap: 15px;
+
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    &__nav-link_logout {
+      gap: 16px;
+      padding: 16px 11px 0;
+
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    &__nav-link_logout::before {
+      left: 11px;
+      right: 11px;
+      width: auto;
+    }
+
+    &__nav-link_logout &__nav-text {
+      padding-top: 2px;
+    }
+
+    &__nav-icon,
+    &__nav-svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &__policies {
+      margin-top: 28px;
+      gap: 6px;
+    }
+
+    &__policy-link {
+      font-size: 14px;
+    }
+  }
+}
