@@ -1,0 +1,46 @@
+<section class="user-services-bg auth-bg">
+    <div class="form">
+        <div class="form-container">
+            <p class="form social-header">Войдите используя соц. сети</p>
+
+            <div class="form social-buttons">
+                <button type="button" class="btn_social btn_social--facebook">
+                    {{>ui/svg id="facebook" className="social-icon"}}
+                    Войти с помощью Facebook
+                </button>
+
+                <button type="button" class="btn_social btn_social--google">
+                    {{>ui/svg id="google" className="social-icon"}}
+                    Войти с помощью Google
+                </button>
+            </div>
+
+            <div class="divider">или</div>
+
+            <form>
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email">
+                </div>
+
+                <div class="input-group">
+                    <div class="label-row">
+                        <label>Пароль</label>
+                        <a href="#" class="link-basic">Забыли пароль?</a>
+                    </div>
+                    <input type="password">
+                </div>
+
+                <div class="button-row">
+                    <a href="signup.html" class="btn btn_bordered">РЕГИСТРАЦИЯ</a>
+                    <button type="submit" class="btn btn_orange">ВХОД</button>
+                </div>
+            </form>
+
+        </div>
+        <div class="form footer-links">
+            <a href="#" class="link-basic link-basic--white">Политика конфиденциальности</a>
+            <a href="#" class="link-basic--white">Политика использования</a>
+        </div>
+    </div>
+</section>
