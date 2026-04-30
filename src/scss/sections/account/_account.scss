@@ -1,3 +1,5 @@
+@use '@/scss/utils/media' as media;
+
 .account-page {
   &__hero {
     .main-hero__swiper {
@@ -28,5 +30,31 @@
     min-width: 0;
     padding-top: 20px;
     padding-bottom: 100px;
+  }
+
+  @include media.max-width(xxs) {
+    &__container {
+      padding-top: 31px;
+    }
+
+    &__layout {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    &__content {
+      padding-top: 0;
+      padding-bottom: 40px;
+    }
+  }
+}
+
+@include media.max-width(xxs) {
+  .account-page {
+    &__hero {
+      .main-hero__swiper {
+        aspect-ratio: 360 / 191;
+      }
+    }
   }
 }

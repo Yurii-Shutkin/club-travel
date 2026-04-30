@@ -1,3 +1,5 @@
+@use '@/scss/utils/media' as media;
+
 .account-profile {
   width: 100%;
 
@@ -188,6 +190,73 @@
 
     &__policy-link:hover {
       color: var(--primary);
+    }
+  }
+
+  @include media.max-width(xxs) {
+    &__card {
+      padding: 24px 13px 24px;
+      transform: translateX(-5px);
+    }
+
+    &__avatar {
+      width: 126px;
+      height: 126px;
+      margin-bottom: 20px;
+    }
+
+    &__name {
+      margin-bottom: 26px;
+
+      font-size: 26px;
+      line-height: 1.35;
+    }
+
+    &__nav {
+      gap: 5px;
+      margin-inline: 0;
+    }
+
+    &__nav-link {
+      min-height: 42px;
+      padding: 0 13px;
+      gap: 15px;
+
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    &__nav-link_logout {
+      gap: 16px;
+      padding: 16px 11px 0;
+
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    &__nav-link_logout::before {
+      left: 11px;
+      right: 11px;
+      width: auto;
+    }
+
+    &__nav-link_logout &__nav-text {
+      padding-top: 2px;
+    }
+
+    &__nav-icon,
+    &__nav-svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &__policies {
+      margin-top: 28px;
+      gap: 6px;
+    }
+
+    &__policy-link {
+      font-size: 14px;
     }
   }
 }
