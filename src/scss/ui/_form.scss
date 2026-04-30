@@ -23,11 +23,13 @@
     }
 
     .social-header {
-        color: #999;
+        color: $text-secondary;
         font-size: 14px;
         margin-bottom: 30px;
         text-align: center;
         width: 100%;
+        max-width: 350px;
+        opacity: .5;
     }
 
     .social-icon {
@@ -101,6 +103,10 @@
         @include media.max-width(sm) {
             grid-template-columns: 1fr;
         }
+    }
+
+    &-btn {
+        width: 100%;
     }
 
     .footer-links {
