@@ -6,7 +6,7 @@
 
     &__container {
         position: relative;
-        padding: 80px 20px 95px 20px;
+        padding: 80px 20px 94px 20px;
         @include media.max-width(sm) {
             padding: 30px 10px 45px 10px;
         }
@@ -21,6 +21,16 @@
         z-index: 2;
         & img{
             object-fit: cover;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(8, 44, 99, 0.8);
+            z-index: 1;
         }
     }
 
@@ -194,20 +204,21 @@
         }
     }
 
-    &__contacts-row {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-    }
-
     &__contacts-icon {
         width: 24px;
         aspect-ratio: 1;
         opacity: 0.5;
-        fill: #fff;
+
     }
 
     &__link {
-        width: 180px;
+        //width: 180px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        fill: #fff;
+        &:nth-child(n){
+            flex-shrink: 0;
+        }
     }
 }

@@ -22,7 +22,8 @@
           <a
             href="{{links.tourSupport.href}}"
             class="promo-support__request-btn btn btn_orange">
-            ЗАПОЛНИТЬ ЗАЯВКУ НА ПОИСК ТУРА</a>
+            ЗАПОЛНИТЬ ЗАЯВКУ НА ПОИСК ТУРА
+          </a>
         </div>
         <div class="promo-support__divider">
           <hr class="promo-support__divider-line" aria-hidden="true">
@@ -30,7 +31,8 @@
           <hr class="promo-support__divider-line" aria-hidden="true">
         </div>
         <div class="promo-support__promo-consultant promo-consultant">
-          <h3 class="promo-consultant__title">Свяжитесь с нашим консультантом</h3>
+          <h3
+            class="promo-consultant__title">Свяжитесь с нашим консультантом</h3>
           <div class="promo-consultant__inner">
             {{> ui/picture
               className="promo-consultant__photo"
@@ -40,35 +42,36 @@
             }}
             <div class="promo-consultant__content">
               <h4 class="promo-consultant__name">Марина Каасик</h4>
-              <p class="promo-consultant__sub-fio">Специалист по подбору туров</p>
+              <p class="promo-consultant__sub-fio">Специалист по подбору туров
+              </p>
               <div class="promo-consultant__contacts">
-                <div class="promo-consultant__contacts-row">
+                <a
+                  href="tel:+3726130633"
+                  class="promo-consultant__link link-state">
                   {{> ui/svg
                     className="promo-consultant__contacts-icon"
                     id="phone"
                   }}
-                  <a
-                    href="tel:+3726130633"
-                    class="promo-consultant__link link-state">+372 6 130 633</a>
-                </div>
-                <div class="promo-consultant__contacts-row">
+                  <span>+372 6 130 633</span>
+                </a>
+                <a
+                  href="mailto:contact@email.ee"
+                  class="promo-consultant__link link-state">
                   {{> ui/svg
                     className="promo-consultant__contacts-icon"
                     id="mail"
                   }}
-                  <a
-                    href="mailto:contact@email.ee"
-                    class="promo-consultant__link link-state">contact@email.ee</a>
-                </div>
-                <div class="promo-consultant__contacts-row">
+                  <span>contact@email.ee</span>
+                </a>
+                <a
+                  href="{{links.messenger.href}}"
+                  class="promo-consultant__link link-state">
                   {{> ui/svg
                     className="promo-consultant__contacts-icon"
                     id="messanger"
                   }}
-                  <a
-                    href="{{links.messenger.href}}"
-                    class="promo-consultant__link link-state">Написать в Messenger</a>
-                </div>
+                  <span>Написать в Messenger</span>
+                </a>
               </div>
             </div>
           </div>

@@ -23,7 +23,7 @@
     &__picture {
         aspect-ratio: 38/25;
         @include media.max-width(sm) {
-            aspect-ratio: 32/25;
+            aspect-ratio: 34/25;
         }
 
     }

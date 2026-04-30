@@ -7,6 +7,7 @@ export const links = {
   directions: { href: '#!' },
   company: { href: './company.html' },
   tourSupport: { href: '#!' },
+  tourRequest: { href: './tour-request.html' },
   customerAccount: { href: './account.html' },
   contacts: { href: '#!' },
   authorization: { href: '#!' },

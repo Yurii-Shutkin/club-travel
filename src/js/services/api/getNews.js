@@ -26,11 +26,13 @@ export const getNews = async () => {
         id: country.id,
         date: new Date(country.createdAt).toLocaleDateString('ru-RU', {
           day: 'numeric',
-          month: 'long'
-        }) || null,
+          month: 'long',
+          year: 'numeric'
+        }).replace(/\s*г\.?$/, '') || null,
         countryName: country.name || null,
         image: optimizedImage,
         title: country.title || null,
+        price: country.price || null,
       };
     });
     console.log(normalized);
@@ -40,6 +42,4 @@ export const getNews = async () => {
     return [];
   }
 }
-
-
 

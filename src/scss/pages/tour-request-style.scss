@@ -5,15 +5,12 @@
 @use 'swiper/css/navigation';
 
 @use '@/scss/ui/states';
-@use '@/scss/ui/intro-header';
-@use '@/scss/ui/badge';
-
-@use '@/scss/components/news-card';
+@use '@/scss/ui/btn';
 
 @use '@/scss/layout/header';
 @use '@/scss/layout/burger-menu';
 
 @use '@/scss/sections/common/main-hero';
-@use '@/scss/sections/company/news';
+@use '@/scss/sections/tour-request/tour-selector';
 
 @use '@/scss/layout/footer';

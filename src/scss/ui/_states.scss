@@ -1,17 +1,21 @@
 @use "@/scss/utils/media" as media;
 .link-state {
-    transition: color .3s ease;
+    transition: color .3s ease, fill .3s ease;
     &:focus-visible {
         color: #f68521;
+        fill:  #f68521;
         opacity: 0.8;
     }
     @media (hover: hover) and (pointer: fine) {
         &:hover:not(:active) {
             color: #f68521;
+            fill:  #f68521;
             opacity: 0.8;
         }
     }
     &:active{
         color: #a85309;
+        fill:  #a85309;
+        opacity: 1;
     }
 }
