@@ -6,7 +6,6 @@
   &__card {
     box-sizing: border-box;
     padding: 25px 24px 24px;
-
     background-color: #ffffff;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
   }
@@ -15,12 +14,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 126px;
     height: 126px;
     margin: 0 auto 20px;
     border-radius: 50%;
-
     background-color: #f2f2f2;
     overflow: hidden;
   }
@@ -36,24 +33,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     height: 100%;
-
     background-color: #1f4f9f;
-
     font-family: var(--font-family);
     font-size: 36px;
-    font-weight: 400;
     color: #ffffff;
   }
 
   &__name {
     margin: 0 0 26px;
-
     font-family: var(--font-family);
     font-size: 26px;
-    font-weight: 400;
     text-align: center;
     color: var(--text);
   }
@@ -62,7 +53,6 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-
     margin-inline: -11px;
   }
 
@@ -71,23 +61,18 @@
     display: flex;
     align-items: center;
     gap: 14px;
-
     width: 100%;
     min-height: 42px;
     padding: 0 10px;
     border: none;
     border-radius: 4px;
-
     background-color: transparent;
-
     font-family: var(--font-family);
     font-size: 18px;
-    font-weight: 400;
     text-align: left;
     color: #000000;
     text-decoration: none;
     cursor: pointer;
-
     transition:
       background-color 0.2s ease,
       color 0.2s ease;
@@ -99,14 +84,11 @@
 
   &__nav-link_logout {
     position: relative;
-
     align-items: flex-start;
     gap: 16px;
-
     min-height: auto;
     padding: 16px 11px 0;
     border-radius: 0;
-
     font-size: 14px;
     color: #7d7d7d;
   }
@@ -114,12 +96,9 @@
   &__nav-link_logout::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 11px;
-
-    width: calc(100% - 22px);
+    inset-block-start: 0;
+    inset-inline: 11px;
     height: 1px;
-
     background-color: rgba(0, 0, 0, 0.2);
   }
 
@@ -128,10 +107,8 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-
     width: 24px;
     height: 24px;
-
     color: var(--primary);
     fill: var(--primary);
   }
@@ -149,7 +126,6 @@
     display: block;
     width: 24px;
     height: 24px;
-
     color: inherit;
     fill: currentColor;
   }
@@ -159,21 +135,15 @@
     fill: currentColor;
   }
 
-  &__nav-text {
-    display: block;
-  }
-
   &__policies {
     display: flex;
     flex-direction: column;
     gap: 6px;
-
     margin-top: 28px;
   }
 
   &__policy-link {
     font-family: var(--font-family);
-    font-weight: 400;
     font-size: 14px;
     color: #555;
   }
@@ -196,7 +166,7 @@
     max-width: 100%;
 
     &__card {
-      padding: 22px 20px 22px;
+      padding: 22px 20px;
     }
 
     &__nav {
@@ -206,60 +176,16 @@
 
   @include media.max-width(xxs) {
     &__card {
-      padding: 25px 13px 24px;
       max-width: 314px;
-    }
-
-    &__avatar {
-      width: 126px;
-      height: 126px;
-      margin-bottom: 20px;
+      padding: 25px 13px 24px;
     }
 
     &__name {
       margin-bottom: 22px;
-      font-size: 26px;
     }
 
     &__nav {
-      gap: 5px;
       margin-inline: 0;
-    }
-
-    &__nav-link {
-      font-size: 18px;
-    }
-
-    &__nav-link_logout {
-      gap: 16px;
-      padding: 16px 11px 0;
-
-      font-size: 14px;
-    }
-
-    &__nav-link_logout::before {
-      left: 11px;
-      right: 11px;
-      width: auto;
-    }
-
-    &__nav-link_logout &__nav-text {
-      padding-top: 2px;
-    }
-
-    &__nav-icon,
-    &__nav-svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    &__policies {
-      margin-top: 28px;
-      gap: 6px;
-    }
-
-    &__policy-link {
-      font-size: 14px;
     }
   }
 }
