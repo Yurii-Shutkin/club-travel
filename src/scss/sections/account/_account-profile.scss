@@ -44,7 +44,6 @@
 
     font-family: var(--font-family);
     font-size: 36px;
-    line-height: 1;
     font-weight: 400;
     color: #ffffff;
   }
@@ -54,7 +53,6 @@
 
     font-family: var(--font-family);
     font-size: 26px;
-    line-height: 1.35;
     font-weight: 400;
     text-align: center;
     color: var(--text);
@@ -70,14 +68,13 @@
 
   &__nav-link {
     box-sizing: border-box;
-
     display: flex;
     align-items: center;
     gap: 14px;
 
     width: 100%;
     min-height: 42px;
-    padding: 0 13px;
+    padding: 0 10px;
     border: none;
     border-radius: 4px;
 
@@ -85,7 +82,6 @@
 
     font-family: var(--font-family);
     font-size: 18px;
-    line-height: 1.2;
     font-weight: 400;
     text-align: left;
     color: #000000;
@@ -112,7 +108,6 @@
     border-radius: 0;
 
     font-size: 14px;
-    line-height: 1.35;
     color: #7d7d7d;
   }
 
@@ -193,10 +188,26 @@
     }
   }
 
+  @include media.max-width(md) {
+    max-width: 316px;
+  }
+
+  @include media.max-width(xs) {
+    max-width: 100%;
+
+    &__card {
+      padding: 22px 20px 22px;
+    }
+
+    &__nav {
+      margin-inline: -7px;
+    }
+  }
+
   @include media.max-width(xxs) {
     &__card {
-      padding: 24px 13px 24px;
-      transform: translateX(-5px);
+      padding: 25px 13px 24px;
+      max-width: 314px;
     }
 
     &__avatar {
@@ -206,10 +217,8 @@
     }
 
     &__name {
-      margin-bottom: 26px;
-
+      margin-bottom: 22px;
       font-size: 26px;
-      line-height: 1.35;
     }
 
     &__nav {
@@ -218,12 +227,7 @@
     }
 
     &__nav-link {
-      min-height: 42px;
-      padding: 0 13px;
-      gap: 15px;
-
       font-size: 18px;
-      line-height: 1.2;
     }
 
     &__nav-link_logout {
@@ -231,7 +235,6 @@
       padding: 16px 11px 0;
 
       font-size: 14px;
-      line-height: 1.35;
     }
 
     &__nav-link_logout::before {
