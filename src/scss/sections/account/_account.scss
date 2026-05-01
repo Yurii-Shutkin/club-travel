@@ -1,19 +1,15 @@
 @use '@/scss/utils/media' as media;
 
 .account-page {
-  &__hero {
-    .main-hero__swiper {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1366 / 320;
-    }
+  &__hero .main-hero__swiper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1366 / 320;
   }
 
   @include media.max-width(xxs) {
-    &__hero {
-      .main-hero__swiper {
-        aspect-ratio: 360 / 191;
-      }
+    &__hero .main-hero__swiper {
+      aspect-ratio: 360 / 191;
     }
   }
 }
@@ -30,14 +26,13 @@
     align-items: flex-start;
   }
 
-  &__sidebar {
+  &__sidebar,
+  &__content {
     min-width: 0;
   }
 
   &__content {
-    min-width: 0;
-    padding-top: 20px;
-    padding-bottom: 100px;
+    padding: 20px 0 100px;
   }
 
   @include media.max-width(lg) {
@@ -54,8 +49,7 @@
     &__content {
       width: 100%;
       max-width: 430px;
-      padding-top: 0;
-      padding-bottom: 80px;
+      padding: 0 0 80px;
     }
   }
 
