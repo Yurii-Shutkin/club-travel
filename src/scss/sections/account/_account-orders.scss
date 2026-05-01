@@ -2,38 +2,116 @@
 
 .account-orders {
   width: 100%;
+  min-width: 0;
 
   &__title {
     margin: 0 0 24px;
-
     font-weight: 400;
     font-size: 26px;
     color: #000;
+
+    @media (max-width: 1365px) {
+      margin: 0 auto 24px;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1365px) {
+      width: 100%;
+      max-width: 620px;
+    }
+
+    @include media.max-width(lg) {
+      max-width: 680px;
+    }
+
+    @include media.max-width(sm) {
+      max-width: 520px;
+      margin-bottom: 20px;
+    }
+
+    @include media.max-width(xs) {
+      max-width: 440px;
+    }
+
+    @include media.max-width(xxs) {
+      max-width: 100%;
+    }
   }
 
   &__card {
     width: 100%;
+    min-width: 0;
     background-color: #ffffff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+
+    @media (max-width: 1365px) {
+      margin: 0 auto;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    @media (min-width: 1281px) and (max-width: 1365px) {
+      max-width: 620px;
+    }
+
+    @include media.max-width(lg) {
+      max-width: 680px;
+    }
+
+    @include media.max-width(sm) {
+      max-width: 520px;
+    }
+
+    @include media.max-width(xs) {
+      max-width: 440px;
+    }
+
+    @include media.max-width(xxs) {
+      max-width: 100%;
+    }
   }
 
   &__table-wrapper {
     width: 100%;
-    overflow-x: auto;
+    min-width: 0;
+    overflow: visible;
   }
 
   &__table {
     display: block;
     width: 100%;
-    min-width: 800px;
+    min-width: 0;
     border-collapse: initial;
     border-spacing: 0;
   }
 
-  &__head,
+  &__head {
+    display: block;
+    width: 100%;
+    min-width: 0;
+
+    @media (max-width: 1365px) {
+      display: none;
+    }
+  }
+
   &__body {
     display: block;
     width: 100%;
+    min-width: 0;
+
+    @media (max-width: 1365px) {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    @include media.max-width(sm) {
+      gap: 16px;
+    }
+
+    @include media.max-width(xxs) {
+      gap: 12px;
+    }
   }
 
   &__row {
@@ -53,6 +131,7 @@
     align-items: center;
 
     width: 100%;
+    min-width: 0;
     padding: 0 15px 0 24px;
     border-bottom: 1px solid #dddddd;
   }
@@ -64,12 +143,42 @@
 
   &__body &__row {
     min-height: 64px;
+
+    @media (max-width: 1365px) {
+      display: block;
+      min-height: 0;
+      width: 100%;
+      border-bottom: none;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+    }
+
+    @media (min-width: 1281px) and (max-width: 1365px) {
+      padding: 24px;
+    }
+
+    @include media.max-width(lg) {
+      padding: 22px 22px 24px;
+    }
+
+    @include media.max-width(sm) {
+      padding: 20px 20px 22px;
+    }
+
+    @include media.max-width(xs) {
+      padding: 18px 16px 20px;
+    }
+
+    @include media.max-width(xxs) {
+      padding: 10px 0 24px;
+      box-shadow: none;
+    }
   }
 
   &__cell {
     display: flex;
     align-items: center;
-
+    min-width: 0;
     padding: 0;
 
     font-family: var(--font-family);
@@ -78,27 +187,129 @@
     color: var(--text);
     white-space: nowrap;
     text-align: left;
+
+    @media (max-width: 1365px) {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      column-gap: 14px;
+
+      width: 100%;
+      white-space: normal;
+    }
+
+    @include media.max-width(sm) {
+      grid-template-columns: 110px minmax(0, 1fr);
+      column-gap: 18px;
+    }
+
+    @include media.max-width(xs) {
+      grid-template-columns: 100px minmax(0, 1fr);
+      column-gap: 14px;
+    }
+
+    @include media.max-width(xxs) {
+      grid-template-columns: 105px minmax(0, 1fr);
+      column-gap: 26px;
+    }
+  }
+
+  &__cell + &__cell {
+    @media (max-width: 1365px) {
+      margin-top: 10px;
+    }
+  }
+
+  &__cell::before {
+    @media (max-width: 1365px) {
+      flex-shrink: 0;
+
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 14px;
+      color: #666666;
+    }
   }
 
   &__cell:nth-child(1) {
     grid-column: 1;
+
+    @media (max-width: 1365px) {
+      grid-column: auto;
+      justify-content: initial;
+
+      font-weight: 700;
+      color: var(--text);
+    }
+  }
+
+  &__cell:nth-child(1)::before {
+    @media (max-width: 1365px) {
+      content: 'Номер заказа';
+
+      font-weight: 700;
+      color: #666666;
+    }
   }
 
   &__cell:nth-child(2) {
     grid-column: 3;
+
+    @media (max-width: 1365px) {
+      grid-column: auto;
+      justify-content: initial;
+    }
+  }
+
+  &__cell:nth-child(2)::before {
+    @media (max-width: 1365px) {
+      content: 'Сумма';
+    }
   }
 
   &__cell:nth-child(3) {
     grid-column: 5;
+
+    @media (max-width: 1365px) {
+      grid-column: auto;
+      justify-content: initial;
+    }
+  }
+
+  &__cell:nth-child(3)::before {
+    @media (max-width: 1365px) {
+      content: 'E-mail';
+    }
   }
 
   &__cell:nth-child(4) {
     grid-column: 7;
     justify-content: center;
+
+    @media (max-width: 1365px) {
+      grid-column: auto;
+      justify-content: initial;
+    }
+  }
+
+  &__cell:nth-child(4)::before {
+    @media (max-width: 1365px) {
+      content: 'Статус';
+    }
   }
 
   &__cell:nth-child(5) {
     grid-column: 9;
+
+    @media (max-width: 1365px) {
+      grid-column: auto;
+      justify-content: initial;
+    }
+  }
+
+  &__cell:nth-child(5)::before {
+    @media (max-width: 1365px) {
+      content: 'Дата';
+    }
   }
 
   &__cell_head {
@@ -114,13 +325,14 @@
     align-items: center;
     justify-content: center;
 
-    width: 99px;
+    padding: 5px 20px;
+    max-width: 99px;
     min-height: 26px;
-    padding: 4px 19px;
-    border-radius: 7px;
+    border-radius: 6px;
 
     font-size: 12px;
     font-weight: 400;
+    white-space: nowrap;
   }
 
   &__status_paid {
@@ -140,6 +352,39 @@
     gap: 24px;
 
     padding: 20px 23px 20px 12px;
+
+    @media (max-width: 1365px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+
+      margin-top: 18px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+    }
+
+    @media (min-width: 1281px) and (max-width: 1365px) {
+      padding: 20px 24px;
+    }
+
+    @include media.max-width(lg) {
+      padding: 18px 22px;
+    }
+
+    @include media.max-width(sm) {
+      gap: 14px;
+      padding: 16px 20px 18px;
+    }
+
+    @include media.max-width(xs) {
+      padding: 14px 16px 16px;
+    }
+
+    @include media.max-width(xxs) {
+      gap: 12px;
+      padding: 12px;
+      box-shadow: none;
+    }
   }
 
   &__counter {
@@ -148,12 +393,22 @@
     font-weight: 400;
     font-size: 16px;
     color: #555;
+
+    @include media.max-width(sm) {
+      font-size: 14px;
+    }
   }
 
   &__pagination {
     display: flex;
     align-items: center;
     gap: 20px;
+
+    @media (max-width: 1365px) {
+      width: 100%;
+      justify-content: space-between;
+      gap: 8px;
+    }
   }
 
   &__pagination-button {
@@ -177,10 +432,18 @@
     transition:
       background-color 0.2s ease,
       opacity 0.2s ease;
+
+    @media (max-width: 1365px) {
+      padding: 4px 12px;
+    }
   }
 
   &__pagination-button:last-child {
     width: 72px;
+
+    @media (max-width: 1365px) {
+      width: auto;
+    }
   }
 
   &__pagination-button:disabled {
@@ -199,6 +462,11 @@
     font-size: 16px;
     color: #555;
     white-space: nowrap;
+
+    @media (max-width: 1365px) {
+      gap: 4px;
+      font-size: 14px;
+    }
   }
 
   &__pagination-current {
@@ -213,154 +481,27 @@
 
     background-color: rgba(196, 196, 196, 0.5);
     color: #333333;
+
+    @media (max-width: 1365px) {
+      width: 20px;
+      height: 20px;
+      font-size: 13px;
+    }
+
+    @include media.max-width(sm) {
+      width: 24px;
+      height: 24px;
+    }
+
+    @include media.max-width(xxs) {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   @media (hover: hover) and (pointer: fine) {
     &__pagination-button:not(:disabled):hover {
       background-color: #e86d12;
-    }
-  }
-
-  @include media.max-width(xxs) {
-    &__card {
-      box-shadow: none;
-    }
-
-    &__table-wrapper {
-      overflow: visible;
-    }
-
-    &__table {
-      min-width: 0;
-    }
-
-    &__head {
-      display: none;
-    }
-
-    &__body &__row {
-      display: block;
-      min-height: 0;
-      padding: 7px 0px 24px;
-      margin-bottom: 14px;
-    }
-
-    &__cell {
-      display: grid;
-      grid-template-columns: 105px minmax(0, 1fr);
-      align-items: center;
-      column-gap: 26px;
-
-      width: 100%;
-      padding: 0;
-
-      white-space: normal;
-
-      font-family: var(--font-family);
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 1.35;
-      color: var(--text);
-      text-align: left;
-    }
-
-    &__cell + &__cell {
-      margin-top: 8px;
-    }
-
-    &__cell::before {
-      font-family: var(--font-family);
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 1.35;
-      color: #666666;
-    }
-
-    &__cell:nth-child(1) {
-      font-weight: 700;
-      font-size: 16px;
-      color: var(--text);
-    }
-
-    &__cell:nth-child(1)::before {
-      content: 'Номер заказа';
-
-      font-weight: 700;
-      font-size: 14px;
-      color: #666666;
-    }
-
-    &__cell:nth-child(2)::before {
-      content: 'Сумма';
-    }
-
-    &__cell:nth-child(3)::before {
-      content: 'E-mail';
-    }
-
-    &__cell:nth-child(4)::before {
-      content: 'Статус';
-    }
-
-    &__cell:nth-child(5)::before {
-      content: 'Дата';
-    }
-
-    &__cell:nth-child(1),
-    &__cell:nth-child(2),
-    &__cell:nth-child(3),
-    &__cell:nth-child(4),
-    &__cell:nth-child(5) {
-      grid-column: auto;
-      justify-content: initial;
-    }
-
-    &__status {
-      max-width: 135px;
-      min-height: 36px;
-      padding: 8px 18px;
-      border-radius: 8px;
-      font-weight: 400;
-      font-size: 12px;
-      white-space: nowrap;
-    }
-
-    &__footer {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
-
-      padding: 12px;
-    }
-
-    &__counter {
-      font-size: 14px;
-    }
-
-    &__pagination {
-      width: 100%;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    &__pagination-button {
-      padding: 4px 12px;
-      font-size: 14px;
-    }
-
-    &__pagination-button:last-child {
-      width: auto;
-    }
-
-    &__pagination-text {
-      gap: 4px;
-      font-size: 14px;
-    }
-
-    &__pagination-current {
-      width: 20px;
-      height: 20px;
-      font-size: 13px;
     }
   }
 }
