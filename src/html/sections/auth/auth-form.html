@@ -17,18 +17,19 @@
 
             <div class="divider">или</div>
 
-            <form>
+            <form data-form="auth" id="form">
                 <div class="input-group">
-                    <label>E-mail</label>
-                    <input type="email">
+                    <label for="email">E-mail</label>
+                    <input type="email" mane="email" id="email" autocomplete="email">
                 </div>
 
                 <div class="input-group">
                     <div class="label-row">
-                        <label>Пароль</label>
+                        <label for="password-login">Пароль</label>
                         <a href="#" class="link-basic">Забыли пароль?</a>
                     </div>
-                    <input type="password">
+                    <input type="password" id="password-login" name="password-login" id="password-login"
+                        autocomplete="current-password">
                 </div>
 
                 <div class="button-row">
