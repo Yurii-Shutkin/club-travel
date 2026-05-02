@@ -6,11 +6,13 @@
 
 @use '@/scss/ui/states';
 @use '@/scss/ui/btn';
+@use '@/scss/ui/rating';
 
 @use '@/scss/layout/header';
 @use '@/scss/layout/burger-menu';
 
 @use '@/scss/sections/common/main-hero';
 @use '@/scss/sections/tour-request/tour-selector';
+@use '@/scss/sections/tour-request/callback-request';
 
 @use '@/scss/layout/footer';
