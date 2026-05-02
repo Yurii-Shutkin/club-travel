@@ -1,0 +1,14 @@
+@use "@/scss/utils/variables" as *;
+
+.link-basic {
+    color: $blue;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+
+    &--white {
+        color: #fff;
+    }
+}

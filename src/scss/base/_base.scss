@@ -6,6 +6,8 @@
     --green: #{vars.$green};
     --blue: #{vars.$blue};
     --text: #{vars.$text};
+    --text-secondary: #{vars.$text-secondary};
+    --facebook: #{vars.$facebook};
 
     --font-family: #{vars.$font-family};
     --second-family: #{vars.$second-family};
@@ -29,6 +31,7 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #D97706;
 }
+
 // Open Sans  400,700
 // Roboto  400,600
 body {
@@ -42,12 +45,13 @@ body {
     max-width: 1366px;
     margin: 0 auto;
     padding: 0 98px;
+
     @include media.max-width(md) {
         padding: 0 20px;
     }
 }
 
-.title{
+.title {
     font-weight: 700;
     font-size: 26px;
     letter-spacing: 0.05em;
@@ -56,15 +60,61 @@ body {
 
 picture {
     overflow: hidden;
+
     & img {
         width: 100%;
         height: 100%;
     }
 }
 
+input,
+button,
+textarea,
+select {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+input {
+
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+
+    -webkit-box-shadow: 0 0 0 1000px #fdfdfd inset !important;
+    -webkit-text-fill-color: var(--text) !important;
+    border: 1px solid #ddd !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
 
 
 
+.user-services-bg {
+    position: relative;
+    background: url('@/assets/image/components/promo-support/bg.webp') no-repeat center center;
+    background-size: cover;
+    padding-top: 120px;
 
-
-
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(0deg, rgba(8, 44, 99, 0.80) 0%, rgba(8, 44, 99, 0.80) 100%);
+    }
+}

@@ -1,0 +1,48 @@
+<section class="user-services-bg signup-bg">
+    <div class="form">
+        <div class="form-container">
+            <p class="form social-header">Зарегистрируйтесь используя соц. сети</p>
+
+            <div class="form social-buttons">
+                <button type="button" class="btn_social btn_social--facebook">
+                    {{>ui/svg id="facebook" className="social-icon"}}
+                    Войти с помощью Facebook
+                </button>
+
+                <button type="button" class="btn_social btn_social--google">
+                    {{>ui/svg id="google" className="social-icon"}}
+                    Войти с помощью Google
+                </button>
+            </div>
+
+            <div class="divider">или</div>
+
+            <form data-form="signup" id="form">
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" autocomplete="email">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Пароль</label>
+                    <input type="password" name="password" id="password" autocomplete="new-password">
+                </div>
+
+                <div class="input-group">
+                    <label for="password-confirm">Повторите пароль</label>
+                    <input type="password" name="password-confirm" id="password-confirm" autocomplete="new-password">
+                </div>
+
+                <div class="button-row">
+                    <a href="auth.html" class="btn btn_bordered">ВХОД</a>
+                    <button type="submit" class="btn btn_orange">РЕГИСТРАЦИЯ</button>
+                </div>
+            </form>
+
+        </div>
+        <div class="form footer-links">
+            <a href="#" class="link-basic link-basic--white">Политика конфиденциальности</a>
+            <a href="#" class="link-basic--white">Политика использования</a>
+        </div>
+    </div>
+</section>
