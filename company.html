@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/club-travel/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Club Travel, Кампании</title>    <script type="module" crossorigin src="/club-travel/assets/js/company-DeTxAW6p.js"></script>
-    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/render-news-cards-CfM5wEWr.js">
-    <link rel="stylesheet" crossorigin href="/club-travel/assets/css/company-DYCFS4mM.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Club Travel, Кампании</title>    <script type="module" crossorigin src="/club-travel/assets/js/company-BB-V_S4p.js"></script>
+    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-QTP0zqH0.js">
+    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/render-news-cards-CO1KInU2.js">
+    <link rel="stylesheet" crossorigin href="/club-travel/assets/css/company-BzCJ40uz.css">
   </head>
   <body class="company">
     <header class="header">
@@ -64,27 +65,34 @@
             </ul>
           </address>
     
-          <div class="header__account-menu">
+          <div class="header__account-menu header__account-menu_guest">
             <button
               class="header__account"
               type="button"
               aria-label="Личный кабинет"
               aria-expanded="false"
               aria-controls="account-dropdown"
+              data-auth-url="index.html"
+              data-account-url="./account.html"
             >
               <svg class="header__account-icon" >
                   <use href="/club-travel/sprite.svg#icon-user"></use>
               </svg>
+              <span class="header__account-initials" aria-hidden="true"></span>
             </button>
     
             <div
               class="header__account-dropdown"
               id="account-dropdown"
               aria-label="Меню личного кабинета"
+              aria-hidden="true"
             >
               <ul class="header__account-list">
                 <li class="header__account-item">
-                  <a class="header__account-link" href="index.html">
+                  <a
+                    class="header__account-link"
+                    href="./account.html"
+                  >
                     <svg class="header__account-item-icon" >
                         <use href="/club-travel/sprite.svg#icon-ticket"></use>
                     </svg>
