@@ -1,9 +1,5 @@
 @use "@/scss/utils/media" as media;
 .footer {
-    //margin-top: 82px;
-    //@include media.max-width(sm) {
-    //    margin-top: 42px;
-    //}
 
     &__line{
         background: #000;
@@ -22,6 +18,7 @@
 
         @include media.max-width(lg) {
             grid-template-columns: 2fr 3fr ;
+            gap: 60px 30px;
         }
         @include media.max-width(sm) {
             grid-template-columns: 1fr;
@@ -31,6 +28,12 @@
     }
 
     &__destinations {
+        @include media.max-width(lg) {
+            grid-column: span 2;
+        }
+        @include media.max-width(sm) {
+            grid-column: span 1;
+        }
     }
 
     &__destinations-title {
@@ -46,7 +49,7 @@
         font-size: 18px;
         color: var(--text);
         margin-top: 22px;
-        @include media.max-width(sm) {
+        @include media.max-width(lg) {
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         }
         @include media.max-width(xxs) {
@@ -126,21 +129,15 @@
     &__social {
         justify-self: end;
         display: flex;
-        //align-items: center;
         justify-content: space-between;
         gap: 40px;
         width: 95%;
         @include media.max-width(lg) {
-            grid-column: span 2;
+            width: max-content;
             display: block;
-            justify-self: center;
         }
         @include media.max-width(sm) {
-            grid-column: span 1;
-        }
-        @include media.max-width(xs) {
-            width: 100%;
-
+            justify-self: center;
         }
 
     }
@@ -206,19 +203,23 @@
         width: 25px;
         aspect-ratio: 1;
     }
-    &__social-photo{
+
+    &__social-widget-wrap{
         margin-top: 24px;
-        width: 100%;
+        width: 332px;
         @include media.max-width(lg) {
             margin-top: 18px;
         }
+    }
+
+    &__social-widget{
+        width: 332px;
     }
 
     &__rights {
         display: flex;
         align-items: center;
         justify-content: center;
-        //gap: 16px;
         margin-top: 57px;
         padding: 15px 0;
         background: #f4f4f4;

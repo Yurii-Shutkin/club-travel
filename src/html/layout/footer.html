@@ -80,12 +80,12 @@
               <span>@booking.clubstravel.ee</span>
             </a>
           </div>
-          {{> ui/picture
-            className="footer__social-photo"
-            alt="Social messenger"
-            desktop="/src/assets/image/footer/social.jpg"
-            desktopWebp="/src/assets/image/footer/social.webp"
-          }}
+          <div class="footer__social-widget-wrap">
+            {{> ui/facebook-widget
+              widgetClass="footer__social-widget"
+              pageUrl="https://www.facebook.com/yourPage"
+            }}
+          </div>
         </div>
       </div>
     </div>

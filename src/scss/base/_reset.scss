@@ -4,14 +4,6 @@
     border: 0;
 }
 
-button {
-    cursor: pointer;
-    background: none;
-    border: none;
-    font: inherit;
-
-}
-
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -44,6 +36,27 @@ body {
 input, select, button, textarea {
     font: inherit;
     color: inherit;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+select,
+input[type="checkbox"],
+input[type="radio"] {
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea {
+    cursor: text;
 }
 
 textarea {
@@ -101,7 +114,3 @@ canvas {
     display: block;
     max-width: 100%;
 }
-
-
-
-

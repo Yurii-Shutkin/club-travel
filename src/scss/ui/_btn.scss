@@ -33,11 +33,28 @@
         }
     }
 
-    &_bordered {
-        border-radius: 6px;
+    &_bordered {  //_border-primary
         border: 1px solid var(--primary);
         background: #fff;
         color: var(--text);
+        transition: background .3s ease, color .3s ease, border-color .3s ease;
+
+        &:focus-visible {
+            background: rgba(207, 102, 11, 0.05);
+            border-color: #cf660b;
+            color: #cf660b;
+        }
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                background: rgba(207, 102, 11, 0.05);
+                border-color: #cf660b;
+                color: #cf660b;
+            }
+        }
+        &:active{
+            background: rgba(168, 83, 9, 0.1);
+            border-color: #a85309;
+        }
     }
 
     &_social {

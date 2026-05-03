@@ -1,0 +1,46 @@
+<div class="ask-consultant {{consultantClass}}">
+  <h3
+    class="ask-consultant__title">Свяжитесь с нашим консультантом</h3>
+  <div class="ask-consultant__inner">
+    {{> ui/picture
+      className="ask-consultant__photo"
+      alt="Марина Каасик"
+      desktop="/src/assets/image/components/promo-support/photo.jpg"
+      desktopWebp="/src/assets/image/components/promo-support/photo.webp"
+    }}
+    <div class="ask-consultant__content">
+      <h4 class="ask-consultant__name">Марина Каасик</h4>
+      <p class="ask-consultant__sub-fio">Специалист по подбору туров
+      </p>
+      <div class="ask-consultant__contacts">
+        <a
+          href="tel:+3726130633"
+          class="ask-consultant__link link-state">
+          {{> ui/svg
+            className="ask-consultant__contacts-icon"
+            id="phone"
+          }}
+          <span>+372 6 130 633</span>
+        </a>
+        <a
+          href="mailto:contact@email.ee"
+          class="ask-consultant__link link-state">
+          {{> ui/svg
+            className="ask-consultant__contacts-icon"
+            id="mail"
+          }}
+          <span>contact@email.ee</span>
+        </a>
+        <a
+          href="{{links.messenger.href}}"
+          class="ask-consultant__link link-state">
+          {{> ui/svg
+            className="ask-consultant__contacts-icon"
+            id="messanger"
+          }}
+          <span>Написать в Messenger</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

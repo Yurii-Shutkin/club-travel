@@ -1,0 +1,101 @@
+@use "@/scss/utils/media" as media;
+.callback-request {
+    width: min(100%, 524px);
+
+    &__inner {
+        margin: 0 0 0 3px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 36px;
+        color: var(--text);
+        @include media.max-width(xs) {
+            line-height: 1;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        color: var(--text);
+        margin-top: 15px;
+        width: 90%;
+        @include media.max-width(xs) {
+            margin-top: 26px;
+            width: 100%;
+        }
+    }
+
+    &__text_muted {
+        opacity: 0.5;
+        margin-top: 31px;
+        @include media.max-width(xs) {
+            margin-top: 12px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        color: var(--text);
+        margin-top: 31px;
+        @include media.max-width(xs) {
+            margin-top: 14px;
+        }
+    }
+
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr 170px;
+        margin-top: 16px;
+        @include media.max-width(xs) {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+    }
+
+    &__input {
+        min-height: 42px;
+        border: 1px solid #d2d8df;
+        padding: 0 12px;
+        border-radius: 6px 0 0 6px;
+        @include media.max-width(xs) {
+            border-radius: 6px;
+        }
+    }
+
+    &__btn {
+        border-radius: 0 6px 6px 0;
+        @include media.max-width(xs) {
+            border-radius: 6px;
+        }
+    }
+
+    &__ask-consultant {
+        margin-top: 31px;
+        @include media.max-width(xs) {
+            margin-top: 24px;
+        }
+        & .ask-consultant__photo{
+            aspect-ratio: 3/2;
+            width: 270px;
+            @include media.max-width(xs) {
+                aspect-ratio: 16/9;
+                width: 100%;
+                max-width: none;
+            }
+        }
+        & .ask-consultant__contacts-icon{
+            fill: var(--green);
+        }
+        & .ask-consultant__inner{
+            @include media.max-width(sd) {
+                flex-direction: row;
+            }
+            @include media.max-width(xs) {
+                flex-direction: column;
+                gap: 26px;
+            }
+        }
+    }
+
+}
