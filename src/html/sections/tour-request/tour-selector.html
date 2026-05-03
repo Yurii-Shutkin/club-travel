@@ -1,4 +1,4 @@
-<section class="tour-selector" data-tour-selector>
+<form class="tour-selector {{classBlock}}" data-tour-selector>
   <ul
     class="tour-selector__tabs" role="tablist"
     aria-label="Етапи підбору туру">
@@ -28,8 +28,10 @@
           <span class="tour-selector__label">Направление</span>
           <span class="tour-selector__input-wrap">
           {{> ui/svg className="tour-selector__input-arrow" id="chevron" }}
-            <select class="tour-selector__input" data-field="direction">
-          <option value="">Выберите направление</option>
+            <select class="tour-selector__input" data-field="destination">
+              <template class="tour-selector__input-template" data-destination-template>
+                <option value=""></option>
+              </template>
         </select>
           </span>
         </label>
@@ -64,7 +66,7 @@
           <div class="tour-selector__counter" data-counter>
             <button
               class="tour-selector__counter-btn" type="button"
-              data-counter-action="decrement"
+              data-counter-decrement
               aria-label="Уменьшить количество дней">
               <span></span>
             </button>
@@ -73,7 +75,7 @@
             </output>
             <button
               class="tour-selector__counter-btn" type="button"
-              data-counter-action="increment"
+              data-counter-increment
               aria-label="Увеличить количество дней">
               <span></span>
               <span></span>
@@ -82,8 +84,8 @@
         </div>
       </div>
       <button
-        class="tour-selector__btn btn btn_border-orange" type="button"
-        data-btn-next>Дальше
+        class="tour-selector__btn btn btn_bordered" type="button"
+        data-btn-goto="preferences">Дальше
       </button>
     </div>
 
@@ -159,16 +161,10 @@
             placeholder="Ваши пожелания"></textarea>
         </label>
       </div>
-      <div class="tour-selector__btn-wrap">
         <button
-          class="tour-selector__btn btn btn_border-orange" type="button"
-          data-btn-prev>Назад
+          class="tour-selector__btn btn btn_bordered" type="button"
+          data-btn-goto="contacts">Дальше
         </button>
-        <button
-          class="tour-selector__btn btn btn_border-orange" type="button"
-          data-btn-next>Дальше
-        </button>
-      </div>
     </div>
 
     <div class="tour-selector__panel" data-panel="contacts" hidden>
@@ -192,16 +188,10 @@
             placeholder="mail@example.com" />
         </label>
       </div>
-      <div class="tour-selector__btn-wrap">
-        <button
-          class="tour-selector__btn btn btn_border-orange" type="button"
-          data-btn-prev>Назад
-        </button>
         <button
           class="tour-selector__btn btn btn_orange" type="button"
           data-tour-action>подобрать тур
         </button>
-      </div>
     </div>
   </div>
-</section>
+</form>

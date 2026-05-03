@@ -21,12 +21,15 @@
     &__swiper-cards {
         margin-top: 20px;
         @include media.max-width(sm) {
-            margin-top: 26px;
+            margin-top: 16px;
         }
     }
 
     &__footer {
         margin-top: 32px;
+        @include media.max-width(sm) {
+            margin-top: 22px;
+        }
     }
 }
 

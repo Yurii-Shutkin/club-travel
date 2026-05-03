@@ -1,0 +1,34 @@
+@use "@/scss/utils/media" as media;
+.tour-selection{
+    position: relative;
+    z-index: 5;
+    padding-bottom: 73px;
+    @include media.max-width(sm) {
+        padding-bottom: 78px;
+    }
+
+    &__inner{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        @include media.max-width(sd) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__callback-request{
+        @include media.max-width(sm) {
+            align-self: center;
+        }
+    }
+    &__tour-selector{
+        margin-top: -60px;
+        min-width: 350px;
+        @include media.max-width(sd) {
+            margin-top: 0;
+            min-width: auto;
+        }
+    }
+}
