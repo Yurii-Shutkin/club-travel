@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="ru">
-<head>
   {{>layout/head title="Club Travel, Запрос тура" hrefStyle="tour-request-style"}}
-</head>
 <body class="tour-request">
 {{>layout/header}}
 {{>layout/burger-menu}}
@@ -11,8 +9,8 @@
   {{>sections/common/main-hero}}
   {{>sections/tour-request/tour-selection}}
 </main>
-
 {{>layout/footer}}
-<script type="module" src="/src/js/pages/tour-request.js"></script>
+
+{{>layout/script srcJs="tour-request"}}
 </body>
 </html>
