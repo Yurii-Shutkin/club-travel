@@ -1,5 +1,4 @@
 @use "@/scss/utils/media" as media;
-@use "@/scss/utils/variables" as *;
 
 .btn {
     border-radius: 6px;
@@ -34,7 +33,6 @@
     }
 
     &_bordered {
-        //_border-primary
         border: 1px solid var(--primary);
         background: #fff;
         color: var(--text);
@@ -42,15 +40,15 @@
 
         &:focus-visible {
             background: rgba(207, 102, 11, 0.05);
-            border-color: #cf660b;
-            color: #cf660b;
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         @media (hover: hover) and (pointer: fine) {
             &:hover:not(:active) {
                 background: rgba(207, 102, 11, 0.05);
-                border-color: #cf660b;
-                color: #cf660b;
+                border-color: var(--primary);
+                color: var(--primary);
             }
         }
 
@@ -79,13 +77,13 @@
         }
 
         &_facebook {
-            background: $facebook;
-            color: white;
+            background: var(--facebook);
+            color: var(--white);
         }
 
         &_google {
-            background-color: white;
-            color: #555;
+            background-color: var(--white);
+            color: var(--text);
             border: 1px solid #ddd;
         }
     }
