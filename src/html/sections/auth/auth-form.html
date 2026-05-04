@@ -1,16 +1,16 @@
 <section class="user-services-bg auth-bg">
     <div class="form">
-        <div class="form-container">
-            <p class="form social-header">Войдите используя соц. сети</p>
+        <div class="form__container">
+            <p class="form social__header">Войдите используя соц. сети</p>
 
-            <div class="form social-buttons">
+            <div class="form social__buttons">
                 <button type="button" class="btn__social btn__social_facebook">
-                    {{>ui/svg id="facebook" className="social-icon"}}
+                    {{>ui/svg id="facebook" className="social social__icon"}}
                     Войти с помощью Facebook
                 </button>
 
                 <button type="button" class="btn__social btn__social_google">
-                    {{>ui/svg id="google" className="social-icon"}}
+                    {{>ui/svg id="google" className="social social__icon"}}
                     Войти с помощью Google
                 </button>
             </div>
@@ -18,13 +18,13 @@
             <div class="divider">или</div>
 
             <form data-form="auth" id="form">
-                <div class="input-group">
+                <div class="input input__group">
                     <label for="email">E-mail</label>
                     <input type="email" mane="email" id="email" autocomplete="email">
                 </div>
 
-                <div class="input-group">
-                    <div class="label-row">
+                <div class="input input__group">
+                    <div class="label__row">
                         <label for="password-login">Пароль</label>
                         <a href="password-recovery.html" class="link-basic">Забыли пароль?</a>
                     </div>
@@ -32,14 +32,14 @@
                         autocomplete="current-password">
                 </div>
 
-                <div class="button-row">
+                <div class="button__row">
                     <a href="signup.html" class="btn btn_bordered">РЕГИСТРАЦИЯ</a>
                     <button type="submit" class="btn btn_orange">ВХОД</button>
                 </div>
             </form>
 
         </div>
-        <div class="form footer-links">
+        <div class="policy-links">
             <a href="#" class="link-basic link-basic_white">Политика конфиденциальности</a>
             <a href="#" class="link-basic_white">Политика использования</a>
         </div>
