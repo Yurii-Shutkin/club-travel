@@ -1,17 +1,17 @@
 <section class="user-services-bg auth-bg">
-    <div class="form">
-        <div class="form__container">
-            <p class="form social__header">Войдите используя соц. сети</p>
+    <div class="base-form">
+        <div class="base-form__container">
+            <p class="social-header">Войдите используя соц. сети</p>
 
-            <div class="form social__buttons">
+            <div class="social-buttons">
                 <button type="button" class="btn btn__social btn__social_facebook">
-                    {{>ui/svg id="facebook" className="social social__icon"}}
+                    {{>ui/svg id="facebook" className="social social-icon"}}
                     Войти с помощью Facebook
                 </button>
 
                 <a href="https://club-travel-strapi.onrender.com/api/connect/google"
                     class="btn btn__social btn__social_google">
-                    {{>ui/svg id="google" className="social social__icon"}}
+                    {{>ui/svg id="google" className="social social-icon"}}
                     Войти с помощью Google
                 </a>
             </div>
@@ -19,21 +19,21 @@
             <div class="divider">или</div>
 
             <form data-form="auth" id="form">
-                <div class="input input__group">
-                    <label for="email">E-mail</label>
-                    <input type="email" mane="email" id="email" autocomplete="email">
+                <div class="base-form__input-group">
+                    <label class="base-form__label" for="email">E-mail</label>
+                    <input class="base-form__input" type="email" mane="email" id="email" autocomplete="email">
                 </div>
 
-                <div class="input input__group">
-                    <div class="label__row">
-                        <label for="password-login">Пароль</label>
+                <div class="base-form__input-group">
+                    <div class="base-form__label-row">
+                        <label class="base-form__label" for="password-login">Пароль</label>
                         <a href="password-recovery.html" class="link-basic">Забыли пароль?</a>
                     </div>
-                    <input type="password" id="password-login" name="password-login" id="password-login"
-                        autocomplete="current-password">
+                    <input class="base-form__input" type="password" id="password-login" name="password-login"
+                        id="password-login" autocomplete="current-password">
                 </div>
 
-                <div class="button__row">
+                <div class="base-form__button-row">
                     <a href="signup.html" class="btn btn_bordered">РЕГИСТРАЦИЯ</a>
                     <button type="submit" class="btn btn_orange">ВХОД</button>
                 </div>
