@@ -1,6 +1,6 @@
 export const links = {
   hotDeals: { href: '#!' },
-  main: { href: './index.html' },
+  main: { href: './main.html' },
   searchResults: { href: '#!' },
   searchResultsCalendar: { href: '#!' },
   hotel: { href: '#!' },
