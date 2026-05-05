@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="ru">
   <head>
+    <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/club-travel/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,13 +9,16 @@
       rel="stylesheet"
       href="/src/scss/pages/.scss">
     <title></title>
+      <script type="module" crossorigin src="/club-travel/assets/js/account-COqE4CiL.js"></script>
+      <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-QTP0zqH0.js">
+      <link rel="modulepreload" crossorigin href="/club-travel/assets/js/constants-BgVmj0Yo.js">
+      <link rel="modulepreload" crossorigin href="/club-travel/assets/js/render-news-cards-eWVzWhNF.js">
+      <link rel="modulepreload" crossorigin href="/club-travel/assets/js/getHotOffers-CvXao0PG.js">
+      <link rel="modulepreload" crossorigin href="/club-travel/assets/js/main-BuM233sI.js">
+      <link rel="stylesheet" crossorigin href="/club-travel/assets/css/account-4ZXQLEgX.css">
+    </head>
     <title>Личный кабинет</title>
 
-    <script type="module" crossorigin src="/club-travel/assets/js/account-CsZkHuW4.js"></script>
-    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-QTP0zqH0.js">
-    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/render-news-cards-CO1KInU2.js">
-    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/main-B0L2erZ_.js">
-    <link rel="stylesheet" crossorigin href="/club-travel/assets/css/account-U4fqOpCz.css">
   </head>
 
   <body class="account-page">
@@ -158,7 +162,7 @@
             <li class="header__main-item">
               <a
                 class="header__main-link header__main-link_campaigns"
-                href="index.html"
+                href="./company.html"
               >
                 <svg class="header__main-link-icon
                             header__main-link-icon_campaigns" >
@@ -179,7 +183,7 @@
             </li>
     
             <li class="header__main-item">
-              <a class="header__main-link" href="index.html">Запрос тура</a>
+              <a class="header__main-link" href="./tour-request.html">Запрос тура</a>
             </li>
     
             <li class="header__main-item">
@@ -478,13 +482,17 @@
               <span>@booking.clubstravel.ee</span>
             </a>
           </div>
-          <picture class="footer__social-photo" >
-              <source media="(min-width:769px)" srcset="/club-travel/assets/webp/social-DjDRm8Y8.webp" type="image/webp">
-          
-                  <source media="(max-width:768px)" srcset="/club-travel/assets/webp/social-DjDRm8Y8.webp" type="image/webp">
-              <img src="/club-travel/assets/jpg/social-DN3aN2mD.jpg" alt="Social messenger" loading="lazy">
-          </picture>
-          
+          <div class="footer__social-widget-wrap">
+            <div class="fb-page footer__social-widget"
+                 data-href="https://www.facebook.com/yourPage"
+                 data-tabs=""
+                 data-width=""
+                 data-height=""
+                 data-small-header="false"
+                 data-adapt-container-width="true"
+                 data-hide-cover="false"
+                 data-show-facepile="true">
+            </div>          </div>
         </div>
       </div>
     </div>

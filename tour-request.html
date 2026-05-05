@@ -1,15 +1,16 @@
 <!doctype html>
 <html lang="ru">
-<head>
+  <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/club-travel/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Club Travel, Подбор тура</title>  <script type="module" crossorigin src="/club-travel/assets/js/header-scroll-state-QTP0zqH0.js"></script>
-  <script type="module" crossorigin src="/club-travel/assets/js/render-news-cards-CO1KInU2.js"></script>
-  <script type="module" crossorigin src="/club-travel/assets/js/main-B0L2erZ_.js"></script>
-  <link rel="stylesheet" crossorigin href="/club-travel/assets/css/tour-request-DKPP4MdU.css">
-</head>
-<body class="tour-request">
+  <title>Club Travel, Запрос тура</title>
+    <script type="module" crossorigin src="/club-travel/assets/js/tour-request-xRd5PiP3.js"></script>
+    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-QTP0zqH0.js">
+    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/constants-BgVmj0Yo.js">
+    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/getHotOffers-CvXao0PG.js">
+    <link rel="stylesheet" crossorigin href="/club-travel/assets/css/tour-request-ajXy2_Lk.css">
+  </head><body class="tour-request">
 <header class="header">
   <div class="header__container container">
     <div class="header__panel">
@@ -150,7 +151,7 @@
         <li class="header__main-item">
           <a
             class="header__main-link header__main-link_campaigns"
-            href="index.html"
+            href="./company.html"
           >
             <svg class="header__main-link-icon
                         header__main-link-icon_campaigns" >
@@ -171,7 +172,7 @@
         </li>
 
         <li class="header__main-item">
-          <a class="header__main-link" href="index.html">Запрос тура</a>
+          <a class="header__main-link" href="./tour-request.html">Запрос тура</a>
         </li>
 
         <li class="header__main-item">
@@ -346,109 +347,282 @@
       </button>
     </div>
   </section>
-  <section class="tour-selector">
-    <div class="container">
-      <div class="tour-selector__grid">
-        <article class="tour-selector__card">
-          <ul class="tour-selector__tabs" aria-label="Крок 1">
-            <li class="tour-selector__tab is-active">Основное</li>
-            <li class="tour-selector__tab">Предпочтения</li>
-            <li class="tour-selector__tab">Контакты</li>
-          </ul>
-  
-          <label class="tour-selector__field">
-            <span class="tour-selector__label">Направление</span>
-            <span class="tour-selector__input">Болгария > Золотые пески</span>
-          </label>
-  
-          <label class="tour-selector__field">
-            <span class="tour-selector__label">Дата вылета</span>
-            <span class="tour-selector__input">25.06.2020 - 10.07.2020</span>
-          </label>
-  
-          <label class="tour-selector__field">
-            <span class="tour-selector__label">Гости</span>
-            <span class="tour-selector__input">Взрослых: 2; детей: 5</span>
-          </label>
-  
-          <div class="tour-selector__chips">
-            <span class="tour-selector__chip">Взрослых x2</span>
-            <span class="tour-selector__chip">15 лет x1</span>
-            <span class="tour-selector__chip">3 года x1</span>
-            <span class="tour-selector__chip">10 лет x3</span>
+  <section class="tour-selection">
+    <div class="tour-selection__container container">
+      <div class="tour-selection__inner">
+        <div class="callback-request tour-selection__callback-request">
+          <h1 class="callback-request__title">Нет времени искать тур?</h1>
+            <div class="callback-request__inner">
+              <p class="callback-request__text">Просто скажите нам как должен выглядеть отдых вашей мечты и мы найдём лучший тур для вас!</p>
+              <p class="callback-request__text callback-request__text_muted">Заполните короткую форму запроса на нашем сайте и мы свяжемся с вами в течении 1 часа в рабочее время</p>
+        
+              <p class="callback-request__subtitle">Оставьте свой номер телефона и мы вам перезвоним</p>
+              <form class="callback-request__form" action="#">
+                <input class="callback-request__input" type="tel" placeholder="Ваш номер телефона" aria-label="Ваш номер телефона" />
+                <button class="btn btn_orange callback-request__btn" type="submit">Перезвонить</button>
+              </form>
+              <div class="ask-consultant callback-request__ask-consultant">
+                <h3
+                  class="ask-consultant__title">Свяжитесь с нашим консультантом</h3>
+                <div class="ask-consultant__inner">
+                  <picture class="ask-consultant__photo" >
+                      <source media="(min-width:769px)" srcset="/club-travel/assets/webp/photo-HEoXAHfC.webp" type="image/webp">
+                  
+                          <source media="(max-width:768px)" srcset="/club-travel/assets/webp/photo-HEoXAHfC.webp" type="image/webp">
+                      <img src="/club-travel/assets/jpg/photo-qRMxxpqG.jpg" alt="Марина Каасик" loading="lazy">
+                  </picture>
+                  
+                  <div class="ask-consultant__content">
+                    <h4 class="ask-consultant__name">Марина Каасик</h4>
+                    <p class="ask-consultant__sub-fio">Специалист по подбору туров
+                    </p>
+                    <div class="ask-consultant__contacts">
+                      <a
+                        href="tel:+3726130633"
+                        class="ask-consultant__link link-state">
+                        <svg class="ask-consultant__contacts-icon" >
+                            <use href="/club-travel/sprite.svg#icon-phone"></use>
+                        </svg>
+                        <span>+372 6 130 633</span>
+                      </a>
+                      <a
+                        href="mailto:contact@email.ee"
+                        class="ask-consultant__link link-state">
+                        <svg class="ask-consultant__contacts-icon" >
+                            <use href="/club-travel/sprite.svg#icon-mail"></use>
+                        </svg>
+                        <span>contact@email.ee</span>
+                      </a>
+                      <a
+                        href="https://m.me"
+                        class="ask-consultant__link link-state">
+                        <svg class="ask-consultant__contacts-icon" >
+                            <use href="/club-travel/sprite.svg#icon-messanger"></use>
+                        </svg>
+                        <span>Написать в Messenger</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>    </div>
           </div>
-  
-          <label class="tour-selector__field">
-            <span class="tour-selector__label">Длительность тура (дней)</span>
-            <span class="tour-selector__input tour-selector__input_center">12</span>
-          </label>
-  
-          <button class="btn tour-selector__btn" type="button">Дальше</button>
-        </article>
-  
-        <article class="tour-selector__card">
-          <ul class="tour-selector__tabs" aria-label="Крок 2">
-            <li class="tour-selector__tab">Основное</li>
-            <li class="tour-selector__tab is-active">Предпочтения</li>
-            <li class="tour-selector__tab">Контакты</li>
+        <form class="tour-selector tour-selection__tour-selector" data-tour-selector>
+          <ul
+            class="tour-selector__tabs" role="tablist"
+            aria-label="Етапи підбору туру">
+            <li>
+              <button
+                class="tour-selector__tab is-active" type="button" role="tab"
+                aria-selected="true" data-tab="basic">Основное
+              </button>
+            </li>
+            <li>
+              <button
+                class="tour-selector__tab" type="button" role="tab"
+                aria-selected="false" data-tab="preferences">Предпочтения
+              </button>
+            </li>
+            <li>
+              <button
+                class="tour-selector__tab" type="button" role="tab"
+                aria-selected="false" data-tab="contacts">Контакты
+              </button>
+            </li>
           </ul>
-  
-          <label class="tour-selector__field">
-            <span class="tour-selector__label">Желаемая цена на одного человека (€)</span>
-            <span class="tour-selector__input">12</span>
-          </label>
-  
-          <label class="tour-selector__field">
-            <span class="tour-selector__label">Питание</span>
-            <span class="tour-selector__input">Завтрак</span>
-          </label>
-  
-          <div class="tour-selector__field">
-            <span class="tour-selector__label">Категория отеля</span>
-            <div class="tour-selector__stars" aria-label="Рейтинг 4 із 5">
-              <span>★</span><span>★</span><span>★</span><span>★</span><span class="is-muted">★</span>
+          <div class="tour-selector__container">
+            <div class="tour-selector__panel is-active" data-panel="basic">
+              <div class="tour-selector__panel-body">
+                <label class="tour-selector__field">
+                  <span class="tour-selector__label">Направление</span>
+                  <span class="tour-selector__input-wrap">
+                  <svg class="tour-selector__input-arrow" >
+                      <use href="/club-travel/sprite.svg#icon-chevron"></use>
+                  </svg>
+                    <select class="tour-selector__input" data-field="destination">
+                      <template class="tour-selector__input-template" data-destination-template>
+                        <option value=""></option>
+                      </template>
+                </select>
+                  </span>
+                </label>
+                <label class="tour-selector__field">
+                  <span class="tour-selector__label">Дата вылета</span>
+                  <span class="tour-selector__input-wrap">
+                  <svg class="tour-selector__input-arrow" >
+                      <use href="/club-travel/sprite.svg#icon-chevron"></use>
+                  </svg>
+                    <select class="tour-selector__input" data-field="date-range">
+                  <option>25.06.2020 - 10.07.2020</option>
+                </select>
+                </span>
+                </label>
+                <label class="tour-selector__field">
+                  <span class="tour-selector__label">Гости</span>
+                  <span class="tour-selector__input-wrap">
+                  <svg class="tour-selector__input-arrow" >
+                      <use href="/club-travel/sprite.svg#icon-chevron"></use>
+                  </svg>
+                    <select class="tour-selector__input" data-field="guests">
+                  <option>Взрослых: 2; детей: 5</option>
+                </select>
+                  </span>
+                </label>
+        
+                <div class="tour-selector__chips" aria-label="Возрастные группы гостей">
+                  <span class="tour-selector__chip">Взрослых x2</span>
+                  <span class="tour-selector__chip">15 лет x1</span>
+                  <span class="tour-selector__chip">3 года x1</span>
+                  <span class="tour-selector__chip">10 лет x3</span>
+                </div>
+        
+                <div class="tour-selector__field  tour-selector__field_counter">
+                  <span class="tour-selector__label">Длительность тура (дней)</span>
+                  <div class="tour-selector__counter" data-counter>
+                    <button
+                      class="tour-selector__counter-btn" type="button"
+                      data-counter-decrement
+                      aria-label="Уменьшить количество дней">
+                      <span></span>
+                    </button>
+                    <output
+                      class="tour-selector__counter-value" data-counter-value>12
+                    </output>
+                    <button
+                      class="tour-selector__counter-btn" type="button"
+                      data-counter-increment
+                      aria-label="Увеличить количество дней">
+                      <span></span>
+                      <span></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="tour-selector__btn btn btn_bordered" type="button"
+                data-btn-goto="preferences">Дальше
+              </button>
+            </div>
+        
+            <div class="tour-selector__panel" data-panel="preferences" hidden>
+              <div class="tour-selector__panel-body">
+                <label class="tour-selector__field">
+                  <span
+                    class="tour-selector__label">Желаемая цена на одного человека (€)</span>
+                  <input
+                    class="tour-selector__input" type="number" inputmode="numeric"
+                    placeholder="Введите цену" />
+                </label>
+                <label class="tour-selector__field">
+                  <span class="tour-selector__label">Питание</span>
+                  <span class="tour-selector__input-wrap">
+                  <svg class="tour-selector__input-arrow" >
+                      <use href="/club-travel/sprite.svg#icon-chevron"></use>
+                  </svg>
+                    <select class="tour-selector__input">
+                  <option>Без питания</option>
+                  <option>Завтрак</option>
+                  <option>Затрак и ужин</option>
+                  <option>Завтрак, обед, ужин</option>
+                  <option>Всё включено</option>
+                  <option>Ультра: всё включено</option>
+                </select>
+                  </span>
+                </label>
+                <div class="tour-selector__field">
+                  <span
+                    class="tour-selector__label">Категория отеля</span>
+                  <div class="rating tour-selector__rating">
+                    <div class="rating__items">
+                      <input
+                        type="radio" id="star-5" name="hotel_rating" value="5"
+                        class="rating__input">
+                      <label for="star-5" class="rating__label">
+                        <svg class="rating__icon" >
+                            <use href="/club-travel/sprite.svg#icon-star"></use>
+                        </svg>
+                      </label>
+        
+                      <input
+                        type="radio" id="star-4" name="hotel_rating" value="4"
+                        class="rating__input">
+                      <label for="star-4" class="rating__label">
+                        <svg class="rating__icon" >
+                            <use href="/club-travel/sprite.svg#icon-star"></use>
+                        </svg>
+                      </label>
+        
+                      <input
+                        type="radio" id="star-3" name="hotel_rating" value="3"
+                        class="rating__input">
+                      <label for="star-3" class="rating__label">
+                        <svg class="rating__icon" >
+                            <use href="/club-travel/sprite.svg#icon-star"></use>
+                        </svg>
+                      </label>
+        
+                      <input
+                        type="radio" id="star-2" name="hotel_rating" value="2"
+                        class="rating__input">
+                      <label for="star-2" class="rating__label">
+                        <svg class="rating__icon" >
+                            <use href="/club-travel/sprite.svg#icon-star"></use>
+                        </svg>
+                      </label>
+        
+                      <input
+                        type="radio" id="star-1" name="hotel_rating" value="1"
+                        class="rating__input">
+                      <label for="star-1" class="rating__label">
+                        <svg class="rating__icon" >
+                            <use href="/club-travel/sprite.svg#icon-star"></use>
+                        </svg>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <label class="tour-selector__field">
+                  <span class="tour-selector__label">Пожелания</span>
+                  <textarea
+                    class="tour-selector__input tour-selector__input_area"
+                    placeholder="Ваши пожелания"></textarea>
+                </label>
+              </div>
+                <button
+                  class="tour-selector__btn btn btn_bordered" type="button"
+                  data-btn-goto="contacts">Дальше
+                </button>
+            </div>
+        
+            <div class="tour-selector__panel" data-panel="contacts" hidden>
+              <div class="tour-selector__panel-body">
+                <label class="tour-selector__field">
+                  <span class="tour-selector__label">Имя</span>
+                  <input
+                    class="tour-selector__input" type="text" autocomplete="name"
+                    placeholder="Введите имя" />
+                </label>
+                <label class="tour-selector__field">
+                  <span class="tour-selector__label">Телефон</span>
+                  <input
+                    class="tour-selector__input" type="tel" autocomplete="tel"
+                    placeholder="+380" />
+                </label>
+                <label class="tour-selector__field">
+                  <span class="tour-selector__label">Эл. почта</span>
+                  <input
+                    class="tour-selector__input" type="email" autocomplete="email"
+                    placeholder="mail@example.com" />
+                </label>
+              </div>
+                <button
+                  class="tour-selector__btn btn btn_orange" type="button"
+                  data-tour-action>подобрать тур
+                </button>
             </div>
           </div>
-  
-          <label class="tour-selector__field">
-            <span class="tour-selector__label">Пожелания</span>
-            <span class="tour-selector__input tour-selector__input_area"></span>
-          </label>
-  
-          <button class="btn tour-selector__btn" type="button">Дальше</button>
-        </article>
-  
-        <article class="tour-selector__card">
-          <ul class="tour-selector__tabs" aria-label="Крок 3">
-            <li class="tour-selector__tab">Основное</li>
-            <li class="tour-selector__tab">Предпочтения</li>
-            <li class="tour-selector__tab is-active">Контакты</li>
-          </ul>
-  
-          <label class="tour-selector__field">
-            <span class="tour-selector__label">Имя</span>
-            <span class="tour-selector__input"></span>
-          </label>
-  
-          <label class="tour-selector__field">
-            <span class="tour-selector__label">Телефон</span>
-            <span class="tour-selector__input"></span>
-          </label>
-  
-          <label class="tour-selector__field">
-            <span class="tour-selector__label">Эл. почта</span>
-            <span class="tour-selector__input"></span>
-          </label>
-  
-          <button class="btn btn_orange tour-selector__btn tour-selector__btn_orange" type="button">
-            Подобрать тур
-          </button>
-        </article>
-      </div>
+        </form>    </div>
     </div>
-  </section>
-</main>
-
+  </section></main>
 <footer class="footer " id="footer">
   <hr class="footer__line">
   <div class="footer__container container">
@@ -530,13 +704,17 @@
               <span>@booking.clubstravel.ee</span>
             </a>
           </div>
-          <picture class="footer__social-photo" >
-              <source media="(min-width:769px)" srcset="/club-travel/assets/webp/social-DjDRm8Y8.webp" type="image/webp">
-          
-                  <source media="(max-width:768px)" srcset="/club-travel/assets/webp/social-DjDRm8Y8.webp" type="image/webp">
-              <img src="/club-travel/assets/jpg/social-DN3aN2mD.jpg" alt="Social messenger" loading="lazy">
-          </picture>
-          
+          <div class="footer__social-widget-wrap">
+            <div class="fb-page footer__social-widget"
+                 data-href="https://www.facebook.com/yourPage"
+                 data-tabs=""
+                 data-width=""
+                 data-height=""
+                 data-small-header="false"
+                 data-adapt-container-width="true"
+                 data-hide-cover="false"
+                 data-show-facepile="true">
+            </div>          </div>
         </div>
       </div>
     </div>
@@ -547,5 +725,9 @@
     <a href="https://zakon.rada.gov.ua/laws/show/2297-17#Text" class="footer__rights-link link-state">Политика использования</a>
   </div>
 </footer>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v20.0">
+</script>
 </body>
 </html>
