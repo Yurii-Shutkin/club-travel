@@ -1,6 +1,8 @@
 import '@/js/layout/burger-menu.js';
 import '@/js/layout/header-account-dropdown.js';
 import '@/js/layout/header-scroll-state.js';
+import { initGuard } from '@/js/services/user/guard.js';
+import { auth } from '@/js/services/user/auth.js';
 
 import { accountOrders, accountUser } from '../../data/account-mock.js';
 
@@ -173,9 +175,10 @@ function initLogout() {
   }
 
   logoutButton.addEventListener('click', () => {
-    window.location.href = '/club-travel/';
+    auth.logout();
   });
 }
+initGuard();
 
 if (accountPage) {
   renderUser(accountUser);

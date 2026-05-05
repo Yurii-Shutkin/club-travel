@@ -1,31 +1,48 @@
 import { auth } from './auth.js';
 
-const BASE_URL = 'http://localhost:5173/club-travel';
+const ACCOUNT_PATH = '/account.html';
+const AUTH_PATH = '/auth.html';
+const AUTH_PAGE_PATHS = ['/auth', '/signup', '/auth.html', '/signup.html'];
+const PUBLIC_PATHS = ['/', '/index.html'];
+
+function withBase(path) {
+  const baseDir = 'http://localhost:5173/club-travel';
+  
+
+  return `${baseDir}${path}`;
+}
+
+function isAuthPage(pathname) {
+  return AUTH_PAGE_PATHS.some(path => pathname.includes(path));
+}
+
+function isPublicPage(pathname) {
+  return isAuthPage(pathname) || PUBLIC_PATHS.includes(pathname);
+}
 
 export async function initGuard() {
-    
-    const token = auth.getToken();
-    const path = window.location.pathname;
+  const token = auth.getToken();
+  const pathname = window.location.pathname;
 
-    const authPages = ['/auth', '/signup', '/auth.html', '/signup.html'];
-    const isAuthPage = authPages.some(p => path.includes(p));
+  if (token) {
+    const isValidSession = await auth.validate();
 
-    if (token) {
-        const isValid = await auth.validate();
-        
-        if (isValid) {
-            if (isAuthPage) {
-                window.location.href = BASE_URL + '/account.html'; 
-              }
-            } else {
-              auth.logout();
-            }
-          } else {
-            const isPublicPage = isAuthPage || path === '/' || path === '/index.html';
-            if (!isPublicPage) {
-              window.location.href = BASE_URL +'/auth.html';
-            }
-          }
-          document.documentElement.classList.add('ready');
+    if (!isValidSession) {
+      auth.logout();
+      return;
+    }
+
+    if (isAuthPage(pathname)) {
+      window.location.href = withBase(ACCOUNT_PATH);
+      return;
+    }
+  } else if (!isPublicPage(pathname)) {
+    window.location.href = withBase(AUTH_PATH);
+    return;
+  }
+
+  document.documentElement.classList.add('ready');
 }
+
+
 

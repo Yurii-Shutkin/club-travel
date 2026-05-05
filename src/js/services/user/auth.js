@@ -1,4 +1,5 @@
 const STRAPI_URL = 'https://club-travel-strapi.onrender.com';
+const BASE_URL = 'http://localhost:5173/club-travel';
 
 export const auth = {
     getToken() {
@@ -12,7 +13,7 @@ export const auth = {
 
     logout() {
         localStorage.clear();
-        window.location.href = '/auth.html';
+        window.location.href = BASE_URL + '/auth.html';
     },
 
     async validate() {
