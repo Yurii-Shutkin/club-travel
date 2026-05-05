@@ -1,29 +1,35 @@
-const API_URL = 'https://club-travel-strapi.onrender.com';
-export async function handleGoogleCallback() {
-  const queryString = window.location.search || window.location.hash.substring(window.location.hash.indexOf('?'));
-  const urlParams = new URLSearchParams(queryString);
-  
-  const accessToken = urlParams.get('access_token');
-  
-  console.log('Текущий URL:', window.location.href);
-  console.log('Найденный токен:', accessToken);
+const STRAPI_URL = 'https://club-travel-strapi.onrender.com';
 
-  if (accessToken) {
-    try {
-      console.log('Отправка запроса на Strapi...');
-      const response = await fetch(`${API_URL}/api/auth/google/callback?access_token=${accessToken}`);
-      const data = await response.json();
+export const auth = {
+    getToken() {
+        return localStorage.getItem('jwt');
+    },
 
-      if (data.jwt) {
-        localStorage.setItem('jwt', data.jwt);
-        localStorage.setItem('user', JSON.stringify(data.user));
+    setSession(token, user) {
+        localStorage.setItem('jwt', token);
+        localStorage.setItem('user', JSON.stringify(user));
+    },
 
-        alert('Вход выполнен!');
-        
-        window.location.href = window.location.origin + window.location.pathname;
-      }
-    } catch (err) {
-      console.error('Ошибка при обращении к Strapi:', err);
+    logout() {
+        localStorage.clear();
+        window.location.href = '/auth.html';
+    },
+
+    async validate() {
+        const token = this.getToken();
+        console.log(token)
+        if (!token) return false;
+
+
+        try {
+            const response = await fetch(`${STRAPI_URL}/api/users/me`, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            console.log('ok', response)
+            return response.ok; 
+        } catch (error) {
+            console.error("Ошибка проверки сессии", error);
+            return false;
+        }
     }
-  }
-}
+};

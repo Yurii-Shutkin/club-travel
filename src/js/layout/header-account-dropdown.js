@@ -1,3 +1,5 @@
+import { auth } from '@/js/services/user/auth.js';
+
 const DESKTOP_BREAKPOINT = 1366;
 const AUTH_STORAGE_KEY = 'club-travel-mock-auth-state';
 const DEFAULT_AUTH_STATE = 'authorized';
@@ -125,6 +127,7 @@ function initHeaderAccountDropdown() {
 
     setMockAuthState('guest');
     renderHeaderAccountState();
+    auth.logout();
   });
 
   document.addEventListener('click', event => {

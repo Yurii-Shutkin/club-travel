@@ -10,6 +10,17 @@
 
 @use '@/scss/layout/footer';
 
+html {
+    visibility: hidden;
+    opacity: 0;
+}
+
+html.ready {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
 .signup-bg {
     padding-bottom: 166px;
 }

@@ -7,8 +7,10 @@ import { renderNewsCards } from '@/js/components/render-news-cards.js';
 import { renderHotCards } from '@/js/components/render-hot-cards.js';
 import { renderSeasonCards } from '@/js/sections/main/render-season-cards.js';
 import { initCardsSwiper } from '@/js/sections/main/cards-swiper.js';
-import { handleGoogleCallback } from '@/js/services/user/auth.js';
+import { handleGoogleCallback } from '@/js/services/user/google-auth.js';
+import { initGuard } from '@/js/services/user/guard.js';
 
+initGuard();
 handleGoogleCallback();
 
 document.addEventListener('DOMContentLoaded', async () => {
