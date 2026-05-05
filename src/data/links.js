@@ -13,7 +13,6 @@ export const links = {
   authorization: { href: '#!' },
   registration: { href: '#!' },
   passwordRecovery: { href: '#!' },
-  textPage: { href: '#!' },
 
   // social: { href: './company.html' },
   seasonTours: { href: '#!' },
