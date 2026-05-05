@@ -51,8 +51,8 @@ function initHeaderAccountDropdown() {
     return;
   }
 
-  const authUrl = accountButton.dataset.authUrl || 'index.html';
-  const accountUrl = accountButton.dataset.accountUrl || 'index.html';
+  const authUrl = accountButton.dataset.authUrl || 'main.html';
+  const accountUrl = accountButton.dataset.accountUrl || 'main.html';
 
   const isDesktop = () => window.innerWidth >= DESKTOP_BREAKPOINT;
 

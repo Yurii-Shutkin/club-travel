@@ -1,6 +1,6 @@
 export const links = {
   hotDeals: { href: '#!' },
-  main: { href: './index.html' },
+  main: { href: './main.html' },
   searchResults: { href: '#!' },
   searchResultsCalendar: { href: '#!' },
   hotel: { href: '#!' },
@@ -10,7 +10,7 @@ export const links = {
   tourRequest: { href: './tour-request.html' },
   customerAccount: { href: './account.html' },
   contacts: { href: '#!' },
-  authorization: { href: '#!' },
+  authorization: { href: './auth.html' },
   registration: { href: '#!' },
   passwordRecovery: { href: '#!' },
 

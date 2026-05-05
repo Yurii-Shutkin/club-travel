@@ -11,13 +11,13 @@
         {{> ui/svg className="header__burger-icon" id="menu" }}
       </button>
 
-      <a class="header__logo" href="index.html" aria-label="Club Travel">
+      <a class="header__logo" href="main.html" aria-label="Club Travel">
         {{> ui/svg className="header__logo-icon" id="logo" }}
       </a>
 
       <nav class="header__service-nav" aria-label="Дополнительная навигация">
         {{> ui/links-list linksListClass="header__service-list"
-        classNameItem="header__service-link link-state" link="index.html"
+        classNameItem="header__service-link link-state" link="main.html"
         sortItems=(split "Страховки, Визы, Контакты") }}
       </nav>
 
@@ -51,7 +51,7 @@
           aria-label="Личный кабинет"
           aria-expanded="false"
           aria-controls="account-dropdown"
-          data-auth-url="index.html"
+          data-auth-url="{{links.authorization.href}}"
           data-account-url="{{links.customerAccount.href}}"
         >
           {{> ui/svg className="header__account-icon" id="user" }}
@@ -76,7 +76,7 @@
             </li>
 
             <li class="header__account-item">
-              <a class="header__account-link" href="index.html">
+              <a class="header__account-link" href="main.html">
                 {{> ui/svg className="header__account-item-icon"
                 id="payment-card" }}
                 <span class="header__account-item-text">История платежей</span>
@@ -84,7 +84,7 @@
             </li>
 
             <li class="header__account-item">
-              <a class="header__account-link" href="index.html">
+              <a class="header__account-link" href="main.html">
                 {{> ui/svg className="header__account-item-icon" id="settings"
                 }}
                 <span class="header__account-item-text">Настройки</span>
@@ -94,7 +94,7 @@
 
           <div class="header__account-divider"></div>
 
-          <a class="header__account-logout" href="index.html">
+          <a class="header__account-logout" href="main.html">
             {{> ui/svg className="header__account-logout-icon" id="exit" }}
             <span class="header__account-logout-text">Выход</span>
           </a>
@@ -109,11 +109,11 @@
     <nav class="header__main-nav" aria-label="Основная навигация">
       <ul class="header__main-list">
         <li class="header__main-item">
-          <a class="header__main-link" href="index.html">Поиск тура</a>
+          <a class="header__main-link" href="main.html">Поиск тура</a>
         </li>
 
         <li class="header__main-item">
-          <a class="header__main-link" href="index.html">Направления</a>
+          <a class="header__main-link" href="main.html">Направления</a>
         </li>
 
         <li class="header__main-item">
@@ -128,7 +128,7 @@
         </li>
 
         <li class="header__main-item">
-          <a class="header__main-link header__main-link_hot" href="index.html">
+          <a class="header__main-link header__main-link_hot" href="main.html">
             {{> ui/svg className="header__main-link-icon
             header__main-link-icon_hot" id="fast-time" }}
             <span class="header__main-link-text">Горящие предложения</span>
@@ -136,11 +136,13 @@
         </li>
 
         <li class="header__main-item">
-          <a class="header__main-link" href="{{links.tourRequest.href}}">Запрос тура</a>
+          <a class="header__main-link" href="{{links.tourRequest.href}}"
+            >Запрос тура</a
+          >
         </li>
 
         <li class="header__main-item">
-          <a class="header__main-link" href="index.html">Авиабилеты</a>
+          <a class="header__main-link" href="main.html">Авиабилеты</a>
         </li>
       </ul>
     </nav>
