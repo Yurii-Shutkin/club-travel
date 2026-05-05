@@ -1,3 +1,7 @@
+import '@/js/layout/burger-menu.js';
+import '@/js/layout/header-account-dropdown.js';
+import '@/js/layout/header-scroll-state.js';
+
 import { accountOrders, accountUser } from '../../data/account-mock.js';
 
 const ORDERS_PER_PAGE = 9;
