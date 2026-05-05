@@ -58,21 +58,30 @@
     background-color: rgba(255, 255, 255, 0.2);
     cursor: pointer;
 
-    transform: translateY(-50%);
+    --ty: -50%;
+    transform: translateY(var(--ty));
     transition:
-      background-color 0.2s ease,
-      transform 0.2s ease;
+      box-shadow 0.3s ease,
+      transform 0.3s ease;
 
     @media screen and (max-width: 1365px) {
       display: none;
     }
 
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.32);
+    &:focus-visible {
+      transform: translateY(var(--ty)) scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover:not(:active) {
+        transform: translateY(var(--ty)) scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
     }
 
     &:active {
-      transform: translateY(-50%) scale(0.96);
+      transform: translateY(var(--ty)) scale(0.95);
     }
 
     &_prev {

@@ -51,7 +51,7 @@
           aria-label="Личный кабинет"
           aria-expanded="false"
           aria-controls="account-dropdown"
-          data-auth-url="index.html"
+          data-auth-url="{{links.authorization.href}}"
           data-account-url="{{links.customerAccount.href}}"
         >
           {{> ui/svg className="header__account-icon" id="user" }}
@@ -136,7 +136,9 @@
         </li>
 
         <li class="header__main-item">
-          <a class="header__main-link" href="{{links.tourRequest.href}}">Запрос тура</a>
+          <a class="header__main-link" href="{{links.tourRequest.href}}"
+            >Запрос тура</a
+          >
         </li>
 
         <li class="header__main-item">
