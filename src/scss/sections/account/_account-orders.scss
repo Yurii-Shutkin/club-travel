@@ -295,6 +295,40 @@
     }
   }
 
+  &__empty {
+    box-sizing: border-box;
+    padding: 48px 24px;
+    text-align: center;
+    background-color: #fff;
+
+    @media (max-width: 1365px) {
+      padding: 40px 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+    }
+
+    @include media.max-width(xxs) {
+      padding: 32px 16px;
+      box-shadow: none;
+    }
+  }
+
+  &__empty-title {
+    margin: 0 0 8px;
+    font: 20px var(--font-family);
+    color: var(--text);
+
+    @include media.max-width(xxs) {
+      font-size: 18px;
+    }
+  }
+
+  &__empty-text {
+    max-width: 360px;
+    margin: 0 auto;
+    font: 14px var(--font-family);
+    color: #666;
+  }
+
   &__footer {
     display: flex;
     align-items: center;

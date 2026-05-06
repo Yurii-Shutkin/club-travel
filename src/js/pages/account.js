@@ -2,14 +2,19 @@ import '@/js/layout/burger-menu.js';
 import '@/js/layout/header-account-dropdown.js';
 import '@/js/layout/header-scroll-state.js';
 
-import { accountOrders, accountUser } from '../../data/account-mock.js';
+import {
+  accountOrders as mockAccountOrders,
+  accountUser as mockAccountUser,
+} from '../../data/account-mock.js';
 
 const ORDERS_PER_PAGE = 9;
 
 const accountPage = document.querySelector('[data-account-page]');
 const avatarElement = document.querySelector('[data-account-profile-avatar]');
 const nameElement = document.querySelector('[data-account-profile-name]');
-const emailElement = document.querySelector('[data-account-profile-email]');
+const ordersTable = document.querySelector('[data-account-orders-table]');
+const ordersEmpty = document.querySelector('[data-account-orders-empty]');
+const ordersFooter = document.querySelector('[data-account-orders-footer]');
 const ordersBody = document.querySelector('[data-account-orders-body]');
 const ordersCounter = document.querySelector('[data-account-orders-counter]');
 const currentPageElement = document.querySelector('[data-account-orders-page]');
@@ -20,12 +25,24 @@ const prevButton = document.querySelector('[data-account-orders-prev]');
 const nextButton = document.querySelector('[data-account-orders-next]');
 const logoutButton = document.querySelector('[data-account-logout]');
 
-let currentPage = 1;
+const accountState = {
+  user: null,
+  orders: [],
+  currentPage: 1,
+};
 
 const statusLabels = {
   paid: 'Оплачено',
   processing: 'В обработке',
 };
+
+function getCurrentUser() {
+  return mockAccountUser;
+}
+
+function getUserOrders() {
+  return mockAccountOrders;
+}
 
 function getUserFullName(user) {
   return `${user.firstName || ''} ${user.lastName || ''}`.trim();
@@ -39,7 +56,7 @@ function getUserInitials(user) {
 }
 
 function renderUser(user) {
-  if (!avatarElement || !nameElement) {
+  if (!avatarElement || !nameElement || !user) {
     return;
   }
 
@@ -47,10 +64,6 @@ function renderUser(user) {
   const userInitials = getUserInitials(user);
 
   nameElement.textContent = userFullName || 'Пользователь';
-
-  if (emailElement) {
-    emailElement.textContent = user.email || '';
-  }
 
   if (user.avatar) {
     avatarElement.innerHTML = `
@@ -72,20 +85,42 @@ function renderUser(user) {
 }
 
 function getTotalPages() {
-  return Math.ceil(accountOrders.length / ORDERS_PER_PAGE);
+  return Math.ceil(accountState.orders.length / ORDERS_PER_PAGE);
 }
 
 function getVisibleOrders() {
-  const startIndex = (currentPage - 1) * ORDERS_PER_PAGE;
+  const startIndex = (accountState.currentPage - 1) * ORDERS_PER_PAGE;
   const endIndex = startIndex + ORDERS_PER_PAGE;
 
-  return accountOrders.slice(startIndex, endIndex);
+  return accountState.orders.slice(startIndex, endIndex);
+}
+
+function setOrdersEmptyState(isEmpty) {
+  if (ordersTable) {
+    ordersTable.hidden = isEmpty;
+  }
+
+  if (ordersFooter) {
+    ordersFooter.hidden = isEmpty;
+  }
+
+  if (ordersEmpty) {
+    ordersEmpty.hidden = !isEmpty;
+  }
 }
 
 function renderOrders() {
   if (!ordersBody) {
     return;
   }
+
+  if (accountState.orders.length === 0) {
+    ordersBody.innerHTML = '';
+    setOrdersEmptyState(true);
+    return;
+  }
+
+  setOrdersEmptyState(false);
 
   const visibleOrders = getVisibleOrders();
 
@@ -111,18 +146,22 @@ function renderOrders() {
 }
 
 function renderPagination() {
+  if (accountState.orders.length === 0) {
+    return;
+  }
+
   const totalPages = getTotalPages();
   const shownOrdersCount = Math.min(
-    currentPage * ORDERS_PER_PAGE,
-    accountOrders.length,
+    accountState.currentPage * ORDERS_PER_PAGE,
+    accountState.orders.length,
   );
 
   if (ordersCounter) {
-    ordersCounter.textContent = `Показано ${shownOrdersCount} из ${accountOrders.length}`;
+    ordersCounter.textContent = `Показано ${shownOrdersCount} из ${accountState.orders.length}`;
   }
 
   if (currentPageElement) {
-    currentPageElement.textContent = currentPage;
+    currentPageElement.textContent = accountState.currentPage;
   }
 
   if (totalPagesElement) {
@@ -130,11 +169,11 @@ function renderPagination() {
   }
 
   if (prevButton) {
-    prevButton.disabled = currentPage === 1;
+    prevButton.disabled = accountState.currentPage === 1;
   }
 
   if (nextButton) {
-    nextButton.disabled = currentPage === totalPages;
+    nextButton.disabled = accountState.currentPage === totalPages;
   }
 }
 
@@ -146,22 +185,22 @@ function updateOrdersView() {
 function initPagination() {
   if (prevButton) {
     prevButton.addEventListener('click', () => {
-      if (currentPage === 1) {
+      if (accountState.currentPage === 1) {
         return;
       }
 
-      currentPage -= 1;
+      accountState.currentPage -= 1;
       updateOrdersView();
     });
   }
 
   if (nextButton) {
     nextButton.addEventListener('click', () => {
-      if (currentPage === getTotalPages()) {
+      if (accountState.currentPage === getTotalPages()) {
         return;
       }
 
-      currentPage += 1;
+      accountState.currentPage += 1;
       updateOrdersView();
     });
   }
@@ -177,9 +216,17 @@ function initLogout() {
   });
 }
 
-if (accountPage) {
-  renderUser(accountUser);
+function initAccountPage() {
+  accountState.user = getCurrentUser();
+  accountState.orders = getUserOrders();
+  accountState.currentPage = 1;
+
+  renderUser(accountState.user);
   updateOrdersView();
   initPagination();
   initLogout();
+}
+
+if (accountPage) {
+  initAccountPage();
 }
