@@ -177,6 +177,28 @@ function renderPagination() {
   }
 }
 
+function syncOrdersTableMinHeight() {
+  if (!ordersTable || accountState.orders.length === 0) {
+    return;
+  }
+
+  const activePage = accountState.currentPage;
+
+  if (activePage !== 1) {
+    accountState.currentPage = 1;
+    renderOrders();
+  }
+
+  ordersTable.style.minHeight = '';
+  const firstPageHeight = ordersTable.getBoundingClientRect().height;
+  ordersTable.style.minHeight = `${Math.ceil(firstPageHeight)}px`;
+
+  if (activePage !== 1) {
+    accountState.currentPage = activePage;
+    renderOrders();
+  }
+}
+
 function updateOrdersView() {
   renderOrders();
   renderPagination();
@@ -223,6 +245,10 @@ function initAccountPage() {
 
   renderUser(accountState.user);
   updateOrdersView();
+  syncOrdersTableMinHeight();
+
+  window.addEventListener('resize', syncOrdersTableMinHeight);
+
   initPagination();
   initLogout();
 }
