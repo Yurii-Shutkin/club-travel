@@ -4,9 +4,12 @@
 
   <body class="account-page">
     {{>layout/header}} {{>layout/burger-menu}}
-    <div class="account-page__hero">{{>sections/common/main-hero}}</div>
 
-    {{>sections/account/account}} {{>layout/footer}} {{>layout/script
-    srcJs="account"}}
+    <main>
+      {{>sections/common/main-hero sectionClass="account-page__main-hero"}}
+      {{>sections/account/account}}
+    </main>
+
+    {{>layout/footer}} {{>layout/script srcJs="account"}}
   </body>
 </html>
