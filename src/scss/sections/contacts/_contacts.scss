@@ -1,0 +1,43 @@
+@use '@/scss/utils/media' as media;
+
+.contacts-page {
+  &__main-hero .main-hero__swiper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1366 / 320;
+  }
+
+  @include media.max-width(xxs) {
+    &__main-hero .main-hero__swiper {
+      aspect-ratio: 360 / 191;
+    }
+  }
+}
+
+.contacts {
+  &__container {
+    padding-top: 70px;
+    padding-bottom: 100px;
+  }
+
+  @include media.max-width(md) {
+    &__container {
+      padding-top: 50px;
+      padding-bottom: 80px;
+    }
+  }
+
+  @include media.max-width(sm) {
+    &__container {
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+  }
+
+  @include media.max-width(xxs) {
+    &__container {
+      padding-top: 32px;
+      padding-bottom: 50px;
+    }
+  }
+}

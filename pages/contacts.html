@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ru">
+  {{>layout/head title="Club Travel, Контакты" hrefStyle="contacts-style"}}
+
+  <body class="contacts-page">
+    {{>layout/header}} {{>layout/burger-menu}}
+
+    <main>
+      {{>sections/common/main-hero sectionClass="contacts-page__main-hero"}}
+      {{>sections/contacts/contacts}}
+    </main>
+
+    {{>layout/footer}} {{>layout/script srcJs="contacts"}}
+  </body>
+</html>
