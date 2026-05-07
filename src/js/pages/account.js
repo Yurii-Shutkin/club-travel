@@ -2,184 +2,148 @@ import '@/js/layout/burger-menu.js';
 import '@/js/layout/header-account-dropdown.js';
 import '@/js/layout/header-scroll-state.js';
 
-import { accountOrders, accountUser } from '../../data/account-mock.js';
+import {
+  accountOrders as mockAccountOrders,
+  accountUser as mockAccountUser,
+} from '../../data/account-mock.js';
 
 const ORDERS_PER_PAGE = 9;
+const STATUS_LABELS = { paid: 'Оплачено', processing: 'В обработке' };
 
 const accountPage = document.querySelector('[data-account-page]');
-const avatarElement = document.querySelector('[data-account-profile-avatar]');
-const nameElement = document.querySelector('[data-account-profile-name]');
-const emailElement = document.querySelector('[data-account-profile-email]');
-const ordersBody = document.querySelector('[data-account-orders-body]');
-const ordersCounter = document.querySelector('[data-account-orders-counter]');
-const currentPageElement = document.querySelector('[data-account-orders-page]');
-const totalPagesElement = document.querySelector(
-  '[data-account-orders-total-pages]',
-);
-const prevButton = document.querySelector('[data-account-orders-prev]');
-const nextButton = document.querySelector('[data-account-orders-next]');
-const logoutButton = document.querySelector('[data-account-logout]');
-
-let currentPage = 1;
-
-const statusLabels = {
-  paid: 'Оплачено',
-  processing: 'В обработке',
-};
-
-function getUserFullName(user) {
-  return `${user.firstName || ''} ${user.lastName || ''}`.trim();
-}
-
-function getUserInitials(user) {
-  const firstInitial = user.firstName ? user.firstName[0] : '';
-  const lastInitial = user.lastName ? user.lastName[0] : '';
-
-  return `${firstInitial}${lastInitial}`.toUpperCase();
-}
-
-function renderUser(user) {
-  if (!avatarElement || !nameElement) {
-    return;
-  }
-
-  const userFullName = getUserFullName(user);
-  const userInitials = getUserInitials(user);
-
-  nameElement.textContent = userFullName || 'Пользователь';
-
-  if (emailElement) {
-    emailElement.textContent = user.email || '';
-  }
-
-  if (user.avatar) {
-    avatarElement.innerHTML = `
-      <img
-        class="account-profile__avatar-img"
-        src="${user.avatar}"
-        alt="${userFullName || 'Пользователь'}"
-      />
-    `;
-
-    return;
-  }
-
-  avatarElement.innerHTML = `
-    <span class="account-profile__avatar-initials">
-      ${userInitials || 'U'}
-    </span>
-  `;
-}
-
-function getTotalPages() {
-  return Math.ceil(accountOrders.length / ORDERS_PER_PAGE);
-}
-
-function getVisibleOrders() {
-  const startIndex = (currentPage - 1) * ORDERS_PER_PAGE;
-  const endIndex = startIndex + ORDERS_PER_PAGE;
-
-  return accountOrders.slice(startIndex, endIndex);
-}
-
-function renderOrders() {
-  if (!ordersBody) {
-    return;
-  }
-
-  const visibleOrders = getVisibleOrders();
-
-  ordersBody.innerHTML = visibleOrders
-    .map(order => {
-      const statusText = statusLabels[order.status] || order.status;
-
-      return `
-        <tr class="account-orders__row">
-          <td class="account-orders__cell">${order.id}</td>
-          <td class="account-orders__cell">${order.amount}</td>
-          <td class="account-orders__cell">${order.email}</td>
-          <td class="account-orders__cell">
-            <span class="account-orders__status account-orders__status_${order.status}">
-              ${statusText}
-            </span>
-          </td>
-          <td class="account-orders__cell">${order.date}</td>
-        </tr>
-      `;
-    })
-    .join('');
-}
-
-function renderPagination() {
-  const totalPages = getTotalPages();
-  const shownOrdersCount = Math.min(
-    currentPage * ORDERS_PER_PAGE,
-    accountOrders.length,
-  );
-
-  if (ordersCounter) {
-    ordersCounter.textContent = `Показано ${shownOrdersCount} из ${accountOrders.length}`;
-  }
-
-  if (currentPageElement) {
-    currentPageElement.textContent = currentPage;
-  }
-
-  if (totalPagesElement) {
-    totalPagesElement.textContent = totalPages;
-  }
-
-  if (prevButton) {
-    prevButton.disabled = currentPage === 1;
-  }
-
-  if (nextButton) {
-    nextButton.disabled = currentPage === totalPages;
-  }
-}
-
-function updateOrdersView() {
-  renderOrders();
-  renderPagination();
-}
-
-function initPagination() {
-  if (prevButton) {
-    prevButton.addEventListener('click', () => {
-      if (currentPage === 1) {
-        return;
-      }
-
-      currentPage -= 1;
-      updateOrdersView();
-    });
-  }
-
-  if (nextButton) {
-    nextButton.addEventListener('click', () => {
-      if (currentPage === getTotalPages()) {
-        return;
-      }
-
-      currentPage += 1;
-      updateOrdersView();
-    });
-  }
-}
-
-function initLogout() {
-  if (!logoutButton) {
-    return;
-  }
-
-  logoutButton.addEventListener('click', () => {
-    window.location.href = '/club-travel/';
-  });
-}
 
 if (accountPage) {
-  renderUser(accountUser);
-  updateOrdersView();
-  initPagination();
-  initLogout();
+  const state = { user: mockAccountUser, orders: mockAccountOrders, page: 1 };
+
+  const elements = {
+    avatar: document.querySelector('[data-account-profile-avatar]'),
+    name: document.querySelector('[data-account-profile-name]'),
+    table: document.querySelector('[data-account-orders-table]'),
+    empty: document.querySelector('[data-account-orders-empty]'),
+    footer: document.querySelector('[data-account-orders-footer]'),
+    body: document.querySelector('[data-account-orders-body]'),
+    counter: document.querySelector('[data-account-orders-counter]'),
+    currentPage: document.querySelector('[data-account-orders-page]'),
+    totalPages: document.querySelector('[data-account-orders-total-pages]'),
+    prev: document.querySelector('[data-account-orders-prev]'),
+    next: document.querySelector('[data-account-orders-next]'),
+    logout: document.querySelector('[data-account-logout]'),
+  };
+
+  const totalPages = () => Math.ceil(state.orders.length / ORDERS_PER_PAGE);
+  const visibleOrders = () => {
+    const start = (state.page - 1) * ORDERS_PER_PAGE;
+    return state.orders.slice(start, start + ORDERS_PER_PAGE);
+  };
+
+  const fullName = ({ firstName = '', lastName = '' }) =>
+    `${firstName} ${lastName}`.trim() || 'Пользователь';
+
+  const initials = ({ firstName = '', lastName = '' }) =>
+    `${firstName[0] || ''}${lastName[0] || ''}`.toUpperCase() || 'U';
+
+  const renderUser = user => {
+    if (!elements.avatar || !elements.name || !user) return;
+
+    const name = fullName(user);
+    elements.name.textContent = name;
+    elements.avatar.innerHTML = user.avatar
+      ? `<img class="account-profile__avatar-img" src="${user.avatar}" alt="${name}" />`
+      : `<span class="account-profile__avatar-initials">${initials(user)}</span>`;
+  };
+
+  const setEmptyState = isEmpty => {
+    if (elements.table) elements.table.hidden = isEmpty;
+    if (elements.footer) elements.footer.hidden = isEmpty;
+    if (elements.empty) elements.empty.hidden = !isEmpty;
+  };
+
+  const renderOrders = () => {
+    if (!elements.body) return;
+    if (!state.orders.length) {
+      elements.body.innerHTML = '';
+      setEmptyState(true);
+      return;
+    }
+
+    setEmptyState(false);
+    elements.body.innerHTML = visibleOrders()
+      .map(
+        ({ id, amount, email, status, date }) => `
+          <tr class="account-orders__row">
+            <td class="account-orders__cell">${id}</td>
+            <td class="account-orders__cell">${amount}</td>
+            <td class="account-orders__cell">${email}</td>
+            <td class="account-orders__cell">
+              <span class="account-orders__status account-orders__status_${status}">
+                ${STATUS_LABELS[status] || status}
+              </span>
+            </td>
+            <td class="account-orders__cell">${date}</td>
+          </tr>
+        `,
+      )
+      .join('');
+  };
+
+  const renderPagination = () => {
+    if (!state.orders.length) return;
+
+    const pages = totalPages();
+    const shown = Math.min(state.page * ORDERS_PER_PAGE, state.orders.length);
+
+    if (elements.counter) {
+      elements.counter.textContent = `Показано ${shown} из ${state.orders.length}`;
+    }
+    if (elements.currentPage) elements.currentPage.textContent = state.page;
+    if (elements.totalPages) elements.totalPages.textContent = pages;
+    if (elements.prev) elements.prev.disabled = state.page === 1;
+    if (elements.next) elements.next.disabled = state.page === pages;
+  };
+
+  const render = () => {
+    renderOrders();
+    renderPagination();
+  };
+
+  const syncTableHeight = () => {
+    if (!elements.table || !state.orders.length) return;
+
+    const activePage = state.page;
+    if (activePage !== 1) {
+      state.page = 1;
+      renderOrders();
+    }
+
+    elements.table.style.minHeight = '';
+    const height = elements.table.getBoundingClientRect().height;
+    elements.table.style.minHeight = `${Math.ceil(height)}px`;
+
+    if (activePage !== 1) {
+      state.page = activePage;
+      renderOrders();
+    }
+  };
+
+  const changePage = delta => {
+    const nextPage = state.page + delta;
+    if (nextPage < 1 || nextPage > totalPages()) return;
+    state.page = nextPage;
+    render();
+  };
+
+  if (elements.prev)
+    elements.prev.addEventListener('click', () => changePage(-1));
+  if (elements.next)
+    elements.next.addEventListener('click', () => changePage(1));
+  if (elements.logout) {
+    elements.logout.addEventListener('click', () => {
+      window.location.href = '/club-travel/';
+    });
+  }
+
+  renderUser(state.user);
+  render();
+  syncTableHeight();
+  window.addEventListener('resize', syncTableHeight);
 }
