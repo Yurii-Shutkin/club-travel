@@ -9,7 +9,7 @@ export const links = {
   tourSupport: { href: '#!' },
   tourRequest: { href: './tour-request.html' },
   customerAccount: { href: './account.html' },
-  contacts: { href: '#!' },
+  contacts: { href: './contacts.html' },
   authorization: { href: './auth.html' },
   registration: { href: '#!' },
   passwordRecovery: { href: '#!' },
