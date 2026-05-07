@@ -1,9 +1,141 @@
 <section class="contacts" data-contacts-page>
   <div class="contacts__container container">
-    <!-- 
-      - контактна інформація
-      - форма
-      - Google Map
-    -->
+    <div class="contacts__content">
+      <div class="contacts__info">
+        <h1 class="contacts__title">Контакты</h1>
+
+        <div class="contacts__text-block">
+          <p class="contacts__subtitle">Напишите нам</p>
+
+          <p class="contacts__description">
+            Оставьте свой номер телефона или электронную почту и мы свяжемся с
+            вами
+          </p>
+        </div>
+
+        <div class="contacts__details">
+          <p class="contacts__company">Clubs Travel OÜ</p>
+
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              {{> ui/svg className="contacts__icon" id="mail" }}
+
+              <a
+                href="mailto:info@clubstravel.ee"
+                class="contacts__link link-state"
+              >
+                info@clubstravel.ee
+              </a>
+            </li>
+
+            <li class="contacts__item">
+              {{> ui/svg className="contacts__icon" id="phone" }}
+
+              <div class="contacts__phones">
+                <a
+                  href="tel:+37255560310"
+                  class="contacts__link link-state"
+                  aria-label="Позвонить по номеру +372 555 60 310"
+                >
+                  +372 555 60 310
+                </a>
+
+                <span class="contacts__phone-line"> | </span>
+
+                <a
+                  href="tel:+3726130633"
+                  class="contacts__link link-state"
+                  aria-label="Позвонить по номеру +372 61 30 633"
+                >
+                  +372 61 30 633
+                </a>
+              </div>
+            </li>
+
+            <li class="contacts__item">
+              {{> ui/svg className="contacts__icon" id="clock" }}
+
+              <span class="contacts__text">
+                Пн-Пт 9:30-18:00, Сб 11:00-15:00
+              </span>
+            </li>
+
+            <li class="contacts__item">
+              {{> ui/svg className="contacts__icon" id="point" }}
+
+              <span class="contacts__text">
+                Narva mnt 7D, Tallinn (корпус B) 4 этаж
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <form class="contacts__form" data-contacts-form>
+        <div class="contacts__field">
+          <label class="contacts__label" for="contacts-name">
+            Имя (необязательно)
+          </label>
+
+          <input
+            class="contacts__input"
+            id="contacts-name"
+            name="name"
+            type="text"
+            autocomplete="name"
+          />
+        </div>
+
+        <div class="contacts__field">
+          <label class="contacts__label" for="contacts-phone">
+            Номер телефона
+          </label>
+
+          <input
+            class="contacts__input"
+            id="contacts-phone"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+          />
+        </div>
+
+        <div class="contacts__field">
+          <label class="contacts__label" for="contacts-email">E-mail</label>
+
+          <input
+            class="contacts__input"
+            id="contacts-email"
+            name="email"
+            type="email"
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="contacts__field contacts__field_message">
+          <label class="contacts__label" for="contacts-message">
+            Сообщение (необязательно)
+          </label>
+
+          <textarea
+            class="contacts__textarea"
+            id="contacts-message"
+            name="message"
+          ></textarea>
+        </div>
+
+        <button class="contacts__submit" type="submit">Отправить</button>
+      </form>
+    </div>
+
+    <div class="contacts__map" data-contacts-map>
+      <iframe
+        class="contacts__map-frame"
+        src="https://www.google.com/maps?q=Narva%20mnt%207D%2C%20Tallinn%2C%20Estonia&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Clubs Travel OÜ на карте"
+      ></iframe>
+    </div>
   </div>
 </section>
