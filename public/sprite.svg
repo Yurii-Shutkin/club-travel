@@ -224,5 +224,11 @@
         <symbol id="icon-wave" viewBox="0 0 717 32">
             <path d="M716.59 32h-716.59c56.161-10.667 204.447-32 348.305-32s305.466 21.333 368.285 32z"></path>
         </symbol>
+        <symbol id="icon-smile-wink" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="14" fill="#FFD93B" stroke="#E0A800" stroke-width="1.5"/>
+            <circle cx="11" cy="13" r="1.5" fill="#333"/>
+            <path d="M19 13 Q21 12 23 13" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M10 20 Q16 25 22 20" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </symbol>
     </defs>
 </svg>

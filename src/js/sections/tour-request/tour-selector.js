@@ -2,7 +2,7 @@ import { getHotOffers } from '@/js/services/api/getHotOffers.js';
 
 
 function initCounter(counterDom) {
-  const counter = document.querySelector(counterDom);
+  const counter = document.querySelector('[data-counter]');
   const counterValue =counter.querySelector('[data-counter-value]');
   counter.addEventListener('click', (e)=>{
     const click = e.target.closest('[data-counter-decrement], [data-counter-increment]');
@@ -19,32 +19,31 @@ function initCounter(counterDom) {
 
 async function renderCountryList() {
   const dataList = (await getHotOffers()) || [];
-  const destinationSelect = document.querySelector('[data-field="destination"]');
-  const destinationTemplate = destinationSelect.querySelector('[data-destination-template]');
-  const destinationEl = destinationTemplate.content.querySelector('option');
-
   const uniqueData = dataList.filter((item, index, self) =>
       index === self.findIndex((t) => (
         t.country === item.country && t.region === item.region
       ))
   );
+
+  const select = document.querySelector('[data-select="destination"]');
+  const dropdown = select.querySelector('[data-select-dropdown]');
+  const template = select.querySelector('[data-template-option]');
+  const templateEl = template.content.querySelector('[data-select-option]');
+
   const optionsList = [];
 
   for (let i = 0; i < uniqueData.length; i++) {
-    const destinationClone = destinationEl.cloneNode(true);
-    destinationClone.textContent = `${uniqueData[i].country}>${uniqueData[i].region}`;
-    destinationClone.value = uniqueData.country;
-    optionsList.push(destinationClone);
+    const cloneEl = templateEl.cloneNode(true);
+    cloneEl.textContent = `${uniqueData[i].country}>${uniqueData[i].region}`;
+    // cloneEl.dataset.value = uniqueData[i].country;
+    optionsList.push(cloneEl);
   }
-  destinationSelect.append(...optionsList);
+  dropdown.append(...optionsList);
 }
 
 
 export const initTourSelector = async (root = document) => {
   const tourSelector = document.querySelector('[data-tour-selector]');
-  // const tabsList = tourSelector.querySelectorAll('[data-tab]');
-  // const panelsList = tourSelector.querySelectorAll('[data-panel]');
-  // const btnGotoList= tourSelector.querySelectorAll('[data-btn-goto]');
 
   tourSelector.addEventListener('click', (e) => {
       const click = e.target.closest('[data-tab], [data-btn-goto]');
