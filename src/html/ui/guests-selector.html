@@ -36,11 +36,13 @@
           {{label}}
         </span>
 
-        {{>
-        ui/counter
+        {{>ui/counter
           counterClass="guests-selector__counter"
           counterValue=value
           counterType=type
+          min=min
+          max=max
+          step=step
         }}
       </div>
     {{/each}}

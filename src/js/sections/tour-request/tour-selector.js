@@ -1,22 +1,5 @@
 import { getHotOffers } from '@/js/services/api/getHotOffers.js';
 
-
-function initCounter(counterDom) {
-  const counter = document.querySelector('[data-counter]');
-  const counterValue =counter.querySelector('[data-counter-value]');
-  counter.addEventListener('click', (e)=>{
-    const click = e.target.closest('[data-counter-decrement], [data-counter-increment]');
-    if (click) {
-      if (click.hasAttribute('data-counter-decrement') && counterValue.value>1) {
-        --counterValue.value;
-      }
-      else if (click.hasAttribute('data-counter-increment')  && counterValue.value<28) {
-        ++counterValue.value;
-      }
-    }
-  })
-}
-
 async function renderCountryList() {
   const dataList = (await getHotOffers()) || [];
   const uniqueData = dataList.filter((item, index, self) =>
@@ -54,6 +37,6 @@ export const initTourSelector = async (root = document) => {
       }
   })
 
-  initCounter('[data-counter]');
+
   await renderCountryList();
 };

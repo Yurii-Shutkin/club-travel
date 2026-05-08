@@ -46,10 +46,10 @@
           ui/guests-selector
             guestsSelectorClass="tour-selector__select"
             guestsRows=(json '[
-              {"label":"Взрослые","value":"2","type":"adults"},
-              {"label":"Дети (до 15 лет)","value":"1","type":"adults"},
-              {"label":"Дети (до 10 лет)","value":"1","type":"adults"},
-              {"label":"Дети (до 3 лет)","value":"1","type":"adults"}
+              {"label":"Взрослые","value":"2","type":"adults","min":"1"},
+              {"label":"Дети (до 15 лет)","value":"0","type":"adults","min":"0"},
+              {"label":"Дети (до 10 лет)","value":"0","type":"adults","min":"0"},
+              {"label":"Дети (до 3 лет)","value":"0","type":"adults","min":"0"}
             ]')
           }}
         </div>
@@ -63,7 +63,7 @@
 
         <div class="tour-selector__field  tour-selector__field_counter">
           <span class="tour-selector__label">Длительность тура (дней)</span>
-          {{>ui/counter counterClass="tour-selector__counter" counterValue="12"}}
+          {{>ui/counter counterClass="tour-selector__counter" counterType="days" counterValue="12" min="3"}}
         </div>
       </div>
       <button
