@@ -3,7 +3,7 @@ export const links = {
   main: { href: './main.html' },
   searchResults: { href: '#!' },
   searchResultsCalendar: { href: '#!' },
-  hotel: { href: '#!' },
+  hotel: { href: './hotel.html' },
   directions: { href: '#!' },
   company: { href: './company.html' },
   tourSupport: { href: '#!' },
