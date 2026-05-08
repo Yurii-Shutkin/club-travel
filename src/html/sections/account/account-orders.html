@@ -2,7 +2,7 @@
   <h1 class="account-orders__title">Заказы</h1>
 
   <div class="account-orders__card">
-    <div class="account-orders__table-wrapper">
+    <div class="account-orders__table-wrapper" data-account-orders-table>
       <table class="account-orders__table">
         <thead class="account-orders__head">
           <tr class="account-orders__row">
@@ -26,7 +26,14 @@
       </table>
     </div>
 
-    <div class="account-orders__footer">
+    <div class="account-orders__empty" data-account-orders-empty hidden>
+      <p class="account-orders__empty-title">У вас пока нет заказов</p>
+      <p class="account-orders__empty-text">
+        Когда вы оформите тур, информация о заказе появится здесь.
+      </p>
+    </div>
+
+    <div class="account-orders__footer" data-account-orders-footer>
       <p class="account-orders__counter" data-account-orders-counter>
         Показано 0 из 0
       </p>

@@ -1,4 +1,4 @@
-<section class="main-hero">
+<section class="main-hero {{sectionClass}}">
   <div class="main-hero__swiper swiper js-main-hero-swiper">
     <div class="main-hero__wrapper swiper-wrapper">
       <div class="main-hero__slide swiper-slide">
@@ -42,5 +42,9 @@
       {{> ui/svg className="main-hero__button-icon main-hero__button-icon_next"
       id="chevron" }}
     </button>
+  </div>
+
+  <div class="main-hero__wave" aria-hidden="true">
+    {{> ui/svg className="main-hero__wave-icon" id="wave" }}
   </div>
 </section>
