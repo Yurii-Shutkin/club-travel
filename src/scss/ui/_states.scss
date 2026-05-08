@@ -1,5 +1,5 @@
 @use "@/scss/utils/media" as media;
-.link-state {
+.link-state:not(.is-disabled) {  //clickable  interactive
     transition: color .3s ease, fill .3s ease;
     &:focus-visible {
         color: #f68521;

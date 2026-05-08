@@ -9,10 +9,12 @@ import { renderSeasonCards } from '@/js/sections/main/render-season-cards.js';
 import { initCardsSwiper } from '@/js/sections/main/cards-swiper.js';
 import { handleGoogleCallback } from '@/js/services/user/auth.js';
 
-handleGoogleCallback();
+
 
 document.addEventListener('DOMContentLoaded', async () => {
   await Promise.all([
+    handleGoogleCallback(),
+
     renderNewsCards('.promo-company',5).then(() =>
       initCardsSwiper('.promo-company', 3),
     ),
@@ -28,3 +30,49 @@ document.addEventListener('DOMContentLoaded', async () => {
   ]);
 });
 
+
+import Swiper from 'swiper';
+import { FreeMode, Thumbs } from 'swiper/modules';
+
+const swipersWithThumbs = document.querySelectorAll('.js-swiper-thumbs');
+
+swipersWithThumbs.forEach((swiperWithThumbs) => {
+  const mainElement = swiperWithThumbs.querySelector('.js-swiper-thumbs-main');
+  const thumbsElement = swiperWithThumbs.querySelector('.js-swiper-thumbs-nav');
+
+  if (!mainElement || !thumbsElement) {
+    return;
+  }
+
+  const slides = mainElement.querySelectorAll('.swiper-slide');
+
+  if (slides.length === 0) {
+    return;
+  }
+
+  const thumbsSwiper = new Swiper(thumbsElement, {
+    modules: [FreeMode],
+    slidesPerView: 4,
+    spaceBetween: 12,
+    freeMode: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+      0: {
+        spaceBetween: 8,
+      },
+      769: {
+        spaceBetween: 12,
+      },
+    },
+  });
+
+  new Swiper(mainElement, {
+    modules: [Thumbs],
+    slidesPerView: 1,
+    spaceBetween: 0,
+    speed: 500,
+    thumbs: {
+      swiper: thumbsSwiper,
+    },
+  });
+});

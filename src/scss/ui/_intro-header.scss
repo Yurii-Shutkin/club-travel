@@ -30,11 +30,20 @@
             color: #f15d28;
         }
     }
-    &__subtitle {
+    &__subtitle{
+        padding-inline: 20px;
+        text-align: center;
         margin-top: 17px;
-        padding-inline: 24px;
         @include media.max-width(xs) {
             margin-top: 12px;
         }
+    }
+
+    &__subtitle-icon{
+        width: 20px;
+        aspect-ratio: 1;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 4px;
     }
 }

@@ -206,14 +206,14 @@
 
     &__social-widget-wrap{
         margin-top: 24px;
-        width: 332px;
+        width: 320px;
         @include media.max-width(lg) {
             margin-top: 18px;
         }
     }
 
     &__social-widget{
-        width: 332px;
+        max-width: 315px;
     }
 
     &__rights {

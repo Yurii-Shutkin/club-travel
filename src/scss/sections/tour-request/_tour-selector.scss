@@ -1,4 +1,5 @@
 @use "@/scss/utils/media" as media;
+
 .tour-selector {
     width: min(100%, 418px);
     min-height: 544px;
@@ -19,7 +20,8 @@
         border-radius: 10px 10px 0 0;
         overflow: hidden;
         width: 100%;
-        & li{
+
+        & li {
             width: 100%;
         }
     }
@@ -34,12 +36,13 @@
         opacity: 0.5;
 
         &.is-active {
-            opacity:1;
+            opacity: 1;
             background: #fff;
         }
     }
-    &__container{
-        padding:24px;
+
+    &__container {
+        padding: 24px;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
@@ -48,6 +51,7 @@
             padding: 24px 16px 16px 16px;
         }
     }
+
     &__panel {
         display: none;
         flex-direction: column;
@@ -55,11 +59,13 @@
         height: 100%;
         flex-grow: 1;
         width: 100%;
+
         &.is-active {
             display: flex;
         }
     }
-    &__panel-body{
+
+    &__panel-body {
         flex-grow: 1;
     }
 
@@ -68,10 +74,12 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+
         & + & {
             margin-top: 15px;
         }
-        &_counter{
+
+        &_counter {
             margin-top: 27px;
         }
     }
@@ -84,11 +92,13 @@
         color: #9aa0a6;
         margin-bottom: 4px;
     }
-    &__input-wrap{
+
+    &__input-wrap {
         width: 100%;
         position: relative;
     }
-    &__input-arrow{
+
+    &__input-arrow {
         width: 24px;
         aspect-ratio: 1;
         fill: #a9a9a9;
@@ -99,6 +109,7 @@
         user-select: none;
         pointer-events: none;
     }
+
     &__input {
         margin-top: 5px;
         display: flex;
@@ -111,7 +122,8 @@
         padding: 0 10px;
         color: var(--text);
         appearance: none;
-        &_area{
+
+        &_area {
             height: 100px;
             padding: 8px 10px;
         }
@@ -137,45 +149,6 @@
     }
 
     &__counter {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border: 1px solid #e2e2e2;
-        border-radius: 6px;
-        background: #fff;
-        min-height: 42px;
-        padding: 0 4px;
-        font-size: 16px;
-        color: var(--text);
-    }
-
-    &__counter-btn {
-        width: 14px;
-        height: 14px;
-        background: var(--primary);
-        opacity: 0.5;
-        color: #fff;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        & span{
-            width: 6px;
-            height: 1px;
-            background: white;
-            flex-shrink: 0;
-            &:nth-child(2){
-                transform: rotate(90deg);
-                position: absolute;
-            }
-        }
-    }
-
-    &__counter-value {
-        font-size: 16px;
-        color: var(--text);
     }
 
     &__input_center {
@@ -206,6 +179,7 @@
                 outline: 2px solid var(--primary);
                 outline-offset: 3px;
                 border-radius: 2px;
+
                 .rating__icon {
                     opacity: 1;
                 }
@@ -245,13 +219,15 @@
             display: block;
         }
     }
-    &__btn-wrap{
+
+    &__btn-wrap {
         display: flex;
         gap: 8px;
     }
+
     &__btn {
         margin-top: 20px;
         width: 100%;
     }
-
 }
+

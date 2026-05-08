@@ -1,0 +1,110 @@
+<section class="hotel-overview">
+  <div class="container hotel-overview__grid">
+    <div class="hotel-overview__main">
+
+
+      {{> ui/picture
+        className="hotel-overview__hero"
+        alt="Номер отеля"
+        desktop="/src/assets/image/test.jpg"
+        desktopWebp="/src/assets/image/test.webp"
+      }}
+
+      <div class="hotel-overview__thumbs">
+        <img
+          src="/src/assets/image/test.jpg" alt="Фото отеля 1"
+          class="hotel-overview__thumb">
+        <img
+          src="/src/assets/image/test.jpg" alt="Фото отеля 2"
+          class="hotel-overview__thumb">
+        <img
+          src="/src/assets/image/test.jpg" alt="Фото отеля 3"
+          class="hotel-overview__thumb">
+        <img
+          src="/src/assets/image/test.jpg" alt="Фото отеля 4"
+          class="hotel-overview__thumb">
+      </div>
+      <h1 class="hotel-overview__title">Рекомендуем для семейного и молодежного отдыха.</h1>
+      <p class="hotel-overview__text">
+        Гости города Золотые пески, приехавшие в город по делам бизнеса или для отдыха,
+        могут остановиться в гостинце Ambassador (Амбассадор). Отель прекрасно сочетает
+        в себе как современный комфорт, так и высокий уровень обслуживания. Каждый номер
+        оснащен всем необходимым для комфортного отдыха (кондиционер, телевизор, письменный
+        стол, сейф и утренняя газета). Вы сможете воспользоваться услугами массажиста, баром,
+        лифтом, спа, сауной, рестораном, отдохнуть у бассейна, посетить фитнес зал и прогуляться по саду.
+        Ваш отдых в отеле Ambassador (Амбассадор) будет ярким и запоминающимся, вас не оставят равнодушными
+        первоклассный сервис и великолепное обслуживание. Отель находится в 27 км от Международного аэропорта Варна
+        (Varna International Airport), в 900 метрах от центра курорта Золотые пески и в 150 метрах от пляжа. Отель
+        принимает отдыхающих круглый год и является прекрасным местом для отдыха, спорта и развлечений. В бальнеологическом
+        центре «Амбассадор» предлагаются свыше 100 видов услуг: таласотерапия, ванные, массаж, электротерапия, грязелечение,
+        водолечение, акупунктура, медицинская косметика, сауна, открытый и крытый бассейны, фитнес зал, солярий и много других.
+      </p>
+
+      <div class="hotel-overview__features">
+        <div>
+          <h3>Месторасположение</h3>
+          <ul>
+            <li>Гостиница находится в южной части курортного комплекса</li>
+            <li>В нескольких минутах ходьбы от моря</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Рестораны и бары</h3>
+          <ul>
+            <li>бар</li>
+            <li>кафе</li>
+            <li>ресторан</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Пляж</h3>
+          <ul>
+            <li>Расстояние до пляжа 60 м</li>
+            <li>Зонтики (платно)</li>
+            <li>Шезлонги (платно)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Развлечения и спорт</h3>
+          <ul>
+            <li>бассейн крытый</li>
+            <li>бассейн открытый</li>
+            <li>теннисный корт</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <aside class="hotel-overview__sidebar">
+      <article class="hotel-card hotel-card--selected">
+        <h2 class="hotel-card__title">Выбранный тур</h2>
+        <ul class="hotel-card__list">
+          <li>18 июня 2020 г. / 7 ночей</li>
+          <li>Вылет из Таллинна</li>
+          <li>Завтраки</li>
+          <li>Стандарт</li>
+        </ul>
+        <p class="hotel-card__price">429€
+          <span>/чел</span>
+        </p>
+        <button
+          class="btn btn-solid btn-solid--orange hotel-card__button">Бронировать
+        </button>
+      </article>
+
+      <article class="hotel-card hotel-card--benefits">
+        <h2 class="hotel-card__title">Почему бронировать тур у нас?</h2>
+        <ul class="hotel-card__checks">
+          <li>Только отобранные отели</li>
+          <li>Все туроператоры на одном сайте</li>
+          <li>Прозрачно и безопасно</li>
+          <li>Без наценок</li>
+        </ul>
+      </article>
+
+      <article class="hotel-card hotel-card--consultant">
+        {{>components/ask-consultant consultantClass="hotel-overview__consultant"}}
+      </article>
+    </aside>
+  </div>
+</section>
