@@ -140,12 +140,15 @@ if (accountPage) {
     elements.next.addEventListener('click', () => changePage(1));
   if (elements.logout) {
     elements.logout.addEventListener('click', () => {
+      auth.logout();
       window.location.href = '/club-travel/';
     });
   }
-
+  
+  
   renderUser(state.user);
   render();
   syncTableHeight();
+  initGuard();
   window.addEventListener('resize', syncTableHeight);
 }
