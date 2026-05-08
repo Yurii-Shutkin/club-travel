@@ -1,7 +1,7 @@
 <div class="custom-select {{customSelectClass}}" data-select="{{name}}" {{{dataAtr}}}>
   <input type="hidden" name="{{name}}" data-select-input />
   <button
-    type="button" class="custom-select__trigger link-state" data-select-trigger
+    type="button" class="custom-select__trigger clickable" data-select-trigger
     role="combobox" aria-haspopup="listbox" aria-expanded="false">
     <span data-select-value>{{placeholder}}</span>
     {{> ui/svg className="custom-select__input-arrow" id="chevron" dataAttr="data-select-arrow"}}
@@ -10,7 +10,7 @@
     {{#if options}}
       {{#each options}}
         <li
-          class="custom-select__option link-state" data-select-option
+          class="custom-select__option clickable" data-select-option
           data-value="{{this.value}}" role="option">
           {{this.label}}
         </li>
@@ -19,7 +19,7 @@
   </ul>
   <template data-template-option>
     <li
-      class="custom-select__option link-state" data-select-option role="option">
+      class="custom-select__option clickable" data-select-option role="option">
     </li>
   </template>
 </div>

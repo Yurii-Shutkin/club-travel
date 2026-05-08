@@ -1,20 +1,17 @@
 <div
   class="guests-selector {{guestsSelectorClass}}"
-  data-guests-selector data-select
->
+  data-guests-selector data-select>
   <input
     type="hidden"
     name="guests"
     class="guests-selector__input"
-    data-guests-input
-  />
+    data-guests-input />
 
   <button
     type="button"
     class="guests-selector__trigger"
     aria-expanded="false"
-    data-select-trigger
-  >
+    data-select-trigger>
     <span
       class="guests-selector__value"
       data-guests-value
@@ -27,8 +24,7 @@
 
   <div
     class="guests-selector__dropdown"
-    data-guests-dropdown
-  >
+    data-guests-dropdown>
 
     {{#each guestsRows}}
       <div class="guests-selector__row">

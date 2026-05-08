@@ -17,12 +17,12 @@
 
       <nav class="header__service-nav" aria-label="Дополнительная навигация">
         <div class="header__service-list">
-          <a class="header__service-link link-state" href="main.html"
+          <a class="header__service-link clickable" href="main.html"
             >Страховки</a
           >
-          <a class="header__service-link link-state" href="main.html">Визы</a>
+          <a class="header__service-link clickable" href="main.html">Визы</a>
           <a
-            class="header__service-link link-state"
+            class="header__service-link clickable"
             href="{{links.contacts.href}}"
             >Контакты</a
           >
@@ -32,7 +32,7 @@
       <address class="header__contacts">
         <ul class="header__contacts-list">
           <li class="header__contacts-item">
-            <a class="header__contacts-link link-state" href="tel:+3726130633">
+            <a class="header__contacts-link clickable" href="tel:+3726130633">
               {{> ui/svg className="header__contacts-icon
               header__contacts-icon_phone" id="phone" }}
               <span class="header__contacts-text">+372 6 130 633</span>
@@ -41,7 +41,7 @@
 
           <li class="header__contacts-item">
             <a
-              class="header__contacts-link link-state"
+              class="header__contacts-link clickable"
               href="mailto:contact@email.ee"
             >
               {{> ui/svg className="header__contacts-icon
