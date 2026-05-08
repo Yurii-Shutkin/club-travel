@@ -1,3 +1,6 @@
+import '@/js/services/user/google-auth.js';
+import { links } from '@/data/links.js';
+
 const STRAPI_URL = 'https://club-travel-strapi.onrender.com';
 const BASE_URL = 'http://localhost:5173/club-travel';
 
@@ -13,12 +16,11 @@ export const auth = {
 
     logout() {
         localStorage.clear();
-        window.location.href = BASE_URL + '/auth.html';
+        window.location.href = links.authorization.href;
     },
 
     async validate() {
         const token = this.getToken();
-        console.log(token)
         if (!token) return false;
 
 
@@ -26,7 +28,6 @@ export const auth = {
             const response = await fetch(`${STRAPI_URL}/api/users/me`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
-            console.log('ok', response)
             return response.ok; 
         } catch (error) {
             console.error("Ошибка проверки сессии", error);

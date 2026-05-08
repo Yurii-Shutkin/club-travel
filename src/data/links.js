@@ -11,7 +11,7 @@ export const links = {
   customerAccount: { href: './account.html' },
   contacts: { href: './contacts.html' },
   authorization: { href: './auth.html' },
-  registration: { href: '#!' },
+  registration: { href: './signup.html' },
   passwordRecovery: { href: '#!' },
 
   // social: { href: './company.html' },

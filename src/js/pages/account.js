@@ -9,6 +9,8 @@ import {
   accountUser as mockAccountUser,
 } from '../../data/account-mock.js';
 
+initGuard();
+
 const ORDERS_PER_PAGE = 9;
 const STATUS_LABELS = { paid: 'Оплачено', processing: 'В обработке' };
 
@@ -141,14 +143,11 @@ if (accountPage) {
   if (elements.logout) {
     elements.logout.addEventListener('click', () => {
       auth.logout();
-      window.location.href = '/club-travel/';
     });
   }
-  
   
   renderUser(state.user);
   render();
   syncTableHeight();
-  initGuard();
   window.addEventListener('resize', syncTableHeight);
 }
