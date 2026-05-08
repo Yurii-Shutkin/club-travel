@@ -1,12 +1,13 @@
 @use '@/scss/base/reset';
 @use '@/scss/base/base';
 @use '@/scss/ui/states';
+@use '@/scss/ui/input';
 
 @use '@/scss/ui/intro-header';
 @use '@/scss/layout/header';
 @use '@/scss/layout/burger-menu';
 
-@use "@/scss/ui/form";
+@use "@/scss/components/form";
 
 @use '@/scss/layout/footer';
 

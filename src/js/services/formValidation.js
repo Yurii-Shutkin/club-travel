@@ -9,8 +9,8 @@ export const initValidation = (formSelector) => {
   if (!form) return null;
 
   const validator = new JustValidate(formSelector, {
-    errorFieldCssClass: 'is-invalid',
-    successFieldCssClass: 'is-valid',
+    errorFieldCssClass: 'input-base_is-invalid',
+    successFieldCssClass: 'input-base_is-valid',
     lockForm: true,
   });
 

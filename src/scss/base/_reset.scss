@@ -76,17 +76,6 @@ input::-ms-clear {
     display: none;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-
-    -webkit-box-shadow: 0 0 0 1000px #fdfdfd inset !important;
-    -webkit-text-fill-color: var(--text) !important;
-    border: 1px solid #ddd !important;
-    transition: background-color 5000s ease-in-out 0s;
-}
-
 button::-moz-focus-inner {
     padding: 0;
     border: 0;

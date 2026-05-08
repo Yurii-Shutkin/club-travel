@@ -94,19 +94,6 @@
         margin-left: 16px;
     }
 
-    &__input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid var(--input-border);
-        border-radius: 4px;
-        background: var(--white);
-
-        &:focus,
-        &:active {
-            border-color: var(--blue);
-        }
-    }
-
     &__label-row {
         display: flex;
         justify-content: space-between;
@@ -137,14 +124,6 @@
         background: #fff;
         padding: 5px;
         border-radius: 5px;
-    }
-
-    .is-invalid {
-        border: 1px solid #ff4d4d !important;
-    }
-
-    .is-valid {
-        border: 1px solid #57bc7f !important;
     }
 
     .policy-links {
