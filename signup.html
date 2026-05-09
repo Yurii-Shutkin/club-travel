@@ -4,12 +4,12 @@
 <head>
 <meta charset="UTF-8" />
 <link rel="icon" type="image/svg+xml" href="/club-travel/favicon.svg" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Club Travel, Регистрация</title>
-  <script type="module" crossorigin src="/club-travel/assets/js/signup-DTN_FrWV.js"></script>
-  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-QTP0zqH0.js">
-  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/formValidation-CSLp6KKk.js">
-  <link rel="stylesheet" crossorigin href="/club-travel/assets/css/signup-BfnuvxsK.css">
+  <script type="module" crossorigin src="/club-travel/assets/js/signup-Ck2wasHK.js"></script>
+  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-BtxuocSx.js">
+  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/formValidation-D-Hpduxm.js">
+  <link rel="stylesheet" crossorigin href="/club-travel/assets/css/signup-CWyAnJtE.css">
 </head>
 <body class="signup">
     <header class="header">
@@ -27,23 +27,30 @@
             </svg>
           </button>
     
-          <a class="header__logo" href="index.html" aria-label="Club Travel">
+          <a class="header__logo" href="main.html" aria-label="Club Travel">
             <svg class="header__logo-icon" >
                 <use href="/club-travel/sprite.svg#icon-logo"></use>
             </svg>
           </a>
     
           <nav class="header__service-nav" aria-label="Дополнительная навигация">
-            <div class="header__service-list" >
-                <a href="index.html" class="header__service-link link-state">Страховки</a>
-                <a href="index.html" class="header__service-link link-state">Визы</a>
-                <a href="index.html" class="header__service-link link-state">Контакты</a>
-            </div>      </nav>
+            <div class="header__service-list">
+              <a class="header__service-link clickable" href="main.html"
+                >Страховки</a
+              >
+              <a class="header__service-link clickable" href="main.html">Визы</a>
+              <a
+                class="header__service-link clickable"
+                href="./contacts.html"
+                >Контакты</a
+              >
+            </div>
+          </nav>
     
           <address class="header__contacts">
             <ul class="header__contacts-list">
               <li class="header__contacts-item">
-                <a class="header__contacts-link link-state" href="tel:+3726130633">
+                <a class="header__contacts-link clickable" href="tel:+3726130633">
                   <svg class="header__contacts-icon
                                 header__contacts-icon_phone" >
                       <use href="/club-travel/sprite.svg#icon-phone"></use>
@@ -54,7 +61,7 @@
     
               <li class="header__contacts-item">
                 <a
-                  class="header__contacts-link link-state"
+                  class="header__contacts-link clickable"
                   href="mailto:contact@email.ee"
                 >
                   <svg class="header__contacts-icon
@@ -74,7 +81,7 @@
               aria-label="Личный кабинет"
               aria-expanded="false"
               aria-controls="account-dropdown"
-              data-auth-url="index.html"
+              data-auth-url="./auth.html"
               data-account-url="./account.html"
             >
               <svg class="header__account-icon" >
@@ -103,7 +110,7 @@
                 </li>
     
                 <li class="header__account-item">
-                  <a class="header__account-link" href="index.html">
+                  <a class="header__account-link" href="main.html">
                     <svg class="header__account-item-icon" >
                         <use href="/club-travel/sprite.svg#icon-payment-card"></use>
                     </svg>
@@ -112,7 +119,7 @@
                 </li>
     
                 <li class="header__account-item">
-                  <a class="header__account-link" href="index.html">
+                  <a class="header__account-link" href="main.html">
                     <svg class="header__account-item-icon" >
                         <use href="/club-travel/sprite.svg#icon-settings"></use>
                     </svg>
@@ -123,7 +130,7 @@
     
               <div class="header__account-divider"></div>
     
-              <a class="header__account-logout" href="index.html">
+              <a class="header__account-logout" href="main.html">
                 <svg class="header__account-logout-icon" >
                     <use href="/club-travel/sprite.svg#icon-exit"></use>
                 </svg>
@@ -142,11 +149,11 @@
         <nav class="header__main-nav" aria-label="Основная навигация">
           <ul class="header__main-list">
             <li class="header__main-item">
-              <a class="header__main-link" href="index.html">Поиск тура</a>
+              <a class="header__main-link" href="main.html">Поиск тура</a>
             </li>
     
             <li class="header__main-item">
-              <a class="header__main-link" href="index.html">Направления</a>
+              <a class="header__main-link" href="main.html">Направления</a>
             </li>
     
             <li class="header__main-item">
@@ -163,7 +170,7 @@
             </li>
     
             <li class="header__main-item">
-              <a class="header__main-link header__main-link_hot" href="index.html">
+              <a class="header__main-link header__main-link_hot" href="main.html">
                 <svg class="header__main-link-icon
                             header__main-link-icon_hot" >
                     <use href="/club-travel/sprite.svg#icon-fast-time"></use>
@@ -173,11 +180,13 @@
             </li>
     
             <li class="header__main-item">
-              <a class="header__main-link" href="./tour-request.html">Запрос тура</a>
+              <a class="header__main-link" href="./tour-request.html"
+                >Запрос тура</a
+              >
             </li>
     
             <li class="header__main-item">
-              <a class="header__main-link" href="index.html">Авиабилеты</a>
+              <a class="header__main-link" href="main.html">Авиабилеты</a>
             </li>
           </ul>
         </nav>
@@ -187,7 +196,7 @@
       <div class="burger-menu__dialog">
         <div class="burger-menu__container container">
           <div class="burger-menu__head">
-            <a class="burger-menu__logo" href="index.html" aria-label="Club Travel">
+            <a class="burger-menu__logo" href="main.html" aria-label="Club Travel">
               <svg class="burger-menu__logo-icon" >
                   <use href="/club-travel/sprite.svg#icon-logo"></use>
               </svg>
@@ -207,24 +216,24 @@
           <nav class="burger-menu__main-nav" aria-label="Основная навигация">
             <ul class="burger-menu__main-list">
               <li class="burger-menu__main-item">
-                <a class="burger-menu__main-link" href="index.html">Поиск тура</a>
+                <a class="burger-menu__main-link" href="main.html">Поиск тура</a>
               </li>
               <li class="burger-menu__main-item">
-                <a class="burger-menu__main-link" href="index.html">Направления</a>
+                <a class="burger-menu__main-link" href="main.html">Направления</a>
               </li>
               <li class="burger-menu__main-item">
-                <a class="burger-menu__main-link" href="index.html">Кампании</a>
+                <a class="burger-menu__main-link" href="main.html">Кампании</a>
               </li>
               <li class="burger-menu__main-item">
-                <a class="burger-menu__main-link" href="index.html">
+                <a class="burger-menu__main-link" href="main.html">
                   Горящие предложения
                 </a>
               </li>
               <li class="burger-menu__main-item">
-                <a class="burger-menu__main-link" href="index.html">Запрос тура</a>
+                <a class="burger-menu__main-link" href="main.html">Запрос тура</a>
               </li>
               <li class="burger-menu__main-item">
-                <a class="burger-menu__main-link" href="index.html">Авиабилеты</a>
+                <a class="burger-menu__main-link" href="main.html">Авиабилеты</a>
               </li>
             </ul>
           </nav>
@@ -237,13 +246,15 @@
           >
             <ul class="burger-menu__service-list">
               <li class="burger-menu__service-item">
-                <a class="burger-menu__service-link" href="index.html">Визы</a>
+                <a class="burger-menu__service-link" href="main.html">Визы</a>
               </li>
               <li class="burger-menu__service-item">
-                <a class="burger-menu__service-link" href="index.html">Страховки</a>
+                <a class="burger-menu__service-link" href="main.html">Страховки</a>
               </li>
               <li class="burger-menu__service-item">
-                <a class="burger-menu__service-link" href="index.html">Контакты</a>
+                <a class="burger-menu__service-link" href="./contacts.html"
+                  >Контакты</a
+                >
               </li>
             </ul>
           </nav>
@@ -353,16 +364,16 @@
           <div class="footer__destinations">
             <h2 class="footer__destinations-title">Популярные направления</h2>
             <div class="footer__destinations-list" >
-                <a href="#!" class="footer__destinations-link link-state">Египет</a>
-                <a href="#!" class="footer__destinations-link link-state">Бали</a>
-                <a href="#!" class="footer__destinations-link link-state">ОАЭ</a>
-                <a href="#!" class="footer__destinations-link link-state">Грузия</a>
-                <a href="#!" class="footer__destinations-link link-state">Таиланд</a>
-                <a href="#!" class="footer__destinations-link link-state">Греция</a>
-                <a href="#!" class="footer__destinations-link link-state">Болгария</a>
-                <a href="#!" class="footer__destinations-link link-state">Турция</a>
-                <a href="#!" class="footer__destinations-link link-state">Тенерифе</a>
-                <a href="#!" class="footer__destinations-link link-state">Кипр</a>
+                <a href="#!" class="footer__destinations-link clickable">Египет</a>
+                <a href="#!" class="footer__destinations-link clickable">Бали</a>
+                <a href="#!" class="footer__destinations-link clickable">ОАЭ</a>
+                <a href="#!" class="footer__destinations-link clickable">Грузия</a>
+                <a href="#!" class="footer__destinations-link clickable">Таиланд</a>
+                <a href="#!" class="footer__destinations-link clickable">Греция</a>
+                <a href="#!" class="footer__destinations-link clickable">Болгария</a>
+                <a href="#!" class="footer__destinations-link clickable">Турция</a>
+                <a href="#!" class="footer__destinations-link clickable">Тенерифе</a>
+                <a href="#!" class="footer__destinations-link clickable">Кипр</a>
             </div>      </div>
           <div class="footer__contacts">
             <div class="footer__contacts-inner">
@@ -388,13 +399,13 @@
                 <div class="footer__contacts-phones">
                   <a
                     href="tel:+37255560310"
-                    class="footer__contacts-link link-state"
+                    class="footer__contacts-link clickable"
                     aria-label="Позвонить по номеру +372 555 60 310">+372 555 60 310
                   </a>
                   <span class="footer__contacts-phone-line"> | </span>
                   <a
                     href="tel:+3726130633"
-                    class="footer__contacts-link link-state"
+                    class="footer__contacts-link clickable"
                     aria-label="Позвонить по номеру +372 61 30 633">+372 61 30 633
                   </a>
                 </div>
@@ -405,7 +416,7 @@
                 </svg>
                 <a
                   href="mailto:info@clubstravel.ee"
-                  class="footer__contacts-link link-state">
+                  class="footer__contacts-link clickable">
                   info@clubstravel.ee
                 </a>
                 </li>
@@ -420,7 +431,7 @@
                   href="https://www.instagram.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="footer__social-link link-state">
+                  class="footer__social-link clickable">
                   <svg class="footer__social-icon"  focusable="false" >
                       <use href="/club-travel/sprite.svg#icon-instagram"></use>
                   </svg>
@@ -444,14 +455,14 @@
       </div>
       <div class="footer__rights">
         <p class="footer__rights-item">©2020 Clubstravel. Все права защищены.</p>
-        <a href="https://zakon.rada.gov.ua/laws/show/2297-17#Text" class="footer__rights-link link-state">Политика конфиденциальности</a>
-        <a href="https://zakon.rada.gov.ua/laws/show/2297-17#Text" class="footer__rights-link link-state">Политика использования</a>
+        <a href="https://zakon.rada.gov.ua/laws/show/2297-17#Text" class="footer__rights-link clickable">Политика конфиденциальности</a>
+        <a href="https://zakon.rada.gov.ua/laws/show/2297-17#Text" class="footer__rights-link clickable">Политика использования</a>
       </div>
     </footer>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
             src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v20.0">
-    </script>
+    </script>
 </body>
 
 </html>
