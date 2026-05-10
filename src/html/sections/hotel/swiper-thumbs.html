@@ -1,15 +1,13 @@
 <div class="swiper-thumbs {{swiperThumbsClass}} js-swiper-thumbs">
   <div class="swiper-thumbs__main swiper js-swiper-thumbs-main">
     <div class="swiper-wrapper">
-      {{#each swiperThumbsImages}}
+      {{#each (split swiperThumbsImages)}}
         <div class="swiper-thumbs__main-slide swiper-slide">
           {{> ui/picture
             className="swiper-thumbs__picture"
-            alt=this.alt
-            desktop=this.desktop
-            desktopWebp=this.desktopWebp
-            mobile=this.mobile
-            mobileWebp=this.mobileWebp
+            alt=../swiperThumbsAlt
+            desktop=this
+            desktopWebp=(lookup (split ../swiperThumbsImagesWebp) @index)
           }}
         </div>
       {{/each}}
@@ -18,9 +16,9 @@
 
   <div class="swiper-thumbs__nav swiper js-swiper-thumbs-nav" aria-label="Фотографии">
     <div class="swiper-wrapper">
-      {{#each swiperThumbsImages}}
-        <button class="swiper-thumbs__thumb swiper-slide" type="button" aria-label="Показать фото: {{this.alt}}">
-          <img src="{{#if this.thumb}}{{this.thumb}}{{else}}{{this.desktop}}{{/if}}" alt="">
+      {{#each (split swiperThumbsImages)}}
+        <button class="swiper-thumbs__thumb swiper-slide" type="button" aria-label="Показать фото: {{../swiperThumbsAlt}}">
+          <img src="{{this}}" alt="">
         </button>
       {{/each}}
     </div>

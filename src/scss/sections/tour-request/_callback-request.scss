@@ -1,6 +1,6 @@
 @use "@/scss/utils/media" as media;
 .callback-request {
-    width: min(100%, 524px);
+
 
     &__inner {
         margin: 0 0 0 3px;
@@ -47,6 +47,9 @@
         display: grid;
         grid-template-columns: 1fr 170px;
         margin-top: 16px;
+        @include media.max-width(sd) {
+            max-width: 600px;
+        }
         @include media.max-width(xs) {
             grid-template-columns: 1fr;
             gap: 16px;
@@ -78,6 +81,12 @@
         & .ask-consultant__photo{
             aspect-ratio: 3/2;
             width: 270px;
+            @include media.max-width(md) {
+                width: 44%;
+            }
+            @include media.max-width(sd) {
+                width: 50%;
+            }
             @include media.max-width(xs) {
                 aspect-ratio: 16/9;
                 width: 100%;
@@ -88,6 +97,9 @@
             fill: var(--green);
         }
         & .ask-consultant__inner{
+            @include media.max-width(md) {
+                flex-direction: row;
+            }
             @include media.max-width(sd) {
                 flex-direction: row;
             }

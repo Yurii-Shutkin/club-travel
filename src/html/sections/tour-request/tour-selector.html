@@ -26,39 +26,31 @@
       <div class="tour-selector__panel-body">
         <div class="tour-selector__field">
           <span class="tour-selector__label">Направление</span>
-            {{> ui/custom-select
-              customSelectClass="tour-selector__select"
-              name="destination"
-              placeholder="Выберите направление"
-            }}
+          {{> ui/custom-select
+            customSelectClass="tour-selector__select"
+            name="destination"
+            placeholder="Выберите направление"
+          }}
         </div>
         <div class="tour-selector__field">
           <span class="tour-selector__label">Дата вылета</span>
           {{> ui/custom-select
             customSelectClass="tour-selector__select"
-            name="destination"
+            name="date"
             placeholder="Выберите дату вылета"
           }}
         </div>
         <div class="tour-selector__field">
           <span class="tour-selector__label">Гости</span>
-          {{>
-          ui/guests-selector
+          {{> ui/guests-selector
             guestsSelectorClass="tour-selector__select"
             guestsRows=(json '[
-              {"label":"Взрослые","value":"2","type":"adults","min":"1"},
-              {"label":"Дети (до 15 лет)","value":"0","type":"adults","min":"0"},
-              {"label":"Дети (до 10 лет)","value":"0","type":"adults","min":"0"},
-              {"label":"Дети (до 3 лет)","value":"0","type":"adults","min":"0"}
+              {"label":"Взрослых","value":"4","type":"adults","min":"1"},
+              {"label":"15 лет","value":"2","type":"15","min":"0"},
+              {"label":"10 лет","value":"3","type":"10","min":"0"},
+              {"label":"3 года","value":"1","type":"3","min":"0"}
             ]')
           }}
-        </div>
-
-        <div class="tour-selector__chips" aria-label="Возрастные группы гостей">
-          <span class="tour-selector__chip">Взрослых x2</span>
-          <span class="tour-selector__chip">15 лет x1</span>
-          <span class="tour-selector__chip">3 года x1</span>
-          <span class="tour-selector__chip">10 лет x3</span>
         </div>
 
         <div class="tour-selector__field  tour-selector__field_counter">
@@ -85,7 +77,7 @@
           <span class="tour-selector__label">Питание</span>
           {{> ui/custom-select
             customSelectClass="tour-selector__select"
-            name="destination"
+            name="food"
             placeholder="Выберите питание"
             options=(json '[{ "value": "roomOnly", "label": "Без питания" },
               { "value": "noMeals", "label": "Завтрак" },
@@ -144,10 +136,10 @@
             placeholder="Ваши пожелания"></textarea>
         </label>
       </div>
-        <button
-          class="tour-selector__btn btn btn_bordered" type="button"
-          data-btn-goto="contacts">Дальше
-        </button>
+      <button
+        class="tour-selector__btn btn btn_bordered" type="button"
+        data-btn-goto="contacts">Дальше
+      </button>
     </div>
 
     <div class="tour-selector__panel" data-panel="contacts" hidden>
@@ -162,19 +154,19 @@
           <span class="tour-selector__label">Телефон</span>
           <input
             class="tour-selector__input" type="tel" autocomplete="tel"
-            placeholder="+380" />
+            placeholder="Введите телефон" />
         </label>
         <label class="tour-selector__field">
           <span class="tour-selector__label">Эл. почта</span>
           <input
             class="tour-selector__input" type="email" autocomplete="email"
-            placeholder="mail@example.com" />
+            placeholder="Введите email" />
         </label>
       </div>
-        <button
-          class="tour-selector__btn btn btn_orange" type="button"
-          data-tour-action>подобрать тур
-        </button>
+      <button
+        class="tour-selector__btn btn btn_orange" type="button"
+        data-tour-action>подобрать тур
+      </button>
     </div>
   </div>
 </form>
