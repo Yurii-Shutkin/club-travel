@@ -55,6 +55,7 @@ swipersWithThumbs.forEach((swiperWithThumbs) => {
     slidesPerView: 4,
     spaceBetween: 12,
     freeMode: true,
+    loop: true,
     watchSlidesProgress: true,
     breakpoints: {
       0: {
@@ -71,6 +72,7 @@ swipersWithThumbs.forEach((swiperWithThumbs) => {
     slidesPerView: 1,
     spaceBetween: 0,
     speed: 500,
+    loop: true,
     thumbs: {
       swiper: thumbsSwiper,
     },

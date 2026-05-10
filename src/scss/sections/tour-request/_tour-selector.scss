@@ -74,6 +74,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        //width: 100%;
 
         & + & {
             margin-top: 15px;
@@ -81,6 +82,7 @@
 
         &_counter {
             margin-top: 27px;
+            font-family: var(--second-family);
         }
     }
 
@@ -111,6 +113,7 @@
     }
 
     &__input {
+        font-family: var(--second-family);
         margin-top: 5px;
         display: flex;
         align-items: center;
@@ -129,26 +132,27 @@
         }
     }
 
-    &__chips {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin: 9px 0 10px 0;
-    }
-
-    &__chip {
-        display: block;
-        padding: 1px 10px;
-        border-radius: 6px;
-        font-size: 12px;
-        color: var(--text);
-        transition: background .2s ease;
-        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
-        border: 1px solid #e2e2e2;
-        background: #fff;
-    }
+    //&__chips {
+    //    display: flex;
+    //    flex-wrap: wrap;
+    //    gap: 6px;
+    //    margin: 9px 0 10px 0;
+    //}
+    //
+    //&__chip {
+    //    display: block;
+    //    padding: 1px 10px;
+    //    border-radius: 6px;
+    //    font-size: 12px;
+    //    color: var(--text);
+    //    transition: background .2s ease;
+    //    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+    //    border: 1px solid #e2e2e2;
+    //    background: #fff;
+    //}
 
     &__counter {
+
     }
 
     &__input_center {

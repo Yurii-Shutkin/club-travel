@@ -1,6 +1,7 @@
 .custom-select {
     position: relative;
     width: 100%;
+    font-family: var(--second-family);
     &.is-disabled {
         opacity: 0.5;
         pointer-events: none;

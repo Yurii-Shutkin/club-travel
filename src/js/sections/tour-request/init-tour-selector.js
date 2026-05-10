@@ -1,6 +1,7 @@
 import { getHotOffers } from '@/js/services/api/getHotOffers.js';
+import { updateDisabledState } from '@/js/ui/disabled-state.js';
 
-async function renderCountryList() {
+export async function renderCountryList() {
   const dataList = (await getHotOffers()) || [];
   const uniqueData = dataList.filter((item, index, self) =>
       index === self.findIndex((t) => (
@@ -18,14 +19,15 @@ async function renderCountryList() {
   for (let i = 0; i < uniqueData.length; i++) {
     const cloneEl = templateEl.cloneNode(true);
     cloneEl.textContent = `${uniqueData[i].country}>${uniqueData[i].region}`;
-    // cloneEl.dataset.value = uniqueData[i].country;
+
     optionsList.push(cloneEl);
   }
   dropdown.append(...optionsList);
+  updateDisabledState();
 }
 
 
-export const initTourSelector = async (root = document) => {
+export function initTourSelector()  {
   const tourSelector = document.querySelector('[data-tour-selector]');
 
   tourSelector.addEventListener('click', (e) => {
@@ -36,7 +38,4 @@ export const initTourSelector = async (root = document) => {
         tourSelector.querySelectorAll(`[data-tab="${dataItem}"],[data-panel="${dataItem}"]`).forEach(el=>el.classList.add('is-active'));
       }
   })
-
-
-  await renderCountryList();
 };

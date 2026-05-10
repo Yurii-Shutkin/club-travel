@@ -79,6 +79,7 @@ export default defineConfig({
     handlebars({
       partialDirectory: path.resolve(__dirname, 'src/html'),
       helpers: {
+        default: (value, fallback) => value || fallback,
         split: str => {
           if (typeof str === 'string') {
             return str.split(',').map(item => item.trim());
