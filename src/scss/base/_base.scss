@@ -37,12 +37,12 @@
     background: #D97706;
 }
 
-// Open Sans  400,700
-// Roboto  400,600
+// font-family: Open Sans  400,700
+// second-family: Roboto  400,600
 body {
     font-family: var(--font-family);
     font-weight: 400;
-    background: #fff;
+    background: var(--white);
     font-size: 14px;
 }
 

@@ -1,0 +1,37 @@
+@use '@/scss/base/reset';
+@use '@/scss/base/base';
+
+@use 'swiper/css';
+@use 'swiper/css/navigation';
+@use 'swiper/css/autoplay';
+
+@use '@/scss/ui/states';
+@use '@/scss/ui/btn';
+@use '@/scss/ui/rating';
+@use '@/scss/ui/intro-header';
+@use '@/scss/ui/counter';
+@use '@/scss/ui/custom-select';
+@use '@/scss/ui/guests-selector';
+@use '@/scss/ui/badge';
+
+@use '@/scss/components/swiper-cards';
+@use '@/scss/components/hot-card';
+
+@use '@/scss/layout/header';
+@use '@/scss/layout/burger-menu';
+
+@use '@/scss/sections/common/promo-tours';
+
+@use '@/scss/sections/common/main-hero';
+@use '@/scss/sections/hotel/hotel-badge';
+@use '@/scss/sections/hotel/about-hotel';
+@use '@/scss/sections/hotel/info-hotel';
+@use '@/scss/sections/hotel/swiper-thumbs';
+
+@use '@/scss/sections/hotel/hotel-consultant';
+@use '@/scss/sections/hotel/booking-card';
+@use '@/scss/sections/hotel/reasons-card';
+@use '@/scss/sections/hotel/hotel-page';
+
+@use '@/scss/layout/footer';
+

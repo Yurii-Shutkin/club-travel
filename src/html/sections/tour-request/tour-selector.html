@@ -1,4 +1,4 @@
-<form class="tour-selector {{classBlock}}" data-tour-selector>
+<form class="tour-selector {{classTourSelector}}" data-tour-selector>
   <ul
     class="tour-selector__tabs" role="tablist"
     aria-label="Етапи підбору туру">
@@ -24,63 +24,38 @@
   <div class="tour-selector__container">
     <div class="tour-selector__panel is-active" data-panel="basic">
       <div class="tour-selector__panel-body">
-        <label class="tour-selector__field">
+        <div class="tour-selector__field">
           <span class="tour-selector__label">Направление</span>
-          <span class="tour-selector__input-wrap">
-          {{> ui/svg className="tour-selector__input-arrow" id="chevron" }}
-            <select class="tour-selector__input" data-field="destination">
-              <template class="tour-selector__input-template" data-destination-template>
-                <option value=""></option>
-              </template>
-        </select>
-          </span>
-        </label>
-        <label class="tour-selector__field">
+          {{> ui/custom-select
+            customSelectClass="tour-selector__select"
+            name="destination"
+            placeholder="Выберите направление"
+          }}
+        </div>
+        <div class="tour-selector__field">
           <span class="tour-selector__label">Дата вылета</span>
-          <span class="tour-selector__input-wrap">
-          {{> ui/svg className="tour-selector__input-arrow" id="chevron" }}
-            <select class="tour-selector__input" data-field="date-range">
-          <option>25.06.2020 - 10.07.2020</option>
-        </select>
-        </span>
-        </label>
-        <label class="tour-selector__field">
+          {{> ui/custom-select
+            customSelectClass="tour-selector__select"
+            name="date"
+            placeholder="Выберите дату вылета"
+          }}
+        </div>
+        <div class="tour-selector__field">
           <span class="tour-selector__label">Гости</span>
-          <span class="tour-selector__input-wrap">
-          {{> ui/svg className="tour-selector__input-arrow" id="chevron" }}
-            <select class="tour-selector__input" data-field="guests">
-          <option>Взрослых: 2; детей: 5</option>
-        </select>
-          </span>
-        </label>
-
-        <div class="tour-selector__chips" aria-label="Возрастные группы гостей">
-          <span class="tour-selector__chip">Взрослых x2</span>
-          <span class="tour-selector__chip">15 лет x1</span>
-          <span class="tour-selector__chip">3 года x1</span>
-          <span class="tour-selector__chip">10 лет x3</span>
+          {{> ui/guests-selector
+            guestsSelectorClass="tour-selector__select"
+            guestsRows=(json '[
+              {"label":"Взрослых","value":"4","type":"adults","min":"1"},
+              {"label":"15 лет","value":"2","type":"15","min":"0"},
+              {"label":"10 лет","value":"3","type":"10","min":"0"},
+              {"label":"3 года","value":"1","type":"3","min":"0"}
+            ]')
+          }}
         </div>
 
         <div class="tour-selector__field  tour-selector__field_counter">
           <span class="tour-selector__label">Длительность тура (дней)</span>
-          <div class="tour-selector__counter" data-counter>
-            <button
-              class="tour-selector__counter-btn" type="button"
-              data-counter-decrement
-              aria-label="Уменьшить количество дней">
-              <span></span>
-            </button>
-            <output
-              class="tour-selector__counter-value" data-counter-value>12
-            </output>
-            <button
-              class="tour-selector__counter-btn" type="button"
-              data-counter-increment
-              aria-label="Увеличить количество дней">
-              <span></span>
-              <span></span>
-            </button>
-          </div>
+          {{>ui/counter counterClass="tour-selector__counter" counterType="days" counterValue="12" min="3"}}
         </div>
       </div>
       <button
@@ -98,20 +73,20 @@
             class="tour-selector__input" type="number" inputmode="numeric"
             placeholder="Введите цену" />
         </label>
-        <label class="tour-selector__field">
+        <div class="tour-selector__field">
           <span class="tour-selector__label">Питание</span>
-          <span class="tour-selector__input-wrap">
-          {{> ui/svg className="tour-selector__input-arrow" id="chevron" }}
-            <select class="tour-selector__input">
-          <option>Без питания</option>
-          <option>Завтрак</option>
-          <option>Затрак и ужин</option>
-          <option>Завтрак, обед, ужин</option>
-          <option>Всё включено</option>
-          <option>Ультра: всё включено</option>
-        </select>
-          </span>
-        </label>
+          {{> ui/custom-select
+            customSelectClass="tour-selector__select"
+            name="food"
+            placeholder="Выберите питание"
+            options=(json '[{ "value": "roomOnly", "label": "Без питания" },
+              { "value": "noMeals", "label": "Завтрак" },
+              { "value": "halfBoard", "label": "Завтрак и ужин" },
+              { "value": "fullBoard", "label": "Завтрак, обед, ужин" },
+              { "value": "allInclusive", "label": "Всё включено" },
+              { "value": "ultraAllInclusive", "label": "Ультра: всё включено " }]')
+          }}
+        </div>
         <div class="tour-selector__field">
           <span
             class="tour-selector__label">Категория отеля</span>
@@ -161,10 +136,10 @@
             placeholder="Ваши пожелания"></textarea>
         </label>
       </div>
-        <button
-          class="tour-selector__btn btn btn_bordered" type="button"
-          data-btn-goto="contacts">Дальше
-        </button>
+      <button
+        class="tour-selector__btn btn btn_bordered" type="button"
+        data-btn-goto="contacts">Дальше
+      </button>
     </div>
 
     <div class="tour-selector__panel" data-panel="contacts" hidden>
@@ -179,19 +154,21 @@
           <span class="tour-selector__label">Телефон</span>
           <input
             class="tour-selector__input" type="tel" autocomplete="tel"
-            placeholder="+380" />
+            placeholder="Введите телефон" />
         </label>
         <label class="tour-selector__field">
           <span class="tour-selector__label">Эл. почта</span>
           <input
             class="tour-selector__input" type="email" autocomplete="email"
-            placeholder="mail@example.com" />
+            placeholder="Введите email" />
         </label>
       </div>
-        <button
-          class="tour-selector__btn btn btn_orange" type="button"
-          data-tour-action>подобрать тур
-        </button>
+      <button
+        class="tour-selector__btn btn btn_orange" type="button"
+        data-tour-action>подобрать тур
+      </button>
     </div>
   </div>
 </form>
+
+

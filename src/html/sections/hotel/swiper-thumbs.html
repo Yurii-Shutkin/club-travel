@@ -1,0 +1,21 @@
+<div class="swiper-thumbs {{swiperThumbsClass}} js-swiper-thumbs" data-swiper-thumbs>
+  <div class="swiper-thumbs__main-swiper swiper" data-swiper-thumbs-main>
+    <div class="swiper-thumbs__main-swiper-wrapper swiper-wrapper">
+      {{#each (split swiperThumbsImages)}}
+        <picture class="swiper-thumbs__main-slide swiper-slide">
+          <img src="{{this}}" alt="">
+        </picture>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="swiper-thumbs__list--swiper swiper" aria-label="Фотографии" data-swiper-thumbs-list>
+    <div class="swiper-thumbs__list-swiper-wrapper swiper-wrapper">
+      {{#each (split swiperThumbsImages)}}
+        <button class="swiper-thumbs__list-slide swiper-slide" type="button" aria-label="Показать фото: {{../swiperThumbsAlt}}">
+          <img src="{{this}}" alt="">
+        </button>
+      {{/each}}
+    </div>
+  </div>
+</div>

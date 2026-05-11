@@ -8,6 +8,7 @@
       titleOrange=titleOrange
       titleMain=titleMain
       subtitle=subtitle
+      subtitleIconId=subtitleIconId
     }}
 
     <template class="promo-tours__template" data-template>
@@ -15,7 +16,7 @@
     </template>
 
     {{> components/swiper-cards swiperCardsClass="promo-tours__swiper-cards"}}
-
+    {{#if hrefLink}}
     <div class="promo-tours__footer">
       {{> ui/link-more
         linkMoreClass="promo-tours__link-more"
@@ -23,6 +24,8 @@
         hrefLink=hrefLink
       }}
     </div>
+    {{/if}}
+
 
   </div>
 </section>

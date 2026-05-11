@@ -1,0 +1,21 @@
+<section class="about-hotel">
+  <div class="about-hotel__container container">
+    <div class="about-hotel__inner">
+      <div class="about-hotel__main">
+        {{> sections/hotel/swiper-thumbs
+          swiperThumbsClass="about-hotel__swiper-thumbs"
+          swiperThumbsAlt="Тестовое фото"
+          swiperThumbsImages="/src/assets/image/test.jpg, /src/assets/image/test.jpg, /src/assets/image/test.jpg, /src/assets/image/test.jpg, /src/assets/image/test.jpg"
+          swiperThumbsImagesWebp="/src/assets/image/test.webp, /src/assets/image/test.webp, /src/assets/image/test.webp, /src/assets/image/test.webp, /src/assets/image/test.webp"
+        }}
+        {{> sections/hotel/info-hotel infoHotelClass="about-hotel__info-hotel"}}
+      </div>
+
+      <aside class="about-hotel__aside">
+        {{>sections/hotel/booking-card bookingCardClass="about-hotel__booking-card"}}
+        {{>sections/hotel/reasons-card reasonsCardClass="about-hotel__reasons-card"}}
+        {{>sections/hotel/hotel-consultant hotelConsultantClass="about-hotel__hotel-consultant"}}
+      </aside>
+    </div>
+  </div>
+</section>

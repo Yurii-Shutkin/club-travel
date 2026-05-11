@@ -14,9 +14,17 @@
       {{titleMain}}
     </{{tag}}>
   </div>
+
   {{#if subtitle}}
     <p class="intro-header__subtitle">
       {{subtitle}}
+      {{#if subtitleIconId}}
+        {{> ui/svg
+          className="intro-header__subtitle-icon"
+          id=subtitleIconId
+        }}
+      {{/if}}
     </p>
   {{/if}}
+
 </div>

@@ -1,0 +1,161 @@
+@use '@/scss/utils/media' as media;
+
+.booking-card {
+    width: 100%;
+    padding: 24px;
+    border-radius: 10px;
+    background: var(--white);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    color: var(--text);
+    @include media.max-width(xs) {
+        padding: 24px 0;
+        box-shadow: none;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    &__title {
+        font-size: 20px;
+    }
+
+    &__change {
+        text-transform: lowercase;
+        color: var(--primary);
+        opacity: 0.5;
+        transition: color 0.2s ease;
+
+        &:focus-visible,
+        &:hover {
+            color: var(--primary);
+        }
+    }
+
+    &__details {
+        display: grid;
+        gap: 15px;
+        font-size: 16px;
+        margin-top: 22px;
+    }
+
+    &__details-item {
+        display: grid;
+        grid-template-columns: 24px minmax(0, 1fr);
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__icon {
+        width: 22px;
+        aspect-ratio: 1;
+        fill: rgba(62, 119, 57, 0.5);
+    }
+
+    &__price {
+        display: flex;
+        align-items: baseline;
+        font-size: 24px;
+        margin-top: 25px;
+    }
+
+    &__price-value {
+        font-weight: 700;
+        color: #000;
+    }
+
+    &__price-unit {
+        font-weight: 400;
+        color: var(--text);
+    }
+
+    &__note {
+        max-width: 304px;
+        color: #999;
+        font-size: 12px;
+        margin-top: 9px;
+        line-height: 1.33;
+
+        &_bold {
+            font-weight: 700;
+        }
+    }
+
+    &__guests {
+        margin-top: 30px;
+        max-width: 400px;
+        @include media.max-width(xs) {
+            margin-top: 25px;
+        }
+    }
+
+    &__label {
+        display: block;
+        font-size: 16px;
+        color: #555;
+    }
+
+    &__guests-selector {
+        margin-top: 9px;
+
+        .guests-selector__trigger {
+            padding: 8px 16px;
+            font-size: 16px;
+        }
+    }
+
+    &__total {
+        display: flex;
+        align-items: baseline;
+        //justify-content: space-between;
+        gap: 12px;
+        margin-top: 28px;
+    }
+
+    &__total-label {
+        font-size: 16px;
+        color: var(--text);
+    }
+
+    &__total-value {
+        font-weight: 700;
+        font-size: 24px;
+        color: var(--green);
+        white-space: nowrap;
+    }
+
+    &__button {
+        width: 100%;
+        margin-top: 15px;
+        letter-spacing: 0.05em;
+    }
+
+    &__secure {
+        display: grid;
+        grid-template-columns: 18px minmax(0, 1fr);
+        margin-top: 18px;
+        gap: 8px;
+        color: #b0b0b0;
+        font-size: 12px;
+        line-height: 1.32;
+    }
+
+    &__secure-icon {
+        width: 18px;
+        aspect-ratio: 1;
+        fill: rgba(37, 82, 150, 0.5);
+    }
+
+    &__secure a {
+        color: #6f6f6f;
+        transition: color 0.2s ease;
+
+        &:focus-visible,
+        &:hover {
+            color: var(--primary);
+        }
+    }
+}

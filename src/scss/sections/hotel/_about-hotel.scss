@@ -1,0 +1,61 @@
+@use '@/scss/utils/media' as media;
+
+.about-hotel {
+
+    &__inner {
+        display: grid;
+        grid-template-columns:minmax(0, 1fr) 370px;
+        //gap: 70px;
+        gap: 6%;
+        @include media.max-width(sd) {
+            grid-template-columns: minmax(0, 1fr) 300px;
+        }
+        @include media.max-width(sm) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__main {
+        width: 100%;
+        margin-top: 68px;
+        @include media.max-width(sm) {
+            margin-top: 32px;
+            order: 3;
+        }
+    }
+    &__swiper-thumbs{
+    }
+
+    &__aside {
+        width: 100%;
+        @include media.max-width(sd) {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        @include media.max-width(sm) {
+            display: contents;
+        }
+    }
+    &__booking-card{
+        order: 2;
+    }
+    &__reasons-card {
+        margin-top: 48px;
+        order: 4;
+        @include media.max-width(sm) {
+            margin-top: 31px;
+        }
+    }
+    &__hotel-consultant{
+        margin-top: 44px;
+        order: 5;
+        @include media.max-width(sm) {
+            margin-top: 54px;
+        }
+    }
+
+    &__info-hotel {
+        margin-top: 29px;
+    }
+}

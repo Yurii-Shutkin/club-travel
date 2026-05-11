@@ -25,11 +25,3 @@ document.addEventListener('DOMContentLoaded', async () => {
   ]);
 });
 
-// await renderNewsCards('.promo-company');
-// initCardsSwiper('.promo-company', 3);
-//
-// await renderSeasonCards('winter', '.promo-winter-tours');
-// initCardsSwiper('.promo-winter-tours', 4);
-//
-// await renderSeasonCards('summer', '.promo-summer-tours');
-// initCardsSwiper('.promo-summer-tours', 4);

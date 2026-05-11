@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+{{>layout/head title="Club Travel, Контакты" hrefStyle="hotel-style"}}
+
+<body class="hotel-page">
+{{>layout/header}}
+{{>layout/burger-menu}}
+
+<main>
+  <div class="hotel-page__badge-wrap">
+    {{>sections/hotel/hotel-badge hotelBadgeClass="hotel-page__hotel-badge"}}
+    {{>sections/common/main-hero sectionClass="hotel-page__main-hero"}}
+  </div>
+
+  {{>sections/hotel/about-hotel}}
+
+  {{>sections/common/promo-tours
+    sectionClass="hotel-page__promo-tours"
+    tag="h2"
+    titleMain="ПОХОЖИЕ ОТЕЛИ"
+    cardPartial="components/hot-card"
+    textLinkMore="Все горящие предложения"}}
+
+
+</main>
+
+{{>layout/footer}}
+{{>layout/script srcJs="hotel"}}
+</body>
+</html>

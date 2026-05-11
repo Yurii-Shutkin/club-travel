@@ -1,0 +1,63 @@
+@use '@/scss/utils/media' as media;
+
+.reasons-card {
+    width: 100%;
+    padding: 19px 18px 26px 20px;
+    border: 3px solid var(--primary);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--text);
+    @include media.max-width(sm) {
+        padding: 18px 14px 21px 14px;
+    }
+
+    &__title {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.25;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        @include media.max-width(sd) {
+            font-size: 16px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        gap: 13px;
+        font-weight: 700;
+        font-size: 16px;
+        margin-top: 26px;
+        color: var(--text);
+        @include media.max-width(sd) {
+            font-size: 14px;
+            margin-top: 13px;
+            gap: 15px;
+        }
+    }
+
+    &__item {
+        display: grid;
+        grid-template-columns: 25px minmax(0, 1fr);
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__check {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3px;
+        width: 25px;
+        height: 25px;
+        border: 1px solid  color-mix(in srgb, var(--green), transparent 75%);
+        border-radius: 4px;
+        background: var(--white);
+    }
+
+    &__icon {
+        width: 18px;
+        aspect-ratio: 1;
+        fill: var(--green);
+    }
+}
