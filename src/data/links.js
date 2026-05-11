@@ -1,6 +1,6 @@
 export const links = {
   hotDeals: { href: '#!' },
-  main: { href: './main.html' },
+  main: { href: './index.html' },
   searchResults: { href: '#!' },
   searchResultsCalendar: { href: '#!' },
   hotel: { href: './hotel.html' },
@@ -18,8 +18,8 @@ export const links = {
   seasonTours: { href: '#!' },
   messenger: { href: 'https://m.me' },
   instagram: { href: 'https://www.instagram.com/' },
-  policy: { href: 'https://zakon.rada.gov.ua/laws/show/2297-17#Text' },
+  policy: { href: './policy.html' },
 };
 
-// <a href="{{links.company.href}}">Поддержка туров</a>
+// <a href="{{links.main.href}}">Поддержка туров</a>
 // <a href="{{links.[tour-support].href}}">Поддержка туров</a>

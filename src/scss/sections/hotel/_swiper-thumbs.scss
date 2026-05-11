@@ -1,10 +1,10 @@
 @use '@/scss/utils/media' as media;
 
 .swiper-thumbs {
-    max-width: 885px;
-    margin-bottom: 20px;
+    //max-width: 885px;
+    min-width: 0;
 
-    &__main {
+    &__main-swiper {
         overflow: hidden;
         border-radius: 8px;
         background-color: #f5f5f5;
@@ -12,7 +12,10 @@
 
     &__main-slide {
         overflow: hidden;
-        aspect-ratio: 885 / 611;
+        aspect-ratio: 73 / 50;
+        @include media.max-width(sm) {
+            aspect-ratio: 16 / 11;
+        }
     }
 
     &__picture {
@@ -21,31 +24,38 @@
         height: 100%;
     }
 
-    &__picture img,
-    &__thumb img {
+    &__picture img{
+        object-fit: cover;
+    }
+    &__list-slide img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
-    &__nav {
-        margin-top: 14px;
+    &__list-swiper {
+        margin-top: 13px;
+        //height: 100px;
         overflow: hidden;
+        @include media.max-width(sm) {
+            margin-top: 4px;
+        }
     }
 
-    &__thumb {
+    &__list-slide {
         overflow: hidden;
         min-width: 0;
         height: auto;
-        aspect-ratio: 205 / 75;
+        aspect-ratio: 17 / 10;
         border: 2px solid transparent;
-        border-radius: 6px;
+        border-radius: 8px;
         background-color: #f5f5f5;
         cursor: pointer;
         transition: border-color 0.2s ease, opacity 0.2s ease;
 
         &:focus-visible {
             border-color: var(--primary);
+            opacity: 0.82;
         }
 
         @media (hover: hover) and (pointer: fine) {
@@ -53,19 +63,12 @@
                 opacity: 0.82;
             }
         }
+        &:active {
+            opacity: 0.82;
+        }
     }
 
-    &__thumb.swiper-slide-thumb-active {
+    &__list-slide.swiper-slide-thumb-active {
         border-color: var(--primary);
-    }
-
-    @include media.max-width(sm) {
-        &__main-slide {
-            aspect-ratio: 16 / 11;
-        }
-
-        &__nav {
-            margin-top: 10px;
-        }
     }
 }

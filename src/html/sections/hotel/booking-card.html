@@ -1,0 +1,58 @@
+<form class="booking-card {{bookingCardClass}}">
+  <div class="booking-card__header">
+    <h2 class="booking-card__title">Выбранный тур</h2>
+    <a class="booking-card__change clickable" href="{{links.searchResults.href}}">изменить</a>
+  </div>
+
+  <ul class="booking-card__details" aria-label="Параметры выбранного тура">
+    <li class="booking-card__details-item">
+      {{> ui/svg className="booking-card__icon" id="calendar"}}
+      <span>18 июня 2020 г. / 7 ночей</span>
+    </li>
+    <li class="booking-card__details-item">
+      {{> ui/svg className="booking-card__icon" id="airplane"}}
+      <span>Вылет из Таллинна</span>
+    </li>
+    <li class="booking-card__details-item">
+      {{> ui/svg className="booking-card__icon" id="food"}}
+      <span>Завтраки</span>
+    </li>
+    <li class="booking-card__details-item">
+      {{> ui/svg className="booking-card__icon" id="house"}}
+      <span>Стандарт</span>
+    </li>
+  </ul>
+
+  <div class="booking-card__price" aria-label="Цена за одного человека">
+    <span class="booking-card__price-value">429€</span><span class="booking-card__price-unit">/чел</span>
+  </div>
+
+  <p class="booking-card__note">
+    <span class="booking-card__note_bold">Цена на одного человека</span> действительна при размещении в двухместном номере. Цена зависит от количества мест и может измениться.
+  </p>
+
+  <div class="booking-card__guests">
+    <span class="booking-card__label">Количество отдыхающих</span>
+    {{> ui/guests-selector
+      guestsSelectorClass="booking-card__guests-selector"
+      guestsRows=(json '[
+        {"label":"Взрослых","value":"2","type":"adults","min":"1"},
+        {"label":"15 лет","value":"1","type":"15","min":"0"},
+        {"label":"3 года","value":"1","type":"3","min":"0"},
+        {"label":"10 лет","value":"3","type":"10","min":"0"}
+      ]')
+    }}
+  </div>
+
+  <p class="booking-card__total" aria-label="Общая стоимость тура">
+    <span class="booking-card__total-label">Общая стоимость тура:</span>
+    <span class="booking-card__total-value">1429€</span>
+  </p>
+
+  <button class="booking-card__button btn btn_orange" type="sumbit">Бронировать</button>
+
+  <p class="booking-card__secure">
+    {{> ui/svg className="booking-card__secure-icon" id="lock"}}
+    <span>Ваши данные надежно защищены и обрабатываются согласно с <a href="{{links.policy.href}}">условиями обработки личных данных</a></span>
+  </p>
+</form>

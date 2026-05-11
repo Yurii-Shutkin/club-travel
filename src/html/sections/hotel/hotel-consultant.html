@@ -1,0 +1,54 @@
+<div class="hotel-consultant {{hotelConsultantClass}}">
+    <p class="hotel-consultant__title">
+      ЕСТЬ ВОПРОСЫ ПО ОТЕЛЮ ИЛИ <span class="hotel-consultant__title_bold">ХОТИТЕ ПОДОБРАТЬ ТУР?</span>
+    </p>
+
+    <p class="hotel-consultant__subtitle">Вам поможет наш консультант</p>
+    <p class="hotel-consultant__name">Марина Каасик</p>
+    <div class="hotel-consultant__contacts-wrap">
+    {{> ui/picture
+      className="hotel-consultant__photo"
+      alt="Марина Каасик"
+      desktop="/src/assets/image/components/promo-support/photo.jpg"
+      desktopWebp="/src/assets/image/components/promo-support/photo.webp"
+    }}
+
+    <div class="hotel-consultant__contacts">
+      <a
+        href="tel:+3726130633"
+        class="hotel-consultant__row clickable">
+        {{> ui/svg
+          className="hotel-consultant__contacts-icon"
+          id="phone"
+        }}
+        <span>+372 6 130 633</span>
+      </a>
+      <a
+        href="mailto:contact@email.ee"
+        class="hotel-consultant__row clickable">
+        {{> ui/svg
+          className="hotel-consultant__contacts-icon"
+          id="mail"
+        }}
+        <span>contact@email.ee</span>
+      </a>
+      <a
+        href="{{links.messenger.href}}"
+        class="hotel-consultant__row clickable">
+        {{> ui/svg
+          className="hotel-consultant__contacts-icon"
+          id="messanger"
+        }}
+        <span>Написать в Messenger</span>
+      </a>
+
+      <div class="hotel-consultant__row hotel-consultant__row_schedule">
+        {{> ui/svg
+          className="hotel-consultant__contacts-icon"
+          id="clock"
+        }}
+        <span>Пн - Пт <b>10.00 - 18.00</b></span>
+      </div>
+    </div>
+  </div>
+</div>
