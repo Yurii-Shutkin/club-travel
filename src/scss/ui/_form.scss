@@ -3,7 +3,24 @@
 @use "@/scss/utils/variables" as *;
 @use "@/scss/utils/media" as media;
 
-.form {
+.main-layout {
+    position: relative;
+    background: url('@/assets/image/components/promo-support/bg.webp') no-repeat center center;
+    background-size: cover;
+    padding-top: 120px;
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(0deg, rgba(8, 44, 99, 0.80) 0%, rgba(8, 44, 99, 0.80) 100%);
+    }
+}
+
+.base-form {
     position: relative;
     width: 100%;
     max-width: 427px;
@@ -16,7 +33,7 @@
         width: 350px;
     }
 
-    &-container {
+    &__container {
         padding: 33px 28px;
         margin-bottom: 16px;
         width: 100%;
@@ -46,6 +63,7 @@
         width: 100%;
     }
 
+
     .divider {
         display: flex;
         align-items: center;
@@ -62,27 +80,52 @@
         margin: 0 10px;
     }
 
-    .input-group {
+    &__input-group {
         position: relative;
         text-align: left;
         margin-bottom: 14px;
+    }
 
-        input {
-            background: #fff;
+    &__label {
+        display: block;
+        color: #999;
+        font-size: 13px;
+        margin-bottom: 6px;
+        margin-left: 16px;
+    }
 
-            &:focus,
-            &:active {
-                border-color: var(--blue);
-            }
+    &__input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--input-border);
+        border-radius: 4px;
+        background: var(--white);
+
+        &:focus,
+        &:active {
+            border-color: var(--blue);
         }
+    }
 
-        label {
-            display: block;
-            color: #999;
-            font-size: 13px;
-            margin-bottom: 6px;
-            margin-left: 16px;
+    &__label-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__button-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-top: 30px;
+
+        @include media.max-width(sm) {
+            grid-template-columns: 1fr;
         }
+    }
+
+    &__btn {
+        width: 100%;
     }
 
     .just-validate-error-label {
@@ -104,41 +147,7 @@
         border: 1px solid #57bc7f !important;
     }
 
-    .label-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .link-basic {
-            margin-bottom: 5px;
-            margin-right: 11px;
-        }
-    }
-
-    .input-group input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        background: #fdfdfd;
-    }
-
-    .button-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-        margin-top: 30px;
-
-        @include media.max-width(sm) {
-            grid-template-columns: 1fr;
-        }
-    }
-
-    &-btn {
-        width: 100%;
-    }
-
-    .footer-links {
+    .policy-links {
         position: absolute;
         left: 0;
         right: 0;

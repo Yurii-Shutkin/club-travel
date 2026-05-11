@@ -1,0 +1,76 @@
+function selectClose() {
+  document.querySelectorAll('[data-select]').forEach(select => {
+    const triggerEl = select.querySelector('[data-select-trigger]');
+    if (!triggerEl) {
+      return;
+    }
+
+    triggerEl.setAttribute('aria-expanded', 'false');
+    select.classList.remove('is-open');
+  });
+}
+
+function selectOption(option) {
+  const select = option.closest('[data-select]');
+  const allOptions = select.querySelectorAll('[data-select-option]');
+  const label = select.querySelector('[data-select-value]');
+  const input = select.querySelector('[data-select-input]');
+  if (option.dataset.value) input.value = option.dataset.value.trim();
+  label.textContent = option.textContent.trim();
+
+  allOptions.forEach(opt => opt.setAttribute('aria-selected', 'false'));
+  option.setAttribute('aria-selected', 'true');
+  selectClose();
+}
+
+export function selectOpen() {
+  // updateGuestValue();
+
+  document.addEventListener('click', e => {
+    const triggerEl = e.target.closest('[data-select-trigger]');
+    const option = e.target.closest('[data-select-option]');
+
+    if (triggerEl) {
+      const select = triggerEl.closest('[data-select]');
+      if (!select) return;
+      const isOpen = select.classList.contains('is-open');
+
+      selectClose();
+      if (!isOpen) {
+        select.classList.add('is-open');
+        triggerEl.setAttribute('aria-expanded', 'true');
+      }
+      // return;
+    } else if (option) {
+      selectOption(option);
+    } else if (!e.target.closest('[data-select]')) selectClose();
+  });
+}
+
+export function updateGuestValue(guestSelect) {
+  // const guestSelect=document.querySelector('[data-guests-selector]');
+  const guestAdult = guestSelect.querySelector('[data-guests-adults]');
+  const guestChildren = guestSelect.querySelector('[data-guests-children]');
+
+  const guestDropdown = guestSelect.querySelector('[data-guests-dropdown]');
+  const counterList = guestDropdown.querySelectorAll('[data-counter]');
+  const chips = guestSelect.querySelector('[data-chips]');
+  let adult=0;
+  let children=0;
+
+  counterList.forEach(item => {
+
+    const value = Number(item.querySelector('[data-counter-value]').textContent);
+    const type = item.dataset.counter;
+    const chip = chips.querySelector(`[data-chip="${type}"]`);
+    if (chip) {
+      chip.querySelector('span').textContent = String(value);
+    }
+
+    if (type==="adults") {adult = value;}
+    else  {children += value;}
+  });
+
+  guestAdult.textContent = String(adult);
+  guestChildren.textContent = String(children);
+}

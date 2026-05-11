@@ -1,0 +1,44 @@
+.counter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    background: #fff;
+    min-height: 42px;
+    padding: 0 4px;
+    font-size: 16px;
+    color: var(--text);
+
+
+    &__btn {
+        width: 14px;
+        height: 14px;
+        background: var(--primary);
+        opacity: 0.5;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        & span {
+            width: 6px;
+            height: 1px;
+            background: white;
+            flex-shrink: 0;
+
+            &:nth-child(2) {
+                transform: rotate(90deg);
+                position: absolute;
+            }
+        }
+    }
+
+    &__value {
+        font-size: 16px;
+        color: var(--text);
+    }
+}

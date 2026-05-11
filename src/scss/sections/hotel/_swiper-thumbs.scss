@@ -1,0 +1,71 @@
+@use '@/scss/utils/media' as media;
+
+.swiper-thumbs {
+    max-width: 885px;
+    margin-bottom: 20px;
+
+    &__main {
+        overflow: hidden;
+        border-radius: 8px;
+        background-color: #f5f5f5;
+    }
+
+    &__main-slide {
+        overflow: hidden;
+        aspect-ratio: 885 / 611;
+    }
+
+    &__picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__picture img,
+    &__thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__nav {
+        margin-top: 14px;
+        overflow: hidden;
+    }
+
+    &__thumb {
+        overflow: hidden;
+        min-width: 0;
+        height: auto;
+        aspect-ratio: 205 / 75;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        background-color: #f5f5f5;
+        cursor: pointer;
+        transition: border-color 0.2s ease, opacity 0.2s ease;
+
+        &:focus-visible {
+            border-color: var(--primary);
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+            &:hover:not(:active) {
+                opacity: 0.82;
+            }
+        }
+    }
+
+    &__thumb.swiper-slide-thumb-active {
+        border-color: var(--primary);
+    }
+
+    @include media.max-width(sm) {
+        &__main-slide {
+            aspect-ratio: 16 / 11;
+        }
+
+        &__nav {
+            margin-top: 10px;
+        }
+    }
+}

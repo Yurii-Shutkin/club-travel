@@ -1,21 +1,15 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    {{> layout/head}}
-
-    <title>Личный кабинет</title>
-
-    <link rel="stylesheet" href="/src/scss/pages/account-style.scss" />
-  </head>
+  {{>layout/head title="Club Travel, Личный кабинет" hrefStyle="account-style"}}
 
   <body class="account-page">
-    {{> layout/header}}
+    {{>layout/header}} {{>layout/burger-menu}}
 
-    <div class="account-page__hero">{{> sections/common/main-hero}}</div>
+    <main>
+      {{>sections/common/main-hero sectionClass="account-page__main-hero"}}
+      {{>sections/account/account}}
+    </main>
 
-    {{> sections/account/account}} {{> layout/footer}}
-
-    <script type="module" src="/src/js/pages/main.js"></script>
-    <script type="module" src="/src/js/pages/account.js"></script>
+    {{>layout/footer}} {{>layout/script srcJs="account"}}
   </body>
 </html>

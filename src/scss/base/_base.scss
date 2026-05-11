@@ -8,6 +8,9 @@
   --text: #{vars.$text};
   --text-secondary: #{vars.$text-secondary};
   --facebook: #{vars.$facebook};
+  --google-gradient: #{vars.$google-gradient};
+  --white: #{vars.$white};
+  --input-border: #{vars.$input-border};
 
   --font-family: #{vars.$font-family};
   --second-family: #{vars.$second-family};
@@ -32,8 +35,8 @@
   background: #d97706;
 }
 
-// Open Sans  400,700
-// Roboto  400,600
+// font-family: Open Sans  400,700
+// second-family: Roboto  400,600
 body {
   font-family: var(--font-family);
   font-weight: 400;

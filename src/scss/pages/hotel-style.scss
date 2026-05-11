@@ -1,0 +1,38 @@
+@use '@/scss/base/reset';
+@use '@/scss/base/base';
+
+@use 'swiper/css';
+@use 'swiper/css/navigation';
+@use 'swiper/css/autoplay';
+
+@use '@/scss/ui/states';
+@use '@/scss/ui/btn';
+@use '@/scss/ui/rating';
+//@use '@/scss/ui/intro-header';
+@use '@/scss/ui/badge';
+
+//@use '@/scss/components/swiper-cards';
+//@use '@/scss/components/news-card';
+//@use '@/scss/components/hot-card';
+//@use '@/scss/components/season-card';
+//@use '@/scss/components/ask-consultant';
+
+@use '@/scss/layout/header';
+@use '@/scss/layout/burger-menu';
+
+@use '@/scss/sections/common/main-hero';
+@use '@/scss/sections/hotel/about-hotel';
+@use '@/scss/sections/hotel/info-list';
+@use '@/scss/sections/hotel/info-hotel';
+@use '@/scss/sections/hotel/swiper-thumbs';
+
+
+
+@use '@/scss/components/ask-consultant';
+
+//@use '@/scss/sections/main/promo-tours';
+//@use '@/scss/sections/main/promo-season-tours';
+//@use '@/scss/sections/common/promo-support';
+//@use '@/scss/sections/main/main';
+
+@use '@/scss/layout/footer';

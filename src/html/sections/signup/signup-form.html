@@ -1,15 +1,15 @@
-<section class="user-services-bg signup-bg">
-    <div class="form">
-        <div class="form-container">
-            <p class="form social-header">Зарегистрируйтесь используя соц. сети</p>
+<section class="main-layout signup-bg">
+    <div class="base-form">
+        <div class="base-form__container">
+            <p class="social-header">Зарегистрируйтесь используя соц. сети</p>
 
-            <div class="form social-buttons">
-                <button type="button" class="btn_social btn_social--facebook">
+            <div class="social-buttons">
+                <button type="button" class="btn__social btn__social_facebook">
                     {{>ui/svg id="facebook" className="social-icon"}}
                     Войти с помощью Facebook
                 </button>
 
-                <button type="button" class="btn_social btn_social--google">
+                <button type="button" class="btn__social btn__social_google">
                     {{>ui/svg id="google" className="social-icon"}}
                     Войти с помощью Google
                 </button>
@@ -18,31 +18,33 @@
             <div class="divider">или</div>
 
             <form data-form="signup" id="form">
-                <div class="input-group">
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" autocomplete="email">
+                <div class="base-form__input-group">
+                    <label class="base-form__label" for="email">E-mail</label>
+                    <input class="base-form__input" type="email" name="email" id="email" autocomplete="email">
                 </div>
 
-                <div class="input-group">
-                    <label for="password">Пароль</label>
-                    <input type="password" name="password" id="password" autocomplete="new-password">
+                <div class="base-form__input-group">
+                    <label class="base-form__label" for="password">Пароль</label>
+                    <input class="base-form__input" type="password" name="password" id="password"
+                        autocomplete="new-password">
                 </div>
 
-                <div class="input-group">
-                    <label for="password-confirm">Повторите пароль</label>
-                    <input type="password" name="password-confirm" id="password-confirm" autocomplete="new-password">
+                <div class="base-form__input-group">
+                    <label class="base-form__label" for="password-confirm">Повторите пароль</label>
+                    <input class="base-form__input" type="password" name="password-confirm" id="password-confirm"
+                        autocomplete="new-password">
                 </div>
 
-                <div class="button-row">
+                <div class="base-form__button-row">
                     <a href="auth.html" class="btn btn_bordered">ВХОД</a>
                     <button type="submit" class="btn btn_orange">РЕГИСТРАЦИЯ</button>
                 </div>
             </form>
 
         </div>
-        <div class="form footer-links">
-            <a href="#" class="link-basic link-basic--white">Политика конфиденциальности</a>
-            <a href="#" class="link-basic--white">Политика использования</a>
+        <div class="policy-links">
+            <a href="#" class="link-basic link-basic_white">Политика конфиденциальности</a>
+            <a href="#" class="link-basic_white">Политика использования</a>
         </div>
     </div>
 </section>

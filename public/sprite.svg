@@ -221,5 +221,14 @@
             <path d="M12.0002 22C14.5832 22 16.9302 21.0115 18.7047 19.404L15.6097 16.785C14.5719 17.5742 13.3039 18.001 12.0002 18C9.39916 18 7.19066 16.3415 6.35866 14.027L3.09766 16.5395C4.75266 19.778 8.11366 22 12.0002 22Z" fill="#4CAF50"/>
             <path d="M21.8055 10.0415H21V10H12V14H17.6515C17.2571 15.1082 16.5467 16.0766 15.608 16.7855L15.6095 16.7845L18.7045 19.4035C18.4855 19.6025 22 17 22 12C22 11.3295 21.931 10.675 21.8055 10.0415Z" fill="#1976D2"/>
         </symbol>
+        <symbol id="icon-wave" viewBox="0 0 717 32">
+            <path d="M716.59 32h-716.59c56.161-10.667 204.447-32 348.305-32s305.466 21.333 368.285 32z"></path>
+        </symbol>
+        <symbol id="icon-smile-wink" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="14" fill="#FFD93B" stroke="#E0A800" stroke-width="1.5"/>
+            <circle cx="11" cy="13" r="1.5" fill="#333"/>
+            <path d="M19 13 Q21 12 23 13" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <path d="M10 20 Q16 25 22 20" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </symbol>
     </defs>
 </svg>

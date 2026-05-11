@@ -1,14 +1,18 @@
-@use "@/scss/utils/variables" as *;
-
 .link-basic {
-    color: $blue;
+    color: var(--blue);
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-decoration-line: underline;
 
-    &--white {
-        color: #fff;
+    &_white {
+        color: var(--white);
+
+        &:hover,
+        &:focus,
+        &:active {
+            opacity: .7;
+        }
     }
 }
