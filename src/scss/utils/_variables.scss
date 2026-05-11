@@ -1,29 +1,29 @@
 @font-face {
-    font-family: 'Open Sans';
-    src: url('@/assets/fonts/open-sans-regular.woff2') format('woff2');
-    font-weight: 400;
-    font-display: swap;
+  font-family: 'Open Sans';
+  src: url('@/assets/fonts/open-sans-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Open Sans';
-    src: url('@/assets/fonts/open-sans-bold.woff2') format('woff2');
-    font-weight: 700;
-    font-display: swap;
+  font-family: 'Open Sans';
+  src: url('@/assets/fonts/open-sans-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Roboto';
-    src: url('@/assets/fonts/roboto-regular.woff2') format('woff2');
-    font-weight: 400;
-    font-display: swap;
+  font-family: 'Roboto';
+  src: url('@/assets/fonts/roboto-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Roboto';
-    src: url('@/assets/fonts/roboto-semiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-display: swap;
+  font-family: 'Roboto';
+  src: url('@/assets/fonts/roboto-semiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
 }
 
 $primary: #f68521;
@@ -32,6 +32,7 @@ $blue: #255296;
 $text: #222;
 $text-secondary: #555;
 $facebook: #395185;
+$white: #fff;
 
-$font-family: "Open Sans", sans-serif;
-$second-family: "Roboto", sans-serif;
+$font-family: 'Open Sans', sans-serif;
+$second-family: 'Roboto', sans-serif;

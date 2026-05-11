@@ -1,38 +1,14 @@
 <!doctype html>
 <html lang="ru">
 
-<head>
-    {{> layout/head}}
+{{>layout/head title="Ошибка - Страница не найдена" hrefStyle="404-style"}}
 
-    <title>Ошибка - страница не найдена</title>
-
-    <link rel="stylesheet" href="/src/scss/pages/404.scss" />
-</head>
 
 <body class="not-found-page">
     {{> layout/header}}
+    <!-- {{> layout/burger-menu}} -->
     <main>
-        <section class="not-found">
-            <div class="not-found__container">
-                <div class="not-found__title">Ой!</div>
-                <div class="not-found__text">
-                    <p>Ошибка 404. Похоже, страницы не существует.</p>
-                </div>
-                <div class="not-found__subtitle">Вот несколько полезных ссылок:</div>
-                <ul class="not-found__list">
-                    <li class="not-found__item"><a href='index.html' class="not-found__link">Поиск тура</a></li>
-                    <li class="not-found__item"><a href='index.html' class="not-found__link">Направления</a></li>
-                    <li class="not-found__item"><a href='{{links.company.href}}' class="not-found__link">Кампании</a>
-                    </li>
-                    <li class="not-found__item"><a href='index.html' class="not-found__link">Горящие предложения</a>
-                    </li>
-                    <li class="not-found__item"><a href='{{links.tourRequest.href}}' class="not-found__link">Запрос
-                            тура</a>
-                    </li>
-                    <li class="not-found__item"><a href='index.html' class="not-found__link">Контакты</a></li>
-                </ul>
-            </div>
-        </section>
+        {{> sections/404/404-hero}}
     </main>
 
     {{> layout/footer}}
