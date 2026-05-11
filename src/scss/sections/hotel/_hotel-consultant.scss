@@ -1,0 +1,101 @@
+@use '@/scss/utils/media' as media;
+.hotel-consultant {
+    //max-width: 400px;
+    padding: 24px 22px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    @include media.max-width(xs) {
+        padding: 24px 0;
+        box-shadow: none;
+    }
+
+    &__title {
+        font-size: 18px;
+        color: var(--text);
+        text-transform: uppercase;
+        width: 87%;
+        @include media.max-width(sm) {
+            width: 100%;
+        }
+
+        &_bold {
+            font-weight: 700;
+        }
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        color: #555;
+        margin-top: 19px;
+    }
+
+    &__name {
+        font-weight: 700;
+        font-size: 18px;
+        color: var(--text);
+    }
+
+    &__contacts-wrap{
+        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        @include media.max-width(sm) {
+            flex-direction: row;
+        }
+        @include media.max-width(xs) {
+            flex-direction: column;
+            gap: 17px;
+        }
+    }
+    &__photo {
+        width: 100%;
+        aspect-ratio: 2/1;
+        border-radius: 6px;
+        max-width: 400px;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        flex-shrink: 0;
+        //margin-top: 14px;
+        @include media.max-width(sm) {
+            //margin-top: 17px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        gap: 11px;
+        color: #333;
+        font-size: 16px;
+
+        &_schedule{
+            font-size: 14px;
+        }
+        & b{
+            font-weight: 700;
+        }
+    }
+
+
+    &__contacts-icon{
+        width: 24px;
+        aspect-ratio: 1;
+        fill: rgba(62, 119, 57, 0.5);
+    }
+
+    &__icon {
+        width: 22px;
+        height: 22px;
+        margin-right: 15px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+    }
+}

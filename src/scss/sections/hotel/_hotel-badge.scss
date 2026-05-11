@@ -1,0 +1,46 @@
+@use '@/scss/utils/media' as media;
+.hotel-badge {
+    border-radius: 8px;
+    background: #fff;
+    padding: 12px 19px;
+    width: max-content;
+    display: flex;
+    align-items: start;
+    gap: 4px;
+    @include media.max-width(xxs) {
+        flex-direction: column-reverse;
+        padding: 6px 18px;
+    }
+    &__content {
+        line-height: 1;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 26px;
+        color: var(--text);
+        @include media.max-width(xs) {
+            font-size: 22px;
+        }
+    }
+    &__rating{
+        & svg{
+            display: block;
+        }
+    }
+
+    &__meta {
+        display: flex;
+        align-items: center;
+        margin: 6px 0 0 -4px;
+    }
+    &__meta-icon{
+        width: 19px;
+        aspect-ratio: 1;
+        fill: var(--green);
+    }
+    &__meta-text {
+        color: var(--text);
+    }
+}
+

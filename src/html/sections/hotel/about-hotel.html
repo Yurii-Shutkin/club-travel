@@ -1,44 +1,21 @@
 <section class="about-hotel">
   <div class="about-hotel__container container">
-    <div class="about-hotel__main">
-      {{> sections/hotel/swiper-thumbs
-        swiperThumbsClass="main__swiper-thumbs"
-        swiperThumbsAlt="Тестовое фото"
-        swiperThumbsImages="/src/assets/image/test.jpg, /src/assets/image/test.jpg, /src/assets/image/test.jpg, /src/assets/image/test.jpg, /src/assets/image/test.jpg"
-        swiperThumbsImagesWebp="/src/assets/image/test.webp, /src/assets/image/test.webp, /src/assets/image/test.webp, /src/assets/image/test.webp, /src/assets/image/test.webp"
-      }}
-      {{> sections/hotel/info-hotel}}
+    <div class="about-hotel__inner">
+      <div class="about-hotel__main">
+        {{> sections/hotel/swiper-thumbs
+          swiperThumbsClass="about-hotel__swiper-thumbs"
+          swiperThumbsAlt="Тестовое фото"
+          swiperThumbsImages="/src/assets/image/test.jpg, /src/assets/image/test.jpg, /src/assets/image/test.jpg, /src/assets/image/test.jpg, /src/assets/image/test.jpg"
+          swiperThumbsImagesWebp="/src/assets/image/test.webp, /src/assets/image/test.webp, /src/assets/image/test.webp, /src/assets/image/test.webp, /src/assets/image/test.webp"
+        }}
+        {{> sections/hotel/info-hotel infoHotelClass="about-hotel__info-hotel"}}
+      </div>
 
-    <aside class="about-hotel__sidebar">
-      <article class="hotel-card hotel-card--selected">
-        <h2 class="hotel-card__title">Выбранный тур</h2>
-        <ul class="hotel-card__list">
-          <li>18 июня 2020 г. / 7 ночей</li>
-          <li>Вылет из Таллинна</li>
-          <li>Завтраки</li>
-          <li>Стандарт</li>
-        </ul>
-        <p class="hotel-card__price">429€
-          <span>/чел</span>
-        </p>
-        <button
-          class="btn btn-solid btn-solid--orange hotel-card__button">Бронировать
-        </button>
-      </article>
-
-      <article class="hotel-card hotel-card--benefits">
-        <h2 class="hotel-card__title">Почему бронировать тур у нас?</h2>
-        <ul class="hotel-card__checks">
-          <li>Только отобранные отели</li>
-          <li>Все туроператоры на одном сайте</li>
-          <li>Прозрачно и безопасно</li>
-          <li>Без наценок</li>
-        </ul>
-      </article>
-
-      <article class="hotel-card hotel-card--consultant">
-        {{>components/ask-consultant consultantClass="about-hotel__consultant"}}
-      </article>
-    </aside>
+      <aside class="about-hotel__aside">
+        {{>sections/hotel/booking-card bookingCardClass="about-hotel__booking-card"}}
+        {{>sections/hotel/reasons-card reasonsCardClass="about-hotel__reasons-card"}}
+        {{>sections/hotel/hotel-consultant hotelConsultantClass="about-hotel__hotel-consultant"}}
+      </aside>
+    </div>
   </div>
 </section>
