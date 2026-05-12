@@ -1,62 +1,68 @@
-import { API_URL, OFFER_POPULATE, HOTEL_POPULATE, REGION_POPULATE, COUNTRY_POPULATE } from './constants.js';
+import { API_URL } from './constants.js';
 
-export const getHotOffers = async () => {
-  const query = '?filters[slug][$eq]=hot-order';
+const HOTEL_POPULATE_QUERY = [
+  'populate[region]=true',
+  'populate[country][populate][cover][fields][0]=url',
+].join('&');
+
+const getImageUrl = media => {
+  const data = media?.data || media;
+  const item = Array.isArray(data) ? data[0] : data;
+  const attrs = item?.attributes || item || {};
+
+  if (!attrs.url) return null;
+
+  return attrs.url.includes('cloudinary.com')
+    ? attrs.url
+      .replace('/upload/', '/upload/f_webp,q_auto/')
+      .replace(/\.(png|jpg|jpeg)$/i, '.webp')
+    : attrs.url;
+};
+
+export const normalizeV2Hotel = hotel => {
+  const attrs = hotel.attributes || hotel;
+  const country = attrs.country?.data?.attributes || attrs.country || {};
+  const region = attrs.region?.data?.attributes || attrs.region || {};
+
+  return {
+    id: hotel.documentId || hotel.id,
+    hotelName: attrs.hotelName || null,
+    season: attrs.season || null,
+    stars: attrs.stars || null,
+    date: attrs.dateOfDeparture
+      ? new Date(attrs.dateOfDeparture).toLocaleDateString('ru-RU', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      }).replace(/\s*г\.?$/, '')
+      : null,
+    price: attrs.priceForPerson || null,
+    oldPrice: attrs.oldPrice || null,
+    discount: attrs.discount || null,
+    country: country.name || null,
+    region: region.name || null,
+    coverImage: getImageUrl(country.cover),
+  };
+};
+
+export const getHotOffers = async (limit = 12) => {
+  const query = [
+    'filters[isHot][$eq]=true',
+    'sort[0]=dateOfDeparture:asc',
+    `pagination[pageSize]=${limit}`,
+    HOTEL_POPULATE_QUERY,
+  ].join('&');
+
   try {
-    const response = await fetch(`${API_URL}categories${query}&` +
-      `${OFFER_POPULATE}${HOTEL_POPULATE}[fields][0]=name&` +
-      `${OFFER_POPULATE}${HOTEL_POPULATE}[fields][1]=stars&` +
-      `${OFFER_POPULATE}${HOTEL_POPULATE}[populate][main][fields]=url&` +
-      `${OFFER_POPULATE}${HOTEL_POPULATE}${REGION_POPULATE}${COUNTRY_POPULATE}[fields][0]=name`);
+    const response = await fetch(`${API_URL}v2-hotels?${query}`);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
     const { data } = await response.json();
-
     if (!data || data.length === 0) return [];
-    const category = data[0];
-    if (!category || !category.offers) {
-      console.log('Нет offers');
-      return [];
-    }
 
-    const normalized = category.offers.map((offer) => {
-      const hotel = offer.hotel || {};
-
-      const oldPrice = offer.oldPrice ?? null;
-      const discount = offer.discount ?? null;
-      let price = offer.price;
-      const originalUrl = hotel.main?.url || null;
-      const optimizedImage = originalUrl && originalUrl.includes('cloudinary.com')
-        ? originalUrl.replace('/upload/', '/upload/f_webp,q_auto/')
-        .replace(/\.(png|jpg|jpeg)$/, '.webp') 
-        : originalUrl;
-
-      if (!price && oldPrice) {
-        price = discount
-          ? oldPrice - (oldPrice * discount / 100)
-          : oldPrice;
-      }
-
-      return {
-        id: offer.id,
-        date: new Date(offer.date).toLocaleDateString('ru-RU', {
-          day: 'numeric',
-          month: 'long',
-          year: 'numeric'
-        }).replace(/\s*г\.?$/, '') || null,
-        hotelName: hotel.name || null,
-        price: price || null,
-        stars: hotel.stars || null,
-        coverImage: optimizedImage,
-        country: hotel.region?.country?.name || null,
-        oldPrice: oldPrice,
-        discount: discount || null,
-        region: hotel.region?.name || null
-      };
-    });
-    console.log(normalized);
-    return normalized;
+    return data.map(normalizeV2Hotel);
   } catch (error) {
-      console.error(`Ошибка при загрузке категории:`, error);
+    console.error('Ошибка при загрузке горящих туров:', error);
     return [];
   }
-}
-
+};

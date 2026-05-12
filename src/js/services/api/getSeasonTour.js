@@ -1,40 +1,33 @@
-import { API_URL, OFFER_POPULATE, HOTEL_POPULATE, REGION_POPULATE, COUNTRY_POPULATE } from './constants.js';
+import { API_URL } from './constants.js';
+import { normalizeV2Hotel } from './getHotOffers.js';
 
-export const getSeasonTour = async (slug) => {
-  const query = `?filters[slug][$eq]=${slug}`;
+const HOTEL_POPULATE_QUERY = [
+  'populate[region]=true',
+  'populate[country][populate][cover][fields][0]=url',
+].join('&');
+
+export const getSeasonTour = async (season, limit = 12) => {
+  const seasonValue = encodeURIComponent(season);
+  const query = [
+    `filters[season][$eq]=${seasonValue}`,
+    'sort[0]=priceForPerson:asc',
+    'sort[1]=dateOfDeparture:asc',
+    `pagination[pageSize]=${limit}`,
+    HOTEL_POPULATE_QUERY,
+  ].join('&');
+
   try {
-    const response = await fetch(`${API_URL}categories${query}&` +
-      `${OFFER_POPULATE}${HOTEL_POPULATE}${REGION_POPULATE}${COUNTRY_POPULATE}[fields][0]=name&` + 
-      `${OFFER_POPULATE}${HOTEL_POPULATE}${REGION_POPULATE}${COUNTRY_POPULATE}[populate][cover][fields][0]=url`);
+    const response = await fetch(`${API_URL}v2-hotels?${query}`);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
     const { data } = await response.json();
-
     if (!data || data.length === 0) return [];
-    const category = data[0];
-    if (!category || !category.offers) {
-      console.log('Нет offers');
-      return [];
-    }
 
-    const normalized = category.offers.map((offer) => {
-      const hotel = offer.hotel || {};
-      const originalUrl = hotel.region?.country?.cover?.url || null;
-      const optimizedImage = originalUrl && originalUrl.includes('cloudinary.com')
-        ? originalUrl.replace('/upload/', '/upload/f_webp,q_auto/')
-        .replace(/\.(png|jpg|jpeg)$/, '.webp') 
-        : originalUrl;
-
-      return {
-        id: offer.id,
-        price: offer.price || null,
-        country: hotel.region?.country?.name || null,
-        coverImage: optimizedImage
-      };
-    });
-    console.log(normalized);
-    return normalized;
+    return data
+      .map(normalizeV2Hotel)
+      .filter(hotel => hotel.season === season);
   } catch (error) {
-      console.error(`Ошибка при загрузке категории:`, error);
+    console.error(`Ошибка при загрузке ${season} туров:`, error);
     return [];
   }
-}
-
+};
