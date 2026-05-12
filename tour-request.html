@@ -5,12 +5,12 @@
   <link rel="icon" type="image/svg+xml" href="/club-travel/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Club Travel, Запрос тура</title>
-    <script type="module" crossorigin src="/club-travel/assets/js/tour-request-iWlJEHAS.js"></script>
-    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-BtxuocSx.js">
-    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/hero-swiper-DnYlDfUA.js">
-    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/constants-mNb6wMDh.js">
-    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/getHotOffers-Dnko9cHN.js">
-    <link rel="stylesheet" crossorigin href="/club-travel/assets/css/tour-request-3ePo6fUW.css">
+    <script type="module" crossorigin src="/club-travel/assets/js/tour-request-CKI-Pydk.js"></script>
+    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-o8ksIPE-.js">
+    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/hero-swiper-RjYsEEzr.js">
+    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/constants-CUThRpYF.js">
+    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/counter-B8EmXott.js">
+    <link rel="stylesheet" crossorigin href="/club-travel/assets/css/tour-request-CbEH86UW.css">
   </head><body class="tour-request">
 <header class="header">
   <div class="header__container container">
@@ -27,7 +27,7 @@
         </svg>
       </button>
 
-      <a class="header__logo" href="main.html" aria-label="Club Travel">
+      <a class="header__logo" href="./index.html" aria-label="Club Travel">
         <svg class="header__logo-icon" >
             <use href="/club-travel/sprite.svg#icon-logo"></use>
         </svg>
@@ -186,7 +186,7 @@
         </li>
 
         <li class="header__main-item">
-          <a class="header__main-link" href="main.html">Авиабилеты</a>
+          <a class="header__main-link" href="./hotel.html">Авиабилеты</a>
         </li>
       </ul>
     </nav>
@@ -196,7 +196,7 @@
   <div class="burger-menu__dialog">
     <div class="burger-menu__container container">
       <div class="burger-menu__head">
-        <a class="burger-menu__logo" href="main.html" aria-label="Club Travel">
+        <a class="burger-menu__logo" href="./index.html" aria-label="Club Travel">
           <svg class="burger-menu__logo-icon" >
               <use href="/club-travel/sprite.svg#icon-logo"></use>
           </svg>
@@ -222,7 +222,7 @@
             <a class="burger-menu__main-link" href="main.html">Направления</a>
           </li>
           <li class="burger-menu__main-item">
-            <a class="burger-menu__main-link" href="main.html">Кампании</a>
+            <a class="burger-menu__main-link" href="./company.html">Кампании</a>
           </li>
           <li class="burger-menu__main-item">
             <a class="burger-menu__main-link" href="main.html">
@@ -230,10 +230,10 @@
             </a>
           </li>
           <li class="burger-menu__main-item">
-            <a class="burger-menu__main-link" href="main.html">Запрос тура</a>
+            <a class="burger-menu__main-link" href="./tour-request.html">Запрос тура</a>
           </li>
           <li class="burger-menu__main-item">
-            <a class="burger-menu__main-link" href="main.html">Авиабилеты</a>
+            <a class="burger-menu__main-link" href="./hotel.html">Авиабилеты</a>
           </li>
         </ul>
       </nav>
@@ -452,24 +452,24 @@
               <div class="tour-selector__panel-body">
                 <div class="tour-selector__field">
                   <span class="tour-selector__label">Направление</span>
-                    <div class="custom-select tour-selector__select" data-select="destination" >
-                      <input type="hidden" name="destination" data-select-input />
-                      <button
-                        type="button" class="custom-select__trigger clickable" data-select-trigger
-                        role="combobox" aria-haspopup="listbox" aria-expanded="false">
-                        <span data-select-value>Выберите направление</span>
-                        <svg class="custom-select__input-arrow"  data-select-arrow >
-                            <use href="/club-travel/sprite.svg#icon-chevron"></use>
-                        </svg>
-                      </button>
-                      <ul class="custom-select__dropdown" data-select-dropdown role="listbox">
-                      </ul>
-                      <template data-template-option>
-                        <li
-                          class="custom-select__option clickable" data-select-option role="option">
-                        </li>
-                      </template>
-                    </div>        </div>
+                  <div class="custom-select tour-selector__select" data-select="destination" >
+                    <input type="hidden" name="destination" data-select-input />
+                    <button
+                      type="button" class="custom-select__trigger clickable" data-select-trigger
+                      role="combobox" aria-haspopup="listbox" aria-expanded="false">
+                      <span data-select-value>Выберите направление</span>
+                      <svg class="custom-select__input-arrow"  data-select-arrow >
+                          <use href="/club-travel/sprite.svg#icon-chevron"></use>
+                      </svg>
+                    </button>
+                    <ul class="custom-select__dropdown" data-select-dropdown role="listbox">
+                    </ul>
+                    <template data-template-option>
+                      <li
+                        class="custom-select__option clickable" data-select-option role="option">
+                      </li>
+                    </template>
+                  </div>        </div>
                 <div class="tour-selector__field">
                   <span class="tour-selector__label">Дата вылета</span>
                   <div class="custom-select tour-selector__select" data-select="date" >
@@ -492,43 +492,38 @@
                   </div>        </div>
                 <div class="tour-selector__field">
                   <span class="tour-selector__label">Гости</span>
-                  <div
-                    class="guests-selector tour-selector__select"
-                    data-guests-selector data-select>
-                    <input
-                      type="hidden"
-                      name="guests"
-                      class="guests-selector__input"
-                      data-guests-input />
-                  
-                    <button
-                      type="button"
-                      class="guests-selector__trigger"
-                      aria-expanded="false"
-                      data-select-trigger>
-                      <span
-                        class="guests-selector__value"
-                        data-guests-value
-                      >
-                        Взрослых: 2; детей: 0
+                  <div class="guests-selector tour-selector__select" data-guests-selector data-select>
+                    <input type="hidden" name="guests" class="guests-selector__input" data-guests-input />
+                  <div class="guests-selector__trigger-wrap">
+                    <button type="button" class="guests-selector__trigger" aria-expanded="false" data-select-trigger>
+                      <span class="guests-selector__value" data-guests-value>
+                        Взрослых: <span data-guests-adults>2</span>; детей: <span data-guests-children>0</span>
                       </span>
-                  
                       <svg class="guests-selector__arrow"  data-select-arrow >
                           <use href="/club-travel/sprite.svg#icon-chevron"></use>
                       </svg>
                     </button>
                   
-                    <div
-                      class="guests-selector__dropdown"
-                      data-guests-dropdown>
-                  
+                    <div class="guests-selector__dropdown" data-guests-dropdown>
                         <div class="guests-selector__row">
-                          <span class="guests-selector__label">
-                            Взрослые
-                          </span>
-                  
+                          <span class="guests-selector__label">Взрослых</span>
                           <div
                             class="counter guests-selector__counter" data-counter="adults" data-min="1" data-max="">
+                            <button class="counter__btn" type="button" data-counter-decrement>
+                              <span></span>
+                            </button>
+                          
+                            <output class="counter__value" data-counter-value>4</output>
+                          
+                            <button class="counter__btn" type="button" data-counter-increment>
+                              <span></span>
+                              <span></span>
+                            </button>
+                          </div>      </div>
+                        <div class="guests-selector__row">
+                          <span class="guests-selector__label">15 лет</span>
+                          <div
+                            class="counter guests-selector__counter" data-counter="15" data-min="0" data-max="">
                             <button class="counter__btn" type="button" data-counter-decrement>
                               <span></span>
                             </button>
@@ -541,17 +536,14 @@
                             </button>
                           </div>      </div>
                         <div class="guests-selector__row">
-                          <span class="guests-selector__label">
-                            Дети (до 15 лет)
-                          </span>
-                  
+                          <span class="guests-selector__label">10 лет</span>
                           <div
-                            class="counter guests-selector__counter" data-counter="adults" data-min="0" data-max="">
+                            class="counter guests-selector__counter" data-counter="10" data-min="0" data-max="">
                             <button class="counter__btn" type="button" data-counter-decrement>
                               <span></span>
                             </button>
                           
-                            <output class="counter__value" data-counter-value>0</output>
+                            <output class="counter__value" data-counter-value>3</output>
                           
                             <button class="counter__btn" type="button" data-counter-increment>
                               <span></span>
@@ -559,50 +551,37 @@
                             </button>
                           </div>      </div>
                         <div class="guests-selector__row">
-                          <span class="guests-selector__label">
-                            Дети (до 10 лет)
-                          </span>
-                  
+                          <span class="guests-selector__label">3 года</span>
                           <div
-                            class="counter guests-selector__counter" data-counter="adults" data-min="0" data-max="">
+                            class="counter guests-selector__counter" data-counter="3" data-min="0" data-max="">
                             <button class="counter__btn" type="button" data-counter-decrement>
                               <span></span>
                             </button>
                           
-                            <output class="counter__value" data-counter-value>0</output>
+                            <output class="counter__value" data-counter-value>1</output>
                           
                             <button class="counter__btn" type="button" data-counter-increment>
                               <span></span>
                               <span></span>
                             </button>
                           </div>      </div>
-                        <div class="guests-selector__row">
-                          <span class="guests-selector__label">
-                            Дети (до 3 лет)
-                          </span>
-                  
-                          <div
-                            class="counter guests-selector__counter" data-counter="adults" data-min="0" data-max="">
-                            <button class="counter__btn" type="button" data-counter-decrement>
-                              <span></span>
-                            </button>
-                          
-                            <output class="counter__value" data-counter-value>0</output>
-                          
-                            <button class="counter__btn" type="button" data-counter-increment>
-                              <span></span>
-                              <span></span>
-                            </button>
-                          </div>      </div>
-                  
                     </div>
-                  </div>        </div>
-        
-                <div class="tour-selector__chips" aria-label="Возрастные группы гостей">
-                  <span class="tour-selector__chip">Взрослых x2</span>
-                  <span class="tour-selector__chip">15 лет x1</span>
-                  <span class="tour-selector__chip">3 года x1</span>
-                  <span class="tour-selector__chip">10 лет x3</span>
+                  </div>
+                    <div class="guests-selector__chips" data-chips aria-label="Возрастные группы гостей">
+                        <span class="guests-selector__chip" data-chip="adults">
+                          Взрослых x<span class="guests-selector__chip-value">4</span>
+                        </span>
+                        <span class="guests-selector__chip" data-chip="15">
+                          15 лет x<span class="guests-selector__chip-value">2</span>
+                        </span>
+                        <span class="guests-selector__chip" data-chip="10">
+                          10 лет x<span class="guests-selector__chip-value">3</span>
+                        </span>
+                        <span class="guests-selector__chip" data-chip="3">
+                          3 года x<span class="guests-selector__chip-value">1</span>
+                        </span>
+                    </div>
+                  </div>
                 </div>
         
                 <div class="tour-selector__field  tour-selector__field_counter">
@@ -745,10 +724,10 @@
                     placeholder="Ваши пожелания"></textarea>
                 </label>
               </div>
-                <button
-                  class="tour-selector__btn btn btn_bordered" type="button"
-                  data-btn-goto="contacts">Дальше
-                </button>
+              <button
+                class="tour-selector__btn btn btn_bordered" type="button"
+                data-btn-goto="contacts">Дальше
+              </button>
             </div>
         
             <div class="tour-selector__panel" data-panel="contacts" hidden>
@@ -772,10 +751,10 @@
                     placeholder="Введите email" />
                 </label>
               </div>
-                <button
-                  class="tour-selector__btn btn btn_orange" type="button"
-                  data-tour-action>подобрать тур
-                </button>
+              <button
+                class="tour-selector__btn btn btn_orange" type="button"
+                data-tour-action>подобрать тур
+              </button>
             </div>
           </div>
         </form>
@@ -882,8 +861,8 @@
   </div>
   <div class="footer__rights">
     <p class="footer__rights-item">©2020 Clubstravel. Все права защищены.</p>
-    <a href="https://zakon.rada.gov.ua/laws/show/2297-17#Text" class="footer__rights-link clickable">Политика конфиденциальности</a>
-    <a href="https://zakon.rada.gov.ua/laws/show/2297-17#Text" class="footer__rights-link clickable">Политика использования</a>
+    <a href="./policy.html" class="footer__rights-link clickable">Политика конфиденциальности</a>
+    <a href="./policy.html" class="footer__rights-link clickable">Политика использования</a>
   </div>
 </footer>
 <div id="fb-root"></div>
