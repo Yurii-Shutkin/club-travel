@@ -16,6 +16,12 @@
         width: 100%;
         aspect-ratio: 28/25;
         border-radius: 10px 10px 0 0;
+
+        img {
+            object-fit: cover;
+            min-height: 100%;
+        }
+
         @include media.max-width(sm) {
             aspect-ratio: 34/25;
         }
@@ -29,7 +35,7 @@
 
     &__info {
         display: flex;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
         align-items: center;
         gap: 4px;
         margin-top: 16px;
@@ -65,7 +71,8 @@
             color: #000;
         }
     }
-    &__footer{
+
+    &__footer {
         padding-inline: 16px;
     }
 
@@ -73,4 +80,3 @@
         margin-top: 16px;
     }
 }
-

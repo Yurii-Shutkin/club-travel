@@ -1,11 +1,11 @@
 import { API_URL } from './constants.js';
 
 const HOTEL_POPULATE_QUERY = [
-  'populate[region]=true',
-  'populate[country][populate][cover][fields][0]=url',
+  'populate[region][populate][cover][fields][0]=url',
+  'populate[country]=true',
 ].join('&');
 
-const getImageUrl = media => {
+export const getImageUrl = media => {
   const data = media?.data || media;
   const item = Array.isArray(data) ? data[0] : data;
   const attrs = item?.attributes || item || {};
@@ -41,7 +41,7 @@ export const normalizeV2Hotel = hotel => {
     discount: attrs.discount || null,
     country: country.name || null,
     region: region.name || null,
-    coverImage: getImageUrl(country.cover),
+    coverImage: getImageUrl(region.cover),
   };
 };
 
