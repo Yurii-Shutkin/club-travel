@@ -103,7 +103,7 @@
       </div>
 
       <div class="tour-search__advanced_content">
-        <div class="tour-search__group">
+        <div class="tour-search__group tour-search__group_accommodation">
           <h4 class="tour-search__group_title">Категория размещения</h4>
 
           <ul class="tour-search__list">
@@ -136,7 +136,6 @@
                   type="checkbox"
                   name="accommodation"
                   value="3-stars"
-                  checked
                   data-tour-search-filter
                 />
 
@@ -184,7 +183,6 @@
                   type="checkbox"
                   name="accommodation"
                   value="5-stars"
-                  checked
                   data-tour-search-filter
                 />
 
@@ -225,7 +223,7 @@
           </ul>
         </div>
 
-        <div class="tour-search__group">
+        <div class="tour-search__group tour-search__group_meal">
           <h4 class="tour-search__group_title">Питание</h4>
 
           <ul class="tour-search__list">
@@ -301,9 +299,9 @@
                   id="check-circle" }}
                 </span>
 
-                <span class="tour-search__option_text"
-                  >Завтрак, обед, ужин</span
-                >
+                <span class="tour-search__option_text">
+                  Завтрак, обед, ужин
+                </span>
               </label>
             </li>
 
@@ -341,15 +339,15 @@
                   id="check-circle" }}
                 </span>
 
-                <span class="tour-search__option_text"
-                  >Ультра: всё включено</span
-                >
+                <span class="tour-search__option_text">
+                  Ультра: всё включено
+                </span>
               </label>
             </li>
           </ul>
         </div>
 
-        <div class="tour-search__group">
+        <div class="tour-search__group tour-search__group_composition">
           <h4 class="tour-search__group_title">Состав тура</h4>
 
           <ul class="tour-search__list">
@@ -368,9 +366,9 @@
                   id="check-circle" }}
                 </span>
 
-                <span class="tour-search__option_text"
-                  >Туристический пакет</span
-                >
+                <span class="tour-search__option_text">
+                  Туристический пакет
+                </span>
               </label>
             </li>
 
@@ -381,7 +379,6 @@
                   type="checkbox"
                   name="tourComposition"
                   value="flight-only"
-                  checked
                   data-tour-search-filter
                 />
 
@@ -396,7 +393,7 @@
           </ul>
         </div>
 
-        <div class="tour-search__group">
+        <div class="tour-search__group tour-search__group_departure">
           <h4 class="tour-search__group_title">Вылет из</h4>
 
           <ul class="tour-search__list">
@@ -510,12 +507,10 @@
                   value="albena"
                   data-tour-search-filter
                 />
-
                 <span class="tour-search__checkbox_icon">
                   {{> ui/svg className="tour-search__checkbox_svg"
                   id="check-circle" }}
                 </span>
-
                 <span class="tour-search__option_text">Албена</span>
               </label>
             </li>
@@ -529,12 +524,10 @@
                   value="bansko"
                   data-tour-search-filter
                 />
-
                 <span class="tour-search__checkbox_icon">
                   {{> ui/svg className="tour-search__checkbox_svg"
                   id="check-circle" }}
                 </span>
-
                 <span class="tour-search__option_text">Банско</span>
               </label>
             </li>
@@ -548,12 +541,10 @@
                   value="burgas"
                   data-tour-search-filter
                 />
-
                 <span class="tour-search__checkbox_icon">
                   {{> ui/svg className="tour-search__checkbox_svg"
                   id="check-circle" }}
                 </span>
-
                 <span class="tour-search__option_text">Бургас</span>
               </label>
             </li>
@@ -567,12 +558,10 @@
                   value="dunes"
                   data-tour-search-filter
                 />
-
                 <span class="tour-search__checkbox_icon">
                   {{> ui/svg className="tour-search__checkbox_svg"
                   id="check-circle" }}
                 </span>
-
                 <span class="tour-search__option_text">Дюны</span>
               </label>
             </li>
@@ -586,12 +575,10 @@
                   value="elenite"
                   data-tour-search-filter
                 />
-
                 <span class="tour-search__checkbox_icon">
                   {{> ui/svg className="tour-search__checkbox_svg"
                   id="check-circle" }}
                 </span>
-
                 <span class="tour-search__option_text">Елените</span>
               </label>
             </li>
@@ -605,12 +592,10 @@
                   value="golden-sands"
                   data-tour-search-filter
                 />
-
                 <span class="tour-search__checkbox_icon">
                   {{> ui/svg className="tour-search__checkbox_svg"
                   id="check-circle" }}
                 </span>
-
                 <span class="tour-search__option_text">Золотые пески</span>
               </label>
             </li>
@@ -624,12 +609,10 @@
                   value="kranevo"
                   data-tour-search-filter
                 />
-
                 <span class="tour-search__checkbox_icon">
                   {{> ui/svg className="tour-search__checkbox_svg"
                   id="check-circle" }}
                 </span>
-
                 <span class="tour-search__option_text">Кранево</span>
               </label>
             </li>
@@ -643,12 +626,10 @@
                   value="nesebar"
                   data-tour-search-filter
                 />
-
                 <span class="tour-search__checkbox_icon">
                   {{> ui/svg className="tour-search__checkbox_svg"
                   id="check-circle" }}
                 </span>
-
                 <span class="tour-search__option_text">Несебр</span>
               </label>
             </li>
@@ -662,12 +643,10 @@
                   value="obzor"
                   data-tour-search-filter
                 />
-
                 <span class="tour-search__checkbox_icon">
                   {{> ui/svg className="tour-search__checkbox_svg"
                   id="check-circle" }}
                 </span>
-
                 <span class="tour-search__option_text">Обзор</span>
               </label>
             </li>
@@ -681,12 +660,10 @@
                   value="pomorie"
                   data-tour-search-filter
                 />
-
                 <span class="tour-search__checkbox_icon">
                   {{> ui/svg className="tour-search__checkbox_svg"
                   id="check-circle" }}
                 </span>
-
                 <span class="tour-search__option_text">Поморие</span>
               </label>
             </li>
@@ -700,12 +677,10 @@
                   value="ravda"
                   data-tour-search-filter
                 />
-
                 <span class="tour-search__checkbox_icon">
                   {{> ui/svg className="tour-search__checkbox_svg"
                   id="check-circle" }}
                 </span>
-
                 <span class="tour-search__option_text">Равда</span>
               </label>
             </li>
@@ -719,12 +694,10 @@
                   value="riviera"
                   data-tour-search-filter
                 />
-
                 <span class="tour-search__checkbox_icon">
                   {{> ui/svg className="tour-search__checkbox_svg"
                   id="check-circle" }}
                 </span>
-
                 <span class="tour-search__option_text">Ривьера</span>
               </label>
             </li>
@@ -738,12 +711,10 @@
                   value="sarafovo"
                   data-tour-search-filter
                 />
-
                 <span class="tour-search__checkbox_icon">
                   {{> ui/svg className="tour-search__checkbox_svg"
                   id="check-circle" }}
                 </span>
-
                 <span class="tour-search__option_text">Сарафово</span>
               </label>
             </li>
@@ -755,7 +726,9 @@
         <span class="tour-search__active_label">Активные фильтры:</span>
 
         <div class="tour-search__active_group">
-          <span class="tour-search__active_name"> Категория размещения </span>
+          <span class="tour-search__active_name"
+            >Категория размещения отеля</span
+          >
 
           <button
             class="tour-search__tag"
@@ -786,6 +759,8 @@
           </button>
         </div>
       </div>
+
+      <div class="tour-search__active" data-tour-search-active hidden></div>
     </div>
   </form>
 </section>
