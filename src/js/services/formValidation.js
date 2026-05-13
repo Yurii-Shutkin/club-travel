@@ -58,6 +58,56 @@ export const initValidation = (formSelector) => {
   ]);
   }
 
+  if (document.querySelector('#contacts-name')) {
+    validator.addField('#contacts-name', [
+      {
+        rule: 'maxLength', 
+        value: 15,
+        errorMessage: 'Имя должно быть не длиннее 15 символов',
+      },
+    ]);
+  }
+
+  if (document.querySelector('#contacts-phone')) {
+    validator.addField('#contacts-phone', [
+      {
+        rule: 'required',
+        errorMessage: 'Укажийте номер телефона',
+      },
+      {
+        rule: 'customRegexp',
+        value: /^[+]?[0-9]{10,15}$/,
+        errorMessage: 'Неверный формат телефона',
+      },
+    ]);
+  }
+
+  if (document.querySelector('#contacts-email')) {
+    validator.addField('#contacts-email', [
+      {
+        rule: 'required',
+        errorMessage: 'Укажийте Email',
+      },
+      {
+        rule: 'email',
+        errorMessage: 'Укажийте корректный Email',
+      },
+      { rule: 'maxLength',
+        value: 50,
+        errorMessage: 'Максимальная длина Email 50 символов',
+      }
+    ]);
+  }
+
+  if (document.querySelector('#contacts-message')) {
+    validator.addField('#contacts-message', [
+      {
+        maxLength: 500,
+        errorMessage: 'Максимальная длина сообщения 300 символов',
+      },
+    ]);
+  }
+
   validator.onSuccess(async (event) => {
     const form = event.target;
     const formType = form.getAttribute('data-form'); 
@@ -70,6 +120,6 @@ export const initValidation = (formSelector) => {
     }
     console.log('Форма валидна, можно отправлять!', event.target);
   });
-
+  
   return validator; 
 };
