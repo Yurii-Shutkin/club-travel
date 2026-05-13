@@ -76,7 +76,7 @@ export const initValidation = (formSelector) => {
       },
       {
         rule: 'customRegexp',
-        value: /^[+]?[0-9]{10,15}$/,
+        value: /^\+?(?:\s*\d){10,15}\s*$/,
         errorMessage: 'Неверный формат телефона',
       },
     ]);
