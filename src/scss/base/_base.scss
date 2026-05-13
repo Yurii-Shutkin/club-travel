@@ -2,6 +2,7 @@
 @use '@/scss/utils/media' as media;
 
 :root {
+<<<<<<< HEAD
   --primary: #{vars.$primary};
   --green: #{vars.$green};
   --blue: #{vars.$blue};
@@ -14,6 +15,22 @@
 
   --font-family: #{vars.$font-family};
   --second-family: #{vars.$second-family};
+=======
+    --primary: #{vars.$primary};
+    --green: #{vars.$green};
+    --blue: #{vars.$blue};
+    --text: #{vars.$text};
+    --text-secondary: #{vars.$text-secondary};
+    --facebook: #{vars.$facebook};
+    --google-gradient: #{vars.$google-gradient};
+    --white: #{vars.$white};
+    --input-border: #{vars.$input-border};
+    --input-border-red: #{vars.$input-border-red};
+    --input-border-green: #{vars.$input-border-green};
+
+    --font-family: #{vars.$font-family};
+    --second-family: #{vars.$second-family};
+>>>>>>> master
 }
 
 ::-webkit-scrollbar {
@@ -38,10 +55,17 @@
 // font-family: Open Sans  400,700
 // second-family: Roboto  400,600
 body {
+<<<<<<< HEAD
   font-family: var(--font-family);
   font-weight: 400;
   background: #fff;
   font-size: 14px;
+=======
+    font-family: var(--font-family);
+    font-weight: 400;
+    background: var(--white);
+    font-size: 14px;
+>>>>>>> master
 }
 
 .container {

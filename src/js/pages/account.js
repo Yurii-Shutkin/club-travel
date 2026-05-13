@@ -1,11 +1,15 @@
 import '@/js/layout/burger-menu.js';
 import '@/js/layout/header-account-dropdown.js';
 import '@/js/layout/header-scroll-state.js';
+import { initGuard } from '@/js/services/user/guard.js';
+import { auth } from '@/js/services/user/auth.js';
 
 import {
   accountOrders as mockAccountOrders,
   accountUser as mockAccountUser,
 } from '../../data/account-mock.js';
+
+initGuard();
 
 const ORDERS_PER_PAGE = 9;
 const STATUS_LABELS = { paid: 'Оплачено', processing: 'В обработке' };
@@ -138,10 +142,10 @@ if (accountPage) {
     elements.next.addEventListener('click', () => changePage(1));
   if (elements.logout) {
     elements.logout.addEventListener('click', () => {
-      window.location.href = '/club-travel/';
+      auth.logout();
     });
   }
-
+  
   renderUser(state.user);
   render();
   syncTableHeight();

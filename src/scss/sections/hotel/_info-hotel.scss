@@ -1,0 +1,72 @@
+@use '@/scss/utils/media' as media;
+
+.info-hotel {
+
+    &__title {
+        font-size: 18px;
+        color: var(--text);
+    }
+
+    &__text {
+        color: #555;
+        margin-top: 16px;
+        line-height: 1.5;
+    }
+
+    &__lists-block {
+        //display: grid;
+        //grid-template-columns: 1fr 1fr;
+        //gap: 30px 4px;
+        margin-top: 47px;
+
+        column-count: 2;
+        column-gap: 30px;
+
+        @include media.max-width(xs) {
+            column-count: 1;
+        }
+    }
+
+    &__list-wrap {
+        display: inline-block;
+        break-inside: avoid;
+        margin-bottom: 32px;
+        width: 80%;
+        @include media.max-width(xs) {
+            margin-bottom: 31px;
+            width: 100%;
+        }
+    }
+
+    &__list-title {
+        font-size: 18px;
+        color: var(--text);
+    }
+
+    &__list {
+        color: #555;
+        line-height: 1.35;
+        & li::before {
+            content: '';
+            display: block;
+            width: 13px;
+            height: 1px;
+            background-color: #555;
+            margin-top: 10px;
+        }
+        &_no-dash li{
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    &__list-item {
+        display: flex;
+        gap: 4px;
+
+        &:first-child {
+            margin-top: 17px;
+        }
+    }
+}

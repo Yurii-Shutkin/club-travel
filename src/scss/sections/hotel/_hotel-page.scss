@@ -1,0 +1,30 @@
+@use '@/scss/utils/media' as media;
+.hotel-page{
+    &__badge-wrap{
+        position: relative;
+    }
+    &__hotel-badge{
+        position: absolute;
+        z-index: 5;
+        top: 60%;
+        left: 8%;
+        transform: translate(-10%, -10%);
+        @include media.max-width(xs) {
+            transform: translate(-50%, -10%);
+            top: 55%;
+            left: 50%;
+        }
+    }
+    &__promo-tours{
+        margin-top: 36px;
+        @include media.max-width(sm) {
+            margin-top: 56px;
+        }
+    }
+    & .footer{
+        margin-top: 80px;
+        @include media.max-width(sm) {
+            margin-top: 26px;
+        }
+    }
+}

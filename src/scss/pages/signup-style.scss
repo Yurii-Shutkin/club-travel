@@ -1,14 +1,26 @@
 @use '@/scss/base/reset';
 @use '@/scss/base/base';
 @use '@/scss/ui/states';
+@use '@/scss/ui/input';
 
 @use '@/scss/ui/intro-header';
 @use '@/scss/layout/header';
 @use '@/scss/layout/burger-menu';
 
-@use "@/scss/ui/form";
+@use "@/scss/components/form";
 
 @use '@/scss/layout/footer';
+
+html {
+    visibility: hidden;
+    opacity: 0;
+}
+
+html.ready {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
 
 .signup-bg {
     padding-bottom: 166px;

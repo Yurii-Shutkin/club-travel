@@ -9,8 +9,7 @@
                     Войти с помощью Facebook
                 </button>
 
-                <a href="https://club-travel-strapi.onrender.com/api/connect/google"
-                    class="btn btn__social btn__social_google">
+                <a class="btn btn__social btn__social_google">
                     {{>ui/svg id="google" className="social social-icon"}}
                     Войти с помощью Google
                 </a>
@@ -21,7 +20,7 @@
             <form data-form="auth" id="form">
                 <div class="base-form__input-group">
                     <label class="base-form__label" for="email">E-mail</label>
-                    <input class="base-form__input" type="email" mane="email" id="email" autocomplete="email">
+                    <input class="input-base" type="email" mane="email" id="email" autocomplete="email">
                 </div>
 
                 <div class="base-form__input-group">
@@ -29,7 +28,7 @@
                         <label class="base-form__label" for="password-login">Пароль</label>
                         <a href="password-recovery.html" class="link-basic">Забыли пароль?</a>
                     </div>
-                    <input class="base-form__input" type="password" id="password-login" name="password-login"
+                    <input class="input-base" type="password" id="password-login" name="password-login"
                         id="password-login" autocomplete="current-password">
                 </div>
 

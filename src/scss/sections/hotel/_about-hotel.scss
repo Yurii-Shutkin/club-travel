@@ -1,47 +1,61 @@
 @use '@/scss/utils/media' as media;
 
-.hotel-overview {
-    padding: 32px 0 72px;
+.about-hotel {
 
-    &__grid {
+    &__inner {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) 320px;
-        gap: 32px;
-
-        @include media.max-width(md) {
-            grid-template-columns: 1fr;
+        grid-template-columns:minmax(0, 1fr) 370px;
+        //gap: 70px;
+        gap: 6%;
+        @include media.max-width(sd) {
+            grid-template-columns: minmax(0, 1fr) 300px;
+        }
+        @include media.max-width(sm) {
+            display: flex;
+            flex-direction: column;
         }
     }
 
-    &__main { min-width: 0; }
-    &__title { margin-bottom: 16px; font-size: 24px; }
-    &__hero { border-radius: 10px; overflow: hidden; }
-    &__thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 12px 0 20px; }
-    &__thumb { border-radius: 6px; aspect-ratio: 4/3; object-fit: cover; }
-    &__text { line-height: 1.5; margin-bottom: 24px; }
-    &__features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 28px; }
+    &__main {
+        width: 100%;
+        margin-top: 68px;
+        @include media.max-width(sm) {
+            margin-top: 32px;
+            order: 3;
+        }
+    }
+    &__swiper-thumbs{
+    }
 
-    &__features h3 { margin-bottom: 6px; font-size: 18px; }
-    &__features ul { padding-left: 18px; display: grid; gap: 4px; }
+    &__aside {
+        width: 100%;
+        @include media.max-width(sd) {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        @include media.max-width(sm) {
+            display: contents;
+        }
+    }
+    &__booking-card{
+        order: 2;
+    }
+    &__reasons-card {
+        margin-top: 48px;
+        order: 4;
+        @include media.max-width(sm) {
+            margin-top: 31px;
+        }
+    }
+    &__hotel-consultant{
+        margin-top: 44px;
+        order: 5;
+        @include media.max-width(sm) {
+            margin-top: 54px;
+        }
+    }
 
-    &__sidebar { display: grid; gap: 16px; align-content: start; }
-
-    &__consultant .ask-consultant__title { font-size: 20px; }
-    &__consultant .ask-consultant__inner { display: block; }
-    &__consultant .ask-consultant__photo { width: 100%; max-width: 100%; margin-bottom: 10px; }
-}
-
-.hotel-card {
-    background: #fff;
-    border: 1px solid #e5e5e5;
-    border-radius: 10px;
-    padding: 16px;
-
-    &__title { font-size: 20px; margin-bottom: 10px; }
-    &__list { display: grid; gap: 8px; margin-bottom: 12px; }
-    &__price { font-size: 32px; font-weight: 700; margin-bottom: 12px; }
-    &__price span { font-size: 16px; font-weight: 400; }
-    &__checks { display: grid; gap: 8px; padding-left: 18px; }
-
-    &__button { width: 100%; justify-content: center; }
+    &__info-hotel {
+        margin-top: 29px;
+    }
 }

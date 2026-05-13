@@ -17,12 +17,13 @@
 @use '@/scss/components/hot-card';
 @use '@/scss/components/season-card';
 @use '@/scss/components/ask-consultant';
+@use '@/scss/components/tour-search';
 
 @use '@/scss/layout/header';
 @use '@/scss/layout/burger-menu';
 
 @use '@/scss/sections/common/main-hero';
-@use '@/scss/sections/main/promo-tours';
+@use '@/scss/sections/common/promo-tours';
 @use '@/scss/sections/main/promo-season-tours';
 @use '@/scss/sections/common/promo-support';
 @use '@/scss/sections/main/main';

@@ -1,4 +1,6 @@
 import JustValidate from 'just-validate';
+import { handleSignUp } from '@/js/services/user/on-sign-up.js';
+import { handleLogin } from '@/js/services/user/mail-pass-auth.js';
 
 export const initValidation = (formSelector) => {
   const form = document.querySelector(formSelector);
@@ -7,8 +9,8 @@ export const initValidation = (formSelector) => {
   if (!form) return null;
 
   const validator = new JustValidate(formSelector, {
-    errorFieldCssClass: 'is-invalid',
-    successFieldCssClass: 'is-valid',
+    errorFieldCssClass: 'input-base_is-invalid',
+    successFieldCssClass: 'input-base_is-valid',
     lockForm: true,
   });
 
@@ -56,7 +58,16 @@ export const initValidation = (formSelector) => {
   ]);
   }
 
-  validator.onSuccess((event) => {
+  validator.onSuccess(async (event) => {
+    const form = event.target;
+    const formType = form.getAttribute('data-form'); 
+    if (formType === 'signup') {
+        await handleSignUp(form);
+    }
+
+    else if (formType === 'auth') {
+        await handleLogin(form);
+    }
     console.log('Форма валидна, можно отправлять!', event.target);
   });
 

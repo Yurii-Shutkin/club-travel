@@ -7,16 +7,13 @@ import { renderNewsCards } from '@/js/components/render-news-cards.js';
 import { renderHotCards } from '@/js/components/render-hot-cards.js';
 import { renderSeasonCards } from '@/js/sections/main/render-season-cards.js';
 import { initCardsSwiper } from '@/js/sections/main/cards-swiper.js';
-import { handleGoogleCallback } from '@/js/services/user/auth.js';
-
-handleGoogleCallback();
 
 document.addEventListener('DOMContentLoaded', async () => {
   await Promise.all([
-    renderNewsCards('.promo-company',5).then(() =>
+    renderNewsCards('.promo-company').then(() =>
       initCardsSwiper('.promo-company', 3),
     ),
-    renderHotCards('.promo-offers',5).then(() =>
+    renderHotCards('.promo-offers').then(() =>
       initCardsSwiper('.promo-offers', 3),
     ),
     renderSeasonCards('winter', '.promo-winter-tours').then(() =>
@@ -27,4 +24,3 @@ document.addEventListener('DOMContentLoaded', async () => {
     ),
   ]);
 });
-

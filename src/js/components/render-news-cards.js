@@ -2,7 +2,7 @@ import { getNews } from '@/js/services/api/getNews.js';
 import { updateTextContent } from '@/js/utils/update-text-content.js';
 
 export const renderNewsCards = async (className, maxCards) => {
-  const cardsData = await getNews();
+  const cardsData = await getNews(maxCards);
 
   const container = document.querySelector(className);
   if (!container) return;
@@ -10,21 +10,22 @@ export const renderNewsCards = async (className, maxCards) => {
   const templateCard = templateWrapper.content.querySelector('[data-card]');
   const cardsWrapper = container.querySelector('[data-wrapper]');
 
-  if (container.querySelector('.swiper')) {
-    templateCard.classList.add('swiper-slide');
-  }
-
   const cardsList = [];
   const cardsToRender = Math.min(maxCards || cardsData.length, cardsData.length);
+  cardsWrapper.innerHTML = '';
 
   for (let i = 0; i < cardsToRender; i++) {
     const card = templateCard.cloneNode(true);
+    if (container.querySelector('.swiper')) card.classList.add('swiper-slide');
 
     const cardImg = card.querySelector('[data-card-img]');
     const cardPriceWrap = card.querySelector('[data-badge]');
     const cardDateWrap = card.querySelector('[data-card-date]');
 
-    if (cardImg && cardsData[i].image) cardImg.src = cardsData[i].image;
+    if (cardImg && cardsData[i].image) {
+      cardImg.src = cardsData[i].image;
+      cardImg.alt = cardsData[i].title || cardsData[i].countryName;
+    }
 
     updateTextContent(card, '[data-card-title]', cardsData[i].title);
 
