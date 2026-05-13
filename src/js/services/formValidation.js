@@ -102,7 +102,8 @@ export const initValidation = (formSelector) => {
   if (document.querySelector('#contacts-message')) {
     validator.addField('#contacts-message', [
       {
-        maxLength: 500,
+        rule: 'maxLength',
+        value: 500,
         errorMessage: 'Максимальная длина сообщения 300 символов',
       },
     ]);
