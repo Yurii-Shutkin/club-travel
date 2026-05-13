@@ -27,6 +27,7 @@ const postFeedback = async (data) => {
     }
 
     const result = await response.json();
+    feedbackForm.reset();
     console.log('Feedback submitted successfully:', result);
   } catch (error) {
     console.error('Error submitting feedback:', error);
@@ -40,5 +41,4 @@ feedbackForm.addEventListener('submit', (e) => {
   postData.email = emailInput.value;
   postData.message = messageInput.value;
   postFeedback(postData);
-  feedbackForm.reset();
 });
