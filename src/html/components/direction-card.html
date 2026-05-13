@@ -1,0 +1,31 @@
+<div class="direction-card" data-country="{{country}}">
+    <picture class="direction-card__image">
+        <img src="{{image}}" alt="{{imageAlt}}" loading="lazy">
+    </picture>
+    <div class="direction-card__inner">
+        <div class="direction-card__content">
+            <div class="direction-card__city">
+                <h4 class="direction-card__city-name">{{city}}</h4>
+                <span class="direction-card__country">{{country}}</span>
+            </div>
+            <div class="direction-card__price">
+                <div class="direction-card__price-from">от <span
+                        class="direction-card__price-value">{{priceFrom}}</span>/чел</div>
+                <div class="direction-card__price-count">{{offersCount}} предложения</div>
+            </div>
+        </div>
+    </div>
+    <div class="direction-card__dates">
+        <div class="direction-card__date-wrapper">
+            {{#each dates}}
+            <span class="direction-card__date">{{this}}</span>
+            {{/each}}
+        </div>
+        {{> ui/svg className="direction-card__icon-calendar" id="calendar"}}
+    </div>
+
+    <div class="direction-card__inner">
+        <a href="{{href}}" class="direction-card__button">Выбрать тур</a>
+    </div>
+
+</div>

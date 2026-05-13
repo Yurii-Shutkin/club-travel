@@ -3,4 +3,5 @@
 @use '../layout/header';
 @use '../layout/burger-menu';
 @use '../layout/footer';
-@use '../sections/not-found/not-found';
+@use '../sections/direction/direction.scss';
+@use '../components/direction-card';

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+
+{{>layout/head title="Направления" hrefStyle="direction-style"}}
+
+
+<body class="not-found-page">
+    {{> layout/header}}
+    {{> layout/burger-menu}}
+    <main>
+        {{> sections/direction/direction
+        filters=direction.directions.filters
+        cards=direction.directions.cards
+        }}
+    </main>
+
+    {{> layout/footer}}
+    {{> layout/script srcJs="direction"}}
+
+
+
+</body>
+
+</html>
