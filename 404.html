@@ -5,14 +5,12 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/svg+xml" href="/club-travel/favicon.svg" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Club Travel, Авторизация</title>
-  <script type="module" crossorigin src="/club-travel/assets/js/auth-Bkix_1Gs.js"></script>
-  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-DBHKNPaB.js">
-  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/formValidation-CNNCFD4R.js">
-  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/guard-DF2HX03z.js">
-  <link rel="stylesheet" crossorigin href="/club-travel/assets/css/auth-Bg87bRq-.css">
+<title>Ошибка - Страница не найдена</title>
+  <script type="module" crossorigin src="/club-travel/assets/js/header-scroll-state-DBHKNPaB.js"></script>
+  <link rel="stylesheet" crossorigin href="/club-travel/assets/css/404-C50RVAIr.css">
 </head>
-<body class="auth">
+
+<body class="not-found-page">
     <header class="header">
       <div class="header__container container">
         <div class="header__panel">
@@ -270,57 +268,28 @@
       </div>
     </div>
     <main>
-        <section class="main-layout auth-bg">
-            <div class="base-form">
-                <div class="base-form__container">
-                    <p class="social-header">Войдите используя соц. сети</p>
-        
-                    <div class="social-buttons">
-                        <button type="button" class="btn btn__social btn__social_facebook">
-                            <svg class="social social-icon" >
-                                <use href="/club-travel/sprite.svg#icon-facebook"></use>
-                            </svg>
-                            Войти с помощью Facebook
-                        </button>
-        
-                        <a class="btn btn__social btn__social_google">
-                            <svg class="social social-icon" >
-                                <use href="/club-travel/sprite.svg#icon-google"></use>
-                            </svg>
-                            Войти с помощью Google
-                        </a>
-                    </div>
-        
-                    <div class="divider">или</div>
-        
-                    <form data-form="auth" id="form">
-                        <div class="base-form__input-group">
-                            <label class="base-form__label" for="email">E-mail</label>
-                            <input class="input-base" type="email" mane="email" id="email" autocomplete="email">
-                        </div>
-        
-                        <div class="base-form__input-group">
-                            <div class="base-form__label-row">
-                                <label class="base-form__label" for="password-login">Пароль</label>
-                                <a href="password-recovery.html" class="link-basic">Забыли пароль?</a>
-                            </div>
-                            <input class="input-base" type="password" id="password-login" name="password-login"
-                                id="password-login" autocomplete="current-password">
-                        </div>
-        
-                        <div class="base-form__button-row">
-                            <a href="signup.html" class="btn btn_bordered">РЕГИСТРАЦИЯ</a>
-                            <button type="submit" class="btn btn_orange">ВХОД</button>
-                        </div>
-                    </form>
-        
+        <section class="not-found">
+            <div class="not-found__container">
+                <h1 class="not-found__title">Ой!</h1>
+                <div class="not-found__text">
+                    <p>Ошибка 404. Похоже, страницы не существует.</p>
                 </div>
-                <div class="policy-links">
-                    <a href="#" class="link-basic link-basic_white">Политика конфиденциальности</a>
-                    <a href="#" class="link-basic_white">Политика использования</a>
-                </div>
+                <div class="not-found__subtitle">Вот несколько полезных ссылок:</div>
+                <ul class="not-found__list">
+                    <li class="not-found__item"><a href='#!' class="not-found__link">Поиск тура</a></li>
+                    <li class="not-found__item"><a href='#!' class="not-found__link">Направления</a></li>
+                    <li class="not-found__item"><a href='./company.html' class="not-found__link">Кампании</a>
+                    </li>
+                    <li class="not-found__item"><a href='#!' class="not-found__link">Горящие предложения</a>
+                    </li>
+                    <li class="not-found__item"><a href='./tour-request.html' class="not-found__link">Запрос
+                            тура</a>
+                    </li>
+                    <li class="not-found__item"><a href='#!' class="not-found__link">Контакты</a></li>
+                </ul>
             </div>
         </section>    </main>
+
     <footer class="footer " id="footer">
       <hr class="footer__line">
       <div class="footer__container container">
@@ -422,11 +391,13 @@
         <a href="./policy.html" class="footer__rights-link clickable">Политика конфиденциальности</a>
         <a href="./policy.html" class="footer__rights-link clickable">Политика использования</a>
       </div>
-    </footer>
-    <div id="fb-root"></div>
+    </footer>    <div id="fb-root"></div>
     <script async defer crossorigin="anonymous"
             src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v20.0">
     </script>
+
+
+
 </body>
 
 </html>
