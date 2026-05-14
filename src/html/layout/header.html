@@ -1,13 +1,8 @@
 <header class="header">
   <div class="header__container container">
     <div class="header__panel">
-      <button
-        class="header__burger js-burger-open"
-        type="button"
-        aria-label="Открыть меню"
-        aria-expanded="false"
-        aria-controls="burger-menu"
-      >
+      <button class="header__burger js-burger-open" type="button" aria-label="Открыть меню" aria-expanded="false"
+        aria-controls="burger-menu">
         {{> ui/svg className="header__burger-icon" id="menu" }}
       </button>
 
@@ -17,15 +12,9 @@
 
       <nav class="header__service-nav" aria-label="Дополнительная навигация">
         <div class="header__service-list">
-          <a class="header__service-link clickable" href="main.html"
-            >Страховки</a
-          >
+          <a class="header__service-link clickable" href="main.html">Страховки</a>
           <a class="header__service-link clickable" href="main.html">Визы</a>
-          <a
-            class="header__service-link clickable"
-            href="{{links.contacts.href}}"
-            >Контакты</a
-          >
+          <a class="header__service-link clickable" href="{{links.contacts.href}}">Контакты</a>
         </div>
       </nav>
 
@@ -40,10 +29,7 @@
           </li>
 
           <li class="header__contacts-item">
-            <a
-              class="header__contacts-link clickable"
-              href="mailto:contact@email.ee"
-            >
+            <a class="header__contacts-link clickable" href="mailto:contact@email.ee">
               {{> ui/svg className="header__contacts-icon
               header__contacts-icon_mail" id="mail" }}
               <span class="header__contacts-text">contact@email.ee</span>
@@ -53,31 +39,18 @@
       </address>
 
       <div class="header__account-menu header__account-menu_guest">
-        <button
-          class="header__account"
-          type="button"
-          aria-label="Личный кабинет"
-          aria-expanded="false"
-          aria-controls="account-dropdown"
-          data-auth-url="{{links.authorization.href}}"
-          data-account-url="{{links.customerAccount.href}}"
-        >
+        <button class="header__account" type="button" aria-label="Личный кабинет" aria-expanded="false"
+          aria-controls="account-dropdown" data-auth-url="{{links.authorization.href}}"
+          data-account-url="{{links.customerAccount.href}}">
           {{> ui/svg className="header__account-icon" id="user" }}
           <span class="header__account-initials" aria-hidden="true"></span>
         </button>
 
-        <div
-          class="header__account-dropdown"
-          id="account-dropdown"
-          aria-label="Меню личного кабинета"
-          aria-hidden="true"
-        >
+        <div class="header__account-dropdown" id="account-dropdown" aria-label="Меню личного кабинета"
+          aria-hidden="true">
           <ul class="header__account-list">
             <li class="header__account-item">
-              <a
-                class="header__account-link"
-                href="{{links.customerAccount.href}}"
-              >
+              <a class="header__account-link" href="{{links.customerAccount.href}}">
                 {{> ui/svg className="header__account-item-icon" id="ticket" }}
                 <span class="header__account-item-text">Мои заказы</span>
               </a>
@@ -121,14 +94,11 @@
         </li>
 
         <li class="header__main-item">
-          <a class="header__main-link" href="main.html">Направления</a>
+          <a class="header__main-link" href="direction.html">Направления</a>
         </li>
 
         <li class="header__main-item">
-          <a
-            class="header__main-link header__main-link_campaigns"
-            href="{{links.company.href}}"
-          >
+          <a class="header__main-link header__main-link_campaigns" href="{{links.company.href}}">
             {{> ui/svg className="header__main-link-icon
             header__main-link-icon_campaigns" id="offer" }}
             <span class="header__main-link-text">Кампании</span>
@@ -144,9 +114,7 @@
         </li>
 
         <li class="header__main-item">
-          <a class="header__main-link" href="{{links.tourRequest.href}}"
-            >Запрос тура</a
-          >
+          <a class="header__main-link" href="{{links.tourRequest.href}}">Запрос тура</a>
         </li>
 
         <li class="header__main-item">

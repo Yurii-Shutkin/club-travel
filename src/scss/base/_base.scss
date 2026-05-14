@@ -1,88 +1,126 @@
-@use "@/scss/utils/variables" as vars;
-@use "@/scss/utils/media" as media;
+@use '@/scss/utils/variables' as vars;
+@use '@/scss/utils/media' as media;
 
 :root {
-    --primary: #{vars.$primary};
-    --green: #{vars.$green};
-    --blue: #{vars.$blue};
-    --text: #{vars.$text};
-    --text-secondary: #{vars.$text-secondary};
-    --facebook: #{vars.$facebook};
-    --google-gradient: #{vars.$google-gradient};
-    --white: #{vars.$white};
-    --input-border: #{vars.$input-border};
-    --input-border-red: #{vars.$input-border-red};
-    --input-border-green: #{vars.$input-border-green};
+  --primary: #{vars.$primary};
+  --green: #{vars.$green};
+  --blue: #{vars.$blue};
+  --text: #{vars.$text};
+  --text-secondary: #{vars.$text-secondary};
+  --facebook: #{vars.$facebook};
+  --google-gradient: #{vars.$google-gradient};
+  --white: #{vars.$white};
+  --input-border: #{vars.$input-border};
+  --input-border-red: #{vars.$input-border-red};
+  --input-border-green: #{vars.$input-border-green};
 
-    --font-family: #{vars.$font-family};
-    --second-family: #{vars.$second-family};
+  --font-family: #{vars.$font-family};
+  --second-family: #{vars.$second-family};
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 4px;
+  width: 8px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #F3F4F6;
-    border-radius: 10px;
+  background: #f3f4f6;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #F59E0B;
-    border-radius: 10px;
+  background: #f59e0b;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #D97706;
+  background: #d97706;
 }
 
 // font-family: Open Sans  400,700
 // second-family: Roboto  400,600
 body {
-    font-family: var(--font-family);
-    font-weight: 400;
-    background: var(--white);
-    font-size: 14px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  background: var(--white);
+  font-size: 14px;
 }
 
 .container {
-    max-width: 1366px;
-    margin: 0 auto;
-    padding: 0 98px;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 98px;
 
-    @include media.max-width(md) {
-        padding: 0 20px;
-    }
+  @include media.max-width(md) {
+    padding: 0 20px;
+  }
 }
 
 .title {
-    font-weight: 700;
-    font-size: 26px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 picture {
-    overflow: hidden;
+  overflow: hidden;
 
-    & img {
-        width: 100%;
-        height: 100%;
-    }
+  & img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 input,
 button,
 textarea,
 select {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: inherit;
-    font-size: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
 
-    &:focus {
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #fdfdfd inset !important;
+  -webkit-text-fill-color: var(--text) !important;
+  border: 1px solid #ddd !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.user-services-bg {
+  position: relative;
+  background: url('@/assets/image/components/promo-support/bg.webp') no-repeat
+    center center;
+  background-size: cover;
+  //   padding-top: 120px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(8, 44, 99, 0.8) 0%,
+      rgba(8, 44, 99, 0.8) 100%
+    );
+  }
 }

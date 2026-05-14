@@ -1,0 +1,26 @@
+<section class="direction container">
+    <nav class="direction__sidebar sidebar-direction">
+        <h1 class="sidebar-direction__title">Направления</h1>
+        <ul class="sidebar-direction__list">
+            {{#each filters}}
+            <li class="sidebar-direction__item">
+                <label class="sidebar-direction__label">
+                    <input class="sidebar-direction__input" type="checkbox" value="{{id}}" data-country="{{country}}"
+                        {{#if checked}} checked{{/if}}>
+                    <span class="sidebar-direction__box"></span>
+                    <span class="sidebar-direction__text">{{label}}</span>
+                </label>
+
+            </li>
+            {{/each}}
+        </ul>
+    </nav>
+    <div class="direction__filters filters-direction">
+        <div class="filters-direction__items">
+            {{#each cards}}
+            {{>components/direction-card}}
+            {{/each}}
+        </div>
+
+    </div>
+</section>
