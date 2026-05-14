@@ -8,6 +8,7 @@
     {{> layout/header}}
     {{> layout/burger-menu}}
     <main>
+        {{>sections/common/main-hero sectionClass="direction-main-hero"}} {{>components/tour-search}}
         {{> sections/direction/direction
         filters=direction.directions.filters
         cards=direction.directions.cards
@@ -15,7 +16,7 @@
     </main>
 
     {{> layout/footer}}
-    {{> layout/script srcJs="direction"}}
+    {{> layout/script srcJs="direction"}}{{>layout/script srcJs="main"}}
 
 
 
