@@ -1,21 +1,37 @@
-<div class="swiper-thumbs {{swiperThumbsClass}} js-swiper-thumbs" data-swiper-thumbs>
-  <div class="swiper-thumbs__main-swiper swiper" data-swiper-thumbs-main>
-    <div class="swiper-thumbs__main-swiper-wrapper swiper-wrapper">
-      {{#each (split swiperThumbsImages)}}
-        <picture class="swiper-thumbs__main-slide swiper-slide">
-          <img src="{{this}}" alt="">
-        </picture>
-      {{/each}}
-    </div>
-  </div>
+<div class="swiper-thumbs-container" data-swiper-thumbs-container>
+  <div class="swiper-thumbs" data-swiper-thumbs>
 
-  <div class="swiper-thumbs__list--swiper swiper" aria-label="Фотографии" data-swiper-thumbs-list>
-    <div class="swiper-thumbs__list-swiper-wrapper swiper-wrapper">
-      {{#each (split swiperThumbsImages)}}
-        <button class="swiper-thumbs__list-slide swiper-slide" type="button" aria-label="Показать фото: {{../swiperThumbsAlt}}">
-          <img src="{{this}}" alt="">
-        </button>
-      {{/each}}
+    <div class="swiper-thumbs__main-swiper swiper" data-swiper-main>
+      <div
+        class="swiper-thumbs__main-swiper-wrapper swiper-wrapper"
+        data-main-wrap>
+
+      </div>
     </div>
+
+    <div class="swiper-thumbs__list-swiper swiper" aria-label="Фотографії" data-swiper-list>
+      <div
+        class="swiper-thumbs__list-swiper-wrapper swiper-wrapper"
+        data-list-wrap>
+
+      </div>
+    </div>
+
   </div>
+  <template data-template="main-slide">
+    <div class="swiper-slide swiper-thumbs__main-slide" data-main-slide>
+      <picture class="swiper-thumbs__picture">
+        <img src="" alt="" data-img>
+      </picture>
+    </div>
+  </template>
+
+  <template data-template="list-slide">
+    <div class="swiper-slide swiper-thumbs__list-slide" data-list-slide>
+      <button class="swiper-thumbs__list-btn" type="button">
+        <img src="" alt="" loading="lazy" data-img>
+      </button>
+    </div>
+  </template>
 </div>
+

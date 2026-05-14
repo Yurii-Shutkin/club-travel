@@ -10,6 +10,13 @@ function selectClose() {
   });
 }
 
+window.addEventListener('resize', () => {
+  if (document.querySelector('[data-select].is-open')) {
+    selectClose();
+  }
+})
+
+
 function selectOption(option) {
   const select = option.closest('[data-select]');
   const allOptions = select.querySelectorAll('[data-select-option]');
@@ -29,6 +36,7 @@ export function selectOpen() {
   document.addEventListener('click', e => {
     const triggerEl = e.target.closest('[data-select-trigger]');
     const option = e.target.closest('[data-select-option]');
+    const isSelectClick = e.target.closest('[data-select]');
 
     if (triggerEl) {
       const select = triggerEl.closest('[data-select]');
@@ -36,19 +44,20 @@ export function selectOpen() {
       const isOpen = select.classList.contains('is-open');
 
       selectClose();
+
       if (!isOpen) {
         select.classList.add('is-open');
         triggerEl.setAttribute('aria-expanded', 'true');
       }
-      // return;
+
     } else if (option) {
       selectOption(option);
-    } else if (!e.target.closest('[data-select]')) selectClose();
+    } else if (!isSelectClick) selectClose();
   });
 }
 
 export function updateGuestValue(guestSelect) {
-  // const guestSelect=document.querySelector('[data-guests-selector]');
+
   const guestAdult = guestSelect.querySelector('[data-guests-adults]');
   const guestChildren = guestSelect.querySelector('[data-guests-children]');
 
@@ -59,12 +68,12 @@ export function updateGuestValue(guestSelect) {
   let children=0;
 
   counterList.forEach(item => {
-
     const value = Number(item.querySelector('[data-counter-value]').textContent);
     const type = item.dataset.counter;
-    const chip = chips.querySelector(`[data-chip="${type}"]`);
-    if (chip) {
-      chip.querySelector('span').textContent = String(value);
+
+    if (chips) {
+      const chip = chips.querySelector(`[data-chip="${type}"]`);
+      if (chip) chip.querySelector('span').textContent = String(value);
     }
 
     if (type==="adults") {adult = value;}

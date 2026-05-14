@@ -1,15 +1,15 @@
 import Swiper from 'swiper';
-import { FreeMode, Thumbs } from 'swiper/modules';
+import { FreeMode, Thumbs} from 'swiper/modules';
 
-export function innitSwiperThumbs() {
-  const swiperThumbs = document.querySelectorAll('[data-swiper-thumbs]');
+export function innitSwiperThumbs(SwiperThumbsClass) {
+  const swiperThumbs = document.querySelectorAll(SwiperThumbsClass);
 
   swiperThumbs.forEach(swiperWithThumbs => {
     const mainSwiper = swiperWithThumbs.querySelector(
-      '[data-swiper-thumbs-main]',
+      '[data-swiper-main]',
     );
     const listSwiper = swiperWithThumbs.querySelector(
-      '[data-swiper-thumbs-list]',
+      '[data-swiper-list]',
     );
 
     if (!mainSwiper || !listSwiper) {
@@ -21,13 +21,14 @@ export function innitSwiperThumbs() {
     if (slides.length === 0) {
       return;
     }
+    const isLoop = slides.length > 4;
 
     const thumbsSwiper = new Swiper(listSwiper, {
-      modules: [FreeMode],
+      modules: [FreeMode, Thumbs],
       slidesPerView: 4,
       spaceBetween: 16,
       freeMode: true,
-      loop: true,
+      loop: isLoop,
       watchSlidesProgress: true,
       breakpoints: {
         0: {
@@ -45,6 +46,7 @@ export function innitSwiperThumbs() {
       spaceBetween: 10,
       speed: 500,
       loop: true,
+      grabCursor: true,
       thumbs: {
         swiper: thumbsSwiper,
       },
