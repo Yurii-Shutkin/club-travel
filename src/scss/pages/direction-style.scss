@@ -1,0 +1,13 @@
+@use 'swiper/css';
+@use 'swiper/css/navigation';
+@use 'swiper/css/autoplay';
+
+@use '../base/reset';
+@use '../base/base';
+@use '../layout/header';
+@use '../layout/burger-menu';
+@use '../layout/footer';
+@use '../sections/direction/direction.scss';
+@use '../components/direction-card';
+@use '@/scss/sections/common/main-hero';
+@use '@/scss/components/tour-search';

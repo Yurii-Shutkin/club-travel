@@ -13,6 +13,7 @@ export const links = {
   authorization: { href: './auth.html' },
   registration: { href: './signup.html' },
   passwordRecovery: { href: '#!' },
+  airTickets: { href: './hotel.html' },  // change !!!
 
   // social: { href: './company.html' },
   seasonTours: { href: '#!' },
@@ -21,5 +22,5 @@ export const links = {
   policy: { href: './policy.html' },
 };
 
-// <a href="{{links.main.href}}">Поддержка туров</a>
+// <a href="{{links.airTickets.href}}">Поддержка туров</a>
 // <a href="{{links.[tour-support].href}}">Поддержка туров</a>

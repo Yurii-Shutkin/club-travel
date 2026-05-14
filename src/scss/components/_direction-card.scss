@@ -1,0 +1,92 @@
+.direction-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+
+  &__inner {
+    padding: 16px;
+  }
+
+  &__image {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__city {
+  }
+
+  &__city-name {
+    font-weight: 700;
+    font-size: 16px;
+    color: #222;
+  }
+
+  &__country,
+  &__price-count {
+    font-weight: 400;
+    font-size: 12px;
+    color: #808080;
+  }
+
+  &__price {
+    font-weight: 400;
+    font-size: 16px;
+  }
+  &__price-value {
+    font-weight: 700;
+    font-size: 16px;
+    color: #222;
+  }
+
+  &__price-from {
+  }
+
+  &__price-count {
+  }
+
+  &__dates {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+    padding: 16px;
+    align-items: center;
+    gap: 10px;
+    @media (768px <width < 832px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  &__icon-calendar {
+    width: 24px;
+    height: 24px;
+    fill: #b3b3b3;
+    flex-shrink: 0;
+  }
+
+  &__date {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    color: #222;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    background: #f68521;
+    color: var(--white);
+    padding: 12px 10px;
+    border-radius: 6px;
+  }
+}

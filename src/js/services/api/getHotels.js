@@ -135,7 +135,7 @@ export const normalizeV2HotelDetails = hotel => {
     gallery: normalizeMediaList(attrs.gallery),
     hotelFeatures: normalizeHotelFeatures(attrs.hotelFeatures),
     hotelDescription: normalizeHotelDescription(attrs.hotelDescription),
-    raw: hotel,
+    // raw: hotel,
   };
 };
 
@@ -151,11 +151,12 @@ export const getHotels = async (limit = 100) => {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const { data } = await response.json();
-    const hotels = (data || []).map(hotel =>
-      flattenObject(normalizeV2HotelDetails(hotel), '', {}, {
-        preserveArrayKeys: ['gallery', 'hotelFeatures', 'hotelDescription'],
-      }),
-    );
+    // const hotels = (data || []).map(hotel =>
+    //   flattenObject(normalizeV2HotelDetails(hotel), '', {}, {
+    //     preserveArrayKeys: ['gallery', 'hotelFeatures', 'hotelDescription'],
+    //   }),
+    // );
+    const hotels = (data || []).map(normalizeV2HotelDetails);
 
     return hotels;
   } catch (error) {

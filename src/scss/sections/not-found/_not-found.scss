@@ -1,0 +1,69 @@
+@use '@/scss/utils/variables' as *;
+
+.not-found {
+  position: relative;
+  background-image: url('../../../assets/image/components/404/404-background-PC.webp');
+  background-size: cover;
+  background-position: center;
+  min-height: 689px;
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(8, 44, 99, 0.8);
+  }
+
+  &__container {
+    position: relative;
+    z-index: 4;
+    max-width: 1366px;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    padding-top: 137px;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 84px;
+    text-align: center;
+    color: $white;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 24px;
+    text-align: center;
+    color: $white;
+    margin-bottom: 46px;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: $white;
+    margin-bottom: 14px;
+  }
+
+  &__list {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-align: center;
+    color: $white;
+  }
+}

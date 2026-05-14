@@ -1,95 +1,17 @@
-<div class="info-hotel {{infoHotelClass}}">
-  <h1
-    class="info-hotel__title">Рекомендуем для семейного и молодежного отдыха.</h1>
-  <p class="info-hotel__text">
-    Гости города Золотые пески, приехавшие в город по делам бизнеса или для отдыха,
-    могут остановиться в гостинце Ambassador (Амбассадор). Отель прекрасно сочетает
-    в себе как современный комфорт, так и высокий уровень обслуживания. Каждый номер
-    оснащен всем необходимым для комфортного отдыха (кондиционер, телевизор, письменный стол,
-    сейф и утренняя газета). Вы сможете воспользоваться услугами массажиста, баром, лифтом, спа,
-    сауной, рестораном, отдохнуть у бассейна, посетить фитнес зал и прогуляться по саду. Ваш отдых
-    в отеле Ambassador (Амбассадор) будет ярким и запоминающимся, вас не оставят равнодушными первоклассный
-    сервис и великолепное обслуживание. Отель находится в 27 км от Международного аэропорта Варна (Varna International Airport),
-    в 900 метрах от центра курорта Золотые пески и в 150 метрах от пляжа. Отель принимает отдыхающих круглый год и
-    является прекрасным местом для отдыха, спорта и развлечений. В бальнеологическом центре «Амбассадор» предлагаются
-    свыше 100 видов услуг: таласотерапия, ванные, массаж, электротерапия, грязелечение, водолечение, акупунктура,
-    медицинская косметика, сауна, открытый и крытый бассейны, фитнес зал, солярий и много других.
+<div class="info-hotel {{infoHotelClass}}" data-info="hotel">
+  <h2
+    class="info-hotel__title" data-info="title"></h2>
+  <p class="info-hotel__text" data-info="text">
   </p>
-  <div class="info-hotel__lists-block">
-    <div class="info-hotel__list-wrap">
-      <h2 class="info-hotel__list-title">Месторасположение</h2>
-      <ul class="info-hotel__list info-hotel__list_no-dash">
-        <li
-          class="info-hotel__list-item">Гостиница находится в южной части курортного
-          комплекса «Золотые пески» в нескольких минутах ходьбы от моря.
+  <div class="info-hotel__lists-block"  data-info="lists-container">
+    <template class="info-hotel__template" data-info-template>
+      <div class="info-hotel__list-wrap" data-info="list-block">
+        <h3 class="info-hotel__list-title" data-info="list-title"></h3>
+        <ul class="info-hotel__list" data-info="list">
+        </ul>
+        <li class="info-hotel__list-item">
         </li>
-      </ul>
-    </div>
-
-    <div class="info-hotel__list-wrap">
-      <h2 class="info-hotel__list-title">Пляж</h2>
-      <ul class="info-hotel__list">
-        <li class="info-hotel__list-item">Расстояние до пляжа (60 м.)</li>
-        <li class="info-hotel__list-item">Зонтики (платно)</li>
-        <li class="info-hotel__list-item">Шезлонги (платно)</li>
-      </ul>
-    </div>
-
-    <div class="info-hotel__list-wrap">
-      <h2 class="info-hotel__list-title">Для детей</h2>
-      <ul class="info-hotel__list">
-        <li class="info-hotel__list-item">детская площадка</li>
-        <li class="info-hotel__list-item">детский бассейн</li>
-      </ul>
-    </div>
-
-    <div class="info-hotel__list-wrap">
-      <h2 class="info-hotel__list-title">Номера</h2>
-      <ul class="info-hotel__list">
-        <li class="info-hotel__list-item">181 номеров</li>
-        <li class="info-hotel__list-item">душ</li>
-        <li class="info-hotel__list-item">туалет</li>
-        <li class="info-hotel__list-item">умывальник</li>
-        <li class="info-hotel__list-item">балкон</li>
-        <li class="info-hotel__list-item">ТВ спутниковое</li>
-        <li class="info-hotel__list-item">кондиционер</li>
-        <li class="info-hotel__list-item">телефон</li>
-        <li class="info-hotel__list-item">холодильник</li>
-      </ul>
-    </div>
-
-    <div class="info-hotel__list-wrap">
-      <h2 class="info-hotel__list-title">Рестораны и бары</h2>
-      <ul class="info-hotel__list">
-        <li class="info-hotel__list-item">бары</li>
-        <li class="info-hotel__list-item">кафе</li>
-        <li class="info-hotel__list-item">рестораны</li>
-      </ul>
-    </div>
-
-    <div class="info-hotel__list-wrap">
-      <h2 class="info-hotel__list-title">Развлечения и спорт</h2>
-      <ul class="info-hotel__list">
-        <li class="info-hotel__list-item">бассейн крытый</li>
-        <li class="info-hotel__list-item">бассейн открытый</li>
-        <li class="info-hotel__list-item">массаж</li>
-        <li class="info-hotel__list-item">салон красоты</li>
-        <li class="info-hotel__list-item">сауна</li>
-        <li class="info-hotel__list-item">фитнес-центр</li>
-        <li class="info-hotel__list-item">велосипеды</li>
-        <li class="info-hotel__list-item">прокат</li>
-        <li class="info-hotel__list-item">теннис настольный</li>
-      </ul>
-    </div>
-
-    <div class="info-hotel__list-wrap">
-      <h2 class="info-hotel__list-title">Сервис</h2>
-      <ul class="info-hotel__list">
-        <li class="info-hotel__list-item">парковка</li>
-        <li class="info-hotel__list-item">прокат автомобилей</li>
-        <li class="info-hotel__list-item">обмен валют</li>
-        <li class="info-hotel__list-item">сейф</li>
-      </ul>
-    </div>
+      </div>
+    </template>
   </div>
 </div>

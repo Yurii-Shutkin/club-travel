@@ -8,6 +8,7 @@ import autoprefixer from 'autoprefixer';
 import sortMediaQueries from 'postcss-sort-media-queries';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { links } from './src/data/links.js';
+import { direction } from './src/data/direction.js';
 
 const BASE_URL = '/club-travel/'; // name project in gitHub
 const __filename = fileURLToPath(import.meta.url);
@@ -91,6 +92,7 @@ export default defineConfig({
       },
       context: {
         links,
+        direction,
       },
     }),
     hulakPlugins({
