@@ -15,8 +15,17 @@ input:-webkit-autofill:active {
     border: 1px solid var(--input-border);
     border-radius: 4px;
     background: var(--white);
+    transition: border-color 0.2s ease-in-out;
+    &:focus-visible {
+        border-color: var(--blue);
+    }
 
-    &:focus,
+    @media (hover: hover) and (pointer: fine) {
+        &:hover:not(:active) {
+            border-color: var(--blue);
+        }
+    }
+
     &:active {
         border-color: var(--blue);
     }

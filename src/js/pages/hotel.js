@@ -5,35 +5,31 @@ import '@/js/sections/main/hero-swiper.js';
 
 import { renderHotCards } from '@/js/components/render-hot-cards.js';
 import { initCardsSwiper } from '@/js/sections/main/cards-swiper.js';
-// import { handleGoogleCallback } from '@/js/services/user/auth.js';
 import { selectOpen, updateGuestValue } from '@/js/ui/custom-select.js';
 import { initCounter } from '@/js/ui/counter.js';
-import { innitSwiperThumbs } from '@/js/sections/tour-request/swiper-humbs.js';
+import { innitSwiperThumbs } from '@/js/sections/hotel/swiper-tumbs.js';
+import { renderSlides } from '@/js/sections/hotel/render-swiper-thumbs.js';
 
-
+import { getHotelData } from '@/js/sections/hotel/get-hotel-data.js';
+import { renderAboutHotel } from '@/js/sections/hotel/render-about-hotel.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   selectOpen();
   initCounter();
-  innitSwiperThumbs();
 
-  document.querySelectorAll('[data-guests-selector]').forEach((guestSelect) => {
+
+  document.querySelectorAll('[data-guests-selector]').forEach(guestSelect => {
     updateGuestValue(guestSelect);
   });
 
-  await Promise.all([
-    // handleGoogleCallback(),
+  const hotelData = await getHotelData();
 
-    renderHotCards('.hotel-page__promo-tours',5).then(() =>
+  await Promise.all([
+    renderSlides(hotelData.gallery).then(() => innitSwiperThumbs('[data-swiper-thumbs]')),
+    renderAboutHotel(hotelData.info),
+
+    renderHotCards('.hotel-page__promo-tours', 5).then(() =>
       initCardsSwiper('.hotel-page__promo-tours', 3),
     ),
   ]);
 });
-
-import { getHotels } from '@/js/services/api/getHotels.js';
-
-const hotels = await getHotels(50);
-console.log('hotels', hotels);
-
-
-

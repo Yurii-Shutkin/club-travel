@@ -11,12 +11,10 @@
         color: #555;
         margin-top: 16px;
         line-height: 1.5;
+        text-align: justify;
     }
 
     &__lists-block {
-        //display: grid;
-        //grid-template-columns: 1fr 1fr;
-        //gap: 30px 4px;
         margin-top: 47px;
 
         column-count: 2;
@@ -46,14 +44,14 @@
     &__list {
         color: #555;
         line-height: 1.35;
-        & li::before {
-            content: '';
-            display: block;
-            width: 13px;
-            height: 1px;
-            background-color: #555;
-            margin-top: 10px;
-        }
+        //& li::before {
+        //    content: '';
+        //    display: block;
+        //    width: 13px;
+        //    height: 1px;
+        //    background-color: #555;
+        //    margin-top: 9px;
+        //}
         &_no-dash li{
             &::before {
                 display: none;
