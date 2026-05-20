@@ -5,12 +5,13 @@
   <link rel="icon" type="image/svg+xml" href="/club-travel/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Club Travel, Запрос тура</title>
-    <script type="module" crossorigin src="/club-travel/assets/js/tour-request-DXjsssNo.js"></script>
-    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-DBHKNPaB.js">
-    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/hero-swiper-0weSknRP.js">
+    <script type="module" crossorigin src="/club-travel/assets/js/tour-request-DV-ZsprS.js"></script>
+    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-BM9bwU5j.js">
+    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/hero-swiper-C28f7kmy.js">
     <link rel="modulepreload" crossorigin href="/club-travel/assets/js/constants-Djf1hzno.js">
-    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/counter-DjzvJhTb.js">
-    <link rel="stylesheet" crossorigin href="/club-travel/assets/css/tour-request-hFuJ3-pe.css">
+    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/custom-select-ecbNeENs.js">
+    <link rel="modulepreload" crossorigin href="/club-travel/assets/js/counter-CjLPaNz2.js">
+    <link rel="stylesheet" crossorigin href="/club-travel/assets/css/tour-request-DgMjOFKo.css">
   </head><body class="tour-request">
 <header class="header">
   <div class="header__container container">
@@ -122,7 +123,7 @@
     <nav class="header__main-nav" aria-label="Основная навигация">
       <ul class="header__main-list">
         <li class="header__main-item">
-          <a class="header__main-link" href="main.html">Поиск тура</a>
+          <a class="header__main-link" href="./search-result.html">Поиск тура</a>
         </li>
 
         <li class="header__main-item">
@@ -183,7 +184,7 @@
       <nav class="burger-menu__main-nav" aria-label="Основная навигация">
         <ul class="burger-menu__main-list">
           <li class="burger-menu__main-item">
-            <a class="burger-menu__main-link" href="main.html">Поиск тура</a>
+            <a class="burger-menu__main-link" href="./search-result.html">Поиск тура</a>
           </li>
           <li class="burger-menu__main-item">
             <a class="burger-menu__main-link" href="main.html">Направления</a>
@@ -343,7 +344,7 @@
         
               <p class="callback-request__subtitle">Оставьте свой номер телефона и мы вам перезвоним</p>
               <form class="callback-request__form" action="#">
-                <input class="callback-request__input" type="tel" placeholder="Ваш номер телефона" aria-label="Ваш номер телефона" />
+                <input class="callback-request__input input-base" type="tel" placeholder="Ваш номер телефона" aria-label="Ваш номер телефона" />
                 <button class="btn btn_orange callback-request__btn" type="submit">Перезвонить</button>
               </form>
               <div class="ask-consultant callback-request__ask-consultant">
@@ -391,7 +392,7 @@
                 </div>
               </div>    </div>
           </div>
-        <form class="tour-selector tour-selection__tour-selector" data-tour-selector>
+        <form class="tour-selector tour-selection__tour-selector" novalidate="novalidate" data-tour-selector>
           <ul
             class="tour-selector__tabs" role="tablist"
             aria-label="Етапи підбору туру">
@@ -420,16 +421,16 @@
                 <div class="tour-selector__field">
                   <span class="tour-selector__label">Направление</span>
                   <div class="custom-select tour-selector__select" data-select="destination" >
-                    <input type="hidden" name="destination" data-select-input />
+                    <input type="hidden" name="destination" value="" data-select-input />
                     <button
-                      type="button" class="custom-select__trigger clickable" data-select-trigger
+                      type="button" class="custom-select__trigger clickable input-base" data-select-trigger
                       role="combobox" aria-haspopup="listbox" aria-expanded="false">
                       <span data-select-value>Выберите направление</span>
                       <svg class="custom-select__input-arrow"  data-select-arrow >
                           <use href="/club-travel/sprite.svg#icon-chevron"></use>
                       </svg>
                     </button>
-                    <ul class="custom-select__dropdown" data-select-dropdown role="listbox">
+                    <ul class="custom-select__dropdown input-base" data-select-dropdown role="listbox">
                     </ul>
                     <template data-template-option>
                       <li
@@ -440,16 +441,16 @@
                 <div class="tour-selector__field">
                   <span class="tour-selector__label">Дата вылета</span>
                   <div class="custom-select tour-selector__select" data-select="date" >
-                    <input type="hidden" name="date" data-select-input />
+                    <input type="hidden" name="date" value="" data-select-input />
                     <button
-                      type="button" class="custom-select__trigger clickable" data-select-trigger
+                      type="button" class="custom-select__trigger clickable input-base" data-select-trigger
                       role="combobox" aria-haspopup="listbox" aria-expanded="false">
                       <span data-select-value>Выберите дату вылета</span>
                       <svg class="custom-select__input-arrow"  data-select-arrow >
                           <use href="/club-travel/sprite.svg#icon-chevron"></use>
                       </svg>
                     </button>
-                    <ul class="custom-select__dropdown" data-select-dropdown role="listbox">
+                    <ul class="custom-select__dropdown input-base" data-select-dropdown role="listbox">
                     </ul>
                     <template data-template-option>
                       <li
@@ -460,9 +461,10 @@
                 <div class="tour-selector__field">
                   <span class="tour-selector__label">Гости</span>
                   <div class="guests-selector tour-selector__select" data-guests-selector data-select>
-                    <input type="hidden" name="guests" class="guests-selector__input" data-guests-input />
+                    <input type="hidden" name="adults" data-guests-adults-input />
+                    <input type="hidden" name="children" data-guests-children-input />
                   <div class="guests-selector__trigger-wrap">
-                    <button type="button" class="guests-selector__trigger" aria-expanded="false" data-select-trigger>
+                    <button type="button" class="guests-selector__trigger clickable input-base" aria-expanded="false" data-select-trigger>
                       <span class="guests-selector__value" data-guests-value>
                         Взрослых: <span data-guests-adults>2</span>; детей: <span data-guests-children>0</span>
                       </span>
@@ -471,11 +473,11 @@
                       </svg>
                     </button>
                   
-                    <div class="guests-selector__dropdown" data-guests-dropdown>
+                    <div class="guests-selector__dropdown input-base" data-guests-dropdown>
                         <div class="guests-selector__row">
                           <span class="guests-selector__label">Взрослых</span>
                           <div
-                            class="counter guests-selector__counter" data-counter="adults" data-min="1" data-max="">
+                            class="counter input-base guests-selector__counter" data-counter="adults" data-min="1" data-max="">
                             <button class="counter__btn" type="button" data-counter-decrement>
                               <span></span>
                             </button>
@@ -490,7 +492,7 @@
                         <div class="guests-selector__row">
                           <span class="guests-selector__label">15 лет</span>
                           <div
-                            class="counter guests-selector__counter" data-counter="15" data-min="0" data-max="">
+                            class="counter input-base guests-selector__counter" data-counter="15" data-min="0" data-max="">
                             <button class="counter__btn" type="button" data-counter-decrement>
                               <span></span>
                             </button>
@@ -505,7 +507,7 @@
                         <div class="guests-selector__row">
                           <span class="guests-selector__label">10 лет</span>
                           <div
-                            class="counter guests-selector__counter" data-counter="10" data-min="0" data-max="">
+                            class="counter input-base guests-selector__counter" data-counter="10" data-min="0" data-max="">
                             <button class="counter__btn" type="button" data-counter-decrement>
                               <span></span>
                             </button>
@@ -520,7 +522,7 @@
                         <div class="guests-selector__row">
                           <span class="guests-selector__label">3 года</span>
                           <div
-                            class="counter guests-selector__counter" data-counter="3" data-min="0" data-max="">
+                            class="counter input-base guests-selector__counter" data-counter="3" data-min="0" data-max="">
                             <button class="counter__btn" type="button" data-counter-decrement>
                               <span></span>
                             </button>
@@ -554,7 +556,7 @@
                 <div class="tour-selector__field  tour-selector__field_counter">
                   <span class="tour-selector__label">Длительность тура (дней)</span>
                   <div
-                    class="counter tour-selector__counter" data-counter="days" data-min="3" data-max="">
+                    class="counter input-base tour-selector__counter" data-counter="days" data-min="3" data-max="">
                     <button class="counter__btn" type="button" data-counter-decrement>
                       <span></span>
                     </button>
@@ -579,22 +581,22 @@
                   <span
                     class="tour-selector__label">Желаемая цена на одного человека (€)</span>
                   <input
-                    class="tour-selector__input" type="number" inputmode="numeric"
+                    class="tour-selector__input input-base" type="number" inputmode="numeric"
                     placeholder="Введите цену" />
                 </label>
                 <div class="tour-selector__field">
                   <span class="tour-selector__label">Питание</span>
                   <div class="custom-select tour-selector__select" data-select="food" >
-                    <input type="hidden" name="food" data-select-input />
+                    <input type="hidden" name="food" value="" data-select-input />
                     <button
-                      type="button" class="custom-select__trigger clickable" data-select-trigger
+                      type="button" class="custom-select__trigger clickable input-base" data-select-trigger
                       role="combobox" aria-haspopup="listbox" aria-expanded="false">
                       <span data-select-value>Выберите питание</span>
                       <svg class="custom-select__input-arrow"  data-select-arrow >
                           <use href="/club-travel/sprite.svg#icon-chevron"></use>
                       </svg>
                     </button>
-                    <ul class="custom-select__dropdown" data-select-dropdown role="listbox">
+                    <ul class="custom-select__dropdown input-base" data-select-dropdown role="listbox">
                           <li
                             class="custom-select__option clickable" data-select-option
                             data-value="roomOnly" role="option">
@@ -687,7 +689,7 @@
                 <label class="tour-selector__field">
                   <span class="tour-selector__label">Пожелания</span>
                   <textarea
-                    class="tour-selector__input tour-selector__input_area"
+                    class="tour-selector__input tour-selector__input_area input-base"
                     placeholder="Ваши пожелания"></textarea>
                 </label>
               </div>
@@ -702,19 +704,19 @@
                 <label class="tour-selector__field">
                   <span class="tour-selector__label">Имя</span>
                   <input
-                    class="tour-selector__input" type="text" autocomplete="name"
+                    class="tour-selector__input input-base" type="text" autocomplete="name"
                     placeholder="Введите имя" />
                 </label>
                 <label class="tour-selector__field">
                   <span class="tour-selector__label">Телефон</span>
                   <input
-                    class="tour-selector__input" type="tel" autocomplete="tel"
+                    class="tour-selector__input input-base" type="tel" autocomplete="tel"
                     placeholder="Введите телефон" />
                 </label>
                 <label class="tour-selector__field">
                   <span class="tour-selector__label">Эл. почта</span>
                   <input
-                    class="tour-selector__input" type="email" autocomplete="email"
+                    class="tour-selector__input input-base" type="email" autocomplete="email"
                     placeholder="Введите email" />
                 </label>
               </div>

@@ -5,14 +5,16 @@
   <link rel="icon" type="image/svg+xml" href="/club-travel/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Club Travel</title>
-    <script type="module" crossorigin src="/club-travel/assets/js/header-scroll-state-DBHKNPaB.js"></script>
-    <script type="module" crossorigin src="/club-travel/assets/js/hero-swiper-0weSknRP.js"></script>
+    <script type="module" crossorigin src="/club-travel/assets/js/header-scroll-state-BM9bwU5j.js"></script>
+    <script type="module" crossorigin src="/club-travel/assets/js/hero-swiper-C28f7kmy.js"></script>
+    <script type="module" crossorigin src="/club-travel/assets/js/cards-swiper-DdxL5NcD.js"></script>
     <script type="module" crossorigin src="/club-travel/assets/js/constants-Djf1hzno.js"></script>
-    <script type="module" crossorigin src="/club-travel/assets/js/update-text-content-B4sG6NJD.js"></script>
-    <script type="module" crossorigin src="/club-travel/assets/js/cards-swiper-DClRYx37.js"></script>
-    <script type="module" crossorigin src="/club-travel/assets/js/render-news-cards-B7x2l9cR.js"></script>
-    <script type="module" crossorigin src="/club-travel/assets/js/main-LKGmPZPv.js"></script>
-    <link rel="stylesheet" crossorigin href="/club-travel/assets/css/index-sON1eH7_.css">
+    <script type="module" crossorigin src="/club-travel/assets/js/format-money-DOzOQiUv.js"></script>
+    <script type="module" crossorigin src="/club-travel/assets/js/render-hot-cards-CALPPf8a.js"></script>
+    <script type="module" crossorigin src="/club-travel/assets/js/render-news-cards-AWsyJCY7.js"></script>
+    <script type="module" crossorigin src="/club-travel/assets/js/tour-search-PKGzS58s.js"></script>
+    <script type="module" crossorigin src="/club-travel/assets/js/main-BqN_M2kH.js"></script>
+    <link rel="stylesheet" crossorigin href="/club-travel/assets/css/index-kD2gxtee.css">
   </head>
   <body class="main">
     <header class="header">
@@ -125,7 +127,7 @@
     <nav class="header__main-nav" aria-label="Основная навигация">
       <ul class="header__main-list">
         <li class="header__main-item">
-          <a class="header__main-link" href="main.html">Поиск тура</a>
+          <a class="header__main-link" href="./search-result.html">Поиск тура</a>
         </li>
 
         <li class="header__main-item">
@@ -186,7 +188,7 @@
       <nav class="burger-menu__main-nav" aria-label="Основная навигация">
         <ul class="burger-menu__main-list">
           <li class="burger-menu__main-item">
-            <a class="burger-menu__main-link" href="main.html">Поиск тура</a>
+            <a class="burger-menu__main-link" href="./search-result.html">Поиск тура</a>
           </li>
           <li class="burger-menu__main-item">
             <a class="burger-menu__main-link" href="main.html">Направления</a>
@@ -351,9 +353,6 @@
             data-tour-search-field
           >
             <option value="">Все направления</option>
-            <option value="bulgaria">Болгария</option>
-            <option value="turkey">Турция</option>
-            <option value="egypt">Египет</option>
           </select>
 
           <svg class="tour-search__field_icon" >
@@ -383,23 +382,34 @@
         </span>
       </label>
 
-      <label class="tour-search__field">
+      <div
+        class="tour-search__field tour-search__field_date"
+        data-tour-search-date
+      >
         <span class="tour-search__field_label">Дата вылета</span>
 
-        <span class="tour-search__field_box">
+        <span class="tour-search__field_box" data-tour-search-date-box>
           <input
             class="tour-search__field_control"
             type="text"
             name="departureDate"
-            value="23 июня 2020"
+            value=""
+            readonly
             data-tour-search-field
+            data-tour-search-date-input
           />
 
           <svg class="tour-search__field_icon" >
               <use href="/club-travel/sprite.svg#icon-calendar"></use>
           </svg>
         </span>
-      </label>
+
+        <div
+          class="tour-search__calendar"
+          data-tour-search-calendar
+          hidden
+        ></div>
+      </div>
 
       <label class="tour-search__field tour-search__field_guests">
         <span class="tour-search__field_label">Гости</span>
@@ -411,8 +421,8 @@
             data-tour-search-field
           >
             <option value="2-1">Взрослых: 2; детей: 1</option>
-            <option value="1-0">Взрослых: 1; детей: 0</option>
-            <option value="2-0">Взрослых: 2; детей: 0</option>
+            <option value="1-0">Взрослых: 1</option>
+            <option value="2-0">Взрослых: 2</option>
             <option value="2-2">Взрослых: 2; детей: 2</option>
           </select>
 
@@ -693,9 +703,9 @@
                   </svg>
                 </span>
 
-                <span class="tour-search__option_text">
-                  Завтрак, обед, ужин
-                </span>
+                <span class="tour-search__option_text"
+                  >Завтрак, обед, ужин</span
+                >
               </label>
             </li>
 
@@ -735,9 +745,9 @@
                   </svg>
                 </span>
 
-                <span class="tour-search__option_text">
-                  Ультра: всё включено
-                </span>
+                <span class="tour-search__option_text"
+                  >Ультра: всё включено</span
+                >
               </label>
             </li>
           </ul>
@@ -763,9 +773,9 @@
                   </svg>
                 </span>
 
-                <span class="tour-search__option_text">
-                  Туристический пакет
-                </span>
+                <span class="tour-search__option_text"
+                  >Туристический пакет</span
+                >
               </label>
             </li>
 
@@ -898,286 +908,20 @@
         <div class="tour-search__group tour-search__group_region">
           <h4 class="tour-search__group_title">Регион</h4>
 
-          <ul class="tour-search__list tour-search__list_columns">
-            <li class="tour-search__item">
-              <label class="tour-search__option">
-                <input
-                  class="tour-search__checkbox"
-                  type="checkbox"
-                  name="region"
-                  value="albena"
-                  data-tour-search-filter
-                />
-                <span class="tour-search__checkbox_icon">
-                  <svg class="tour-search__checkbox_svg" >
-                      <use href="/club-travel/sprite.svg#icon-check-circle"></use>
-                  </svg>
-                </span>
-                <span class="tour-search__option_text">Албена</span>
-              </label>
-            </li>
-
-            <li class="tour-search__item">
-              <label class="tour-search__option">
-                <input
-                  class="tour-search__checkbox"
-                  type="checkbox"
-                  name="region"
-                  value="bansko"
-                  data-tour-search-filter
-                />
-                <span class="tour-search__checkbox_icon">
-                  <svg class="tour-search__checkbox_svg" >
-                      <use href="/club-travel/sprite.svg#icon-check-circle"></use>
-                  </svg>
-                </span>
-                <span class="tour-search__option_text">Банско</span>
-              </label>
-            </li>
-
-            <li class="tour-search__item">
-              <label class="tour-search__option">
-                <input
-                  class="tour-search__checkbox"
-                  type="checkbox"
-                  name="region"
-                  value="burgas"
-                  data-tour-search-filter
-                />
-                <span class="tour-search__checkbox_icon">
-                  <svg class="tour-search__checkbox_svg" >
-                      <use href="/club-travel/sprite.svg#icon-check-circle"></use>
-                  </svg>
-                </span>
-                <span class="tour-search__option_text">Бургас</span>
-              </label>
-            </li>
-
-            <li class="tour-search__item">
-              <label class="tour-search__option">
-                <input
-                  class="tour-search__checkbox"
-                  type="checkbox"
-                  name="region"
-                  value="dunes"
-                  data-tour-search-filter
-                />
-                <span class="tour-search__checkbox_icon">
-                  <svg class="tour-search__checkbox_svg" >
-                      <use href="/club-travel/sprite.svg#icon-check-circle"></use>
-                  </svg>
-                </span>
-                <span class="tour-search__option_text">Дюны</span>
-              </label>
-            </li>
-
-            <li class="tour-search__item">
-              <label class="tour-search__option">
-                <input
-                  class="tour-search__checkbox"
-                  type="checkbox"
-                  name="region"
-                  value="elenite"
-                  data-tour-search-filter
-                />
-                <span class="tour-search__checkbox_icon">
-                  <svg class="tour-search__checkbox_svg" >
-                      <use href="/club-travel/sprite.svg#icon-check-circle"></use>
-                  </svg>
-                </span>
-                <span class="tour-search__option_text">Елените</span>
-              </label>
-            </li>
-
-            <li class="tour-search__item">
-              <label class="tour-search__option">
-                <input
-                  class="tour-search__checkbox"
-                  type="checkbox"
-                  name="region"
-                  value="golden-sands"
-                  data-tour-search-filter
-                />
-                <span class="tour-search__checkbox_icon">
-                  <svg class="tour-search__checkbox_svg" >
-                      <use href="/club-travel/sprite.svg#icon-check-circle"></use>
-                  </svg>
-                </span>
-                <span class="tour-search__option_text">Золотые пески</span>
-              </label>
-            </li>
-
-            <li class="tour-search__item">
-              <label class="tour-search__option">
-                <input
-                  class="tour-search__checkbox"
-                  type="checkbox"
-                  name="region"
-                  value="kranevo"
-                  data-tour-search-filter
-                />
-                <span class="tour-search__checkbox_icon">
-                  <svg class="tour-search__checkbox_svg" >
-                      <use href="/club-travel/sprite.svg#icon-check-circle"></use>
-                  </svg>
-                </span>
-                <span class="tour-search__option_text">Кранево</span>
-              </label>
-            </li>
-
-            <li class="tour-search__item">
-              <label class="tour-search__option">
-                <input
-                  class="tour-search__checkbox"
-                  type="checkbox"
-                  name="region"
-                  value="nesebar"
-                  data-tour-search-filter
-                />
-                <span class="tour-search__checkbox_icon">
-                  <svg class="tour-search__checkbox_svg" >
-                      <use href="/club-travel/sprite.svg#icon-check-circle"></use>
-                  </svg>
-                </span>
-                <span class="tour-search__option_text">Несебр</span>
-              </label>
-            </li>
-
-            <li class="tour-search__item">
-              <label class="tour-search__option">
-                <input
-                  class="tour-search__checkbox"
-                  type="checkbox"
-                  name="region"
-                  value="obzor"
-                  data-tour-search-filter
-                />
-                <span class="tour-search__checkbox_icon">
-                  <svg class="tour-search__checkbox_svg" >
-                      <use href="/club-travel/sprite.svg#icon-check-circle"></use>
-                  </svg>
-                </span>
-                <span class="tour-search__option_text">Обзор</span>
-              </label>
-            </li>
-
-            <li class="tour-search__item">
-              <label class="tour-search__option">
-                <input
-                  class="tour-search__checkbox"
-                  type="checkbox"
-                  name="region"
-                  value="pomorie"
-                  data-tour-search-filter
-                />
-                <span class="tour-search__checkbox_icon">
-                  <svg class="tour-search__checkbox_svg" >
-                      <use href="/club-travel/sprite.svg#icon-check-circle"></use>
-                  </svg>
-                </span>
-                <span class="tour-search__option_text">Поморие</span>
-              </label>
-            </li>
-
-            <li class="tour-search__item">
-              <label class="tour-search__option">
-                <input
-                  class="tour-search__checkbox"
-                  type="checkbox"
-                  name="region"
-                  value="ravda"
-                  data-tour-search-filter
-                />
-                <span class="tour-search__checkbox_icon">
-                  <svg class="tour-search__checkbox_svg" >
-                      <use href="/club-travel/sprite.svg#icon-check-circle"></use>
-                  </svg>
-                </span>
-                <span class="tour-search__option_text">Равда</span>
-              </label>
-            </li>
-
-            <li class="tour-search__item">
-              <label class="tour-search__option">
-                <input
-                  class="tour-search__checkbox"
-                  type="checkbox"
-                  name="region"
-                  value="riviera"
-                  data-tour-search-filter
-                />
-                <span class="tour-search__checkbox_icon">
-                  <svg class="tour-search__checkbox_svg" >
-                      <use href="/club-travel/sprite.svg#icon-check-circle"></use>
-                  </svg>
-                </span>
-                <span class="tour-search__option_text">Ривьера</span>
-              </label>
-            </li>
-
-            <li class="tour-search__item">
-              <label class="tour-search__option">
-                <input
-                  class="tour-search__checkbox"
-                  type="checkbox"
-                  name="region"
-                  value="sarafovo"
-                  data-tour-search-filter
-                />
-                <span class="tour-search__checkbox_icon">
-                  <svg class="tour-search__checkbox_svg" >
-                      <use href="/club-travel/sprite.svg#icon-check-circle"></use>
-                  </svg>
-                </span>
-                <span class="tour-search__option_text">Сарафово</span>
-              </label>
-            </li>
-          </ul>
+          <ul
+            class="tour-search__list tour-search__list_columns"
+            data-tour-search-region-list
+          ></ul>
         </div>
       </div>
 
       <div class="tour-search__active" data-tour-search-active>
         <span class="tour-search__active_label">Активные фильтры:</span>
-
-        <div class="tour-search__active_group">
-          <span class="tour-search__active_name"
-            >Категория размещения отеля</span
-          >
-
-          <button
-            class="tour-search__tag"
-            type="button"
-            data-tour-search-tag="5-stars"
-          >
-            5 звезд
-          </button>
-
-          <button
-            class="tour-search__tag"
-            type="button"
-            data-tour-search-tag="3-stars"
-          >
-            3 звезды
-          </button>
-        </div>
-
-        <div class="tour-search__active_group">
-          <span class="tour-search__active_name">Состав тура</span>
-
-          <button
-            class="tour-search__tag"
-            type="button"
-            data-tour-search-tag="flight-only"
-          >
-            Только перелет
-          </button>
-        </div>
       </div>
-
-      <div class="tour-search__active" data-tour-search-active hidden></div>
     </div>
   </form>
 </section>
+
 
       <section class="promo-tours promo-company">
         <div class="promo-tours__container">
@@ -1195,8 +939,7 @@
             </div>
           
               <p class="intro-header__subtitle">
-                Кто
-                действует быстро — получает самые вкусные цены
+                Кто действует быстро — получает самые вкусные цены
                   <svg class="intro-header__subtitle-icon" >
                       <use href="/club-travel/sprite.svg#icon-smile-wink"></use>
                   </svg>
@@ -1204,7 +947,7 @@
           
           </div>
           <template class="promo-tours__template" data-template>
-            <div class=" news-card" data-card>
+            <a href="./search-result.html" class=" news-card card-clickable" data-card>
               <div class="news-card__picture-wrap">
                 <div class="badge news-card__badge" data-badge>
                   <span>от 509€</span>
@@ -1240,7 +983,7 @@
             
                     </span>
               </div>
-            </div>
+            </a>
           </template>
       
           <div class="promo-tours__swiper-cards swiper-cards">
@@ -1264,7 +1007,7 @@
               </svg>
             </button>
           </div>    <div class="promo-tours__footer">
-            <a href="./company.html" class="link-more link-state promo-tours__link-more">
+            <a href="./company.html" class="link-more clickable promo-tours__link-more">
               Все кампании и новости
               <svg class="link-more__icon" >
                   <use href="/club-travel/sprite.svg#icon-arrow-right"></use>
@@ -1273,7 +1016,8 @@
       
       
         </div>
-      </section>      <section class="promo-tours promo-offers">
+      </section>
+      <section class="promo-tours promo-offers">
         <div class="promo-tours__container">
       
           <div class="intro-header promo-tours__header">
@@ -1289,8 +1033,7 @@
             </div>
           
               <p class="intro-header__subtitle">
-                Кто
-                действует быстро — получает самые вкусные цены
+                Кто действует быстро — получает самые вкусные цены
                   <svg class="intro-header__subtitle-icon" >
                       <use href="/club-travel/sprite.svg#icon-smile-wink"></use>
                   </svg>
@@ -1298,7 +1041,7 @@
           
           </div>
           <template class="promo-tours__template" data-template>
-            <div class=" hot-card" data-card>
+            <a href="#!" class=" hot-card card-clickable" data-card>
               <div class="hot-card__inner">
               <div class="hot-card__image-wrap">
                 <div class="hot-card__overlay">
@@ -1323,7 +1066,6 @@
                 </picture>
               </div>
             
-            
               <div class="hot-card__header">
                 <span class="hot-card__title" data-card-hotel>Отель</span>
                 <div class="rating hot-card__rating" data-rating>
@@ -1347,12 +1089,12 @@
               <div class="hot-card__footer">
                 <div class="hot-card__price">
                   <span class="hot-card__price_current"><span
-                    class="hot-card__price-value" data-card-price>509</span>€/чел</span>
-                  <span class="hot-card__price_old" data-card-old-price>779€/чел</span>
+                    class="hot-card__price-value" data-card-price></span>€/чел</span>
+                  <span class="hot-card__price_old" data-card-old-price></span>
                 </div>
             
                 <div class="badge " data-badge>
-                  <span>-30%</span>
+                  <span>0%</span>
                   <picture class="badge__bg" >
                       <source media="(min-width:769px)" srcset="data:image/webp;base64,UklGRqoAAABXRUJQVlA4TJ4AAAAvUsAHEJ+goG0jx7ewP+hJQ3HbtpGVV/ZftndFkG3TjOT+kjfMRtIhFGGP7Px/a3CxxvIeTxQpDwkl6CPgYL4IBGy+pk4ko7qDgjaSlGfmX/+KR0BE/ydA+gtXf/H+BZyIlIiUiDzQnTx3Lt66gM8AkhlAckBv8LyxeNsCNhNIdgLJAZ0OVBZvXsCBSIFIkegD/cX7F3AkUiRSItLGBQ==" type="image/webp">
                   
@@ -1365,7 +1107,7 @@
                 
             
               </div>
-            </div>
+            </a>
           </template>
       
           <div class="promo-tours__swiper-cards swiper-cards">
@@ -1389,7 +1131,7 @@
               </svg>
             </button>
           </div>    <div class="promo-tours__footer">
-            <a href="#!" class="link-more link-state promo-tours__link-more">
+            <a href="#!" class="link-more clickable promo-tours__link-more">
               Все горящие предложения
               <svg class="link-more__icon" >
                   <use href="/club-travel/sprite.svg#icon-arrow-right"></use>
@@ -1398,7 +1140,8 @@
       
       
         </div>
-      </section>      <section class="promo-season-tours promo-winter-tours">
+      </section>
+      <section class="promo-season-tours promo-winter-tours">
         <div class="promo-season-tours__container">
           <h2 class="promo-season-tours__title title">ЗИМНИЕ ТУРЫ</h2>
           <p class="promo-season-tours__subtitle">Зима 2026 - 2027</p>
@@ -1426,8 +1169,8 @@
               </div>
               <div class="season-card__footer">
                 <a
-                  href="#!"
-                  class="season-card__btn btn btn_orange">Выбрать тур
+                  href="./search-result.html"
+                  class="season-card__btn btn btn_orange" data-card-btn>Выбрать тур
                 </a>
               </div>
             </div>    </template>
@@ -1453,157 +1196,156 @@
             </button>
           </div>
           <div class="promo-season-tours__footer">
-            <a href="#!" class="link-more link-state promo-season-tours__link-more">
-              Все
-                  зимниетуры
+            <a href="#!" class="link-more clickable promo-season-tours__link-more">
+              Все зимние туры
               <svg class="link-more__icon" >
                   <use href="/club-travel/sprite.svg#icon-arrow-right"></use>
               </svg>
             </a>    </div>
         </div>
-      </section>      <section class="promo-season-tours promo-summer-tours">
-  <div class="promo-season-tours__container">
-    <h2 class="promo-season-tours__title title">летние ТУРЫ</h2>
-    <p class="promo-season-tours__subtitle">Лето 2026 - 2027</p>
-
-    <template class="promo-season-tours__template" data-template>
-      <div class="season-card " data-card>
-        <div class="season-card__content">
-          <picture class="season-card__picture">
-            <img
-              src=""
-              alt="" loading="lazy" data-card-img>
-          </picture>
+      </section>
+      <section class="promo-season-tours promo-summer-tours">
+        <div class="promo-season-tours__container">
+          <h2 class="promo-season-tours__title title">летние ТУРЫ</h2>
+          <p class="promo-season-tours__subtitle">Лето 2026 - 2027</p>
       
-          <div class="season-card__info">
-            <svg class="season-card__info-icon" >
-                <use href="/club-travel/sprite.svg#icon-point"></use>
-            </svg>
-            <span class="season-card__info-location" data-card-location>
-                  Литва
-                  </span>
-            <span class="season-card__info-price">от <span
-              class="season-card__info-price_bold"
-              data-card-price>509€</span>/чел</span>
-          </div>
-        </div>
-        <div class="season-card__footer">
-          <a
-            href="#!"
-            class="season-card__btn btn btn_orange">Выбрать тур
-          </a>
-        </div>
-      </div>    </template>
-    <div class="promo-season-tours__swiper-cards swiper-cards">
-      <div class="swiper-cards__container">
-        <div class="swiper-cards__swiper swiper">
-          <div class="swiper-cards__swiper-wrapper swiper-wrapper" data-wrapper>
-    
-          </div>
-    
-        </div>
-      </div>
-      <button class="swiper-cards__btn swiper-cards__btn_prev" data-btn-prev>
-        <svg class="swiper-cards__btn-icon" >
-            <use href="/club-travel/sprite.svg#icon-chevron"></use>
-        </svg>
-      </button>
-    
-      <button class="swiper-cards__btn swiper-cards__btn_next" data-btn-next>
-        <svg class="swiper-cards__btn-icon" >
-            <use href="/club-travel/sprite.svg#icon-chevron"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="promo-season-tours__footer">
-      <a href="#!" class="link-more link-state promo-season-tours__link-more">
-        Все летние
-            туры
-        <svg class="link-more__icon" >
-            <use href="/club-travel/sprite.svg#icon-arrow-right"></use>
-        </svg>
-      </a>    </div>
-  </div>
-</section> <section class="promo-support main-page__promo-support">
-  <div class="promo-support__container">
-    <picture class="promo-support__bg" >
-        <source media="(min-width:769px)" srcset="/club-travel/assets/webp/bg-B9HMyRR2.webp" type="image/webp">
-    
-        <source media="(max-width:768px)" srcset="/club-travel/assets/webp/bg_2-BREzqTpV.webp" type="image/webp">
-        <source media="(max-width:768px)" srcset="/src/image/assets/components/promo-support/bg_2.jpg">
-        <img src="/club-travel/assets/jpg/bg-An7RZBus.jpg" alt="" loading="lazy">
-    </picture>
-    
-    <div class="promo-support__inner">
-      <h2 class="promo-support__title">НЕТ ВРЕМЕНИ ИСКАТЬ ТУР? </h2>
-      <p class="promo-support__description">Просто скажите нам как должен
-        выглядеть отдых вашей мечты и мы <br> найдём лучший тур для вас!
-      </p>
-      <div class="promo-support__row">
-        <div class="promo-support__request">
-          <p class="promo-support__request-text">
-            Заполните короткую форму запроса на нашем сайте и мы
-            свяжемся с вами в течение 1 часа в рабочее время
-          </p>
-          <a
-            href="./tour-request.html"
-            class="promo-support__request-btn btn btn_orange">
-            ЗАПОЛНИТЬ ЗАЯВКУ НА ПОИСК ТУРА
-          </a>
-        </div>
-        <div class="promo-support__divider">
-          <hr class="promo-support__divider-line" aria-hidden="true">
-          <span class="promo-support__divider-text">или</span>
-          <hr class="promo-support__divider-line" aria-hidden="true">
-        </div>
-        <div class="ask-consultant promo-support__ask-consultant">
-          <h3
-            class="ask-consultant__title">Свяжитесь с нашим консультантом</h3>
-          <div class="ask-consultant__inner">
-            <picture class="ask-consultant__photo" >
-                <source media="(min-width:769px)" srcset="/club-travel/assets/webp/photo-HEoXAHfC.webp" type="image/webp">
+          <template class="promo-season-tours__template" data-template>
+            <div class="season-card " data-card>
+              <div class="season-card__content">
+                <picture class="season-card__picture">
+                  <img
+                    src=""
+                    alt="" loading="lazy" data-card-img>
+                </picture>
             
-                    <source media="(max-width:768px)" srcset="/club-travel/assets/webp/photo-HEoXAHfC.webp" type="image/webp">
-                <img src="/club-travel/assets/jpg/photo-qRMxxpqG.jpg" alt="Марина Каасик" loading="lazy">
-            </picture>
-            
-            <div class="ask-consultant__content">
-              <h4 class="ask-consultant__name">Марина Каасик</h4>
-              <p class="ask-consultant__sub-fio">Специалист по подбору туров
-              </p>
-              <div class="ask-consultant__contacts">
-                <a
-                  href="tel:+3726130633"
-                  class="ask-consultant__link clickable">
-                  <svg class="ask-consultant__contacts-icon" >
-                      <use href="/club-travel/sprite.svg#icon-phone"></use>
+                <div class="season-card__info">
+                  <svg class="season-card__info-icon" >
+                      <use href="/club-travel/sprite.svg#icon-point"></use>
                   </svg>
-                  <span>+372 6 130 633</span>
-                </a>
+                  <span class="season-card__info-location" data-card-location>
+                        Литва
+                        </span>
+                  <span class="season-card__info-price">от <span
+                    class="season-card__info-price_bold"
+                    data-card-price>509€</span>/чел</span>
+                </div>
+              </div>
+              <div class="season-card__footer">
                 <a
-                  href="mailto:contact@email.ee"
-                  class="ask-consultant__link clickable">
-                  <svg class="ask-consultant__contacts-icon" >
-                      <use href="/club-travel/sprite.svg#icon-mail"></use>
-                  </svg>
-                  <span>contact@email.ee</span>
-                </a>
-                <a
-                  href="https://m.me"
-                  class="ask-consultant__link clickable">
-                  <svg class="ask-consultant__contacts-icon" >
-                      <use href="/club-travel/sprite.svg#icon-messanger"></use>
-                  </svg>
-                  <span>Написать в Messenger</span>
+                  href="./search-result.html"
+                  class="season-card__btn btn btn_orange" data-card-btn>Выбрать тур
                 </a>
               </div>
+            </div>    </template>
+          <div class="promo-season-tours__swiper-cards swiper-cards">
+            <div class="swiper-cards__container">
+              <div class="swiper-cards__swiper swiper">
+                <div class="swiper-cards__swiper-wrapper swiper-wrapper" data-wrapper>
+          
+                </div>
+          
+              </div>
             </div>
+            <button class="swiper-cards__btn swiper-cards__btn_prev" data-btn-prev>
+              <svg class="swiper-cards__btn-icon" >
+                  <use href="/club-travel/sprite.svg#icon-chevron"></use>
+              </svg>
+            </button>
+          
+            <button class="swiper-cards__btn swiper-cards__btn_next" data-btn-next>
+              <svg class="swiper-cards__btn-icon" >
+                  <use href="/club-travel/sprite.svg#icon-chevron"></use>
+              </svg>
+            </button>
           </div>
-        </div>      </div>
-    </div>
-  </div>
-</section>
-    </main>
+          <div class="promo-season-tours__footer">
+            <a href="#!" class="link-more clickable promo-season-tours__link-more">
+              Все летние туры
+              <svg class="link-more__icon" >
+                  <use href="/club-travel/sprite.svg#icon-arrow-right"></use>
+              </svg>
+            </a>    </div>
+        </div>
+      </section>
+      <section class="promo-support main-page__promo-support">
+        <div class="promo-support__container">
+          <picture class="promo-support__bg" >
+              <source media="(min-width:769px)" srcset="/club-travel/assets/webp/bg-B9HMyRR2.webp" type="image/webp">
+          
+              <source media="(max-width:768px)" srcset="/club-travel/assets/webp/bg_2-BREzqTpV.webp" type="image/webp">
+              <source media="(max-width:768px)" srcset="/src/image/assets/components/promo-support/bg_2.jpg">
+              <img src="/club-travel/assets/jpg/bg-An7RZBus.jpg" alt="" loading="lazy">
+          </picture>
+          
+          <div class="promo-support__inner">
+            <h2 class="promo-support__title">НЕТ ВРЕМЕНИ ИСКАТЬ ТУР? </h2>
+            <p class="promo-support__description">Просто скажите нам как должен
+              выглядеть отдых вашей мечты и мы <br> найдём лучший тур для вас!
+            </p>
+            <div class="promo-support__row">
+              <div class="promo-support__request">
+                <p class="promo-support__request-text">
+                  Заполните короткую форму запроса на нашем сайте и мы
+                  свяжемся с вами в течение 1 часа в рабочее время
+                </p>
+                <a
+                  href="./tour-request.html"
+                  class="promo-support__request-btn btn btn_orange">
+                  ЗАПОЛНИТЬ ЗАЯВКУ НА ПОИСК ТУРА
+                </a>
+              </div>
+              <div class="promo-support__divider">
+                <hr class="promo-support__divider-line" aria-hidden="true">
+                <span class="promo-support__divider-text">или</span>
+                <hr class="promo-support__divider-line" aria-hidden="true">
+              </div>
+              <div class="ask-consultant promo-support__ask-consultant">
+                <h3
+                  class="ask-consultant__title">Свяжитесь с нашим консультантом</h3>
+                <div class="ask-consultant__inner">
+                  <picture class="ask-consultant__photo" >
+                      <source media="(min-width:769px)" srcset="/club-travel/assets/webp/photo-HEoXAHfC.webp" type="image/webp">
+                  
+                          <source media="(max-width:768px)" srcset="/club-travel/assets/webp/photo-HEoXAHfC.webp" type="image/webp">
+                      <img src="/club-travel/assets/jpg/photo-qRMxxpqG.jpg" alt="Марина Каасик" loading="lazy">
+                  </picture>
+                  
+                  <div class="ask-consultant__content">
+                    <h4 class="ask-consultant__name">Марина Каасик</h4>
+                    <p class="ask-consultant__sub-fio">Специалист по подбору туров
+                    </p>
+                    <div class="ask-consultant__contacts">
+                      <a
+                        href="tel:+3726130633"
+                        class="ask-consultant__link clickable">
+                        <svg class="ask-consultant__contacts-icon" >
+                            <use href="/club-travel/sprite.svg#icon-phone"></use>
+                        </svg>
+                        <span>+372 6 130 633</span>
+                      </a>
+                      <a
+                        href="mailto:contact@email.ee"
+                        class="ask-consultant__link clickable">
+                        <svg class="ask-consultant__contacts-icon" >
+                            <use href="/club-travel/sprite.svg#icon-mail"></use>
+                        </svg>
+                        <span>contact@email.ee</span>
+                      </a>
+                      <a
+                        href="https://m.me"
+                        class="ask-consultant__link clickable">
+                        <svg class="ask-consultant__contacts-icon" >
+                            <use href="/club-travel/sprite.svg#icon-messanger"></use>
+                        </svg>
+                        <span>Написать в Messenger</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>      </div>
+          </div>
+        </div>
+      </section>    </main>
 
     <footer class="footer " id="footer">
   <hr class="footer__line">

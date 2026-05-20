@@ -5,14 +5,16 @@
 <link rel="icon" type="image/svg+xml" href="/club-travel/favicon.svg" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Club Travel, Контакты</title>
-  <script type="module" crossorigin src="/club-travel/assets/js/hotel-CHgJ9RHS.js"></script>
-  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-DBHKNPaB.js">
-  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/hero-swiper-0weSknRP.js">
+  <script type="module" crossorigin src="/club-travel/assets/js/hotel-dHsNA7GP.js"></script>
+  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-BM9bwU5j.js">
+  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/hero-swiper-C28f7kmy.js">
+  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/cards-swiper-DdxL5NcD.js">
   <link rel="modulepreload" crossorigin href="/club-travel/assets/js/constants-Djf1hzno.js">
-  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/update-text-content-B4sG6NJD.js">
-  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/cards-swiper-DClRYx37.js">
-  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/counter-DjzvJhTb.js">
-  <link rel="stylesheet" crossorigin href="/club-travel/assets/css/hotel-BNF8mSXT.css">
+  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/format-money-DOzOQiUv.js">
+  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/render-hot-cards-CALPPf8a.js">
+  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/custom-select-ecbNeENs.js">
+  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/counter-CjLPaNz2.js">
+  <link rel="stylesheet" crossorigin href="/club-travel/assets/css/hotel-sYIl1zpM.css">
 </head>
 <body class="hotel-page">
 <header class="header">
@@ -125,7 +127,7 @@
     <nav class="header__main-nav" aria-label="Основная навигация">
       <ul class="header__main-list">
         <li class="header__main-item">
-          <a class="header__main-link" href="main.html">Поиск тура</a>
+          <a class="header__main-link" href="./search-result.html">Поиск тура</a>
         </li>
 
         <li class="header__main-item">
@@ -186,7 +188,7 @@
       <nav class="burger-menu__main-nav" aria-label="Основная навигация">
         <ul class="burger-menu__main-list">
           <li class="burger-menu__main-item">
-            <a class="burger-menu__main-link" href="main.html">Поиск тура</a>
+            <a class="burger-menu__main-link" href="./search-result.html">Поиск тура</a>
           </li>
           <li class="burger-menu__main-item">
             <a class="burger-menu__main-link" href="main.html">Направления</a>
@@ -274,14 +276,14 @@
 
 <main>
   <div class="hotel-page__badge-wrap">
-    <div class="hotel-badge hotel-page__hotel-badge">
+    <div class="hotel-badge hotel-page__hotel-badge" data-badge="container">
       <div class="hotel-badge__content">
-        <h1 class="hotel-badge__title">AMBASSADOR</h1>
+        <h1 class="hotel-badge__title" data-badge="title"></h1>
         <div class="hotel-badge__meta">
           <svg class="hotel-badge__meta-icon" >
               <use href="/club-travel/sprite.svg#icon-point"></use>
           </svg>
-          <span class="hotel-badge__meta-text">Болгария, Золотые Пески</span>
+          <span class="hotel-badge__meta-text" data-badge="location"></span>
         </div>
       </div>
       <div class="rating hotel-badge__rating" data-rating>
@@ -424,41 +426,41 @@
           </div>      </div>
   
         <aside class="about-hotel__aside">
-          <form class="booking-card about-hotel__booking-card">
+          <form class="booking-card about-hotel__booking-card" data-booking="container">
             <div class="booking-card__header">
-              <h3 class="booking-card__title">Выбранный тур</h3>
-              <a class="booking-card__change clickable" href="#!">изменить</a>
+              <h3 class="booking-card__title"></h3>
+              <a class="booking-card__change clickable" href="./search-result.html">изменить</a>
             </div>
           
             <ul class="booking-card__details" aria-label="Параметры выбранного тура">
-              <li class="booking-card__details-item">
+              <li class="booking-card__details-item" data-booking="period">
                 <svg class="booking-card__icon" >
                     <use href="/club-travel/sprite.svg#icon-calendar"></use>
                 </svg>
-                <span>18 июня 2020 г. / 7 ночей</span>
+                <span>Дату перенесли</span>
               </li>
-              <li class="booking-card__details-item">
+              <li class="booking-card__details-item" data-booking="departure">
                 <svg class="booking-card__icon" >
                     <use href="/club-travel/sprite.svg#icon-airplane"></use>
                 </svg>
-                <span>Вылет из Таллинна</span>
+                <span>Вылет отложили</span>
               </li>
-              <li class="booking-card__details-item">
+              <li class="booking-card__details-item" data-booking="meal">
                 <svg class="booking-card__icon" >
                     <use href="/club-travel/sprite.svg#icon-food"></use>
                 </svg>
-                <span>Завтраки</span>
+                <span></span>
               </li>
-              <li class="booking-card__details-item">
+              <li class="booking-card__details-item" data-booking="tour">
                 <svg class="booking-card__icon" >
                     <use href="/club-travel/sprite.svg#icon-house"></use>
                 </svg>
-                <span>Стандарт</span>
+                <span></span>
               </li>
             </ul>
           
             <div class="booking-card__price" aria-label="Цена за одного человека">
-              <span class="booking-card__price-value">429€</span><span class="booking-card__price-unit">/чел</span>
+              <span class="booking-card__price-value" data-booking="pricePerson">0€</span><span class="booking-card__price-unit">/чел</span>
             </div>
           
             <p class="booking-card__note">
@@ -468,9 +470,10 @@
             <div class="booking-card__guests">
               <span class="booking-card__label">Количество отдыхающих</span>
               <div class="guests-selector booking-card__guests-selector" data-guests-selector data-select>
-                <input type="hidden" name="guests" class="guests-selector__input" data-guests-input />
+                <input type="hidden" name="adults" data-guests-adults-input />
+                <input type="hidden" name="children" data-guests-children-input />
               <div class="guests-selector__trigger-wrap">
-                <button type="button" class="guests-selector__trigger" aria-expanded="false" data-select-trigger>
+                <button type="button" class="guests-selector__trigger clickable input-base" aria-expanded="false" data-select-trigger>
                   <span class="guests-selector__value" data-guests-value>
                     Взрослых: <span data-guests-adults>2</span>; детей: <span data-guests-children>0</span>
                   </span>
@@ -479,11 +482,11 @@
                   </svg>
                 </button>
               
-                <div class="guests-selector__dropdown" data-guests-dropdown>
+                <div class="guests-selector__dropdown input-base" data-guests-dropdown>
                     <div class="guests-selector__row">
                       <span class="guests-selector__label">Взрослых</span>
                       <div
-                        class="counter guests-selector__counter" data-counter="adults" data-min="1" data-max="">
+                        class="counter input-base guests-selector__counter" data-counter="adults" data-min="1" data-max="">
                         <button class="counter__btn" type="button" data-counter-decrement>
                           <span></span>
                         </button>
@@ -498,7 +501,7 @@
                     <div class="guests-selector__row">
                       <span class="guests-selector__label">15 лет</span>
                       <div
-                        class="counter guests-selector__counter" data-counter="15" data-min="0" data-max="">
+                        class="counter input-base guests-selector__counter" data-counter="15" data-min="0" data-max="">
                         <button class="counter__btn" type="button" data-counter-decrement>
                           <span></span>
                         </button>
@@ -513,7 +516,7 @@
                     <div class="guests-selector__row">
                       <span class="guests-selector__label">3 года</span>
                       <div
-                        class="counter guests-selector__counter" data-counter="3" data-min="0" data-max="">
+                        class="counter input-base guests-selector__counter" data-counter="3" data-min="0" data-max="">
                         <button class="counter__btn" type="button" data-counter-decrement>
                           <span></span>
                         </button>
@@ -528,7 +531,7 @@
                     <div class="guests-selector__row">
                       <span class="guests-selector__label">10 лет</span>
                       <div
-                        class="counter guests-selector__counter" data-counter="10" data-min="0" data-max="">
+                        class="counter input-base guests-selector__counter" data-counter="10" data-min="0" data-max="">
                         <button class="counter__btn" type="button" data-counter-decrement>
                           <span></span>
                         </button>
@@ -561,7 +564,7 @@
           
             <p class="booking-card__total" aria-label="Общая стоимость тура">
               <span class="booking-card__total-label">Общая стоимость тура:</span>
-              <span class="booking-card__total-value">1429€</span>
+              <span class="booking-card__total-value" data-booking="final-price">0€</span>
             </p>
           
             <button class="booking-card__button btn btn_orange" type="sumbit">Бронировать</button>
@@ -678,7 +681,7 @@
       
       </div>
       <template class="promo-tours__template" data-template>
-        <div class=" hot-card" data-card>
+        <a href="#!" class=" hot-card card-clickable" data-card>
           <div class="hot-card__inner">
           <div class="hot-card__image-wrap">
             <div class="hot-card__overlay">
@@ -703,7 +706,6 @@
             </picture>
           </div>
         
-        
           <div class="hot-card__header">
             <span class="hot-card__title" data-card-hotel>Отель</span>
             <div class="rating hot-card__rating" data-rating>
@@ -727,12 +729,12 @@
           <div class="hot-card__footer">
             <div class="hot-card__price">
               <span class="hot-card__price_current"><span
-                class="hot-card__price-value" data-card-price>509</span>€/чел</span>
-              <span class="hot-card__price_old" data-card-old-price>779€/чел</span>
+                class="hot-card__price-value" data-card-price></span>€/чел</span>
+              <span class="hot-card__price_old" data-card-old-price></span>
             </div>
         
             <div class="badge " data-badge>
-              <span>-30%</span>
+              <span>0%</span>
               <picture class="badge__bg" >
                   <source media="(min-width:769px)" srcset="data:image/webp;base64,UklGRqoAAABXRUJQVlA4TJ4AAAAvUsAHEJ+goG0jx7ewP+hJQ3HbtpGVV/ZftndFkG3TjOT+kjfMRtIhFGGP7Px/a3CxxvIeTxQpDwkl6CPgYL4IBGy+pk4ko7qDgjaSlGfmX/+KR0BE/ydA+gtXf/H+BZyIlIiUiDzQnTx3Lt66gM8AkhlAckBv8LyxeNsCNhNIdgLJAZ0OVBZvXsCBSIFIkegD/cX7F3AkUiRSItLGBQ==" type="image/webp">
               
@@ -745,7 +747,7 @@
             
         
           </div>
-        </div>
+        </a>
       </template>
   
       <div class="promo-tours__swiper-cards swiper-cards">
