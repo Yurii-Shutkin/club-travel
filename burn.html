@@ -5,8 +5,8 @@
 <meta charset="UTF-8" />
 <link rel="icon" type="image/svg+xml" href="/club-travel/favicon.svg" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Направления</title>
-  <script type="module" crossorigin src="/club-travel/assets/js/direction-iSEg5IjB.js"></script>
+<title>Горящие предложения</title>
+  <script type="module" crossorigin src="/club-travel/assets/js/burn-BasnW4HR.js"></script>
   <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-BEVYLdVW.js">
   <link rel="modulepreload" crossorigin href="/club-travel/assets/js/hero-swiper-DN71Kztk.js">
   <link rel="modulepreload" crossorigin href="/club-travel/assets/js/cards-swiper-D-4vpDoL.js">
@@ -16,10 +16,10 @@
   <link rel="modulepreload" crossorigin href="/club-travel/assets/js/render-news-cards-Bb7z5Hsl.js">
   <link rel="modulepreload" crossorigin href="/club-travel/assets/js/tour-search-C_W5a2NG.js">
   <link rel="modulepreload" crossorigin href="/club-travel/assets/js/main-Dbz5js9u.js">
-  <link rel="stylesheet" crossorigin href="/club-travel/assets/css/direction-BJs1vkQR.css">
+  <link rel="stylesheet" crossorigin href="/club-travel/assets/css/burn-9g4OZb4R.css">
 </head>
 
-<body class="not-found-page">
+<body class="burn-page">
     <header class="header">
       <div class="header__container container">
         <div class="header__panel">
@@ -277,7 +277,7 @@
       </div>
     </div>
     <main>
-        <section class="main-hero direction-main-hero">
+        <section class="main-hero burn-main-hero">
   <div class="main-hero__swiper swiper js-main-hero-swiper">
     <div class="main-hero__wrapper swiper-wrapper">
       <div class="main-hero__slide swiper-slide">
@@ -923,303 +923,259 @@
   </form>
 </section>
 
-        <section class="direction container">
-            <nav class="direction__sidebar sidebar-direction">
-                <h1 class="sidebar-direction__title">Направления</h1>
-                <ul class="sidebar-direction__list">
-                    <li class="sidebar-direction__item">
-                        <label class="sidebar-direction__label">
-                            <input class="sidebar-direction__input" type="checkbox" value="all" data-country=""
-                                 checked>
-                            <span class="sidebar-direction__box"></span>
-                            <span class="sidebar-direction__text">Все страны</span>
-                        </label>
+        <section class="tours-section container">
+            <div class="tours-table">
         
-                    </li>
-                    <li class="sidebar-direction__item">
-                        <label class="sidebar-direction__label">
-                            <input class="sidebar-direction__input" type="checkbox" value="egypt" data-country="Египет"
-                                >
-                            <span class="sidebar-direction__box"></span>
-                            <span class="sidebar-direction__text">Египет</span>
-                        </label>
+                <!-- ─── Outer header (desktop only) ─────────────────── -->
+                <div class="tours-table__head tours-table__grid">
+                    <span class="col-date">Дата <span class="sort-icon">▾</span></span>
+                    <span class="col-from">Откуда</span>
+                    <span class="col-to">Куда</span>
+                    <span class="col-dur">Длительность</span>
+                    <span class="col-price">Цена</span>
+                    <span class="col-action"></span>
+                </div>
         
-                    </li>
-                    <li class="sidebar-direction__item">
-                        <label class="sidebar-direction__label">
-                            <input class="sidebar-direction__input" type="checkbox" value="uae" data-country="АОЭ"
-                                >
-                            <span class="sidebar-direction__box"></span>
-                            <span class="sidebar-direction__text">АОЭ</span>
-                        </label>
+                <!-- ══════════ ROW 1 ══════════ -->
+                <div class="tour-row">
+                    <div class="tour-row__main tours-table__grid">
+                        <span class="col-date">25 июня 2020</span>
+                        <span class="col-from">Хельсинки</span>
+                        <span class="col-to">Rethymnon, Kreeta</span>
+                        <span class="col-dur">7 дней</span>
+                        <span class="col-price">от <strong>480€</strong>/чел</span>
+                        <span class="col-action">
+                            <button class="btn-toggle" aria-expanded="false" aria-controls="panel-1">
+                                <span class="btn-toggle__label">ОТКРЫТЬ</span>
+                                <span class="btn-toggle__arrow">›</span>
+                            </button>
+                        </span>
+                    </div>
         
-                    </li>
-                    <li class="sidebar-direction__item">
-                        <label class="sidebar-direction__label">
-                            <input class="sidebar-direction__input" type="checkbox" value="thailand" data-country="Тайланд"
-                                >
-                            <span class="sidebar-direction__box"></span>
-                            <span class="sidebar-direction__text">Тайланд</span>
-                        </label>
+                    <div class="tour-row__panel" id="panel-1" hidden>
+                        <div class="inner-table">
         
-                    </li>
-                    <li class="sidebar-direction__item">
-                        <label class="sidebar-direction__label">
-                            <input class="sidebar-direction__input" type="checkbox" value="bulgaria" data-country="Болгария"
-                                >
-                            <span class="sidebar-direction__box"></span>
-                            <span class="sidebar-direction__text">Болгария</span>
-                        </label>
+                            <div class="inner-table__head inner-table__grid">
+                                <span class="icol-hotel">Отель</span>
+                                <span class="icol-cat">Категория</span>
+                                <span class="icol-food">Питание</span>
+                                <span class="icol-comp">Состав тура</span>
+                                <span class="icol-price">Цена <span class="sort-icon">▾</span></span>
+                                <span class="icol-action"></span>
+                            </div>
         
-                    </li>
-                    <li class="sidebar-direction__item">
-                        <label class="sidebar-direction__label">
-                            <input class="sidebar-direction__input" type="checkbox" value="tenerife" data-country="Тенерифе"
-                                >
-                            <span class="sidebar-direction__box"></span>
-                            <span class="sidebar-direction__text">Тенерифе</span>
-                        </label>
-        
-                    </li>
-                    <li class="sidebar-direction__item">
-                        <label class="sidebar-direction__label">
-                            <input class="sidebar-direction__input" type="checkbox" value="bali" data-country="Бали"
-                                >
-                            <span class="sidebar-direction__box"></span>
-                            <span class="sidebar-direction__text">Бали</span>
-                        </label>
-        
-                    </li>
-                    <li class="sidebar-direction__item">
-                        <label class="sidebar-direction__label">
-                            <input class="sidebar-direction__input" type="checkbox" value="georgia" data-country="Грузия"
-                                >
-                            <span class="sidebar-direction__box"></span>
-                            <span class="sidebar-direction__text">Грузия</span>
-                        </label>
-        
-                    </li>
-                    <li class="sidebar-direction__item">
-                        <label class="sidebar-direction__label">
-                            <input class="sidebar-direction__input" type="checkbox" value="greece" data-country="Греция"
-                                >
-                            <span class="sidebar-direction__box"></span>
-                            <span class="sidebar-direction__text">Греция</span>
-                        </label>
-        
-                    </li>
-                    <li class="sidebar-direction__item">
-                        <label class="sidebar-direction__label">
-                            <input class="sidebar-direction__input" type="checkbox" value="turkey" data-country="Турция"
-                                >
-                            <span class="sidebar-direction__box"></span>
-                            <span class="sidebar-direction__text">Турция</span>
-                        </label>
-        
-                    </li>
-                    <li class="sidebar-direction__item">
-                        <label class="sidebar-direction__label">
-                            <input class="sidebar-direction__input" type="checkbox" value="cyprus" data-country="Кипр"
-                                >
-                            <span class="sidebar-direction__box"></span>
-                            <span class="sidebar-direction__text">Кипр</span>
-                        </label>
-        
-                    </li>
-                </ul>
-            </nav>
-            <div class="direction__filters filters-direction">
-                <div class="filters-direction__items">
-                    <div class="direction-card" data-country="Турция">
-                        <picture class="direction-card__image">
-                            <img src="src/assets/image/components/direction/item-one-1366.webp" alt="Алания" loading="lazy">
-                        </picture>
-                        <div class="direction-card__inner">
-                            <div class="direction-card__content">
-                                <div class="direction-card__city">
-                                    <h4 class="direction-card__city-name">Алания</h4>
-                                    <span class="direction-card__country">Турция</span>
+                            <!-- expandable inner row -->
+                            <div class="inner-row inner-row--expandable">
+                                <div class="inner-row__main inner-table__grid">
+                                    <span class="icol-hotel"><a href="#" class="hotel-link">Марилиана, Платанья</a></span>
+                                    <span class="icol-cat"><span class="stars">★★★★</span></span>
+                                    <span class="icol-food">Завтраки; Завтрак, обед…</span>
+                                    <span class="icol-comp">Только перелет; Тур…</span>
+                                    <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                    <span class="icol-action">
+                                        <button class="btn-offers" aria-expanded="false">
+                                            <span class="btn-offers__label">ОТКРЫТЬ ПРЕДЛОЖЕНИЯ</span>
+                                            <span class="btn-offers__arrow">▾</span>
+                                        </button>
+                                    </span>
                                 </div>
-                                <div class="direction-card__price">
-                                    <div class="direction-card__price-from">от <span
-                                            class="direction-card__price-value">319,00€</span>/чел</div>
-                                    <div class="direction-card__price-count">214 предложения</div>
+                                <div class="sub-rows" hidden>
+                                    <div class="sub-row inner-table__grid">
+                                        <span class="icol-hotel"><span class="sub-arrow">→</span><a href="#"
+                                                class="hotel-link dimmed">Марилиана, Платанья</a></span>
+                                        <span class="icol-cat"><span class="stars">★★★</span></span>
+                                        <span class="icol-food">Завтраки</span>
+                                        <span class="icol-comp">Только перелет</span>
+                                        <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                        <span class="icol-action"><button class="btn-select">ВЫБРАТЬ</button></span>
+                                    </div>
+                                    <div class="sub-row inner-table__grid">
+                                        <span class="icol-hotel"><span class="sub-arrow">→</span><a href="#"
+                                                class="hotel-link dimmed">Марилиана, Платанья</a></span>
+                                        <span class="icol-cat"><span class="stars">★★★★</span></span>
+                                        <span class="icol-food">Завтрак, обед, ужин</span>
+                                        <span class="icol-comp">Туристический пакет</span>
+                                        <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                        <span class="icol-action"><button class="btn-select">ВЫБРАТЬ</button></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="direction-card__dates">
-                            <div class="direction-card__date-wrapper">
-                                <span class="direction-card__date">19 июня 2020 – 30 сентября 2020</span>
-                                <span class="direction-card__date">08 июля 2020 – 05 апреля 2021</span>
-                            </div>
-                            <svg class="direction-card__icon-calendar" >
-                                <use href="/club-travel/sprite.svg#icon-calendar"></use>
-                            </svg>
-                        </div>
-                    
-                        <div class="direction-card__inner">
-                            <a href="/tours/alanya" class="direction-card__button">Выбрать тур</a>
-                        </div>
-                    
-                    </div>            <div class="direction-card" data-country="Турция">
-                        <picture class="direction-card__image">
-                            <img src="src/assets/image/components/direction/item-two-1366.webp" alt="Алания" loading="lazy">
-                        </picture>
-                        <div class="direction-card__inner">
-                            <div class="direction-card__content">
-                                <div class="direction-card__city">
-                                    <h4 class="direction-card__city-name">Алания</h4>
-                                    <span class="direction-card__country">Турция</span>
-                                </div>
-                                <div class="direction-card__price">
-                                    <div class="direction-card__price-from">от <span
-                                            class="direction-card__price-value">319,00€</span>/чел</div>
-                                    <div class="direction-card__price-count">214 предложения</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="direction-card__dates">
-                            <div class="direction-card__date-wrapper">
-                                <span class="direction-card__date">19 июня 2020 – 30 сентября 2020</span>
-                                <span class="direction-card__date">08 июля 2020 – 05 апреля 2021</span>
-                            </div>
-                            <svg class="direction-card__icon-calendar" >
-                                <use href="/club-travel/sprite.svg#icon-calendar"></use>
-                            </svg>
-                        </div>
-                    
-                        <div class="direction-card__inner">
-                            <a href="/tours/alanya" class="direction-card__button">Выбрать тур</a>
-                        </div>
-                    
-                    </div>            <div class="direction-card" data-country="Болгария">
-                        <picture class="direction-card__image">
-                            <img src="src/assets/image/components/direction/item-three-1366.webp" alt="Алания" loading="lazy">
-                        </picture>
-                        <div class="direction-card__inner">
-                            <div class="direction-card__content">
-                                <div class="direction-card__city">
-                                    <h4 class="direction-card__city-name">Алания</h4>
-                                    <span class="direction-card__country">Болгария</span>
-                                </div>
-                                <div class="direction-card__price">
-                                    <div class="direction-card__price-from">от <span
-                                            class="direction-card__price-value">319,00€</span>/чел</div>
-                                    <div class="direction-card__price-count">214 предложения</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="direction-card__dates">
-                            <div class="direction-card__date-wrapper">
-                                <span class="direction-card__date">19 июня 2020 – 30 сентября 2020</span>
-                                <span class="direction-card__date">08 июля 2020 – 05 апреля 2021</span>
-                            </div>
-                            <svg class="direction-card__icon-calendar" >
-                                <use href="/club-travel/sprite.svg#icon-calendar"></use>
-                            </svg>
-                        </div>
-                    
-                        <div class="direction-card__inner">
-                            <a href="/tours/alanya" class="direction-card__button">Выбрать тур</a>
-                        </div>
-                    
-                    </div>            <div class="direction-card" data-country="Египет">
-                        <picture class="direction-card__image">
-                            <img src="src/assets/image/components/direction/item-four-1366.webp" alt="Алания" loading="lazy">
-                        </picture>
-                        <div class="direction-card__inner">
-                            <div class="direction-card__content">
-                                <div class="direction-card__city">
-                                    <h4 class="direction-card__city-name">Алания</h4>
-                                    <span class="direction-card__country">Египет</span>
-                                </div>
-                                <div class="direction-card__price">
-                                    <div class="direction-card__price-from">от <span
-                                            class="direction-card__price-value">319,00€</span>/чел</div>
-                                    <div class="direction-card__price-count">214 предложения</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="direction-card__dates">
-                            <div class="direction-card__date-wrapper">
-                                <span class="direction-card__date">19 июня 2020 – 30 сентября 2020</span>
-                                <span class="direction-card__date">08 июля 2020 – 05 апреля 2021</span>
-                            </div>
-                            <svg class="direction-card__icon-calendar" >
-                                <use href="/club-travel/sprite.svg#icon-calendar"></use>
-                            </svg>
-                        </div>
-                    
-                        <div class="direction-card__inner">
-                            <a href="/tours/alanya" class="direction-card__button">Выбрать тур</a>
-                        </div>
-                    
-                    </div>            <div class="direction-card" data-country="Турция">
-                        <picture class="direction-card__image">
-                            <img src="src/assets/image/components/direction/item-five-1366.webp" alt="Алания" loading="lazy">
-                        </picture>
-                        <div class="direction-card__inner">
-                            <div class="direction-card__content">
-                                <div class="direction-card__city">
-                                    <h4 class="direction-card__city-name">Алания</h4>
-                                    <span class="direction-card__country">Турция</span>
-                                </div>
-                                <div class="direction-card__price">
-                                    <div class="direction-card__price-from">от <span
-                                            class="direction-card__price-value">319,00€</span>/чел</div>
-                                    <div class="direction-card__price-count">214 предложения</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="direction-card__dates">
-                            <div class="direction-card__date-wrapper">
-                                <span class="direction-card__date">19 июня 2020 – 30 сентября 2020</span>
-                                <span class="direction-card__date">08 июля 2020 – 05 апреля 2021</span>
-                            </div>
-                            <svg class="direction-card__icon-calendar" >
-                                <use href="/club-travel/sprite.svg#icon-calendar"></use>
-                            </svg>
-                        </div>
-                    
-                        <div class="direction-card__inner">
-                            <a href="/tours/alanya" class="direction-card__button">Выбрать тур</a>
-                        </div>
-                    
-                    </div>            <div class="direction-card" data-country="Египет">
-                        <picture class="direction-card__image">
-                            <img src="src/assets/image/components/direction/item-six-1366.webp" alt="Алания" loading="lazy">
-                        </picture>
-                        <div class="direction-card__inner">
-                            <div class="direction-card__content">
-                                <div class="direction-card__city">
-                                    <h4 class="direction-card__city-name">Алания</h4>
-                                    <span class="direction-card__country">Египет</span>
-                                </div>
-                                <div class="direction-card__price">
-                                    <div class="direction-card__price-from">от <span
-                                            class="direction-card__price-value">319,00€</span>/чел</div>
-                                    <div class="direction-card__price-count">214 предложения</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="direction-card__dates">
-                            <div class="direction-card__date-wrapper">
-                                <span class="direction-card__date">19 июня 2020 – 30 сентября 2020</span>
-                                <span class="direction-card__date">08 июля 2020 – 05 апреля 2021</span>
-                            </div>
-                            <svg class="direction-card__icon-calendar" >
-                                <use href="/club-travel/sprite.svg#icon-calendar"></use>
-                            </svg>
-                        </div>
-                    
-                        <div class="direction-card__inner">
-                            <a href="/tours/alanya" class="direction-card__button">Выбрать тур</a>
-                        </div>
-                    
-                    </div>        </div>
         
-            </div>
-        </section>    </main>
+                            <div class="inner-row inner-table__grid">
+                                <span class="icol-hotel"><a href="#" class="hotel-link">Марилиана, Платанья</a></span>
+                                <span class="icol-cat"><span class="stars">★★</span></span>
+                                <span class="icol-food">Завтраки; Завтрак, обед…</span>
+                                <span class="icol-comp">Только перелет</span>
+                                <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                <span class="icol-action"><button class="btn-select">ВЫБРАТЬ</button></span>
+                            </div>
+        
+                            <div class="inner-row inner-table__grid">
+                                <span class="icol-hotel"><a href="#" class="hotel-link">Марилиана</a></span>
+                                <span class="icol-cat"><span class="stars">★★★★</span></span>
+                                <span class="icol-food">Завтраки</span>
+                                <span class="icol-comp">Только перелет</span>
+                                <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                <span class="icol-action"><button class="btn-select">ВЫБРАТЬ</button></span>
+                            </div>
+        
+                            <div class="inner-row inner-table__grid">
+                                <span class="icol-hotel"><a href="#" class="hotel-link">Платанья</a></span>
+                                <span class="icol-cat"><span class="stars">★★★</span></span>
+                                <span class="icol-food">Завтраки</span>
+                                <span class="icol-comp">Только перелет</span>
+                                <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                <span class="icol-action"><button class="btn-select">ВЫБРАТЬ</button></span>
+                            </div>
+        
+                            <div class="inner-row inner-table__grid">
+                                <span class="icol-hotel"><a href="#" class="hotel-link">Марилиана, Платанья</a></span>
+                                <span class="icol-cat"><span class="stars">★★★★</span></span>
+                                <span class="icol-food">Завтраки</span>
+                                <span class="icol-comp">Только перелет</span>
+                                <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                <span class="icol-action"><button class="btn-select">ВЫБРАТЬ</button></span>
+                            </div>
+        
+                            <div class="inner-row inner-table__grid">
+                                <span class="icol-hotel"><a href="#" class="hotel-link">Платанья</a></span>
+                                <span class="icol-cat"><span class="stars">★★★★</span></span>
+                                <span class="icol-food">Завтраки</span>
+                                <span class="icol-comp">Только перелет</span>
+                                <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                <span class="icol-action"><button class="btn-select">ВЫБРАТЬ</button></span>
+                            </div>
+        
+                        </div>
+                    </div>
+                </div><!-- /ROW 1 -->
+        
+                <!-- ══════════ ROW 2 ══════════ -->
+                <div class="tour-row">
+                    <div class="tour-row__main tours-table__grid">
+                        <span class="col-date">25 июня 2020</span>
+                        <span class="col-from">Хельсинки</span>
+                        <span class="col-to">Rethymnon, Kreeta</span>
+                        <span class="col-dur">7 дней</span>
+                        <span class="col-price">от <strong>480€</strong>/чел</span>
+                        <span class="col-action">
+                            <button class="btn-toggle" aria-expanded="false" aria-controls="panel-2">
+                                <span class="btn-toggle__label">ОТКРЫТЬ</span>
+                                <span class="btn-toggle__arrow">›</span>
+                            </button>
+                        </span>
+                    </div>
+        
+                    <div class="tour-row__panel" id="panel-2" hidden>
+                        <div class="inner-table">
+                            <div class="inner-table__head inner-table__grid">
+                                <span class="icol-hotel">Отель</span>
+                                <span class="icol-cat">Категория</span>
+                                <span class="icol-food">Питание</span>
+                                <span class="icol-comp">Состав тура</span>
+                                <span class="icol-price">Цена <span class="sort-icon">▾</span></span>
+                                <span class="icol-action"></span>
+                            </div>
+        
+                            <div class="inner-row inner-row--expandable">
+                                <div class="inner-row__main inner-table__grid">
+                                    <span class="icol-hotel"><a href="#" class="hotel-link">Марилиана, Платанья</a></span>
+                                    <span class="icol-cat"><span class="stars">★★★★</span></span>
+                                    <span class="icol-food">Завтраки; Завтрак, обед…</span>
+                                    <span class="icol-comp">Только перелет; Тур…</span>
+                                    <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                    <span class="icol-action">
+                                        <button class="btn-offers" aria-expanded="false">
+                                            <span class="btn-offers__label">ОТКРЫТЬ ПРЕДЛОЖЕНИЯ</span>
+                                            <span class="btn-offers__arrow">▾</span>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="sub-rows" hidden>
+                                    <div class="sub-row inner-table__grid">
+                                        <span class="icol-hotel"><span class="sub-arrow">→</span><a href="#"
+                                                class="hotel-link dimmed">Марилиана, Платанья</a></span>
+                                        <span class="icol-cat"><span class="stars">★★★</span></span>
+                                        <span class="icol-food">Завтраки</span>
+                                        <span class="icol-comp">Только перелет</span>
+                                        <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                        <span class="icol-action"><button class="btn-select">ВЫБРАТЬ</button></span>
+                                    </div>
+                                    <div class="sub-row inner-table__grid">
+                                        <span class="icol-hotel"><span class="sub-arrow">→</span><a href="#"
+                                                class="hotel-link dimmed">Марилиана, Платанья</a></span>
+                                        <span class="icol-cat"><span class="stars">★★★★</span></span>
+                                        <span class="icol-food">Завтрак, обед, ужин</span>
+                                        <span class="icol-comp">Туристический пакет</span>
+                                        <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                        <span class="icol-action"><button class="btn-select">ВЫБРАТЬ</button></span>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="inner-row inner-table__grid">
+                                <span class="icol-hotel"><a href="#" class="hotel-link">Марилиана</a></span>
+                                <span class="icol-cat"><span class="stars">★★★★</span></span>
+                                <span class="icol-food">Завтраки</span>
+                                <span class="icol-comp">Только перелет</span>
+                                <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                <span class="icol-action"><button class="btn-select">ВЫБРАТЬ</button></span>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /ROW 2 -->
+        
+                <!-- ══════════ ROW 3 ══════════ -->
+                <div class="tour-row">
+                    <div class="tour-row__main tours-table__grid">
+                        <span class="col-date">25 июня 2020</span>
+                        <span class="col-from">Хельсинки</span>
+                        <span class="col-to">Rethymnon, Kreeta</span>
+                        <span class="col-dur">7 дней</span>
+                        <span class="col-price">от <strong>480€</strong>/чел</span>
+                        <span class="col-action">
+                            <button class="btn-toggle" aria-expanded="false" aria-controls="panel-3">
+                                <span class="btn-toggle__label">ОТКРЫТЬ</span>
+                                <span class="btn-toggle__arrow">›</span>
+                            </button>
+                        </span>
+                    </div>
+        
+                    <div class="tour-row__panel" id="panel-3" hidden>
+                        <div class="inner-table">
+                            <div class="inner-table__head inner-table__grid">
+                                <span class="icol-hotel">Отель</span>
+                                <span class="icol-cat">Категория</span>
+                                <span class="icol-food">Питание</span>
+                                <span class="icol-comp">Состав тура</span>
+                                <span class="icol-price">Цена <span class="sort-icon">▾</span></span>
+                                <span class="icol-action"></span>
+                            </div>
+        
+                            <div class="inner-row inner-table__grid">
+                                <span class="icol-hotel"><a href="#" class="hotel-link">Марилиана, Платанья</a></span>
+                                <span class="icol-cat"><span class="stars">★★★</span></span>
+                                <span class="icol-food">Завтраки</span>
+                                <span class="icol-comp">Только перелет</span>
+                                <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                <span class="icol-action"><button class="btn-select">ВЫБРАТЬ</button></span>
+                            </div>
+        
+                            <div class="inner-row inner-table__grid">
+                                <span class="icol-hotel"><a href="#" class="hotel-link">Платанья</a></span>
+                                <span class="icol-cat"><span class="stars">★★★★</span></span>
+                                <span class="icol-food">Завтраки</span>
+                                <span class="icol-comp">Только перелет</span>
+                                <span class="icol-price">от <strong>645€</strong>/чел</span>
+                                <span class="icol-action"><button class="btn-select">ВЫБРАТЬ</button></span>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /ROW 3 -->
+        
+            </div><!-- /.tours-table -->
+        </section>
+    </main>
 
     <footer class="footer " id="footer">
       <hr class="footer__line">
@@ -1323,14 +1279,13 @@
         <a href="./policy.html" class="footer__rights-link clickable">Политика использования</a>
       </div>
     </footer>    <div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v20.0">
-</script>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v20.0">
-</script>
-
+    <script async defer crossorigin="anonymous"
+            src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v20.0">
+    </script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+            src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v20.0">
+    </script>
 
 
 
