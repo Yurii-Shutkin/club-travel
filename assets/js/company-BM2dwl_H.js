@@ -1,0 +1,1 @@
+import"./header-scroll-state-DBHKNPaB.js";import"./hero-swiper-0weSknRP.js";import{t as e}from"./render-news-cards-B7x2l9cR.js";document.addEventListener("DOMContentLoaded",async()=>{await e(".news")});
