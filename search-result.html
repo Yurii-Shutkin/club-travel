@@ -5,15 +5,15 @@
 <link rel="icon" type="image/svg+xml" href="/club-travel/favicon.svg" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Club Travel, Результаты поиска</title>
-  <script type="module" crossorigin src="/club-travel/assets/js/search-result-DiABTY1H.js"></script>
-  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-BEVYLdVW.js">
+  <script type="module" crossorigin src="/club-travel/assets/js/search-result-NfN5I43f.js"></script>
+  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/header-scroll-state-DwutJZHb.js">
   <link rel="modulepreload" crossorigin href="/club-travel/assets/js/hero-swiper-DN71Kztk.js">
   <link rel="modulepreload" crossorigin href="/club-travel/assets/js/cards-swiper-D-4vpDoL.js">
+  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/dynamic-url-Bb8cVuex.js">
   <link rel="modulepreload" crossorigin href="/club-travel/assets/js/constants-BqE-gIEZ.js">
   <link rel="modulepreload" crossorigin href="/club-travel/assets/js/tour-search-C_W5a2NG.js">
   <link rel="modulepreload" crossorigin href="/club-travel/assets/js/custom-select-xxtK0jeg.js">
-  <link rel="modulepreload" crossorigin href="/club-travel/assets/js/format-money-C_g90i3O.js">
-  <link rel="stylesheet" crossorigin href="/club-travel/assets/css/search-result-BtlDUXmi.css">
+  <link rel="stylesheet" crossorigin href="/club-travel/assets/css/search-result-CJibf8k4.css">
 </head>
 <body class="search-result">
 <header class="header">
@@ -130,7 +130,7 @@
         </li>
 
         <li class="header__main-item">
-          <a class="header__main-link" href="direction.html">Направления</a>
+          <a class="header__main-link" href="./direction.html">Направления</a>
         </li>
 
         <li class="header__main-item">
@@ -144,7 +144,7 @@
         </li>
 
         <li class="header__main-item">
-          <a class="header__main-link header__main-link_hot" href="main.html">
+          <a class="header__main-link header__main-link_hot" href="./burn.html">
             <svg class="header__main-link-icon
                         header__main-link-icon_hot" >
                 <use href="/club-travel/sprite.svg#icon-fast-time"></use>
@@ -190,13 +190,13 @@
             <a class="burger-menu__main-link" href="./search-result.html">Поиск тура</a>
           </li>
           <li class="burger-menu__main-item">
-            <a class="burger-menu__main-link" href="main.html">Направления</a>
+            <a class="burger-menu__main-link" href="./direction.html">Направления</a>
           </li>
           <li class="burger-menu__main-item">
             <a class="burger-menu__main-link" href="./company.html">Кампании</a>
           </li>
           <li class="burger-menu__main-item">
-            <a class="burger-menu__main-link" href="main.html">
+            <a class="burger-menu__main-link" href="./burn.html">
               Горящие предложения
             </a>
           </li>
@@ -972,7 +972,7 @@
               
                 <div class="hotel-summary__content">
                   <div class="hotel-summary__content-inner">
-                    <a href="./hotel.html" class="hotel-summary__title-link clickable">
+                    <a href="./hotel.html" class="hotel-summary__title-link clickable" data-hotel-link>
                       <h3 class="hotel-summary__title" data-hotel-title>
                       </h3>
                       <svg class="hotel-summary__title-icon" >
@@ -990,7 +990,7 @@
                     <p class="hotel-summary__description" data-hotel-description>
                     </p>
                   </div>
-                  <a href="./hotel.html" class="link-more clickable hotel-summary__more">
+                  <a href="./hotel.html" class="link-more clickable hotel-summary__more" data-hotel-link>
                     Подробнее об отеле
                     <svg class="link-more__icon" >
                         <use href="/club-travel/sprite.svg#icon-arrow-right"></use>
@@ -1119,12 +1119,12 @@
                           <ul class="custom-select__dropdown input-base" data-select-dropdown role="listbox">
                                 <li
                                   class="custom-select__option clickable" data-select-option
-                                  data-value="asc" role="option">
+                                  data-value="ascending" role="option">
                                   Возрастаю...
                                 </li>
                                 <li
                                   class="custom-select__option clickable" data-select-option
-                                  data-value="desc" role="option">
+                                  data-value="descending" role="option">
                                   Убываю...
                                 </li>
                           </ul>
@@ -1141,7 +1141,18 @@
                       data-offers-container>
                   
                       <div class="hotel-offers__head" role="row">
-                        <span role="columnheader">Дата</span>
+                        <span
+                          role="columnheader" aria-sort="none" class="hotel-offers__head-btn-wrap"
+                          data-sort-wrapper="date">
+                          <button
+                            class="hotel-offers__head-btn clickable" type="button"
+                            data-column-sort="period" aria-label="Сортировать по дате">
+                            Дата
+                            <svg class="hotel-offers__head-btn-icon" >
+                                <use href="/club-travel/sprite.svg#icon-drop-down"></use>
+                            </svg>
+                          </button>
+                        </span>
                         <span
                           role="columnheader" aria-sort="none" class="hotel-offers__head-btn-wrap"
                           data-sort-wrapper="period">
@@ -1156,8 +1167,30 @@
                         </span>
                         <span role="columnheader">Питание</span>
                         <span role="columnheader">Тип номера</span>
-                        <span role="columnheader">Мест в самолёте</span>
-                        <span role="columnheader">Стоимость</span>
+                        <span
+                          role="columnheader" aria-sort="none" class="hotel-offers__head-btn-wrap"
+                          data-sort-wrapper="places">
+                          <button
+                            class="hotel-offers__head-btn clickable" type="button"
+                            data-column-sort="places" aria-label="Сортировать по местам в самолете">
+                            Мест в самолёте
+                            <svg class="hotel-offers__head-btn-icon" >
+                                <use href="/club-travel/sprite.svg#icon-drop-down"></use>
+                            </svg>
+                          </button>
+                        </span>
+                        <span
+                          role="columnheader" aria-sort="none" class="hotel-offers__head-btn-wrap"
+                          data-sort-wrapper="price">
+                          <button
+                            class="hotel-offers__head-btn clickable" type="button"
+                            data-column-sort="period" aria-label="Сортировать по стоимости">
+                            Стоимость
+                            <svg class="hotel-offers__head-btn-icon" >
+                                <use href="/club-travel/sprite.svg#icon-drop-down"></use>
+                            </svg>
+                          </button>
+                        </span>
                       </div>
                   
                       <div class="hotel-offers__body" data-hotel-offer-body>
@@ -1283,16 +1316,16 @@
       <div class="footer__destinations">
         <h2 class="footer__destinations-title">Популярные направления</h2>
         <div class="footer__destinations-list" >
-            <a href="#!" class="footer__destinations-link clickable">Египет</a>
-            <a href="#!" class="footer__destinations-link clickable">Бали</a>
-            <a href="#!" class="footer__destinations-link clickable">ОАЭ</a>
-            <a href="#!" class="footer__destinations-link clickable">Грузия</a>
-            <a href="#!" class="footer__destinations-link clickable">Таиланд</a>
-            <a href="#!" class="footer__destinations-link clickable">Греция</a>
-            <a href="#!" class="footer__destinations-link clickable">Болгария</a>
-            <a href="#!" class="footer__destinations-link clickable">Турция</a>
-            <a href="#!" class="footer__destinations-link clickable">Тенерифе</a>
-            <a href="#!" class="footer__destinations-link clickable">Кипр</a>
+              <a href="./search-result.html?regions&#x3D;batumi" class="footer__destinations-link clickable">Батуми</a>
+              <a href="./search-result.html?regions&#x3D;kosta-adehe" class="footer__destinations-link clickable">Коста-Адехе</a>
+              <a href="./search-result.html?regions&#x3D;bansko" class="footer__destinations-link clickable">Банско</a>
+              <a href="./search-result.html?regions&#x3D;dubaj" class="footer__destinations-link clickable">Дубай</a>
+              <a href="./search-result.html?regions&#x3D;ubud" class="footer__destinations-link clickable">Убуд</a>
+              <a href="./search-result.html?regions&#x3D;alanya" class="footer__destinations-link clickable">Аланья</a>
+              <a href="./search-result.html?regions&#x3D;samui" class="footer__destinations-link clickable">Самуи</a>
+              <a href="./search-result.html?regions&#x3D;halkidiki" class="footer__destinations-link clickable">Халкидики</a>
+              <a href="./search-result.html?regions&#x3D;hurgada" class="footer__destinations-link clickable">Хургада</a>
+              <a href="./search-result.html?regions&#x3D;rodos" class="footer__destinations-link clickable">Родос</a>
         </div>      </div>
       <div class="footer__contacts">
         <div class="footer__contacts-inner">
